@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.5D Hypergraph Layer Viewer</title>
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- p5.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <style>
+        :root {
+            --bg-color-1: #0a0a0f;
+            --bg-color-2: #12121e;
+            --panel-bg: rgba(18, 18, 30, 0.7);
+            --panel-border: rgba(255, 255, 255, 0.08);
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --accent-color: #6366f1;
+            --accent-hover: #4f46e5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at center, var(--bg-color-2) 0%, var(--bg-color-1) 100%);
+            color: var(--text-primary);
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Layout Container */
+        #app-container {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Canvas Wrapper */
+        #canvas-parent {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* Control Panel (Glassmorphism) */
+        #control-panel {
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            width: 340px;
+            max-height: calc(100vh - 48px);
+            background: var(--panel-bg);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid var(--panel-border);
+            border-radius: 20px;
+            padding: 24px;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+        }
+
+        /* Header block */
+        .header-section {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 16px;
+        }
+
+        .header-section h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #a5b4fc 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 4px;
+        }
+
+        .header-section p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Control groups */
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .control-label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .control-value {
+            font-family: monospace;
+            color: var(--accent-color);
+            font-size: 0.8rem;
+        }
+
+        /* Sliders styling */
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.1);
+            outline: none;
+            transition: background 0.3s;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            cursor: pointer;
+            box-shadow: 0 0 8px var(--accent-color);
+            transition: transform 0.1s;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            background: #818cf8;
+        }
+
+        /* Toggles and checkboxes */
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            user-select: none;
+        }
+
+        .checkbox-container input {
+            cursor: pointer;
+            accent-color: var(--accent-color);
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Details & Hover Info Box */
+        #info-panel {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            width: 320px;
+            background: var(--panel-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--panel-border);
+            border-radius: 16px;
+            padding: 20px;
+            z-index: 10;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .info-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .color-badge {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 8px;
+            font-size: 0.85rem;
+        }
+
+        .info-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .info-val {
+            text-align: right;
+            word-break: break-all;
+        }
+
+        /* Search input */
+        .search-container {
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 8px 12px;
+            color: var(--text-primary);
+            outline: none;
+            font-size: 0.85rem;
+            transition: border-color 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-color);
+        }
+
+        /* Status bar */
+        #status-bar {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            z-index: 10;
+            background: var(--panel-bg);
+            border: 1px solid var(--panel-border);
+            border-radius: 12px;
+            padding: 8px 16px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            backdrop-filter: blur(8px);
+        }
+
+        /* Custom Scrollbar for panel */
+        #control-panel::-webkit-scrollbar {
+            width: 6px;
+        }
+        #control-panel::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        #control-panel::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+        #control-panel::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div id="app-container">
+        <!-- Canvas Parent -->
+        <div id="canvas-parent"></div>
+
+        <!-- Left Controls -->
+        <div id="control-panel">
+            <div class="header-section">
+                <h1>2.5D Hypergraph</h1>
+                <p>階層座標の最適化 & 重複回避ビジュアライザ</p>
+            </div>
+
+            <!-- Visualization Scales -->
+            <div class="control-group">
+                <div class="control-label">
+                    <span>水平スケール (XY)</span>
+                    <span id="label-xy" class="control-value">40</span>
+                </div>
+                <input type="range" id="slider-xy" min="10" max="100" value="40">
+            </div>
+
+            <div class="control-group">
+                <div class="control-label">
+                    <span>垂直スケール (Z - 階層高)</span>
+                    <span id="label-z" class="control-value">6.0</span>
+                </div>
+                <input type="range" id="slider-z" min="1" max="20" step="0.5" value="6.0">
+            </div>
+
+            <!-- Visual elements toggles -->
+            <div class="control-group">
+                <span class="control-label">表示オプション</span>
+                <label class="checkbox-container">
+                    <input type="checkbox" id="toggle-polygons" checked>
+                    <span>ハイパーエッジ (ポリゴン) を描画</span>
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" id="toggle-nodes" checked>
+                    <span>ノード (球体) を描画</span>
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" id="toggle-pillars" checked>
+                    <span>ピラー (垂直連結線) を描画</span>
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" id="toggle-autorotate" checked>
+                    <span>カメラ自動回転</span>
+                </label>
+            </div>
+
+            <!-- Rendering opacity -->
+            <div class="control-group">
+                <div class="control-label">
+                    <span>ポリゴン不透明度</span>
+                    <span id="label-opacity" class="control-value">80</span>
+                </div>
+                <input type="range" id="slider-opacity" min="10" max="220" value="80">
+            </div>
+
+            <!-- Node size scaler -->
+            <div class="control-group">
+                <div class="control-label">
+                    <span>ノードサイズ</span>
+                    <span id="label-nodesize" class="control-value">4.0</span>
+                </div>
+                <input type="range" id="slider-nodesize" min="1" max="12" step="0.5" value="4.0">
+            </div>
+
+            <!-- Search Filter -->
+            <div class="control-group">
+                <span class="control-label">エッジまたはノードを検索</span>
+                <div class="search-container">
+                    <input type="text" id="search-input" class="search-input" placeholder="例: TTF-1, Adenocarcinoma...">
+                </div>
+            </div>
+            
+            <!-- Quick Reset Camera Button -->
+            <div class="control-group" style="margin-top: 10px;">
+                <button id="btn-reset-cam" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; padding: 10px; color: var(--text-primary); cursor: pointer; transition: all 0.2s; font-size: 0.85rem;" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'">
+                    カメラ位置リセット
+                </button>
+            </div>
+        </div>
+
+        <!-- Status Bar -->
+        <div id="status-bar">
+            読み込み中...
+        </div>
+
+        <!-- Info Hover Panel -->
+        <div id="info-panel">
+            <div class="info-title" id="info-title">
+                <span class="color-badge" id="info-color"></span>
+                <span id="info-name">Name</span>
+            </div>
+            <div class="info-grid">
+                <div class="info-label" id="info-lbl-1">タイプ:</div>
+                <div class="info-val" id="info-val-1">-</div>
+                <div class="info-label" id="info-lbl-2">レイヤー (Z):</div>
+                <div class="info-val" id="info-val-2">-</div>
+                <div class="info-label" id="info-lbl-3">詳細:</div>
+                <div class="info-val" id="info-val-3">-</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- p5.js Sketch -->
+    <script>
+        let hypergraphData = null;
+        let nodesMap = {};
+        let nodePillars = {}; // nodeId -> list of layer Z values
+        let hoveredObject = null; // {type: 'node'|'hyperedge', data: ...}
+
+        // Camera Control Helpers
+        let camX = 0, camY = 0, camZ = 0;
+        let rotationAngle = 0;
+
+        // UI Slider elements
+        let sliderXY, sliderZ, sliderOpacity, sliderNodeSize;
+        let togglePolygons, toggleNodes, togglePillars, toggleAutoRotate;
+        let searchInput;
+
+        // Preload Data
+        function preload() {
+            hypergraphData = loadJSON('layered_hypergraph.json', onDataLoaded, onDataError);
+        }
+
+        function onDataLoaded(data) {
+            console.log("Hypergraph data loaded successfully!");
+            document.getElementById('status-bar').innerText = 
+                `データロード完了: ノード ${data.nodes.length}個 | エッジ ${data.hyperedges.length}個`;
+        }
+
+        function onDataError(err) {
+            console.error("Failed to load JSON file:", err);
+            document.getElementById('status-bar').innerText = "エラー: layered_hypergraph.jsonのロードに失敗しました。";
+        }
+
+        function setup() {
+            const canvas = createCanvas(windowWidth, windowHeight, WEBGL);
+            canvas.parent('canvas-parent');
+            
+            // Set normal 3D context default parameters
+            setAttributes('antialias', true);
+            
+            // Set up DOM interaction
+            setupUI();
+            
+            // Process hypergraph data
+            if (hypergraphData) {
+                processData();
+            }
+        }
+
+        function setupUI() {
+            // Sliders
+            sliderXY = select('#slider-xy');
+            sliderZ = select('#slider-z');
+            sliderOpacity = select('#slider-opacity');
+            sliderNodeSize = select('#slider-nodesize');
+
+            // Toggles
+            togglePolygons = select('#toggle-polygons');
+            toggleNodes = select('#toggle-nodes');
+            togglePillars = select('#toggle-pillars');
+            toggleAutoRotate = select('#toggle-autorotate');
+            
+            // Search Input
+            searchInput = select('#search-input');
+            
+            // Labels
+            sliderXY.input(() => select('#label-xy').html(sliderXY.value()));
+            sliderZ.input(() => select('#label-z').html(Number(sliderZ.value()).toFixed(1)));
+            sliderOpacity.input(() => select('#label-opacity').html(sliderOpacity.value()));
+            sliderNodeSize.input(() => select('#label-nodesize').html(Number(sliderNodeSize.value()).toFixed(1)));
+
+            // Reset Camera
+            select('#btn-reset-cam').mousePressed(() => {
+                // reset camera variables (the canvas perspective will reset because mouse controls are handled in orbitControl)
+                rotationAngle = 0;
+                // Reload page or re-initialize orbit controls is not trivial in p5 without resetting,
+                // but we can manually reset rotation angles in the draw loop.
+                const easycam = _renderer.EasyCam; 
+                if (easycam) {
+                    easycam.reset();
+                } else {
+                    // fallbacks
+                    // force canvas rotation reset by resetting framecount-based rotation
+                    rotationAngle = 0;
+                }
+            });
+        }
+
+        // Process data for rendering (e.g. build node ID maps and gather node pillars)
+        function processData() {
+            // 1. Build map of nodes
+            nodesMap = {};
+            hypergraphData.nodes.forEach(n => {
+                nodesMap[n.id] = n;
+                nodePillars[n.id] = [];
+            });
+
+            // 2. Record node-layer memberships
+            hypergraphData.hyperedges.forEach(he => {
+                he.nodes.forEach(nid => {
+                    if (nodePillars[nid] !== undefined) {
+                        nodePillars[nid].push(he.layer);
+                    }
+                });
+            });
+
+            // Clean up pillars that have fewer than 2 layers
+            Object.keys(nodePillars).forEach(nid => {
+                if (nodePillars[nid].length < 2) {
+                    delete nodePillars[nid];
+                } else {
+                    // Sort layers ascendingly
+                    nodePillars[nid].sort((a, b) => a - b);
+                }
+            });
+        }
+
+        function draw() {
+            background(10, 10, 15);
+            
+            if (!hypergraphData) return;
+
+            // Setup scene lighting
+            ambientLight(130, 130, 150);
+            directionalLight(255, 255, 255, 0.4, 0.4, -1);
+            pointLight(150, 150, 255, 0, 0, 300);
+
+            // Get current scale values from sliders
+            const xyScale = sliderXY.value();
+            const zScale = sliderZ.value();
+            const opacity = sliderOpacity.value();
+            const nodeSize = sliderNodeSize.value();
+            
+            const showPolygons = togglePolygons.checked();
+            const showNodes = toggleNodes.checked();
+            const showPillars = togglePillars.checked();
+            const autoRotate = toggleAutoRotate.checked();
+
+            // Set up camera & interaction (Orbit Control)
+            orbitControl(1, 1, 0.1);
+
+            // Translate camera to center of hypergraph structure
+            // Center of X is around 1.0, Y is around 3.0, Z is around -15.0
+            translate(-1.0 * xyScale, -3.0 * xyScale, 15.0 * zScale);
+
+            // Initial view angle orientation
+            rotateX(60 * PI / 180);
+            if (autoRotate) {
+                rotationAngle += 0.003;
+            }
+            rotateZ(rotationAngle);
+
+            // Search filter
+            const query = searchInput.value().trim().toLowerCase();
+
+            // Hover variables (to find the closest projected node or hyperedge)
+            let minDistance = Infinity;
+            let currentHover = null;
+
+            // --- 1. RENDER PILLARS ---
+            if (showPillars) {
+                strokeWeight(1.0);
+                Object.entries(nodePillars).forEach(([nid, layers]) => {
+                    const node = nodesMap[nid];
+                    if (!node) return;
+
+                    // Filter search highlight
+                    let isHighlighted = false;
+                    if (query && node.label.toLowerCase().includes(query)) {
+                        isHighlighted = true;
+                    }
+
+                    const px = node.x * xyScale;
+                    const py = node.y * xyScale;
+                    const zMin = layers[0] * zScale;
+                    const zMax = layers[layers.length - 1] * zScale;
+
+                    if (isHighlighted) {
+                        stroke(239, 68, 68, 220); // Bright Red for search matches
+                        strokeWeight(2.5);
+                    } else {
+                        stroke(255, 255, 255, 50); // Translucent white
+                        strokeWeight(1.0);
+                    }
+                    
+                    line(px, py, zMin, px, py, zMax);
+                });
+            }
+
+            // --- 2. RENDER POLYGONS (HYPEREDGES) & NODES ---
+            hypergraphData.hyperedges.forEach(he => {
+                const z = he.layer * zScale;
+                const c = he.color;
+
+                // Check search filter highlight
+                let isHighlighted = false;
+                let matchesSearch = false;
+                if (query) {
+                    if (he.label.toLowerCase().includes(query)) {
+                        matchesSearch = true;
+                        isHighlighted = true;
+                    } else {
+                        // Check if any node in this hyperedge matches the query
+                        const hasMatchingNode = he.nodes.some(nid => 
+                            nodesMap[nid] && nodesMap[nid].label.toLowerCase().includes(query)
+                        );
+                        if (hasMatchingNode) {
+                            matchesSearch = true;
+                        }
+                    }
+                }
+
+                // Render Polygon (connecting nodes in order)
+                if (showPolygons) {
+                    if (he.nodes && he.nodes.length >= 3) {
+                        push();
+                        translate(0, 0, z);
+                        
+                        // Polygon styling based on state
+                        let polyAlpha = opacity;
+                        if (query && !matchesSearch) {
+                            polyAlpha = 15; // Dim non-matching elements
+                        }
+                        
+                        fill(c.r, c.g, c.b, polyAlpha);
+                        
+                        // Set border glow
+                        if (query && isHighlighted) {
+                            stroke(239, 68, 68);
+                            strokeWeight(3.0);
+                        } else {
+                            stroke(c.r, c.g, c.b);
+                            strokeWeight(1.5);
+                        }
+                        
+                        // Draw shape
+                        beginShape();
+                        he.nodes.forEach(nid => {
+                            const node = nodesMap[nid];
+                            if (node) {
+                                vertex(node.x * xyScale, node.y * xyScale);
+                            }
+                        });
+                        endShape(CLOSE);
+                        
+                        // If polygon has a center, we can check hover on hyperedge
+                        // Let's compute centroid of all nodes in hyperedge
+                        let cx = 0, cy = 0, count = 0;
+                        he.nodes.forEach(nid => {
+                            const node = nodesMap[nid];
+                            if (node) {
+                                cx += node.x;
+                                cy += node.y;
+                                count++;
+                            }
+                        });
+                        if (count > 0) {
+                            cx = (cx / count) * xyScale;
+                            cy = (cy / count) * xyScale;
+                            
+                            // Project centroid to screen coordinate
+                            const sPos = customScreenPosition(cx, cy, z);
+                            const sX = sPos.x;
+                            const sY = sPos.y;
+                            const mouseDist = dist(mouseX, mouseY, sX, sY);
+                            if (mouseDist < 30 && mouseDist < minDistance) {
+                                minDistance = mouseDist;
+                                currentHover = { type: 'hyperedge', data: he, x: cx, y: cy, z: z };
+                            }
+                        }
+                        
+                        pop();
+                    }
+                }
+
+                // Render Nodes
+                if (showNodes) {
+                    he.nodes.forEach(nid => {
+                        const node = nodesMap[nid];
+                        if (!node) return;
+
+                        const nx = node.x * xyScale;
+                        const ny = node.y * xyScale;
+
+                        // Check highlight
+                        let nodeAlpha = 220;
+                        if (query) {
+                            const nodeMatches = node.label.toLowerCase().includes(query);
+                            if (!nodeMatches && !matchesSearch) {
+                                nodeAlpha = 20; // Dim heavily
+                            }
+                        }
+
+                        push();
+                        translate(nx, ny, z);
+                        
+                        // Style node
+                        noStroke();
+                        fill(c.r, c.g, c.b, nodeAlpha);
+                        
+                        // Draw sphere for node
+                        sphere(nodeSize);
+                        
+                        // Projection for mouse hover detection on node
+                        // Project (nx, ny, z) to screen coordinates
+                        const sPos = customScreenPosition(nx, ny, z);
+                        const sX = sPos.x;
+                        const sY = sPos.y;
+                        const mouseDist = dist(mouseX, mouseY, sX, sY);
+                        
+                        // Hover radius 15px
+                        if (mouseDist < 15 && mouseDist < minDistance) {
+                            minDistance = mouseDist;
+                            currentHover = { type: 'node', data: node, layer: he.layer, heLabel: he.label, heColor: c };
+                        }
+                        
+                        pop();
+                    });
+                }
+            });
+
+            // Update Info Panel based on current hovered object
+            if (currentHover) {
+                hoveredObject = currentHover;
+                showHoverInfo(hoveredObject);
+            } else {
+                // Clear hover if mouse is far from everything
+                hoveredObject = null;
+                hideHoverInfo();
+            }
+        }
+
+        // Highlight Hover Element Details
+        function showHoverInfo(hover) {
+            const panel = document.getElementById('info-panel');
+            const titleName = document.getElementById('info-name');
+            const badge = document.getElementById('info-color');
+            const val1 = document.getElementById('info-val-1');
+            const val2 = document.getElementById('info-val-2');
+            const val3 = document.getElementById('info-val-3');
+            
+            const lbl1 = document.getElementById('info-lbl-1');
+            const lbl2 = document.getElementById('info-lbl-2');
+            const lbl3 = document.getElementById('info-lbl-3');
+
+            panel.style.display = 'flex';
+
+            if (hover.type === 'node') {
+                const node = hover.data;
+                badge.style.backgroundColor = `rgb(${hover.heColor.r}, ${hover.heColor.g}, ${hover.heColor.b})`;
+                titleName.innerText = node.label;
+                
+                lbl1.innerText = "タイプ:";
+                val1.innerText = "頂点 (Node)";
+                
+                lbl2.innerText = "座標 / レイヤー:";
+                val2.innerText = `Z=${hover.layer.toFixed(2)}`;
+                
+                lbl3.innerText = "所属親エッジ:";
+                val3.innerText = hover.heLabel;
+            } else if (hover.type === 'hyperedge') {
+                const he = hover.data;
+                badge.style.backgroundColor = `rgb(${he.color.r}, ${he.color.g}, ${he.color.b})`;
+                titleName.innerText = he.label;
+                
+                lbl1.innerText = "タイプ:";
+                val1.innerText = "ハイパーエッジ (Edge)";
+                
+                lbl2.innerText = "階層座標 (Z):";
+                val2.innerText = he.layer.toFixed(4);
+                
+                lbl3.innerText = "頂点数 (Nodes):";
+                val3.innerText = `${he.nodes.length}個`;
+            }
+        }
+
+        function hideHoverInfo() {
+            document.getElementById('info-panel').style.display = 'none';
+        }
+
+        // Project 3D coordinate (x, y, z) to 2D screen space (top-left origin)
+        function customScreenPosition(x, y, z) {
+            let mvp = _renderer.uMVMatrix.copy().mult(_renderer.uPMatrix);
+            let mat = mvp.mat4;
+            let w = mat[3] * x + mat[7] * y + mat[11] * z + mat[15];
+            
+            // Avoid division by zero
+            if (Math.abs(w) < 1e-9) w = 1.0;
+            
+            let ndcX = (mat[0] * x + mat[4] * y + mat[8] * z + mat[12]) / w;
+            let ndcY = (mat[1] * x + mat[5] * y + mat[9] * z + mat[13]) / w;
+            
+            return {
+                x: 0.5 * (ndcX + 1.0) * width,
+                y: 0.5 * (1.0 - ndcY) * height
+            };
+        }
+
+        // Adjust canvas dimension on window resizing
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+        }
+    </script>
+</body>
+</html>
