@@ -190,6 +190,11 @@ def solve_layer_assignment(input_path, output_path, reg_val):
     # 6. Phase 1: Graph Coloring Layout (DSatur)
     print("Phase 1: Computing Graph Coloring using DSatur on overlap graph C...")
     color_assignment = dsatur_coloring(N, C)
+
+    #todo最短ハミルトン路
+    #ポリゴンの重なりでできるグラフと、ポリゴンの共通する頂点でできるグラフの2種類ある
+    #最短ハミルトン路は共通する頂点でできるグラフを使う
+
     num_colors = max(color_assignment.values()) + 1 if N > 0 else 0
     print(f"Graph coloring completed. Total colors/layers used: {num_colors}")
     
