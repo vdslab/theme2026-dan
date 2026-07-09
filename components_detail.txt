@@ -1,416 +1,1302 @@
 Total connected components: 15
-============================================================
+================================================================================
 
---- Component 0 (362 hyperedges) ---
-  - ID:  45 | Connections: 138 | Label: S100
-  - ID:  52 | Connections: 136 | Label: CD34
-  - ID:  38 | Connections: 134 | Label: EMA
-  - ID:  75 | Connections: 131 | Label: CD10
-  - ID:  31 | Connections: 125 | Label: Keratins
-  - ID:  34 | Connections: 121 | Label: Desmin
-  - ID:  43 | Connections: 114 | Label: SMA(Smooth muscle actin)
-  - ID:  29 | Connections: 111 | Label: Vimentin
-  - ID:   4 | Connections: 108 | Label: CK7
-  - ID:  17 | Connections:  91 | Label: p53
-  - ID:   0 | Connections:  90 | Label: TTF-1
-  - ID:  49 | Connections:  90 | Label: ER(Estrogen receptor)
-  - ID:  24 | Connections:  89 | Label: No recommendation
-  - ID:  50 | Connections:  87 | Label: PgR(Progesteron receptor)
-  - ID:  70 | Connections:  87 | Label: Calretinin
-  - ID:  20 | Connections:  83 | Label: p63
-  - ID: 172 | Connections:  81 | Label: WT1
-  - ID:  26 | Connections:  80 | Label: Ki67
-  - ID:  35 | Connections:  79 | Label: AE1/AE3
-  - ID: 103 | Connections:  79 | Label: PAX8
-  - ID:   5 | Connections:  77 | Label: CK20
-  - ID:  11 | Connections:  73 | Label: Synaptophysin
-  - ID:  25 | Connections:  71 | Label: CD56
-  - ID:  37 | Connections:  70 | Label: CEA
-  - ID:  12 | Connections:  67 | Label: Chromogranin
-  - ID: 230 | Connections:  67 | Label: Inhibin
-  - ID: 173 | Connections:  65 | Label: ERG
-  - ID:  69 | Connections:  62 | Label: BCL2
-  - ID:   8 | Connections:  59 | Label: CDX2
-  - ID:  61 | Connections:  58 | Label: D2-40
-  - ID: 192 | Connections:  58 | Label: CAM5.2
-  - ID:  36 | Connections:  57 | Label: CK 34E12
-  - ID:  55 | Connections:  56 | Label: HMB45
-  - ID:  56 | Connections:  55 | Label: Melan-A
-  - ID:  97 | Connections:  55 | Label: GATA3
-  - ID:  27 | Connections:  54 | Label: c-kit(CD117)
-  - ID: 117 | Connections:  53 | Label: CK18
-  - ID: 167 | Connections:  53 | Label: Caldesmon
-  - ID:  21 | Connections:  52 | Label: PAS
-  - ID: 122 | Connections:  51 | Label: Cyclin D1
-  - ID:  90 | Connections:  50 | Label: CD68
-  - ID: 169 | Connections:  50 | Label: KIT(CD117)
-  - ID:   3 | Connections:  49 | Label: CK5/6
-  - ID: 104 | Connections:  49 | Label: CD117
-  - ID:  68 | Connections:  48 | Label: CD99
-  - ID:   1 | Connections:  47 | Label: p40
-  - ID: 119 | Connections:  47 | Label: DOG1
-  - ID: 158 | Connections:  47 | Label: p16
-  - ID:  94 | Connections:  46 | Label: SOX10
-  - ID: 268 | Connections:  46 | Label: AMACR
-  - ID:  13 | Connections:  45 | Label: -catenin
-  - ID:  46 | Connections:  45 | Label: GFAP
-  - ID:  73 | Connections:  45 | Label: CD20
-  - ID:  33 | Connections:  43 | Label: Myogenin
-  - ID:  99 | Connections:  43 | Label: PSA
-  - ID: 163 | Connections:  43 | Label: MyoD1
-  - ID:  16 | Connections:  41 | Label: SALL4
-  - ID:  58 | Connections:  41 | Label: TFE3
-  - ID:  60 | Connections:  40 | Label: CD31
-  - ID: 226 | Connections:  40 | Label: Thrombomodulin
-  - ID:   2 | Connections:  39 | Label: NapsinA
-  - ID: 120 | Connections:  39 | Label: NSE
-  - ID:   9 | Connections:  38 | Label: KRAS mutation
-  - ID:  39 | Connections:  36 | Label: MSA(Muscle Specific Actin)
-  - ID:  78 | Connections:  36 | Label: CD43
-  - ID: 174 | Connections:  36 | Label: MITF
-  - ID:  40 | Connections:  35 | Label: EBV
-  - ID: 135 | Connections:  35 | Label: CK19
-  - ID: 270 | Connections:  35 | Label: Cathepsin K
-  - ID:  44 | Connections:  34 | Label: Calponin
-  - ID:  77 | Connections:  34 | Label: BCL6
-  - ID: 176 | Connections:  34 | Label: PAX2
-  - ID:  84 | Connections:  33 | Label: CD5
-  - ID: 155 | Connections:  32 | Label: E-cadherin
-  - ID: 194 | Connections:  31 | Label: Monotypic slg
-  - ID: 250 | Connections:  31 | Label: LeuM1
-  - ID: 363 | Connections:  31 | Label: Cytokeratins
-  - ID:  22 | Connections:  30 | Label: Alcian blue
-  - ID: 116 | Connections:  30 | Label: CK8
-  - ID: 326 | Connections:  30 | Label: SMARCB1(INI1)
-  - ID:  80 | Connections:  29 | Label: CD30
-  - ID:  82 | Connections:  29 | Label: CD3
-  - ID: 186 | Connections:  29 | Label: HNF1B
-  - ID: 235 | Connections:  29 | Label: FOXL2
-  - ID:  64 | Connections:  28 | Label: FLI1
-  - ID:  10 | Connections:  27 | Label: MUC2
-  - ID:  28 | Connections:  27 | Label: Pancytokerain
-  - ID: 100 | Connections:  27 | Label: AR (Androgen receptor)
-  - ID: 254 | Connections:  27 | Label: CA125
-  - ID:  23 | Connections:  26 | Label: SP(Surfactant protein)
-  - ID: 168 | Connections:  26 | Label: HDAC8
-  - ID:  51 | Connections:  25 | Label: Neuroendocline markers
-  - ID:  71 | Connections:  25 | Label: MDM2
-  - ID: 138 | Connections:  25 | Label: BerEP4
-  - ID: 238 | Connections:  25 | Label: Villin
-  - ID: 367 | Connections:  25 | Label: SMA
-  - ID:  47 | Connections:  24 | Label: Actin
-  - ID:  67 | Connections:  24 | Label: TLE1
-  - ID: 236 | Connections:  24 | Label: 4-Oct
-  - ID:  62 | Connections:  23 | Label: Factor
-  - ID: 225 | Connections:  23 | Label: Uroplakin
-  - ID: 264 | Connections:  23 | Label: PSAP
-  - ID:  14 | Connections:  22 | Label: AFP
-  - ID:  30 | Connections:  22 | Label: Mucin
-  - ID:  15 | Connections:  21 | Label: Glypican3
-  - ID: 178 | Connections:  21 | Label: PIK3CA mutation
-  - ID: 181 | Connections:  21 | Label: TP53 mutation
-  - ID: 234 | Connections:  21 | Label: Steroidgenic factor-1
-  - ID: 248 | Connections:  21 | Label: MOC31
-  - ID: 271 | Connections:  21 | Label: STAT6
-  - ID: 272 | Connections:  21 | Label: NAB2::STAT6
-  - ID: 318 | Connections:  21 | Label: SATB2
-  - ID: 123 | Connections:  20 | Label: MUM1
-  - ID: 161 | Connections:  20 | Label: ARID1A
-  - ID: 212 | Connections:  20 | Label: TdT
-  - ID: 265 | Connections:  20 | Label: P501S
-  - ID:  48 | Connections:  19 | Label: HPV
-  - ID: 148 | Connections:  19 | Label: CD45
-  - ID: 283 | Connections:  19 | Label: CDK4
-  - ID: 345 | Connections:  19 | Label: CAIX(CA9)
-  - ID: 364 | Connections:  19 | Label: ER
-  - ID: 365 | Connections:  19 | Label: PR
-  - ID:  91 | Connections:  18 | Label: CD4
-  - ID: 170 | Connections:  18 | Label: Smooth muscle myosin heavy chain
-  - ID: 171 | Connections:  18 | Label: Oxytocin receptor
-  - ID: 197 | Connections:  18 | Label: Clg
-  - ID: 198 | Connections:  18 | Label: t(11;18)(q21;q21)
-  - ID: 199 | Connections:  18 | Label: API2::MALT1
-  - ID: 200 | Connections:  18 | Label: t(14;18)(q32;q21)
-  - ID: 201 | Connections:  18 | Label: IGH::MALT1
-  - ID: 202 | Connections:  18 | Label: t(1;14)(p22;p32)
-  - ID: 203 | Connections:  18 | Label: BCL10::IGH
-  - ID: 204 | Connections:  18 | Label: t(3;14)(p14.1;q32)
-  - ID: 205 | Connections:  18 | Label: FOXP::IGH
-  - ID: 206 | Connections:  18 | Label: 18 trysomy
-  - ID: 207 | Connections:  18 | Label: 3 trysomy
-  - ID: 224 | Connections:  18 | Label: CDKN2A
-  - ID: 274 | Connections:  18 | Label: NKX3.1
-  - ID: 110 | Connections:  17 | Label: MUC6
-  - ID: 136 | Connections:  17 | Label: HPV16
-  - ID: 247 | Connections:  17 | Label: HBME1
-  - ID: 372 | Connections:  17 | Label: BCOR
-  - ID:  85 | Connections:  16 | Label: CD1a
-  - ID:  87 | Connections:  16 | Label: BRAF V600E
-  - ID: 105 | Connections:  16 | Label: Uroplakin2
-  - ID: 106 | Connections:  16 | Label: Uroplakin3
-  - ID: 107 | Connections:  16 | Label: PLAP
-  - ID: 165 | Connections:  16 | Label: GLUT1
-  - ID: 211 | Connections:  16 | Label: CD19
-  - ID: 279 | Connections:  16 | Label: IGH rearrangement
-  - ID: 336 | Connections:  16 | Label: SS18::SSX1
-  - ID:   7 | Connections:  15 | Label: MUC5AC
-  - ID:  57 | Connections:  15 | Label: 16p13(TSC2) loss
-  - ID:  88 | Connections:  15 | Label: Lysozyme
-  - ID: 115 | Connections:  15 | Label: PTEN
-  - ID: 157 | Connections:  15 | Label: RCC
-  - ID: 329 | Connections:  15 | Label: EWSR1 fusion
-  - ID:  74 | Connections:  14 | Label: CD79a
-  - ID:  83 | Connections:  14 | Label: CD8
-  - ID:  89 | Connections:  14 | Label: MAC387
-  - ID: 111 | Connections:  14 | Label: MUC4
-  - ID: 145 | Connections:  14 | Label: GPC3
-  - ID: 242 | Connections:  14 | Label: Thyroglobulin
-  - ID: 252 | Connections:  14 | Label: S100P
-  - ID: 296 | Connections:  14 | Label: NTRK fusion
-  - ID: 304 | Connections:  14 | Label: CAMTA1
-  - ID: 306 | Connections:  14 | Label: pan-keratin
-  - ID: 307 | Connections:  14 | Label: WWTR1::CAMTA1
-  - ID: 308 | Connections:  14 | Label: YAP1::TFE3
-  - ID: 346 | Connections:  14 | Label: S100A
-  - ID: 347 | Connections:  14 | Label: Ksp-cadherin
-  - ID: 374 | Connections:  14 | Label: p75-NGFR
-  - ID: 375 | Connections:  14 | Label: BCOR exon 15 ITD
-  - ID: 376 | Connections:  14 | Label: YWHAE::NUTM2
-  - ID: 377 | Connections:  14 | Label: BCOR::CCNB3
-  - ID: 101 | Connections:  13 | Label: NF(Neurofilament)
-  - ID: 124 | Connections:  13 | Label: CMYC::Ig
-  - ID: 130 | Connections:  13 | Label: Myeloperoxidase(MPO)
-  - ID: 179 | Connections:  13 | Label: PIK3R1 mutation
-  - ID: 180 | Connections:  13 | Label: ARID1A mutation
-  - ID: 187 | Connections:  13 | Label: PTEN mutation
-  - ID: 221 | Connections:  13 | Label: BRAF
-  - ID: 237 | Connections:  13 | Label: NANOG
-  - ID: 239 | Connections:  13 | Label: SOX2
-  - ID: 255 | Connections:  13 | Label: HER2
-  - ID: 121 | Connections:  12 | Label: KIT mutation
-  - ID: 131 | Connections:  12 | Label: CD163
-  - ID: 137 | Connections:  12 | Label: HPV18
-  - ID: 313 | Connections:  12 | Label: SDHB
-  - ID: 314 | Connections:  12 | Label: SDHA
-  - ID: 315 | Connections:  12 | Label: Nurofibromin (NF1 C terminal)
-  - ID: 316 | Connections:  12 | Label: KIT
-  - ID: 317 | Connections:  12 | Label: PDGFRA mutation
-  - ID: 320 | Connections:  12 | Label: Nestin
-  - ID: 321 | Connections:  12 | Label: CD63
-  - ID: 353 | Connections:  12 | Label: 34E12
-  - ID: 370 | Connections:  12 | Label: Renin
-  - ID: 126 | Connections:  11 | Label: CD7
-  - ID: 127 | Connections:  11 | Label: ALK
-  - ID: 162 | Connections:  11 | Label: MYB::NF1B
-  - ID: 193 | Connections:  11 | Label: HMBE-1
-  - ID: 195 | Connections:  11 | Label: IGH::BCL2
-  - ID: 196 | Connections:  11 | Label: t(14;18)
-  - ID: 208 | Connections:  11 | Label: t(8;14)
-  - ID: 209 | Connections:  11 | Label: t(2;8)
-  - ID: 210 | Connections:  11 | Label: t(8;22)
-  - ID: 244 | Connections:  11 | Label: TSPY
-  - ID: 245 | Connections:  11 | Label: SOX9
-  - ID: 249 | Connections:  11 | Label: B72.3
-  - ID: 253 | Connections:  11 | Label: MUC1
-  - ID: 275 | Connections:  11 | Label: HOXB13 G84E mutation
-  - ID: 276 | Connections:  11 | Label: TMPRSS2::ERG
-  - ID: 277 | Connections:  11 | Label: PAP
-  - ID: 330 | Connections:  11 | Label: PLAG1
-  - ID: 368 | Connections:  11 | Label: Epithelial markers
-  - ID: 380 | Connections:  11 | Label: SE1
-  - ID: 381 | Connections:  11 | Label: HNF1
-  - ID: 382 | Connections:  11 | Label: OCT3/4
-  - ID:  81 | Connections:  10 | Label: CD15
-  - ID:  96 | Connections:  10 | Label: GCDFP15
-  - ID:  98 | Connections:  10 | Label: Mammaglobin
-  - ID: 144 | Connections:  10 | Label: PGP9.5
-  - ID: 149 | Connections:  10 | Label: Laminin(collagen IV)
-  - ID: 160 | Connections:  10 | Label: TP53
-  - ID: 175 | Connections:  10 | Label: LIN28
-  - ID: 299 | Connections:  10 | Label: FOSB
-  - ID: 319 | Connections:  10 | Label: NFP
-  - ID: 350 | Connections:  10 | Label: Parvalbumin
-  - ID: 351 | Connections:  10 | Label: Claudin-7
-  - ID: 352 | Connections:  10 | Label: EpCAM
-  - ID: 366 | Connections:  10 | Label: DICER1 mutation
-  - ID:  95 | Connections:   9 | Label: Melanoma marker
-  - ID: 118 | Connections:   9 | Label: -SMA
-  - ID: 132 | Connections:   9 | Label: Serotonin
-  - ID: 133 | Connections:   9 | Label: Enteroglucagon
-  - ID: 134 | Connections:   9 | Label: Somatostatin
-  - ID: 164 | Connections:   9 | Label: Collagen IV
-  - ID: 166 | Connections:   9 | Label: Claudin-1
-  - ID: 185 | Connections:   9 | Label: BRCA1
-  - ID: 190 | Connections:   9 | Label: Myoglobin
-  - ID: 191 | Connections:   9 | Label: Myosin
-  - ID: 215 | Connections:   9 | Label: PAX5
-  - ID: 228 | Connections:   9 | Label: PHF1 Antibody
-  - ID: 246 | Connections:   9 | Label: WT1(N terminal)
-  - ID: 281 | Connections:   9 | Label: HMGA2
-  - ID: 284 | Connections:   9 | Label: RB1
-  - ID: 295 | Connections:   9 | Label: pan-TRK
-  - ID: 301 | Connections:   9 | Label: PROX1
-  - ID: 322 | Connections:   9 | Label: CD57
-  - ID:   6 | Connections:   8 | Label: HNF4a
-  - ID:  53 | Connections:   8 | Label: t(10;16)(q23;q24)
-  - ID:  72 | Connections:   8 | Label: EWSR1::ZNF444
-  - ID:  92 | Connections:   8 | Label: 1 antichymotrypsin
-  - ID:  93 | Connections:   8 | Label: 1 antitrypsin
-  - ID: 220 | Connections:   8 | Label: CAE
-  - ID: 269 | Connections:   8 | Label: Tyrosinase
-  - ID: 300 | Connections:   8 | Label: FOSOSB fusion
-  - ID: 310 | Connections:   8 | Label: PAX3::FOXO1
-  - ID: 311 | Connections:   8 | Label: PAX7::FOXO1
-  - ID: 344 | Connections:   8 | Label: TFE3 rearrangement
-  - ID: 369 | Connections:   8 | Label: CAIX
-  - ID:  19 | Connections:   7 | Label: EGFR mutation
-  - ID:  76 | Connections:   7 | Label: CD23
-  - ID:  79 | Connections:   7 | Label: ki67
-  - ID: 109 | Connections:   7 | Label: Gastric MUCIN
-  - ID: 128 | Connections:   7 | Label: CCR4
-  - ID: 129 | Connections:   7 | Label: FOXP3
-  - ID: 139 | Connections:   7 | Label: CK13
-  - ID: 140 | Connections:   7 | Label: CK22
-  - ID: 141 | Connections:   7 | Label: UEA1
-  - ID: 150 | Connections:   7 | Label: HHV8
-  - ID: 183 | Connections:   7 | Label: FBXW7 mutation
-  - ID: 184 | Connections:   7 | Label: PPP2R1A mutation
-  - ID: 216 | Connections:   7 | Label: TCR rearrangement
-  - ID: 240 | Connections:   7 | Label: HCG
-  - ID: 302 | Connections:   7 | Label: LYVE1
-  - ID: 303 | Connections:   7 | Label: VEGFR3
-  - ID: 309 | Connections:   7 | Label: MYC
-  - ID: 328 | Connections:   7 | Label: GNAS mutation
-  - ID: 337 | Connections:   7 | Label: MCT1
-  - ID: 338 | Connections:   7 | Label: CD147
-  - ID: 339 | Connections:   7 | Label: ASPSCR1::TFE3
-  - ID: 348 | Connections:   7 | Label: Pancytokeratin
-  - ID: 349 | Connections:   7 | Label: FLCN
-  - ID: 354 | Connections:   7 | Label: SMARCB1
-  - ID: 356 | Connections:   7 | Label: FH
-  - ID:  18 | Connections:   6 | Label: SP
-  - ID: 177 | Connections:   6 | Label: CTNNB1 mutation
-  - ID: 217 | Connections:   6 | Label: CD2
-  - ID: 218 | Connections:   6 | Label: GranzymeB
-  - ID: 219 | Connections:   6 | Label: Perforin
-  - ID: 251 | Connections:   6 | Label: Dpc4
-  - ID: 262 | Connections:   6 | Label: Desmoglein 3
-  - ID: 263 | Connections:   6 | Label: CK14
-  - ID: 266 | Connections:   6 | Label: Reg
-  - ID: 267 | Connections:   6 | Label: Claudin-18
-  - ID: 293 | Connections:   6 | Label: ALK (5A4
-  - ID: 294 | Connections:   6 | Label: ROS1
-  - ID: 305 | Connections:   6 | Label: FOSB fusion
-  - ID: 325 | Connections:   6 | Label: H3K27me3
-  - ID: 342 | Connections:   6 | Label: WT1 (C terminal)
-  - ID: 343 | Connections:   6 | Label: EWS::WT1
-  - ID: 355 | Connections:   6 | Label: OCT3/4(POU5F1)
-  - ID: 362 | Connections:   6 | Label: BRAF VE1
-  - ID: 373 | Connections:   6 | Label: SMARCA4 (BRG1)
-  - ID: 108 | Connections:   5 | Label: HCG
-  - ID: 222 | Connections:   5 | Label: 1q36 loss
-  - ID: 273 | Connections:   5 | Label: NF1
-  - ID: 291 | Connections:   5 | Label: FN1::EGF
-  - ID: 327 | Connections:   5 | Label: PRKAR1A
-  - ID: 333 | Connections:   5 | Label: FGFR1
-  - ID: 334 | Connections:   5 | Label: SSTR2
-  - ID: 335 | Connections:   5 | Label: FGF23
-  - ID: 340 | Connections:   5 | Label: EWSR1::ATF1
-  - ID: 379 | Connections:   5 | Label: PHOX2B
-  - ID:  32 | Connections:   4 | Label: Fascin
-  - ID:  42 | Connections:   4 | Label: CRTC1::MAML2
-  - ID:  63 | Connections:   4 | Label: ALK1
-  - ID: 151 | Connections:   4 | Label: APC mutation
-  - ID: 213 | Connections:   4 | Label: CD138
-  - ID: 223 | Connections:   4 | Label: BRCA2
-  - ID: 278 | Connections:   4 | Label: Prostein
-  - ID: 286 | Connections:   4 | Label: FUSWSR1::DDIT3
-  - ID: 297 | Connections:   4 | Label: Clusterin
-  - ID: 312 | Connections:   4 | Label: MYOD1 mutation
-  - ID: 341 | Connections:   4 | Label: NR4A3 gene rearrangement
-  - ID: 359 | Connections:   4 | Label: ELOC
-  - ID: 371 | Connections:   4 | Label: 4 Trisomy
-  - ID:  86 | Connections:   3 | Label: Langerin
-  - ID: 102 | Connections:   3 | Label: Polyomavirus
-  - ID: 231 | Connections:   3 | Label: Sex cord markers
-  - ID: 232 | Connections:   3 | Label: 12 trysomy
-  - ID: 241 | Connections:   3 | Label: GDF3
-  - ID: 256 | Connections:   3 | Label: CD44
-  - ID: 282 | Connections:   3 | Label: UCP1
-  - ID: 292 | Connections:   3 | Label: EWSR1::SMAD3
-  - ID: 323 | Connections:   3 | Label: Collagen
-  - ID: 324 | Connections:   3 | Label: SSTR2A
-  - ID: 331 | Connections:   3 | Label: TGFB3
-  - ID: 332 | Connections:   3 | Label: OGA (MGEA5)
-  - ID:  59 | Connections:   2 | Label: HHF35
-  - ID:  65 | Connections:   2 | Label: DICER1
-  - ID:  66 | Connections:   2 | Label: DICER1 loss
-  - ID: 113 | Connections:   2 | Label: SMAD4 alteration
-  - ID: 114 | Connections:   2 | Label: BMPR1A alteration
-  - ID: 142 | Connections:   2 | Label: MLH1
-  - ID: 146 | Connections:   2 | Label: Pepsinogen I
-  - ID: 147 | Connections:   2 | Label: H++-ATPase
-  - ID: 156 | Connections:   2 | Label: HepPar1
-  - ID: 182 | Connections:   2 | Label: Mucicarmine
-  - ID: 227 | Connections:   2 | Label: JAZF1::SUZ12
-  - ID: 280 | Connections:   2 | Label: Leptin
-  - ID: 285 | Connections:   2 | Label: DDIT3
-  - ID: 287 | Connections:   2 | Label: EWSR1::DDIT3
-  - ID: 361 | Connections:   2 | Label: INI1
-  - ID: 125 | Connections:   1 | Label: BCL2::Ig
-  - ID: 159 | Connections:   1 | Label: Neuroendocrine marker
-  - ID: 188 | Connections:   1 | Label: See leiomyoma
-  - ID: 289 | Connections:   1 | Label: ANTXR2
-  - ID: 290 | Connections:   1 | Label: FOSL1
-  - ID: 360 | Connections:   1 | Label: 2SC
-  - ID: 378 | Connections:   1 | Label: IGF2
+--- Component 0 (362 個のハイパーエッジ) ---
+  [共通頂点（ノード）と、それに含まれるハイパーエッジの一覧]
+  - 共通頂点: Clrear cell carcinoma (ID:96) | 結合数: 22
+      ハイパーエッジ: [CK7, CK20, p53, p63, Ki67, CK 34E12, CEA, EMA, ER(Estrogen receptor), PgR(Progesteron receptor), CD10, GATA3, PSA, PAX8, PAX2, HNF1B, CAM5.2, Uroplakin, LeuM1, CA125, PSAP, AMACR]
+  - 共通頂点: Leiomyosarcoma (ID:198) | 結合数: 22
+      ハイパーエッジ: [p53, Ki67, c-kit(CD117), Vimentin, Keratins, Myogenin, Desmin, EMA, SMA(Smooth muscle actin), S100, ER(Estrogen receptor), PgR(Progesteron receptor), CD34, CD10, AR (Androgen receptor), CD117, DOG1, p16, MyoD1, Caldesmon, HDAC8, KIT(CD117)]
+  - 共通頂点: Acinar adenocarcinoma (ID:214) | 結合数: 22
+      ハイパーエッジ: [p63, Mucin, Keratins, AE1/AE3, CK 34E12, CK 34E12, CK 34E12, PSA, PSA, PSA, ERG, ERG, CAM5.2, AMACR, AMACR, AMACR, AMACR, AMACR, HOXB13 G84E mutation, TMPRSS2::ERG, PAP, PAP]
+  - 共通頂点: Sertoli-Leydig cell tumor (ID:372) | 結合数: 20
+      ハイパーエッジ: [CD56, CD56, CD56, CD56, CD99, CD99, CD99, CD99, WT1, WT1, WT1, WT1, Steroidgenic factor-1, Steroidgenic factor-1, Steroidgenic factor-1, Steroidgenic factor-1, FOXL2, FOXL2, FOXL2, FOXL2]
+  - 共通頂点: Leiomyoma (ID:199) | 結合数: 19
+      ハイパーエッジ: [p53, No recommendation, c-kit(CD117), Vimentin, Keratins, Desmin, SMA(Smooth muscle actin), S100, ER(Estrogen receptor), PgR(Progesteron receptor), CD34, CD10, DOG1, p16, Caldesmon, HDAC8, Smooth muscle myosin heavy chain, Oxytocin receptor, WT1]
+  - 共通頂点: MALT lymphoma (ID:543) | 結合数: 19
+      ハイパーエッジ: [BCL2, CD20, CD10, BCL6, CD43, CD5, Cyclin D1, Monotypic slg, Clg, t(11;18)(q21;q21), API2::MALT1, t(14;18)(q32;q21), IGH::MALT1, t(1;14)(p22;p32), BCL10::IGH, t(3;14)(p14.1;q32), FOXP::IGH, 18 trysomy, 3 trysomy]
+  - 共通頂点: Acinar adenocarcinoma (ID:2) | 結合数: 18
+      ハイパーエッジ: [TTF-1, p40, NapsinA, CK5/6, CDX2, p63, AE1/AE3, CK 34E12, CEA, GATA3, PSA, ERG, CAM5.2, Thrombomodulin, Villin, P501S, AMACR, NKX3.1]
+  - 共通頂点: Atypical fibroxanthoma (ID:207) | 結合数: 18
+      ハイパーエッジ: [p53, p63, Vimentin, Keratins, Desmin, EMA, SMA(Smooth muscle actin), S100, CD34, HMB45, Melan-A, CD31, CD99, CD10, CD68, SOX10, ERG, MITF]
+  - 共通頂点: Synovial sarcoma (ID:347) | 結合数: 17
+      ハイパーエッジ: [No recommendation, CD56, c-kit(CD117), Vimentin, Keratins, Desmin, EMA, SMA(Smooth muscle actin), S100, CD34, TLE1, CD99, BCL2, Calretinin, DOG1, Caldesmon, SS18::SSX1]
+  - 共通頂点: malignant (ID:47) | 結合数: 16
+      ハイパーエッジ: [TTF-1, SMA(Smooth muscle actin), S100, CD34, HMB45, Melan-A, Melan-A, 16p13(TSC2) loss, TFE3, Calretinin, Inhibin, Steroidgenic factor-1, FOXL2, Thyroglobulin, STAT6, NAB2::STAT6]
+  - 共通頂点: Undifferentiated carcinoma (ID:160) | 結合数: 16
+      ハイパーエッジ: [Synaptophysin, Chromogranin, p63, PAS, Alcian blue, No recommendation, Pancytokerain, Vimentin, Keratins, EMA, ER(Estrogen receptor), PgR(Progesteron receptor), Neuroendocline markers, CK18, CD45, E-cadherin]
+  - 共通頂点: Epithelioid haemangioendothelioma (ID:63) | 結合数: 15
+      ハイパーエッジ: [CK7, EMA, SMA(Smooth muscle actin), CD34, TFE3, CD31, D2-40, FLI1, CK8, CK18, ERG, CAMTA1, pan-keratin, WWTR1::CAMTA1, YAP1::TFE3]
+  - 共通頂点: Clear cell sarcoma of the kidney (CCSK) (ID:409) | 結合数: 15
+      ハイパーエッジ: [Vimentin, Desmin, EMA, S100, CD34, TLE1, BCL2, Cyclin D1, SATB2, Cytokeratins, BCOR, p75-NGFR, BCOR exon 15 ITD, YWHAE::NUTM2, BCOR::CCNB3]
+  - 共通頂点: Carcinosarcoma (ID:28) | 結合数: 14
+      ハイパーエッジ: [TTF-1, p40, NapsinA, Synaptophysin, Chromogranin, -catenin, p63, No recommendation, Vimentin, Keratins, Myogenin, Desmin, S100, MyoD1]
+  - 共通頂点: Endometrioid carcinoma (ID:135) | 結合数: 14
+      ハイパーエッジ: [KRAS mutation, p53, HPV, ER(Estrogen receptor), PgR(Progesteron receptor), PAX8, PTEN, p16, WT1, PIK3CA mutation, PIK3R1 mutation, ARID1A mutation, TP53 mutation, CDKN2A]
+  - 共通頂点: Clear cell carcinoma (ID:140) | 結合数: 14
+      ハイパーエッジ: [KRAS mutation, p53, No recommendation, Ki67, ER(Estrogen receptor), PgR(Progesteron receptor), PAX8, ARID1A, WT1, PIK3CA mutation, TP53 mutation, HNF1B, PTEN mutation, CDKN2A]
+  - 共通頂点: Wolffian tumor (ID:84) | 結合数: 13
+      ハイパーエッジ: [CK7, Vimentin, Keratins, CEA, EMA, SMA(Smooth muscle actin), ER(Estrogen receptor), PgR(Progesteron receptor), Calretinin, CD10, AR (Androgen receptor), CD117, Inhibin]
+  - 共通頂点: Juxtaglomerular cell tumour (ID:171) | 結合数: 13
+      ハイパーエッジ: [Synaptophysin, Chromogranin, PAS, Vimentin, Desmin, CD34, HMB45, PAX8, RCC, KIT(CD117), Cytokeratins, SMA, Renin]
+  - 共通頂点: Granular cell tumor (ID:222) | 結合数: 13
+      ハイパーエッジ: [PAS, S100, HMB45, Melan-A, TFE3, Calretinin, CD68, SOX10, NSE, MITF, Inhibin, Nestin, CD63]
+  - 共通頂点: Gastrointestinal stromal tumor (ID:388) | 結合数: 13
+      ハイパーエッジ: [c-kit(CD117), Desmin, S100, CD34, CK18, DOG1, KIT mutation, Caldesmon, SDHB, SDHA, Nurofibromin (NF1 C terminal), KIT, PDGFRA mutation]
+  - 共通頂点: Mesothelioma (ID:57) | 結合数: 12
+      ハイパーエッジ: [CK5/6, ER(Estrogen receptor), D2-40, Calretinin, BerEP4, Caldesmon, WT1, Thrombomodulin, HBME1, MOC31, B72.3, LeuM1]
+  - 共通頂点: Adenomatoid tumor (ID:56) | 結合数: 12
+      ハイパーエッジ: [CK5/6, CK7, AE1/AE3, D2-40, Calretinin, CK18, CK19, WT1, CAM5.2, HMBE-1, Thrombomodulin, HBME1]
+  - 共通頂点: Micropapillary urothelial carcinoma (ID:91) | 結合数: 12
+      ハイパーエッジ: [CK7, CK20, p63, CK 34E12, GATA3, Uroplakin2, Uroplakin3, Thrombomodulin, S100P, MUC1, CA125, HER2]
+  - 共通頂点: Adult granulosa cell tumor (ID:82) | 結合数: 12
+      ハイパーエッジ: [CK7, CD56, EMA, SMA(Smooth muscle actin), S100, CD99, Calretinin, WT1, CAM5.2, Inhibin, Steroidgenic factor-1, FOXL2]
+  - 共通頂点: Serous borderline tumor (ID:142) | 結合数: 12
+      ハイパーエッジ: [KRAS mutation, p53, AE1/AE3, EMA, ER(Estrogen receptor), PgR(Progesteron receptor), PAX8, BerEP4, p16, WT1, CAM5.2, BRAF]
+  - 共通頂点: Serous borderline tumor/Atypical proliferative serous tumor (ID:141) | 結合数: 12
+      ハイパーエッジ: [KRAS mutation, p53, AE1/AE3, EMA, ER(Estrogen receptor), PgR(Progesteron receptor), PAX8, BerEP4, p16, WT1, CAM5.2, BRAF]
+  - 共通頂点: micropapillary variant/Non-invasive low-grade serous carcinoma (ID:143) | 結合数: 12
+      ハイパーエッジ: [KRAS mutation, p53, AE1/AE3, EMA, ER(Estrogen receptor), PgR(Progesteron receptor), PAX8, BerEP4, p16, WT1, CAM5.2, BRAF]
+  - 共通頂点: NOS (ID:197) | 結合数: 12
+      ハイパーエッジ: [SALL4, CD34, Calretinin, MDM2, GPC3, Inhibin, STAT6, NAB2::STAT6, CDK4, SE1, HNF1, OCT3/4]
+  - 共通頂点: including gonadoblastoma with malignant germ cell tumor (ID:195) | 結合数: 12
+      ハイパーエッジ: [SALL4, D2-40, Calretinin, CD117, PLAP, WT1, Inhibin, FOXL2, 4-Oct, NANOG, TSPY, SOX9]
+  - 共通頂点: Gonadoblastoma (ID:194) | 結合数: 12
+      ハイパーエッジ: [SALL4, D2-40, Calretinin, CD117, PLAP, WT1, Inhibin, FOXL2, 4-Oct, NANOG, TSPY, SOX9]
+  - 共通頂点: Follicular lymphoma (ID:205) | 結合数: 12
+      ハイパーエッジ: [p53, BCL2, CD20, CD10, BCL6, CD43, CD5, Cyclin D1, Monotypic slg, IGH::BCL2, t(14;18), IGH rearrangement]
+  - 共通頂点: Adenoid cystic carcinoma (ID:208) | 結合数: 12
+      ハイパーエッジ: [p63, PAS, Alcian blue, Vimentin, Keratins, SMA(Smooth muscle actin), Calponin, S100, GFAP, CD10, HPV16, MYB::NF1B]
+  - 共通頂点: Mixed tumor NOS (ID:221) | 結合数: 12
+      ハイパーエッジ: [p63, Keratins, Desmin, EMA, SMA(Smooth muscle actin), Calponin, S100, GFAP, SOX10, SMARCB1(INI1), EWSR1 fusion, PLAG1]
+  - 共通頂点: Myoepithelioma NOS (ID:220) | 結合数: 12
+      ハイパーエッジ: [p63, Keratins, Desmin, EMA, SMA(Smooth muscle actin), Calponin, S100, GFAP, SOX10, SMARCB1(INI1), EWSR1 fusion, PLAG1]
+  - 共通頂点: Burkitt lymphoma (ID:379) | 結合数: 12
+      ハイパーエッジ: [Ki67, EBV, BCL2, CD20, CD10, BCL6, MUM1, CMYC::Ig, Monotypic slg, t(8;14), t(2;8), t(8;22)]
+  - 共通頂点: Classic angiomyolipoma / PEComa of the kidney (ID:460) | 結合数: 12
+      ハイパーエッジ: [Desmin, Calponin, S100, HMB45, Melan-A, CD68, MITF, Cathepsin K, ER, PR, SMA, Epithelial markers]
+  - 共通頂点: Diffuse large B-cell lymphoma (ID:485) | 結合数: 12
+      ハイパーエッジ: [EBV, BCL2, CD20, CD79a, CD10, BCL6, CD43, Cyclin D1, MUM1, Monotypic slg, TdT, IGH rearrangement]
+  - 共通頂点: PEComa (ID:487) | 結合数: 12
+      ハイパーエッジ: [SMA(Smooth muscle actin), SMA(Smooth muscle actin), S100, S100, HMB45, HMB45, Melan-A, Melan-A, 16p13(TSC2) loss, 16p13(TSC2) loss, TFE3, TFE3]
+  - 共通頂点: Breast carcinoma (ID:36) | 結合数: 11
+      ハイパーエッジ: [TTF-1, CK7, CK20, CDX2, ER(Estrogen receptor), PgR(Progesteron receptor), GCDFP15, GATA3, Mammaglobin, PAX8, WT1]
+  - 共通頂点: Yolk sac tumor (ID:44) | 結合数: 11
+      ハイパーエッジ: [TTF-1, CDX2, AFP, Glypican3, SALL4, D2-40, CD30, LIN28, 4-Oct, Villin, SOX2]
+  - 共通頂点: Small cell carcinoma (ID:49) | 結合数: 11
+      ハイパーエッジ: [TTF-1, Synaptophysin, Chromogranin, CD56, Keratins, Keratins, EMA, Calretinin, CD10, PGP9.5, WT1(N terminal)]
+  - 共通頂点: Mesonephric carcinoma (ID:43) | 結合数: 11
+      ハイパーエッジ: [TTF-1, Vimentin, Keratins, CEA, EMA, ER(Estrogen receptor), PgR(Progesteron receptor), Calretinin, CD10, PAX8, p16]
+  - 共通頂点: benign (ID:46) | 結合数: 11
+      ハイパーエッジ: [TTF-1, SMA(Smooth muscle actin), S100, CD34, HMB45, Melan-A, 16p13(TSC2) loss, TFE3, Thyroglobulin, STAT6, NAB2::STAT6]
+  - 共通頂点: Chromophobe renal cell carcinoma (ID:105) | 結合数: 11
+      ハイパーエッジ: [CK7, Vimentin, CD10, KIT(CD117), MOC31, Cathepsin K, CAIX(CA9), Ksp-cadherin, Parvalbumin, Claudin-7, EpCAM]
+  - 共通頂点: NOS (ID:119) | 結合数: 11
+      ハイパーエッジ: [CK20, CDX2, -catenin, No recommendation, No recommendation, Vimentin, Keratins, EMA, S100, Neuroendocline markers, Melanoma marker]
+  - 共通頂点: Tubular adenoma (ID:126) | 結合数: 11
+      ハイパーエッジ: [MUC5AC, CDX2, CDX2, MUC2, p53, p53, Ki67, Ki67, CD10, CD10, MUC6]
+  - 共通頂点: Mixed epithelial and stromal tumour of the kidney (MEST-K) (ID:459) | 結合数: 11
+      ハイパーエッジ: [Desmin, Actin, Calretinin, CD10, PAX8, PAX2, Inhibin, Cathepsin K, ER, PR, DICER1 mutation]
+  - 共通頂点: NET G1 (Carcinoid) (ID:40) | 結合数: 10
+      ハイパーエッジ: [TTF-1, CK7, CK20, CDX2, Synaptophysin, Chromogranin, CD56, Ki67, CK8, CK18]
+  - 共通頂点: NET G2 (ID:41) | 結合数: 10
+      ハイパーエッジ: [TTF-1, CK7, CK20, CDX2, Synaptophysin, Chromogranin, CD56, Ki67, CK8, CK18]
+  - 共通頂点: Pulmonary blastoma (ID:29) | 結合数: 10
+      ハイパーエッジ: [TTF-1, CK7, Synaptophysin, Chromogranin, Vimentin, AE1/AE3, CK 34E12, CEA, EMA, MSA(Muscle Specific Actin)]
+  - 共通頂点: Mucinous carcinoma (ID:75) | 結合数: 10
+      ハイパーエッジ: [CK7, CK20, p53, No recommendation, No recommendation, CEA, MUC6, p16, p16, TP53]
+  - 共通頂点: Clear cell renal cell carcinoma (ID:101) | 結合数: 10
+      ハイパーエッジ: [CK7, Vimentin, AE1/AE3, CD10, GATA3, PAX8, KIT(CD117), CAM5.2, AMACR, CAIX(CA9)]
+  - 共通頂点: Goblet cell carcinoid (ID:114) | 結合数: 10
+      ハイパーエッジ: [CK20, MUC2, Synaptophysin, Chromogranin, CD56, CEA, Serotonin, Enteroglucagon, Somatostatin, CK19]
+  - 共通頂点: Endometrioid carcinoma with villoglandular variant (ID:137) | 結合数: 10
+      ハイパーエッジ: [KRAS mutation, HPV, ER(Estrogen receptor), PgR(Progesteron receptor), PTEN, p16, PIK3CA mutation, PIK3R1 mutation, ARID1A mutation, TP53 mutation]
+  - 共通頂点: Endometrioid carcinoma with squamous differentiation (ID:136) | 結合数: 10
+      ハイパーエッジ: [KRAS mutation, HPV, ER(Estrogen receptor), PgR(Progesteron receptor), PTEN, p16, PIK3CA mutation, PIK3R1 mutation, ARID1A mutation, TP53 mutation]
+  - 共通頂点: Endometrioid carcinoma with secretory variant (ID:138) | 結合数: 10
+      ハイパーエッジ: [KRAS mutation, HPV, ER(Estrogen receptor), PgR(Progesteron receptor), PTEN, p16, PIK3CA mutation, PIK3R1 mutation, ARID1A mutation, TP53 mutation]
+  - 共通頂点: Paraganglioma (ID:162) | 結合数: 10
+      ハイパーエッジ: [Synaptophysin, Chromogranin, No recommendation, CD56, Keratins, EMA, S100, Calretinin, GATA3, Inhibin]
+  - 共通頂点: Rhabdomyosarcoma (ID:164) | 結合数: 10
+      ハイパーエッジ: [Synaptophysin, Chromogranin, Keratins, Myogenin, Desmin, MSA(Muscle Specific Actin), SMA(Smooth muscle actin), MyoD1, Myoglobin, Myosin]
+  - 共通頂点: Diffuse pulmonary lymphangiomatosis (ID:399) | 結合数: 10
+      ハイパーエッジ: [Vimentin, Desmin, SMA(Smooth muscle actin), ER(Estrogen receptor), PgR(Progesteron receptor), HMB45, Melan-A, CD31, D2-40, Factor]
+  - 共通頂点: Adenocarcinoma (ID:0) | 結合数: 9
+      ハイパーエッジ: [TTF-1, p40, NapsinA, CK5/6, CK7, CK20, CDX2, MUC2, No recommendation]
+  - 共通頂点: Fetal adenocarcinoma (ID:8) | 結合数: 9
+      ハイパーエッジ: [TTF-1, CDX2, Synaptophysin, Chromogranin, -catenin, AFP, Glypican3, SALL4, p53]
+  - 共通頂点: Alveolar adenoma (ID:32) | 結合数: 9
+      ハイパーエッジ: [TTF-1, SP(Surfactant protein), Keratins, CEA, MSA(Muscle Specific Actin), SMA(Smooth muscle actin), S100, CD34, t(10;16)(q23;q24)]
+  - 共通頂点: Infiltrating urothelial carcinoma (ID:58) | 結合数: 9
+      ハイパーエッジ: [CK5/6, CK7, CK20, p63, CK 34E12, GATA3, Uroplakin2, Uroplakin3, S100P]
+  - 共通頂点: plasmacytoid urothelial carcinoma (ID:92) | 結合数: 9
+      ハイパーエッジ: [CK7, CK20, p63, Pancytokerain, CK 34E12, GATA3, Uroplakin2, Uroplakin3, E-cadherin]
+  - 共通頂点: Neuroectodermal tumors (ID:161) | 結合数: 9
+      ハイパーエッジ: [Synaptophysin, CD56, AE1/AE3, S100, GFAP, FLI1, CD99, NF(Neurofilament), NSE]
+  - 共通頂点: Alveolar rhabdomyosarcoma (ID:167) | 結合数: 9
+      ハイパーエッジ: [Synaptophysin, Chromogranin, CD56, Keratins, Myogenin, Desmin, MyoD1, PAX3::FOXO1, PAX7::FOXO1]
+  - 共通頂点: Solid pseudopapillary neoplasm (ID:174) | 結合数: 9
+      ハイパーエッジ: [Chromogranin, -catenin, CD56, Keratins, Calretinin, CD10, CD117, E-cadherin, Inhibin]
+  - 共通頂点: Mycoepithelial carcinoma (ID:210) | 結合数: 9
+      ハイパーエッジ: [p63, Keratins, Desmin, SMA(Smooth muscle actin), Calponin, S100, GFAP, CD34, EWSR1::ZNF444]
+  - 共通頂点: Myoepithelioma (ID:209) | 結合数: 9
+      ハイパーエッジ: [p63, Keratins, Desmin, SMA(Smooth muscle actin), Calponin, S100, GFAP, CD34, EWSR1::ZNF444]
+  - 共通頂点: Pulmonary myxoid sarcoma with EWSR1-CREB1 translocation (ID:225) | 結合数: 9
+      ハイパーエッジ: [Alcian blue, Vimentin, Keratins, Desmin, EMA, SMA(Smooth muscle actin), S100, Neuroendocline markers, CD34]
+  - 共通頂点: Renal haemangioblastoma (ID:407) | 結合数: 9
+      ハイパーエッジ: [Vimentin, EMA, S100, CD10, PAX8, NSE, Inhibin, Cytokeratins, CAIX]
+  - 共通頂点: Epithelioid haemangioma (ID:425) | 結合数: 9
+      ハイパーエッジ: [Keratins, EMA, SMA(Smooth muscle actin), CD34, CD31, FLI1, ERG, FOSB, FOSOSB fusion]
+  - 共通頂点: Sertoli cell tumor (ID:413) | 結合数: 9
+      ハイパーエッジ: [Keratins, EMA, SMA(Smooth muscle actin), S100, CD99, Calretinin, WT1, Inhibin, Steroidgenic factor-1]
+  - 共通頂点: PEComa (perivascular epithelioid cell tumor) (ID:457) | 結合数: 9
+      ハイパーエッジ: [Desmin, SMA(Smooth muscle actin), S100, HMB45, Melan-A, TFE3, Caldesmon, MITF, TFE3 rearrangement]
+  - 共通頂点: Erdheim-Chester disease (ID:507) | 結合数: 9
+      ハイパーエッジ: [S100, Factor, CD1a, Lysozyme, MAC387, CD68, CD4, 1 antichymotrypsin, 1 antitrypsin]
+  - 共通頂点: Myeloid sarcoma (ID:524) | 結合数: 9
+      ハイパーエッジ: [CD34, CD20, CD43, CD3, Lysozyme, CD68, CD117, Myeloperoxidase(MPO), CAE]
+  - 共通頂点: Acute myeloid leukemia(AML) (ID:523) | 結合数: 9
+      ハイパーエッジ: [CD34, CD20, CD43, CD3, Lysozyme, CD68, CD117, Myeloperoxidase(MPO), CAE]
+  - 共通頂点: Solitary fibrous tumour (SFT) (ID:529) | 結合数: 9
+      ハイパーエッジ: [CD34, CD34, CD34, STAT6, STAT6, STAT6, NAB2::STAT6, NAB2::STAT6, NAB2::STAT6]
+  - 共通頂点: Mantle cell lymphoma (ID:544) | 結合数: 9
+      ハイパーエッジ: [BCL2, CD20, CD10, BCL6, CD43, CD5, Cyclin D1, CD19, IGH rearrangement]
+  - 共通頂点: Non-keratinizing squamous cell carcinma (ID:18) | 結合数: 8
+      ハイパーエッジ: [TTF-1, p40, NapsinA, CK5/6, p63, PAS, Alcian blue, SP(Surfactant protein)]
+  - 共通頂点: Squamous cell carcinma (ID:16) | 結合数: 8
+      ハイパーエッジ: [TTF-1, p40, NapsinA, CK5/6, p63, PAS, Alcian blue, SP(Surfactant protein)]
+  - 共通頂点: Keratinizing squamous cell carcinma (ID:17) | 結合数: 8
+      ハイパーエッジ: [TTF-1, p40, NapsinA, CK5/6, p63, PAS, Alcian blue, SP(Surfactant protein)]
+  - 共通頂点: Adenosquamous carcinoma (ID:24) | 結合数: 8
+      ハイパーエッジ: [TTF-1, p40, CK5/6, p63, Mucin, CK 34E12, CK8, ARID1A]
+  - 共通頂点: lnvasive mucinous adenocarcinoma (ID:6) | 結合数: 8
+      ハイパーエッジ: [TTF-1, NapsinA, CK7, CK20, HNF4a, MUC5AC, CDX2, KRAS mutation]
+  - 共通頂点: Melanoma (ID:38) | 結合数: 8
+      ハイパーエッジ: [TTF-1, No recommendation, c-kit(CD117), Keratins, S100, HMB45, Melan-A, SOX10]
+  - 共通頂点: Small cell neuroendocrine carcinoma (ID:51) | 結合数: 8
+      ハイパーエッジ: [TTF-1, Synaptophysin, Chromogranin, p63, CD56, CK 34E12, PSA, NSE]
+  - 共通頂点: Sclerosing pneumocytoma (ID:31) | 結合数: 8
+      ハイパーエッジ: [TTF-1, SP(Surfactant protein), Vimentin, Keratins, EMA, ER(Estrogen receptor), PgR(Progesteron receptor), Neuroendocline markers]
+  - 共通頂点: Epithlioid sarcoma (ID:61) | 結合数: 8
+      ハイパーエッジ: [CK5/6, Keratins, EMA, CD34, CK8, CK19, ERG, SMARCB1(INI1)]
+  - 共通頂点: Sessile serrated adenoma/polyp (ID:65) | 結合数: 8
+      ハイパーエッジ: [CK7, CK20, MUC5AC, MUC2, Ki67, Gastric MUCIN, MUC6, MUC4]
+  - 共通頂点: Oncocytoma of the kidney (ID:104) | 結合数: 8
+      ハイパーエッジ: [CK7, Vimentin, E-cadherin, KIT(CD117), S100A, Ksp-cadherin, Pancytokeratin, FLCN]
+  - 共通頂点: Clear cell papillary renal cell tumour (ID:107) | 結合数: 8
+      ハイパーエッジ: [CK7, CD10, GATA3, PAX8, PAX2, AMACR, CAIX(CA9), 34E12]
+  - 共通頂点: Ectomesenchymoma (ID:168) | 結合数: 8
+      ハイパーエッジ: [Synaptophysin, Chromogranin, Myogenin, Desmin, MSA(Muscle Specific Actin), S100, NSE, MyoD1]
+  - 共通頂点: Desmoid fibromatosis (ID:176) | 結合数: 8
+      ハイパーエッジ: [-catenin, c-kit(CD117), Vimentin, MSA(Muscle Specific Actin), SMA(Smooth muscle actin), S100, CD34, -SMA]
+  - 共通頂点: Embryonal carcinoma (ID:191) | 結合数: 8
+      ハイパーエッジ: [Glypican3, SALL4, AE1/AE3, EMA, CD30, 4-Oct, SOX2, HCG]
+  - 共通頂点: Dysgerminoma (ID:193) | 結合数: 8
+      ハイパーエッジ: [SALL4, Keratins, EMA, D2-40, CD117, PLAP, 4-Oct, NANOG]
+  - 共通頂点: Alveolar soft part sarcoma (ID:224) | 結合数: 8
+      ハイパーエッジ: [PAS, Desmin, TFE3, Calretinin, Cathepsin K, MCT1, CD147, ASPSCR1::TFE3]
+  - 共通頂点: Sex cord tumor with annular tubules (ID:371) | 結合数: 8
+      ハイパーエッジ: [CD56, Keratins, EMA, Calretinin, WT1, Inhibin, Steroidgenic factor-1, FOXL2]
+  - 共通頂点: Juvenile granulosa cell tumor (ID:370) | 結合数: 8
+      ハイパーエッジ: [CD56, EMA, CD99, Calretinin, CAM5.2, Inhibin, Steroidgenic factor-1, FOXL2]
+  - 共通頂点: Unclassified type_2 (ID:380) | 結合数: 8
+      ハイパーエッジ: [Ki67, BCL2, CD20, CD10, BCL6, Cyclin D1, MUM1, CMYC::Ig]
+  - 共通頂点: Schwannoma (ID:393) | 結合数: 8
+      ハイパーエッジ: [c-kit(CD117), AE1/AE3, S100, GFAP, CD34, SOX10, DOG1, NFP]
+  - 共通頂点: Angiosarcoma (ID:418) | 結合数: 8
+      ハイパーエッジ: [Keratins, EMA, CD34, CD31, Factor, FLI1, ERG, MYC]
+  - 共通頂点: Perineurioma (ID:426) | 結合数: 8
+      ハイパーエッジ: [Keratins, EMA, S100, GFAP, CD34, SOX10, GLUT1, Claudin-1]
+  - 共通頂点: Undifferentiated uterine sarcoma (ID:411) | 結合数: 8
+      ハイパーエッジ: [Keratins, Desmin, EMA, SMA(Smooth muscle actin), ER(Estrogen receptor), PgR(Progesteron receptor), CD10, Cyclin D1]
+  - 共通頂点: Ossifying fibromyxoid tumor (ID:428) | 結合数: 8
+      ハイパーエッジ: [Keratins, Desmin, EMA, SMA(Smooth muscle actin), S100, MUC4, PHF1 Antibody, SMARCB1(INI1)]
+  - 共通頂点: Myxoma (ID:416) | 結合数: 8
+      ハイパーエッジ: [Keratins, Desmin, EMA, SMA(Smooth muscle actin), S100, CD34, CD163, GNAS mutation]
+  - 共通頂点: Perivascular epithelioid cell tumor (PEComa) Malignant (ID:438) | 結合数: 8
+      ハイパーエッジ: [Desmin, SMA(Smooth muscle actin), ER(Estrogen receptor), PgR(Progesteron receptor), HMB45, Melan-A, Caldesmon, MITF]
+  - 共通頂点: Metanephric stromal tumour (ID:458) | 結合数: 8
+      ハイパーエッジ: [Desmin, GFAP, CD34, BRAF V600E, PAX8, NTRK fusion, S100A, Cytokeratins]
+  - 共通頂点: Basal cell carcinoma (ID:462) | 結合数: 8
+      ハイパーエッジ: [AE1/AE3, CEA, EMA, CK19, BerEP4, CK13, CK22, UEA1]
+  - 共通頂点: Basaloid-squamous carcinoma (ID:463) | 結合数: 8
+      ハイパーエッジ: [AE1/AE3, CEA, EMA, CK19, BerEP4, CK13, CK22, UEA1]
+  - 共通頂点: Retiform haemangioendothelioma (ID:499) | 結合数: 8
+      ハイパーエッジ: [SMA(Smooth muscle actin), CD34, CD31, D2-40, HHV8, ERG, PROX1, VEGFR3]
+  - 共通頂点: Kaposiform haemangioendothelioma (ID:498) | 結合数: 8
+      ハイパーエッジ: [SMA(Smooth muscle actin), CD34, CD31, D2-40, GLUT1, ERG, PROX1, LYVE1]
+  - 共通頂点: Extrandal marginal zone lymphoma of mucosa-associated lymphoid tissue (MALT lymphoma) (ID:541) | 結合数: 8
+      ハイパーエッジ: [BCL2, CD20, CD79a, CD10, CD23, BCL6, CD43, ki67]
+  - 共通頂点: T lymphoblastic lymphoma (ID:558) | 結合数: 8
+      ハイパーエッジ: [CD10, CD3, CD8, CD1a, CD4, CD7, TdT, TCR rearrangement]
+  - 共通頂点: T cell lymphoma (ID:560) | 結合数: 8
+      ハイパーエッジ: [CD30, CD3, CD8, CD4, CD7, ALK, CCR4, FOXP3]
+  - 共通頂点: Enteric adenocarcinoma (ID:9) | 結合数: 7
+      ハイパーエッジ: [TTF-1, NapsinA, CK7, CK20, CDX2, MUC2, SP]
+  - 共通頂点: Colloid adenocarcinoma (ID:7) | 結合数: 7
+      ハイパーエッジ: [TTF-1, NapsinA, CK7, CK20, MUC5AC, CDX2, MUC2]
+  - 共通頂点: Papillary adenoma (ID:33) | 結合数: 7
+      ハイパーエッジ: [TTF-1, CK7, SP(Surfactant protein), CD56, Ki67, Pancytokerain, EMA]
+  - 共通頂点: Large cell neuroendocrine carcinoma (ID:20) | 結合数: 7
+      ハイパーエッジ: [TTF-1, p40, Synaptophysin, Chromogranin, CD56, Ki67, c-kit(CD117)]
+  - 共通頂点: Squamous cell carcinoma (ID:54) | 結合数: 7
+      ハイパーエッジ: [p40, No recommendation, MAC387, HPV16, HPV18, Desmoglein 3, CK14]
+  - 共通頂点: Mucinous borderline tumor/Atypical proliferative mucinous tumor (ID:77) | 結合数: 7
+      ハイパーエッジ: [CK7, CK20, CDX2, KRAS mutation, ER(Estrogen receptor), PgR(Progesteron receptor), PAX8]
+  - 共通頂点: Urachal carcinoma (ID:95) | 結合数: 7
+      ハイパーエッジ: [CK7, CK20, CDX2, -catenin, CK 34E12, Reg, Claudin-18]
+  - 共通頂点: Villous adenoma (ID:94) | 結合数: 7
+      ハイパーエッジ: [CK7, CK20, CDX2, GATA3, PSA, PSAP, P501S]
+  - 共通頂点: Collecting duct carcinoma (ID:106) | 結合数: 7
+      ハイパーエッジ: [CK7, PAX8, CK19, 34E12, SMARCB1, OCT3/4(POU5F1), FH]
+  - 共通頂点: Gastric origin (ID:89) | 結合数: 7
+      ハイパーエッジ: [CK7, CK20, ER(Estrogen receptor), PgR(Progesteron receptor), PAX8, p16, Dpc4]
+  - 共通頂点: Ovarian origin (ID:85) | 結合数: 7
+      ハイパーエッジ: [CK7, CK20, ER(Estrogen receptor), PgR(Progesteron receptor), PAX8, p16, Dpc4]
+  - 共通頂点: Pancreatobiliary origin (ID:88) | 結合数: 7
+      ハイパーエッジ: [CK7, CK20, ER(Estrogen receptor), PgR(Progesteron receptor), PAX8, p16, Dpc4]
+  - 共通頂点: Colorectal origin (ID:86) | 結合数: 7
+      ハイパーエッジ: [CK7, CK20, ER(Estrogen receptor), PgR(Progesteron receptor), PAX8, p16, Dpc4]
+  - 共通頂点: gastric type (ID:76) | 結合数: 7
+      ハイパーエッジ: [CK7, CK20, p53, CEA, MUC6, p16, TP53]
+  - 共通頂点: Endocervical origin (ID:90) | 結合数: 7
+      ハイパーエッジ: [CK7, CK20, ER(Estrogen receptor), PgR(Progesteron receptor), PAX8, p16, Dpc4]
+  - 共通頂点: Appendiceal origin (ID:87) | 結合数: 7
+      ハイパーエッジ: [CK7, CK20, ER(Estrogen receptor), PgR(Progesteron receptor), PAX8, p16, Dpc4]
+  - 共通頂点: Metanephric adenoma (ID:112) | 結合数: 7
+      ハイパーエッジ: [CK7, EMA, BRAF V600E, WT1, AMACR, CD57, BRAF VE1]
+  - 共通頂点: Malignant Brenner tumor (ID:79) | 結合数: 7
+      ハイパーエッジ: [CK7, CK20, p63, S100, GATA3, Uroplakin, Thrombomodulin]
+  - 共通頂点: Brenner tumor (ID:78) | 結合数: 7
+      ハイパーエッジ: [CK7, CK20, p63, S100, GATA3, Uroplakin, Thrombomodulin]
+  - 共通頂点: Small cell neuroendocrine carcinoma (SCNEC) (ID:158) | 結合数: 7
+      ハイパーエッジ: [Synaptophysin, Chromogranin, p63, CD56, Vimentin, Keratins, HPV18]
+  - 共通頂点: Rhabdoid tumor NOS (ID:170) | 結合数: 7
+      ハイパーエッジ: [Synaptophysin, Glypican3, SALL4, Keratins, EMA, CD99, SMARCB1(INI1)]
+  - 共通頂点: Malignant rhabdoid tumour of the kidney (ID:172) | 結合数: 7
+      ハイパーエッジ: [Synaptophysin, Vimentin, Keratins, GFAP, SMARCB1(INI1), SMA, SMARCA4 (BRG1)]
+  - 共通頂点: Lymphangioleiomyomatosis (ID:175) | 結合数: 7
+      ハイパーエッジ: [-catenin, SMA(Smooth muscle actin), S100, HMB45, Melan-A, 16p13(TSC2) loss, TFE3]
+  - 共通頂点: Microcystic stromal tumor (ID:177) | 結合数: 7
+      ハイパーエッジ: [-catenin, Keratins, EMA, Calretinin, CD10, WT1, Inhibin]
+  - 共通頂点: Yolk sac tumour (ID:196) | 結合数: 7
+      ハイパーエッジ: [SALL4, Calretinin, GPC3, Inhibin, SE1, HNF1, OCT3/4]
+  - 共通頂点: Serous endometrial intraepithelial carcinoma (ID:200) | 結合数: 7
+      ハイパーエッジ: [p53, Ki67, PIK3CA mutation, TP53 mutation, FBXW7 mutation, PPP2R1A mutation, BRCA1]
+  - 共通頂点: Serous carcinoma (ID:201) | 結合数: 7
+      ハイパーエッジ: [p53, No recommendation, Ki67, PIK3CA mutation, TP53 mutation, FBXW7 mutation, PPP2R1A mutation]
+  - 共通頂点: Adenosarcoma (ID:203) | 結合数: 7
+      ハイパーエッジ: [p53, Ki67, Myogenin, Desmin, ER(Estrogen receptor), PgR(Progesteron receptor), CD10]
+  - 共通頂点: Extranodal NK/T-cell lymphoma (ID:368) | 結合数: 7
+      ハイパーエッジ: [CD56, EBV, CD3, CD5, CD2, GranzymeB, Perforin]
+  - 共通頂点: nasal-type (ID:369) | 結合数: 7
+      ハイパーエッジ: [CD56, EBV, CD3, CD5, CD2, GranzymeB, Perforin]
+  - 共通頂点: Lyomioma (ID:386) | 結合数: 7
+      ハイパーエッジ: [c-kit(CD117), Desmin, MSA(Muscle Specific Actin), S100, CD34, -SMA, DOG1]
+  - 共通頂点: Lyomiosarcoma (ID:387) | 結合数: 7
+      ハイパーエッジ: [c-kit(CD117), Desmin, MSA(Muscle Specific Actin), S100, CD34, -SMA, DOG1]
+  - 共通頂点: Malignant peripheral nerve sheath tumor (MPNST) (ID:427) | 結合数: 7
+      ハイパーエッジ: [Keratins, CEA, S100, GFAP, SOX10, H3K27me3, SMARCB1(INI1)]
+  - 共通頂点: Desmoplastic small round cell tumor (ID:429) | 結合数: 7
+      ハイパーエッジ: [Keratins, Myogenin, Desmin, EMA, MyoD1, WT1 (C terminal), EWS::WT1]
+  - 共通頂点: Inflammatory myofibroblastic tumour (IMT) (ID:423) | 結合数: 7
+      ハイパーエッジ: [Keratins, Desmin, MSA(Muscle Specific Actin), SMA(Smooth muscle actin), Calponin, ALK (5A4, ROS1]
+  - 共通頂点: Angiomatoid fibrous histiocytoma (ID:434) | 結合数: 7
+      ハイパーエッジ: [Myogenin, Desmin, EMA, CD99, CD68, MyoD1, EWSR1 fusion]
+  - 共通頂点: Low-grade endometrial stromal sarcoma (ID:437) | 結合数: 7
+      ハイパーエッジ: [Desmin, AE1/AE3, SMA(Smooth muscle actin), CD10, AR (Androgen receptor), Caldesmon, HDAC8]
+  - 共通頂点: Congenital mesoblastic nephroma (CMN) (ID:461) | 結合数: 7
+      ハイパーエッジ: [Desmin, Actin, CD34, Cyclin D1, pan-TRK, NTRK fusion, BCOR]
+  - 共通頂点: Deep angiomyxoma (ID:456) | 結合数: 7
+      ハイパーエッジ: [Desmin, ER(Estrogen receptor), PgR(Progesteron receptor), CD34, MDM2, HMGA2, CDK4]
+  - 共通頂点: Pseudomyogenic haemangioendothelioma (ID:467) | 結合数: 7
+      ハイパーエッジ: [AE1/AE3, SMA(Smooth muscle actin), CD31, FLI1, ERG, FOSB, FOSB fusion]
+  - 共通頂点: Classical Hodgkin lymphoma (ID:484) | 結合数: 7
+      ハイパーエッジ: [EBV, CD20, CD30, CD15, CD3, MUM1, PAX5]
+  - 共通頂点: Papillary intralymphatic angioendothelioma (PILA) (ID:500) | 結合数: 7
+      ハイパーエッジ: [SMA(Smooth muscle actin), CD34, CD31, D2-40, ERG, PROX1, VEGFR3]
+  - 共通頂点: Composite haemangioendothelioma (CHE) (ID:501) | 結合数: 7
+      ハイパーエッジ: [SMA(Smooth muscle actin), CD34, CD31, D2-40, FLI1, ERG, CAMTA1]
+  - 共通頂点: Mucinous cystadenoma (ID:34) | 結合数: 6
+      ハイパーエッジ: [TTF-1, CK7, KRAS mutation, SP(Surfactant protein), Pancytokerain, CEA]
+  - 共通頂点: Typical carcinoid (ID:21) | 結合数: 6
+      ハイパーエッジ: [TTF-1, Synaptophysin, Chromogranin, CD56, Ki67, Pancytokerain]
+  - 共通頂点: Atypial carcinoid (ID:22) | 結合数: 6
+      ハイパーエッジ: [TTF-1, Synaptophysin, Chromogranin, CD56, Ki67, Pancytokerain]
+  - 共通頂点: Strumal carcinoid (ID:48) | 結合数: 6
+      ハイパーエッジ: [TTF-1, CK7, CDX2, Synaptophysin, Chromogranin, CD56]
+  - 共通頂点: pulmonary type (ID:50) | 結合数: 6
+      ハイパーエッジ: [TTF-1, Synaptophysin, Chromogranin, CD56, Keratins, PGP9.5]
+  - 共通頂点: Urothelial bladder cancer (ID:53) | 結合数: 6
+      ハイパーエッジ: [p40, CK7, Vimentin, GATA3, Uroplakin2, Uroplakin3]
+  - 共通頂点: Lymphoepithelioma-like carcinoma (ID:52) | 結合数: 6
+      ハイパーエッジ: [p40, CK5/6, p63, No recommendation, AE1/AE3, EBV]
+  - 共通頂点: Non-invasive papillary urothelial carcinoma (ID:59) | 結合数: 6
+      ハイパーエッジ: [CK5/6, CK20, p63, No recommendation, CK 34E12, GATA3]
+  - 共通頂点: high grade (ID:60) | 結合数: 6
+      ハイパーエッジ: [CK5/6, CK20, p63, No recommendation, CK 34E12, GATA3]
+  - 共通頂点: Seromucinous carcinoma (ID:81) | 結合数: 6
+      ハイパーエッジ: [CK7, CK20, CDX2, ER(Estrogen receptor), PgR(Progesteron receptor), WT1]
+  - 共通頂点: Seromucinous borderline tumor/Atypical proliferative seromucinous tumor (ID:80) | 結合数: 6
+      ハイパーエッジ: [CK7, CK20, CDX2, ER(Estrogen receptor), PgR(Progesteron receptor), WT1]
+  - 共通頂点: Clear cell urothelial carcinoma (ID:93) | 結合数: 6
+      ハイパーエッジ: [CK7, CK20, p63, GATA3, Thrombomodulin, S100P]
+  - 共通頂点: cowper (ID:98) | 結合数: 6
+      ハイパーエッジ: [CK7, CK20, CDX2, GATA3, PAX8, S100P]
+  - 共通頂点: Carcinoma of skene (ID:97) | 結合数: 6
+      ハイパーエッジ: [CK7, CK20, CDX2, GATA3, PAX8, S100P]
+  - 共通頂点: littre glands (ID:99) | 結合数: 6
+      ハイパーエッジ: [CK7, CK20, CDX2, GATA3, PAX8, S100P]
+  - 共通頂点: Mucinous carcinoid (ID:83) | 結合数: 6
+      ハイパーエッジ: [CK7, CK20, CDX2, Synaptophysin, Chromogranin, CD56]
+  - 共通頂点: Renal cell carcinoma (ID:73) | 結合数: 6
+      ハイパーエッジ: [CK7, CK20, Vimentin, CD10, PAX8, RCC]
+  - 共通頂点: Acquired cystic disease-associated renal cell carcinoma (ID:109) | 結合数: 6
+      ハイパーエッジ: [CK7, CD10, GATA3, PAX8, KIT(CD117), AMACR]
+  - 共通頂点: Eosinophilic solid and cystic renal cell carcinoma (ID:110) | 結合数: 6
+      ハイパーエッジ: [CK7, CK20, Melan-A, PAX8, KIT(CD117), Cathepsin K]
+  - 共通頂点: Adenocarcinoma (ID:118) | 結合数: 6
+      ハイパーエッジ: [CK20, CK20, CDX2, CDX2, -catenin, -catenin]
+  - 共通頂点: Gastric type (ID:127) | 結合数: 6
+      ハイパーエッジ: [MUC5AC, CDX2, p53, Ki67, CD10, MUC6]
+  - 共通頂点: Low-grade serous carcinoma (ID:144) | 結合数: 6
+      ハイパーエッジ: [KRAS mutation, p53, Ki67, PgR(Progesteron receptor), BRAF, 1q36 loss]
+  - 共通頂点: High-grade neuroendocrine carcinoma (NEC) (ID:157) | 結合数: 6
+      ハイパーエッジ: [Synaptophysin, Chromogranin, p63, No recommendation, CD56, HPV18]
+  - 共通頂点: Low-grade neuroendocrine tumor (NET) (ID:154) | 結合数: 6
+      ハイパーエッジ: [Synaptophysin, Chromogranin, No recommendation, CD56, HPV, NSE]
+  - 共通頂点: Calcifying aponeurotic fibromaAF) (ID:179) | 結合数: 6
+      ハイパーエッジ: [-catenin, MSA(Muscle Specific Actin), SMA(Smooth muscle actin), S100, CD99, FN1::EGF]
+  - 共通頂点: Germ cell tumor (ID:183) | 結合数: 6
+      ハイパーエッジ: [AFP, SALL4, Keratins, CD30, PLAP, HCG]
+  - 共通頂点: Neurofibroma (ID:206) | 結合数: 6
+      ハイパーエッジ: [p53, Ki67, S100, CD34, SOX10, NF1]
+  - 共通頂点: Nephroblastoma (ID:351) | 結合数: 6
+      ハイパーエッジ: [No recommendation, Desmin, CD99, WT1, SMARCB1(INI1), PHOX2B]
+  - 共通頂点: Phosphaturic mesenchymal tumor (PMTs) (ID:377) | 結合数: 6
+      ハイパーエッジ: [CD56, ERG, SATB2, FGFR1, SSTR2, FGF23]
+  - 共通頂点: Mucous gland adenoma (ID:378) | 結合数: 6
+      ハイパーエッジ: [Ki67, Keratins, CEA, EMA, SMA(Smooth muscle actin), S100]
+  - 共通頂点: Glomus tumor (ID:394) | 結合数: 6
+      ハイパーエッジ: [c-kit(CD117), Desmin, SMA(Smooth muscle actin), CD34, DOG1, Laminin(collagen IV)]
+  - 共通頂点: Epithelial-myoepithelial carcinoma (ID:385) | 結合数: 6
+      ハイパーエッジ: [c-kit(CD117), Vimentin, Keratins, S100, GFAP, Actin]
+  - 共通頂点: Signet-ring stromal tumor (ID:404) | 結合数: 6
+      ハイパーエッジ: [Vimentin, Mucin, Keratins, EMA, SMA(Smooth muscle actin), Inhibin]
+  - 共通頂点: Meningioma (ID:402) | 結合数: 6
+      ハイパーエッジ: [Vimentin, Keratins, EMA, S100, Neuroendocline markers, Melanoma marker]
+  - 共通頂点: Uterine tumor resembling ovarian sex cord tumor (UTROSCT) (ID:412) | 結合数: 6
+      ハイパーエッジ: [Keratins, Desmin, SMA(Smooth muscle actin), ER(Estrogen receptor), PgR(Progesteron receptor), WT1]
+  - 共通頂点: Angiomyofibroblastoma (ID:446) | 結合数: 6
+      ハイパーエッジ: [Desmin, MSA(Muscle Specific Actin), SMA(Smooth muscle actin), ER(Estrogen receptor), PgR(Progesteron receptor), CD34]
+  - 共通頂点: Cellular angiofibroma (ID:447) | 結合数: 6
+      ハイパーエッジ: [Desmin, SMA(Smooth muscle actin), ER(Estrogen receptor), PgR(Progesteron receptor), CD34, RB1]
+  - 共通頂点: Infantile fibrosarcoma (IFS) (ID:451) | 結合数: 6
+      ハイパーエッジ: [Desmin, SMA(Smooth muscle actin), S100, CD34, pan-TRK, NTRK fusion]
+  - 共通頂点: schwannoma (ID:464) | 結合数: 6
+      ハイパーエッジ: [AE1/AE3, S100, GFAP, NF(Neurofilament), Laminin(collagen IV), Collagen IV]
+  - 共通頂点: neurofibroma (ID:474) | 結合数: 6
+      ハイパーエッジ: [EMA, S100, CD34, Collagen IV, GLUT1, Claudin-1]
+  - 共通頂点: Lymphomatoid grannulomatosis (ID:482) | 結合数: 6
+      ハイパーエッジ: [EBV, CD20, CD30, CD15, CD3, CD8]
+  - 共通頂点: Kaposi sarcoma (ID:502) | 結合数: 6
+      ハイパーエッジ: [SMA(Smooth muscle actin), CD34, CD31, D2-40, HHV8, ERG]
+  - 共通頂点: Benign perivascular epithelioid cell tumor (ID:489) | 結合数: 6
+      ハイパーエッジ: [SMA(Smooth muscle actin), HMB45, Melan-A, MITF, Tyrosinase, Cathepsin K]
+  - 共通頂点: Malignant perivascular epithelioid cell tumor (ID:490) | 結合数: 6
+      ハイパーエッジ: [SMA(Smooth muscle actin), HMB45, Melan-A, MITF, Tyrosinase, Cathepsin K]
+  - 共通頂点: Clear cell sarcoma of soft tissue (ID:514) | 結合数: 6
+      ハイパーエッジ: [S100, HMB45, Melan-A, SOX10, MITF, EWSR1::ATF1]
+  - 共通頂点: Malignant melanotic nerve sheath tumor (MMNST) (ID:512) | 結合数: 6
+      ハイパーエッジ: [S100, HMB45, Melan-A, SOX10, Tyrosinase, PRKAR1A]
+  - 共通頂点: High-grade endometrial stromal sarcoma (ID:519) | 結合数: 6
+      ハイパーエッジ: [ER(Estrogen receptor), PgR(Progesteron receptor), CD10, CD117, DOG1, Cyclin D1]
+  - 共通頂点: Acute myeloid leukaemia (ID:526) | 結合数: 6
+      ハイパーエッジ: [CD34, CD20, Lysozyme, CD68, CD117, Myeloperoxidase(MPO)]
+  - 共通頂点: Epithelioid angiomyolipoma (eAML) / epithelioid PEComa of the kidney (ID:534) | 結合数: 6
+      ハイパーエッジ: [HMB45, Melan-A, CD68, MITF, Cathepsin K, SMA]
+  - 共通頂点: B lymphoblastic lymphoma (ID:557) | 結合数: 6
+      ハイパーエッジ: [CD20, CD10, CD3, Myeloperoxidase(MPO), CD19, TdT]
+  - 共通頂点: Mucoepidermoid carcinoma (ID:30) | 結合数: 5
+      ハイパーエッジ: [TTF-1, NapsinA, PAS, Alcian blue, CRTC1::MAML2]
+  - 共通頂点: Minimally invasive adenocarcinoma (MIA) (ID:10) | 結合数: 5
+      ハイパーエッジ: [TTF-1, TTF-1, NapsinA, CK20, HNF4a]
+  - 共通頂点: Colorectal adenocarcinoma (ID:35) | 結合数: 5
+      ハイパーエッジ: [TTF-1, NapsinA, CK7, CK20, CDX2]
+  - 共通頂点: Spindle cell carcinoma (ID:26) | 結合数: 5
+      ハイパーエッジ: [TTF-1, EGFR mutation, SP(Surfactant protein), Vimentin, Fascin]
+  - 共通頂点: Giant cell carcionoma (ID:27) | 結合数: 5
+      ハイパーエッジ: [TTF-1, EGFR mutation, SP(Surfactant protein), Vimentin, Fascin]
+  - 共通頂点: Pleomorphic carcinoma (ID:25) | 結合数: 5
+      ハイパーエッジ: [TTF-1, EGFR mutation, SP(Surfactant protein), Vimentin, Keratins]
+  - 共通頂点: Large cell carcinoma (ID:23) | 結合数: 5
+      ハイパーエッジ: [TTF-1, p40, NapsinA, CK5/6, Vimentin]
+  - 共通頂点: Mucinous adenocarcinoma (ID:66) | 結合数: 5
+      ハイパーエッジ: [CK7, CK20, CDX2, MUC2, -catenin]
+  - 共通頂点: ELOC (formerly TCEB1)-mutated renal cell carcinoma (ID:111) | 結合数: 5
+      ハイパーエッジ: [CK7, CD10, CAIX(CA9), 34E12, ELOC]
+  - 共通頂点: Diffuse idiopathic pulmonary neuroendocrine cell hyperplasia (ID:62) | 結合数: 5
+      ハイパーエッジ: [CK7, Synaptophysin, Chromogranin, CD56, Ki67]
+  - 共通頂点: Intestinal type (ID:133) | 結合数: 5
+      ハイパーエッジ: [CDX2, MUC2, p53, Ki67, CD10]
+  - 共通頂点: Ganglioneuroma (ID:148) | 結合数: 5
+      ハイパーエッジ: [Synaptophysin, S100, GFAP, NF(Neurofilament), NSE]
+  - 共通頂点: Carcinoid tumor (ID:155) | 結合数: 5
+      ハイパーエッジ: [Synaptophysin, Chromogranin, No recommendation, CD56, NSE]
+  - 共通頂点: Endocrine cell carcinoma/Neuroendocrine carcinoma (ID:152) | 結合数: 5
+      ハイパーエッジ: [Synaptophysin, Chromogranin, CD56, NSE, PGP9.5]
+  - 共通頂点: Extraskeletal myxoid chondrosarcoma (ID:169) | 結合数: 5
+      ハイパーエッジ: [Synaptophysin, S100, NSE, KIT(CD117), NR4A3 gene rearrangement]
+  - 共通頂点: Hepatoid adenocarcinoma (ID:188) | 結合数: 5
+      ハイパーエッジ: [AFP, SALL4, CEA, CD10, GPC3]
+  - 共通頂点: High-grade serous carcinoma (ID:204) | 結合数: 5
+      ハイパーエッジ: [p53, TP53, WT1, BRCA1, BRCA2]
+  - 共通頂点: Plasmacytoma (ID:346) | 結合数: 5
+      ハイパーエッジ: [No recommendation, EBV, CD19, CD138, PAX5]
+  - 共通頂点: well differentiated (ID:373) | 結合数: 5
+      ハイパーエッジ: [CD56, CD99, WT1, Steroidgenic factor-1, FOXL2]
+  - 共通頂点: poorly differentiated (ID:375) | 結合数: 5
+      ハイパーエッジ: [CD56, CD99, WT1, Steroidgenic factor-1, FOXL2]
+  - 共通頂点: retiform (ID:376) | 結合数: 5
+      ハイパーエッジ: [CD56, CD99, WT1, Steroidgenic factor-1, FOXL2]
+  - 共通頂点: moderately differentiated (ID:374) | 結合数: 5
+      ハイパーエッジ: [CD56, CD99, WT1, Steroidgenic factor-1, FOXL2]
+  - 共通頂点: Plexiform fibromyxoma (ID:395) | 結合数: 5
+      ハイパーエッジ: [c-kit(CD117), Desmin, SMA(Smooth muscle actin), CD10, DOG1]
+  - 共通頂点: Ossifying renal tumour of infancy (ORTI) (ID:408) | 結合数: 5
+      ハイパーエッジ: [Vimentin, EMA, WT1, SATB2, 4 Trisomy]
+  - 共通頂点: Pleomorphic adenoma (ID:398) | 結合数: 5
+      ハイパーエッジ: [Vimentin, Keratins, SMA(Smooth muscle actin), Calponin, S100]
+  - 共通頂点: hypercalcemic type (ID:415) | 結合数: 5
+      ハイパーエッジ: [Keratins, EMA, Calretinin, CD10, WT1(N terminal)]
+  - 共通頂点: Malignant melanoma (ID:417) | 結合数: 5
+      ハイパーエッジ: [Keratins, S100, HMB45, Melan-A, MITF]
+  - 共通頂点: Spindle cell rhabdomyosarcoma (ID:433) | 結合数: 5
+      ハイパーエッジ: [Myogenin, Desmin, MSA(Muscle Specific Actin), MyoD1, MYOD1 mutation]
+  - 共通頂点: Intimal sarcoma (ID:435) | 結合数: 5
+      ハイパーエッジ: [Myogenin, Desmin, SMA(Smooth muscle actin), MDM2, MyoD1]
+  - 共通頂点: Tenosynovial giant cell tumour NOS (ID:453) | 結合数: 5
+      ハイパーエッジ: [Desmin, CD68, CD163, CD45, Clusterin]
+  - 共通頂点: Urothelial carcinioma of the probate (ID:471) | 結合数: 5
+      ハイパーエッジ: [CK 34E12, GATA3, PSA, NKX3.1, Prostein]
+  - 共通頂点: Solitary circumscribed neuroma (ID:478) | 結合数: 5
+      ハイパーエッジ: [EMA, S100, GLUT1, Claudin-1, NFP]
+  - 共通頂点: Multilocular clear cell renal cell carcinoma (ID:480) | 結合数: 5
+      ハイパーエッジ: [EMA, PAX8, PAX2, CAM5.2, CAIX(CA9)]
+  - 共通頂点: Lymphangioma NOS (ID:496) | 結合数: 5
+      ハイパーエッジ: [SMA(Smooth muscle actin), CD34, CD31, D2-40, PROX1]
+  - 共通頂点: Cystic lymphangioma (ID:497) | 結合数: 5
+      ハイパーエッジ: [SMA(Smooth muscle actin), CD34, CD31, D2-40, PROX1]
+  - 共通頂点: Clear cell tumour (ID:488) | 結合数: 5
+      ハイパーエッジ: [SMA(Smooth muscle actin), S100, HMB45, Melan-A, 16p13(TSC2) loss]
+  - 共通頂点: Renomedullary interstitial cell tumour (ID:505) | 結合数: 5
+      ハイパーエッジ: [Calponin, CD34, ER, PR, SMA]
+  - 共通頂点: NTRK-rearranged spindle cell neoplasm (ID:513) | 結合数: 5
+      ハイパーエッジ: [S100, CD34, SOX10, pan-TRK, NTRK fusion]
+  - 共通頂点: Endometriosis (ID:518) | 結合数: 5
+      ハイパーエッジ: [ER(Estrogen receptor), PgR(Progesteron receptor), BCL2, CD10, p16]
+  - 共通頂点: B lymphoblastic leukaemia/lymphoma (ID:527) | 結合数: 5
+      ハイパーエッジ: [CD34, CD20, CD10, CD19, TdT]
+  - 共通頂点: Steroid cell tumor (ID:536) | 結合数: 5
+      ハイパーエッジ: [Melan-A, Calretinin, Inhibin, Steroidgenic factor-1, FOXL2]
+  - 共通頂点: Steroid cell tumor (ID:537) | 結合数: 5
+      ハイパーエッジ: [Melan-A, Calretinin, Inhibin, Steroidgenic factor-1, FOXL2]
+  - 共通頂点: Struma ovarii (ID:45) | 結合数: 4
+      ハイパーエッジ: [TTF-1, TTF-1, Thyroglobulin, Thyroglobulin]
+  - 共通頂点: Merkel cell carcinoma (ID:37) | 結合数: 4
+      ハイパーエッジ: [TTF-1, CK20, NF(Neurofilament), Polyomavirus]
+  - 共通頂点: Basaloid squamous cell carcinma (ID:19) | 結合数: 4
+      ハイパーエッジ: [TTF-1, p40, CK5/6, p63]
+  - 共通頂点: Adenocarcinoma in situ (AIS) (ID:14) | 結合数: 4
+      ハイパーエッジ: [TTF-1, NapsinA, CK20, HNF4a]
+  - 共通頂点: Lung adenocarcinoma (ID:42) | 結合数: 4
+      ハイパーエッジ: [TTF-1, NapsinA, CK7, CK20]
+  - 共通頂点: Papilary adenocarcinoma (ID:3) | 結合数: 4
+      ハイパーエッジ: [TTF-1, p40, NapsinA, CK5/6]
+  - 共通頂点: Micropapillary adenocarcinoma (ID:4) | 結合数: 4
+      ハイパーエッジ: [TTF-1, p40, NapsinA, CK5/6]
+  - 共通頂点: Leqidic adenocarcinoma (ID:1) | 結合数: 4
+      ハイパーエッジ: [TTF-1, p40, NapsinA, CK5/6]
+  - 共通頂点: Solid adenocarcinoma (ID:5) | 結合数: 4
+      ハイパーエッジ: [TTF-1, p40, NapsinA, CK5/6]
+  - 共通頂点: Atypical adenomatous hyperplasia (AAH) (ID:13) | 結合数: 4
+      ハイパーエッジ: [TTF-1, NapsinA, KRAS mutation, EGFR mutation]
+  - 共通頂点: Thymic carcinoma (ID:39) | 結合数: 4
+      ハイパーエッジ: [TTF-1, CD5, PAX8, CD117]
+  - 共通頂点: Micropapillary carcinoma (ID:70) | 結合数: 4
+      ハイパーエッジ: [CK7, CK20, CDX2, MUC2]
+  - 共通頂点: Cribriform comedo-type adenocarcinoma (ID:69) | 結合数: 4
+      ハイパーエッジ: [CK7, CK20, CDX2, MUC2]
+  - 共通頂点: Medurally carcinoma (ID:68) | 結合数: 4
+      ハイパーエッジ: [CK7, CK20, CDX2, MUC2]
+  - 共通頂点: Loe-grade appendiceal mucinous neoplasm (ID:71) | 結合数: 4
+      ハイパーエッジ: [CK7, CK20, CDX2, MUC2]
+  - 共通頂点: Signet ring cell carcinoma (ID:67) | 結合数: 4
+      ハイパーエッジ: [CK7, CK20, CDX2, MUC2]
+  - 共通頂点: Mucinous tubular and spindle cell carcinoma (ID:108) | 結合数: 4
+      ハイパーエッジ: [CK7, CD10, PAX8, AMACR]
+  - 共通頂点: Papillary renal cell carcinoma (ID:103) | 結合数: 4
+      ハイパーエッジ: [CK7, Vimentin, CD10, AMACR]
+  - 共通頂点: urothelial carcinoma in situ (ID:116) | 結合数: 4
+      ハイパーエッジ: [CK20, p53, Ki67, CD44]
+  - 共通頂点: Signet-ring cell carcinoma (sig) (ID:130) | 結合数: 4
+      ハイパーエッジ: [MUC5AC, MUC2, CD10, MUC6]
+  - 共通頂点: Mucinous adenocarcinoma (muc) (ID:131) | 結合数: 4
+      ハイパーエッジ: [MUC5AC, MUC2, CD10, MUC6]
+  - 共通頂点: Atypical endometrial hyperplasia/Endometrioid intraepithelial neoplasia (ID:134) | 結合数: 4
+      ハイパーエッジ: [KRAS mutation, PTEN, PAX2, CTNNB1 mutation]
+  - 共通頂点: Well-differentiated neuroendocrine tumor (ID:166) | 結合数: 4
+      ハイパーエッジ: [Synaptophysin, Chromogranin, CD56, PSA]
+  - 共通頂点: Large cell neuroendocrine carcinoma (LCNEC) (ID:159) | 結合数: 4
+      ハイパーエッジ: [Synaptophysin, Chromogranin, p63, CD56]
+  - 共通頂点: Carcinoid tumor/Neuroendocrine tumor G2 (ID:150) | 結合数: 4
+      ハイパーエッジ: [Synaptophysin, Chromogranin, CD56, Ki67]
+  - 共通頂点: Carcinoid tumor/Neuroendocrine tumor G1 (ID:149) | 結合数: 4
+      ハイパーエッジ: [Synaptophysin, Chromogranin, CD56, Ki67]
+  - 共通頂点: Carcinoid tumor/Neuroendocrine tumor G3 (ID:151) | 結合数: 4
+      ハイパーエッジ: [Synaptophysin, Chromogranin, CD56, Ki67]
+  - 共通頂点: Small cell carcinoma (ID:147) | 結合数: 4
+      ハイパーエッジ: [Synaptophysin, Chromogranin, CD56, Ki67]
+  - 共通頂点: Atypical carcinoid tumor (ID:156) | 結合数: 4
+      ハイパーエッジ: [Synaptophysin, Chromogranin, CD56, NSE]
+  - 共通頂点: Nodular fasciitis (ID:178) | 結合数: 4
+      ハイパーエッジ: [-catenin, Desmin, MSA(Muscle Specific Actin), SMA(Smooth muscle actin)]
+  - 共通頂点: Immature tertoma (ID:189) | 結合数: 4
+      ハイパーエッジ: [AFP, Glypican3, SALL4, SOX2]
+  - 共通頂点: Mixed germ cell tumor (ID:192) | 結合数: 4
+      ハイパーエッジ: [Glypican3, CD30, 4-Oct, GDF3]
+  - 共通頂点: Adenocarcinoma in situ (AIS) (ID:381) | 結合数: 4
+      ハイパーエッジ: [Ki67, ER(Estrogen receptor), PgR(Progesteron receptor), p16]
+  - 共通頂点: Inflammatory myofibroblastic tumour (ID:396) | 結合数: 4
+      ハイパーエッジ: [c-kit(CD117), SMA(Smooth muscle actin), DOG1, ALK]
+  - 共通頂点: Meningioma (ID:406) | 結合数: 4
+      ハイパーエッジ: [Vimentin, EMA, PgR(Progesteron receptor), SSTR2A]
+  - 共通頂点: Rhabdoid tumor (ID:405) | 結合数: 4
+      ハイパーエッジ: [Vimentin, Keratins, Myogenin, EMA]
+  - 共通頂点: Ewing sarcoma (ID:410) | 結合数: 4
+      ハイパーエッジ: [Keratins, FLI1, CD99, ERG]
+  - 共通頂点: sclerosing epithelioid fibrosarcoma (ID:424) | 結合数: 4
+      ハイパーエッジ: [Keratins, EMA, SMA(Smooth muscle actin), MUC4]
+  - 共通頂点: Pleomorphic liposarcoma (ID:422) | 結合数: 4
+      ハイパーエッジ: [Keratins, Melan-A, MDM2, CDK4]
+  - 共通頂点: inflammatory myofibroblastic tumor (ID:419) | 結合数: 4
+      ハイパーエッジ: [Keratins, Desmin, SMA(Smooth muscle actin), ALK1]
+  - 共通頂点: Embryonal rhabdomyosarcoma (ID:431) | 結合数: 4
+      ハイパーエッジ: [Myogenin, Desmin, MSA(Muscle Specific Actin), MyoD1]
+  - 共通頂点: Rhabdomyoma (ID:430) | 結合数: 4
+      ハイパーエッジ: [Myogenin, Desmin, SMA(Smooth muscle actin), MyoD1]
+  - 共通頂点: Palmar fibromatosis (ID:449) | 結合数: 4
+      ハイパーエッジ: [Desmin, SMA(Smooth muscle actin), APC mutation, CTNNB1 mutation]
+  - 共通頂点: Myofibroblastoma (ID:445) | 結合数: 4
+      ハイパーエッジ: [Desmin, SMA(Smooth muscle actin), CD34, RB1]
+  - 共通頂点: Myxofibrosarcoma (ID:452) | 結合数: 4
+      ハイパーエッジ: [Desmin, SMA(Smooth muscle actin), S100, CD34]
+  - 共通頂点: Inflammatory myofibroblastic tumor (ID:436) | 結合数: 4
+      ハイパーエッジ: [Desmin, MSA(Muscle Specific Actin), SMA(Smooth muscle actin), ALK1]
+  - 共通頂点: Proliferative fasciitis (ID:442) | 結合数: 4
+      ハイパーエッジ: [Desmin, MSA(Muscle Specific Actin), SMA(Smooth muscle actin), Actin]
+  - 共通頂点: Proliferative myositis (ID:443) | 結合数: 4
+      ハイパーエッジ: [Desmin, MSA(Muscle Specific Actin), SMA(Smooth muscle actin), Actin]
+  - 共通頂点: Hybrid nerve sheath tumor (ID:479) | 結合数: 4
+      ハイパーエッジ: [EMA, S100, GLUT1, Claudin-1]
+  - 共通頂点: Acral fibromyxoma (ID:475) | 結合数: 4
+      ハイパーエッジ: [EMA, SMA(Smooth muscle actin), CD34, RB1]
+  - 共通頂点: EWSR1-SMAD3 positive fibroblastic tumour (ID:492) | 結合数: 4
+      ハイパーエッジ: [SMA(Smooth muscle actin), CD34, ERG, EWSR1::SMAD3]
+  - 共通頂点: Haemosiderotic fibrolipomatous tumor (HFLT) (ID:504) | 結合数: 4
+      ハイパーエッジ: [Calponin, CD34, TGFB3, OGA (MGEA5)]
+  - 共通頂点: Pulmonary Langerhans cell histocytoosis (ID:506) | 結合数: 4
+      ハイパーエッジ: [S100, CD1a, Langerin, BRAF V600E]
+  - 共通頂点: Blue nerve (ID:509) | 結合数: 4
+      ハイパーエッジ: [S100, HMB45, Melan-A, MITF]
+  - 共通頂点: Nerve sheath myxoma (ID:511) | 結合数: 4
+      ハイパーエッジ: [S100, GFAP, CD57, Collagen]
+  - 共通頂点: Kaposi's sarcoma (ID:522) | 結合数: 4
+      ハイパーエッジ: [CD34, CD31, D2-40, Factor]
+  - 共通頂点: Leydig cell tumor (ID:535) | 結合数: 4
+      ハイパーエッジ: [Melan-A, Calretinin, Inhibin, Steroidgenic factor-1]
+  - 共通頂点: Acquired tufted haemangioma (ID:540) | 結合数: 4
+      ハイパーエッジ: [D2-40, GLUT1, PROX1, LYVE1]
+  - 共通頂点: benign lymphoid hyperplasia (ID:546) | 結合数: 4
+      ハイパーエッジ: [BCL2, CD10, BCL6, CD43]
+  - 共通頂点: Fibroma (ID:548) | 結合数: 4
+      ハイパーエッジ: [Calretinin, Inhibin, Sex cord markers, 12 trysomy]
+  - 共通頂点: Thecoma (ID:549) | 結合数: 4
+      ハイパーエッジ: [Calretinin, Inhibin, Sex cord markers, 12 trysomy]
+  - 共通頂点: hibernoma (ID:550) | 結合数: 4
+      ハイパーエッジ: [MDM2, HMGA2, UCP1, CDK4]
+  - 共通頂点: myeloid sarcoma (ID:562) | 結合数: 4
+      ハイパーエッジ: [CD15, CD68, Myeloperoxidase(MPO), CD163]
+  - 共通頂点: Clear cell adenocarcinoma (ID:569) | 結合数: 4
+      ハイパーエッジ: [PSA, PAX8, HNF1B, CA125]
+  - 共通頂点: signet ring-like cell (ID:565) | 結合数: 4
+      ハイパーエッジ: [PSA, ERG, AMACR, PAP]
+  - 共通頂点: mucinous (ID:12) | 結合数: 3
+      ハイパーエッジ: [TTF-1, CK20, HNF4a]
+  - 共通頂点: Squamous carcinoma (ID:55) | 結合数: 3
+      ハイパーエッジ: [CK5/6, p63, CK 34E12]
+  - 共通頂点: Prostate adenocarcinoma (ID:74) | 結合数: 3
+      ハイパーエッジ: [CK7, CK20, PSA]
+  - 共通頂点: Hepatoceller carcinoma (ID:72) | 結合数: 3
+      ハイパーエッジ: [CK7, CK20, HepPar1]
+  - 共通頂点: Traditional serrated adenoma (ID:64) | 結合数: 3
+      ハイパーエッジ: [CK7, CK20, Ki67]
+  - 共通頂点: Basal cell carcinoma of the prostate (ID:100) | 結合数: 3
+      ハイパーエッジ: [CK7, CK20, BCL2]
+  - 共通頂点: Renal papillary adenoma (ID:102) | 結合数: 3
+      ハイパーエッジ: [CK7, CD10, AMACR]
+  - 共通頂点: enteric (ID:120) | 結合数: 3
+      ハイパーエッジ: [CK20, CDX2, -catenin]
+  - 共通頂点: Mixed adenocarcinoma (ID:121) | 結合数: 3
+      ハイパーエッジ: [CK20, CDX2, -catenin]
+  - 共通頂点: Cribriform adenocarcinoma (ID:123) | 結合数: 3
+      ハイパーエッジ: [CK20, PSA, AMACR]
+  - 共通頂点: mucinous (ID:113) | 結合数: 3
+      ハイパーエッジ: [CK20, HNF4a, Mucin]
+  - 共通頂点: Hyperplastic polyp (ID:132) | 結合数: 3
+      ハイパーエッジ: [MUC5AC, Ki67, Gastric MUCIN]
+  - 共通頂点: Tubular adenocarcinoma (ID:128) | 結合数: 3
+      ハイパーエッジ: [MUC5AC, No recommendation, CD10]
+  - 共通頂点: Mucinous carcinoma (ID:139) | 結合数: 3
+      ハイパーエッジ: [KRAS mutation, CEA, Mucicarmine]
+  - 共通頂点: Glassy cell carcinoma (ID:146) | 結合数: 3
+      ハイパーエッジ: [MUC2, ER(Estrogen receptor), PgR(Progesteron receptor)]
+  - 共通頂点: Adenocarcinoma with neuroendocrine differentiation (ID:165) | 結合数: 3
+      ハイパーエッジ: [Synaptophysin, Chromogranin, CD56]
+  - 共通頂点: Adenocarcinoma admixed with neuroendcrine carcinoma (ID:153) | 結合数: 3
+      ハイパーエッジ: [Synaptophysin, Chromogranin, CD56]
+  - 共通頂点: Gardner fibroma (ID:181) | 結合数: 3
+      ハイパーエッジ: [-catenin, SMA(Smooth muscle actin), CD34]
+  - 共通頂点: Low-grade myofibroblastic sarcoma (ID:182) | 結合数: 3
+      ハイパーエッジ: [-catenin, Desmin, SMA(Smooth muscle actin)]
+  - 共通頂点: Papillary adenocarcinoma (ID:185) | 結合数: 3
+      ハイパーエッジ: [AFP, No recommendation, MLH1]
+  - 共通頂点: Mixed cell carcinoma (ID:202) | 結合数: 3
+      ハイパーエッジ: [p53, PTEN, p16]
+  - 共通頂点: Borderline Brenner tumor/Atypical proliferative Brenner tumor (ID:211) | 結合数: 3
+      ハイパーエッジ: [p63, GATA3, WT1]
+  - 共通頂点: microystic (ID:215) | 結合数: 3
+      ハイパーエッジ: [p63, CK 34E12, AMACR]
+  - 共通頂点: Sarcomatoid urothelial carcinoma (ID:213) | 結合数: 3
+      ハイパーエッジ: [p63, CK 34E12, GATA3]
+  - 共通頂点: Juvenile polyp (ID:242) | 結合数: 3
+      ハイパーエッジ: [No recommendation, SMAD4 alteration, BMPR1A alteration]
+  - 共通頂点: Basal cell carcinoma of the probate (ID:384) | 結合数: 3
+      ハイパーエッジ: [Ki67, HER2, AMACR]
+  - 共通頂点: Mesonephric remnants and hyperplasia (ID:383) | 結合数: 3
+      ハイパーエッジ: [Ki67, CD10, p16]
+  - 共通頂点: Naevus (ID:397) | 結合数: 3
+      ハイパーエッジ: [c-kit(CD117), HMB45, Melan-A]
+  - 共通頂点: Poorly differentiated adenocarcinoma (ID:390) | 結合数: 3
+      ハイパーエッジ: [c-kit(CD117), Vimentin, Keratins]
+  - 共通頂点: Gastrointestinal stromal tumor(GIST) (ID:392) | 結合数: 3
+      ハイパーエッジ: [c-kit(CD117), CD34, DOG1]
+  - 共通頂点: Pleuropulmonary blastoma (ID:400) | 結合数: 3
+      ハイパーエッジ: [Vimentin, DICER1, DICER1 loss]
+  - 共通頂点: Pulmonary artery intimal sarcoma (ID:401) | 結合数: 3
+      ハイパーエッジ: [Vimentin, Actin, MDM2]
+  - 共通頂点: sarcomatoid (ID:420) | 結合数: 3
+      ハイパーエッジ: [Keratins, PSA, PAP]
+  - 共通頂点: Neuroectodermal-type tumors (ID:414) | 結合数: 3
+      ハイパーエッジ: [Keratins, ER(Estrogen receptor), PgR(Progesteron receptor)]
+  - 共通頂点: Chondroid lipoma (ID:421) | 結合数: 3
+      ハイパーエッジ: [Keratins, EMA, S100]
+  - 共通頂点: Pleomorphic rhabdomyosarcoma (ID:432) | 結合数: 3
+      ハイパーエッジ: [Myogenin, Desmin, MyoD1]
+  - 共通頂点: Myolipoma (ID:440) | 結合数: 3
+      ハイパーエッジ: [Desmin, SMA(Smooth muscle actin), HMB45]
+  - 共通頂点: Smooth muscle tumor of uncertain malignant potential (ID:454) | 結合数: 3
+      ハイパーエッジ: [Desmin, EBV, Caldesmon]
+  - 共通頂点: Lipoblastoma (ID:439) | 結合数: 3
+      ハイパーエッジ: [Desmin, S100, CD34]
+  - 共通頂点: spindle cell lipoma/pleomorphic lipoma (ID:441) | 結合数: 3
+      ハイパーエッジ: [Desmin, S100, CD34]
+  - 共通頂点: Angiofibroma (ID:448) | 結合数: 3
+      ハイパーエッジ: [Desmin, EMA, CD34]
+  - 共通頂点: Ischaemic fasciitis (ID:444) | 結合数: 3
+      ハイパーエッジ: [Desmin, SMA(Smooth muscle actin), CD34]
+  - 共通頂点: Lipofibromatosis (ID:450) | 結合数: 3
+      ハイパーエッジ: [Desmin, SMA(Smooth muscle actin), CD34]
+  - 共通頂点: pleomorphic giant cell (ID:465) | 結合数: 3
+      ハイパーエッジ: [AE1/AE3, PSA, CAM5.2]
+  - 共通頂点: pseudohyperplastic (ID:469) | 結合数: 3
+      ハイパーエッジ: [CK 34E12, AMACR, HOXB13 G84E mutation]
+  - 共通頂点: Squamous cell carcinoma of the probate (ID:473) | 結合数: 3
+      ハイパーエッジ: [CK 34E12, PSA, PSAP]
+  - 共通頂点: Adenosquamous carcinoma of the probate (ID:472) | 結合数: 3
+      ハイパーエッジ: [CK 34E12, PSA, PSAP]
+  - 共通頂点: Intraductal carcinoma of the probate (ID:470) | 結合数: 3
+      ハイパーエッジ: [CK 34E12, GATA3, PSA]
+  - 共通頂点: Low-grade fibromyxoid sarcoma (ID:477) | 結合数: 3
+      ハイパーエッジ: [EMA, SMA(Smooth muscle actin), MUC4]
+  - 共通頂点: Dermatofibrosarcoma protuberans (DFSP) (ID:476) | 結合数: 3
+      ハイパーエッジ: [EMA, SMA(Smooth muscle actin), CD34]
+  - 共通頂点: Congenital peribronchial myofibroblastic tumor (ID:481) | 結合数: 3
+      ハイパーエッジ: [MSA(Muscle Specific Actin), SMA(Smooth muscle actin), HHF35]
+  - 共通頂点: Deep fibrous histiocytoma (ID:494) | 結合数: 3
+      ハイパーエッジ: [SMA(Smooth muscle actin), CD34, STAT6]
+  - 共通頂点: Adult fibrosarcoma (ID:493) | 結合数: 3
+      ハイパーエッジ: [SMA(Smooth muscle actin), Calponin, CD34]
+  - 共通頂点: Lipoma (ID:510) | 結合数: 3
+      ハイパーエッジ: [S100, Leptin, HMGA2]
+  - 共通頂点: Anastomosing haemangioma (ID:530) | 結合数: 3
+      ハイパーエッジ: [CD34, CD31, ERG]
+  - 共通頂点: Pleomorphic hyalinizing angiectatic tumor (PHAT) (ID:531) | 結合数: 3
+      ハイパーエッジ: [CD34, TGFB3, OGA (MGEA5)]
+  - 共通頂点: Solitary fibrous tumor (ID:525) | 結合数: 3
+      ハイパーエッジ: [CD34, STAT6, NAB2::STAT6]
+  - 共通頂点: Myxoid pleomorphic liposarcoma (ID:555) | 結合数: 3
+      ハイパーエッジ: [MDM2, RB1, FUSWSR1::DDIT3]
+  - 共通頂点: Atypical spindle cell/pleomorphic lipomatous tumour (ID:551) | 結合数: 3
+      ハイパーエッジ: [MDM2, CDK4, RB1]
+  - 共通頂点: Intravascular large B-cell lymphoma (ID:556) | 結合数: 3
+      ハイパーエッジ: [CD20, CD79a, CD5]
+  - 共通頂点: Low-grade endometrioid stromal sarcoma (ID:559) | 結合数: 3
+      ハイパーエッジ: [CD10, JAZF1::SUZ12, PHF1 Antibody]
+  - 共通頂点: Peripheral T-cell lymphomas(PTCL) (ID:563) | 結合数: 3
+      ハイパーエッジ: [CD8, CD4, TCR rearrangement]
+  - 共通頂点: Mixed germ cell-sex cord stromal tumor (ID:570) | 結合数: 3
+      ハイパーエッジ: [CD117, PLAP, 4-Oct]
+  - 共通頂点: unclassified (ID:571) | 結合数: 3
+      ハイパーエッジ: [CD117, PLAP, 4-Oct]
+  - 共通頂点: Adenocarcinoma of fundic gland type (ID:574) | 結合数: 3
+      ハイパーエッジ: [MUC6, Pepsinogen I, H++-ATPase]
+  - 共通頂点: foamy gland (ID:593) | 結合数: 3
+      ハイパーエッジ: [ERG, AMACR, TMPRSS2::ERG]
+  - 共通頂点: Sclerosing stromal tumor (ID:609) | 結合数: 3
+      ハイパーエッジ: [Inhibin, Sex cord markers, 12 trysomy]
+  - 共通頂点: Myxoid liposarcoma (ID:615) | 結合数: 3
+      ハイパーエッジ: [DDIT3, FUSWSR1::DDIT3, EWSR1::DDIT3]
+  - 共通頂点: non-mucinous (ID:15) | 結合数: 2
+      ハイパーエッジ: [TTF-1, NapsinA]
+  - 共通頂点: non-mucinous (ID:11) | 結合数: 2
+      ハイパーエッジ: [TTF-1, NapsinA]
+  - 共通頂点: Extramammary Paget's disease (ID:115) | 結合数: 2
+      ハイパーエッジ: [CK20, GCDFP15]
+  - 共通頂点: Urothelial papilloma (ID:117) | 結合数: 2
+      ハイパーエッジ: [CK20, Ki67]
+  - 共通頂点: well differentiated (tub1) (ID:129) | 結合数: 2
+      ハイパーエッジ: [MUC5AC, CD10]
+  - 共通頂点: Well-differentiated neuroendocrine tumour (ID:163) | 結合数: 2
+      ハイパーエッジ: [Synaptophysin, Chromogranin]
+  - 共通頂点: Nuchal-type fibroma (ID:180) | 結合数: 2
+      ハイパーエッジ: [-catenin, CD34]
+  - 共通頂点: Lymphoepithelioma-like urothelial carcinoma (ID:212) | 結合数: 2
+      ハイパーエッジ: [p63, GATA3]
+  - 共通頂点: Juvenile hyaline fibromatosis (ID:223) | 結合数: 2
+      ハイパーエッジ: [PAS, ANTXR2]
+  - 共通頂点: Familial adenomatous polyposis (ID:248) | 結合数: 2
+      ハイパーエッジ: [No recommendation, APC mutation]
+  - 共通頂点: Inflammatory fibroid polyp (ID:273) | 結合数: 2
+      ハイパーエッジ: [No recommendation, CD34]
+  - 共通頂点: Squamous cell papilloma (ID:260) | 結合数: 2
+      ハイパーエッジ: [No recommendation, HPV]
+  - 共通頂点: Teratoma (ID:232) | 結合数: 2
+      ハイパーエッジ: [No recommendation, No recommendation]
+  - 共通頂点: Lipoleiomyoma (ID:292) | 結合数: 2
+      ハイパーエッジ: [No recommendation, See leiomyoma]
+  - 共通頂点: Squamous cell carcinoma (ID:274) | 結合数: 2
+      ハイパーエッジ: [No recommendation, Neuroendocrine marker]
+  - 共通頂点: low grade (ID:237) | 結合数: 2
+      ハイパーエッジ: [No recommendation, No recommendation]
+  - 共通頂点: Dysplasia (ID:236) | 結合数: 2
+      ハイパーエッジ: [No recommendation, No recommendation]
+  - 共通頂点: Endocervical adenocarcinoma (ID:382) | 結合数: 2
+      ハイパーエッジ: [Ki67, p16]
+  - 共通頂点: Solitary fibrous tumor (SFT) (ID:389) | 結合数: 2
+      ハイパーエッジ: [c-kit(CD117), CD34]
+  - 共通頂点: non-solid type (por2) (ID:403) | 結合数: 2
+      ハイパーエッジ: [Vimentin, Keratins]
+  - 共通頂点: Inflammatory leiomyosarcoma (ID:455) | 結合数: 2
+      ハイパーエッジ: [Desmin, Caldesmon]
+  - 共通頂点: Superficial CD34-positive fibroblastic tumour (ID:466) | 結合数: 2
+      ハイパーエッジ: [AE1/AE3, CD34]
+  - 共通頂点: atrophic (ID:468) | 結合数: 2
+      ハイパーエッジ: [CK 34E12, AMACR]
+  - 共通頂点: Desmoplastic fibroblastoma (ID:491) | 結合数: 2
+      ハイパーエッジ: [SMA(Smooth muscle actin), FOSL1]
+  - 共通頂点: Inclusion body fibromatosis (ID:503) | 結合数: 2
+      ハイパーエッジ: [Calponin, Actin]
+  - 共通頂点: Malignant peripheral nerve sheath tumor (ID:508) | 結合数: 2
+      ハイパーエッジ: [S100, CD34]
+  - 共通頂点: Adenoid basal carcinoma (ID:517) | 結合数: 2
+      ハイパーエッジ: [HPV, p16]
+  - 共通頂点: Lobular endocervical glandular hyperplasia (LEGH) (ID:516) | 結合数: 2
+      ハイパーエッジ: [HPV, MUC6]
+  - 共通頂点: Stromal tumor uncertain malignant potential (ID:520) | 結合数: 2
+      ハイパーエッジ: [PgR(Progesteron receptor), CD34]
+  - 共通頂点: Stromal sarcoma (ID:521) | 結合数: 2
+      ハイパーエッジ: [PgR(Progesteron receptor), CD34]
+  - 共通頂点: Metanephric adenofibroma (ID:532) | 結合数: 2
+      ハイパーエッジ: [CD34, BRAF V600E]
+  - 共通頂点: Tuboendometrioid metaplasia (ID:547) | 結合数: 2
+      ハイパーエッジ: [BCL2, p16]
+  - 共通頂点: Unclassified type_1 (ID:545) | 結合数: 2
+      ハイパーエッジ: [BCL2, CMYC::Ig]
+  - 共通頂点: Atypical lipomatous tumour (ID:552) | 結合数: 2
+      ハイパーエッジ: [MDM2, CDK4]
+  - 共通頂点: Dedifferentiated liposarcoma (ID:554) | 結合数: 2
+      ハイパーエッジ: [MDM2, CDK4]
+  - 共通頂点: well-differentiated liposarcoma (ID:553) | 結合数: 2
+      ハイパーエッジ: [MDM2, CDK4]
+  - 共通頂点: Prostatic adenocarcinoma (ID:564) | 結合数: 2
+      ハイパーエッジ: [PSA, AR (Androgen receptor)]
+  - 共通頂点: Ductal adenocarcinoma of the probate (ID:566) | 結合数: 2
+      ハイパーエッジ: [PSA, AMACR]
+  - 共通頂点: Solid adenocarcinoma of the probate (ID:568) | 結合数: 2
+      ハイパーエッジ: [PSA, AMACR]
+  - 共通頂点: Papillary adenocarcinoma of the probate (ID:567) | 結合数: 2
+      ハイパーエッジ: [PSA, AMACR]
+  - 共通頂点: Unclassified type_3 (ID:579) | 結合数: 2
+      ハイパーエッジ: [CMYC::Ig, BCL2::Ig]
+  - 共通頂点: ALK-rearranged renal cell carcinomas (ID:580) | 結合数: 2
+      ハイパーエッジ: [ALK, INI1]
+  - 共通頂点: Arteriovenous malformation/haemangioma (AVM/H) (ID:591) | 結合数: 2
+      ハイパーエッジ: [GLUT1, WT1]
+  - 共通頂点: Nephrogenic rests (ID:592) | 結合数: 2
+      ハイパーエッジ: [WT1, IGF2]
+  - 共通頂点: SMARCB1-deficient renal medullary carcinoma (ID:622) | 結合数: 2
+      ハイパーエッジ: [SMARCB1, INI1]
+  - 共通頂点: Fumarate hydratase-deficient renal cell carcinoma (ID:623) | 結合数: 2
+      ハイパーエッジ: [FH, 2SC]
+  - 共通頂点: Paediatric cystic nephroma (ID:625) | 結合数: 2
+      ハイパーエッジ: [ER, DICER1 mutation]
+  - 頂点: Solid adenocarcinoma of the prostate (ID:125) | 結合数: 1 (単独)
+      ハイパーエッジ: [CK20]
+  - 頂点: Ductal adenocarcinoma of the prostate (ID:122) | 結合数: 1 (単独)
+      ハイパーエッジ: [CK20]
+  - 頂点: Papillary adenocarcinoma of the prostate (ID:124) | 結合数: 1 (単独)
+      ハイパーエッジ: [CK20]
+  - 頂点: Mucinous adenofibroma (ID:145) | 結合数: 1 (単独)
+      ハイパーエッジ: [KRAS mutation]
+  - 頂点: -fetoprotein producing adenocarcinoma (ID:173) | 結合数: 1 (単独)
+      ハイパーエッジ: [Chromogranin]
+  - 頂点: Yolk sac tumor like carcinoma (ID:187) | 結合数: 1 (単独)
+      ハイパーエッジ: [AFP]
+  - 頂点: -fetoprotein producing adenocarcinoma (ID:184) | 結合数: 1 (単独)
+      ハイパーエッジ: [AFP]
+  - 頂点: Adenocarcinoma with enteroblastic differentiation (ID:186) | 結合数: 1 (単独)
+      ハイパーエッジ: [AFP]
+  - 頂点: -fetoprotein producing adenocarcinoma (ID:190) | 結合数: 1 (単独)
+      ハイパーエッジ: [Glypican3]
+  - 頂点: Squamous cell carcinoma of the prostate (ID:219) | 結合数: 1 (単独)
+      ハイパーエッジ: [p63]
+  - 頂点: Urothelial carcinioma of the prostate (ID:217) | 結合数: 1 (単独)
+      ハイパーエッジ: [p63]
+  - 頂点: Adenosquamous carcinoma of the prostate (ID:218) | 結合数: 1 (単独)
+      ハイパーエッジ: [p63]
+  - 頂点: Intraductal carcinoma of the prostate (ID:216) | 結合数: 1 (単独)
+      ハイパーエッジ: [p63]
+  - 頂点: Poorly differentiated adenocarcinoma (ID:253) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Dysplasia (ID:226) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Non-gestational choriocarcinoma (ID:325) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Condyloma acuminatum (ID:259) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Fibrosarcoma (ID:323) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: mature (ID:233) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Myxoinflammatory fibroblastic sarcoma (MIFS) (ID:357) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Papillary squamous cell carcinoma (ID:276) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Heterotopic pancreas (ID:272) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Tubulovillous adenoma (ID:240) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Adenofibroma (ID:309) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Angiolipoma (ID:353) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Giant cell urothelial carcinoma (ID:341) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Teratoma with carcinoid (neuroendocrine tumour) (ID:366) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Squamous papilloma (ID:280) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Heterotopic submucosal gland (ID:271) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Retention cyst (ID:267) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Intramuscular angioma (ID:360) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Cavernous hemangioma (ID:255) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Adenomyoma (ID:298) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Adenoma (ID:238) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Endometrioid adenofibroma (ID:316) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Tubular carcinoma (ID:252) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Fundic gland polyp (ID:270) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Squamous cell carcinoma in situ (ID:227) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Undifferentiated sarcoma (ID:362) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Squamotransitional carcinoma (ID:279) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Ectopic prostate tissue (ID:291) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Osteosarcoma (ID:348) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Seromucinous adenofibroma (ID:322) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Combined small cell carcinoma (ID:228) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Clear cell borderline tumor/Atypical proliferative clear cell tumor (ID:320) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Endometrioid cystadenoma (ID:315) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Mixed teratoma?yolk sac tumour (ID:367) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Endometrial stroma nodule (ID:307) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Leydig cell hyperplasia (ID:340) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Myositis ossificans (ID:354) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Endocervical polyp (ID:284) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Tubulocystic renal cell carcinoma (ID:363) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Chondroma (ID:231) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Melanosis (ID:344) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Mature teratoma (ID:326) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Lynch syndrome (ID:249) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: High-grade intraepitherial neoplasia (ID:263) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Villoglandular carcinoma (ID:283) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Endocervicosis (ID:290) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Postoperative spindle-cell nodule (ID:296) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Verrucous carcinoma (ID:265) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Basaloid carcinoma (ID:277) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Other rare monodermal teratomas (ID:327) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Combined large cell neuroendocrine carcinoma (ID:229) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Diffuse laminar endocervical hyperplasia (ID:288) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Capillary hemangioma (ID:257) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Minimal deviation adenocarcinoma (ID:281) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Serrated polyposis/Hyper polyposis (ID:250) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Extramural adenocarcinoma (ID:264) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Prepubertal-type teratoma (ID:365) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Endometrioid borderline tumor/Atypical proliferative endometrioid tumor (ID:317) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Serous adenofibroma (ID:312) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Wilms tumor (ID:330) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Myeloid neoplasms (ID:301) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Hyperplastic nodule (ID:241) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Massive edema (ID:339) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Corpus luteum cyst (ID:332) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Pregnancy luteoma (ID:335) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: spindle cell lipoma (ID:293) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: keratinizing type (ID:275) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Cronkhite-Canada syndrome (ID:251) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Internal hemorrhoid (ID:266) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Dedifferentiated carcinoma (ID:303) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Condylomatous (warty) carcinoma (ID:278) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Liposarcoma (ID:294) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Chondroma NOS (ID:361) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Clear cell cystadenoma (ID:318) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Papillary urothelial neoplasm of low malignant potential (PUNLMPs) (ID:343) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Fibroepithelial polyp (ID:268) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Hamartomatous polyp (ID:245) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Fibromatosis colli (ID:356) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Undifferentiated endocervical sarcoma (ID:295) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Atypical polypoid adenomyoma (ID:308) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Sex cord-stromal tumors (ID:324) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Adenomyosarcoma (ID:299) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Clear cell adenofibroma (ID:319) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Lymphoma-like lesion (ID:297) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Haemangioma (ID:345) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Endometrial polyp (ID:304) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: immature (ID:234) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Undifferentiated pleomorohic sarcoma (ID:349) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Glandular papilloma (ID:230) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Germ cell tumors (ID:310) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Papillary hidradenoma (ID:261) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Giant cell tumour of soft tissue (ID:358) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Endometrial hyperplasia without atypia (ID:302) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Lipoma/lipomatosis (ID:254) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Lymphomas (ID:300) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Tubular adenoma (ID:239) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Metaplasias (ID:305) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Adenoma of rete ovarii (ID:328) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Nabothian cyst (ID:286) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Serous surface papilloma (ID:313) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Fibromatosis (ID:338) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Low-grade intraepithelial neoplasia (ID:262) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Hyperreactio luteinalis (ID:334) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Mucosal prolapse syndrome (ID:246) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Venous hemangioma (ID:256) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: moderately differentiated (tub2) (ID:269) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Follicle cyst (ID:331) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Arias-Stella reaction (ID:289) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Stromal hyperplasia (ID:336) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Intrapulmonary thymoma (ID:235) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Renal cell carcinoma NOS (ID:364) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Serous cystadenoma (ID:311) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Large solitary luteinized follicle cyst (ID:333) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Mullerian papilloma (ID:285) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Neuroblastoma (ID:352) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Adenocarcinoma of rete ovarii (ID:329) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Endometriotic cyst (ID:314) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Inflammatory polyp and polyposis (ID:243) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Seromucinous cystadenoma (ID:321) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: intestinal type (ID:282) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Cystadenoma (ID:350) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Smooth muscle tumor of uncertain malignant potential (STUMP) (ID:306) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Fibro-osseous pseudotumour of digits (ID:355) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Stromal hyperthecosis (ID:337) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Microglandular hyperplasia (ID:287) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Synovial haemangioma (ID:359) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Lipid-rich urothelial carcinoma (ID:342) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Cap polyposis (ID:247) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: pyogenic granuloma (ID:258) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: Inflammatory myoglandular polyp (ID:244) | 結合数: 1 (単独)
+      ハイパーエッジ: [No recommendation]
+  - 頂点: solid type (por1) (ID:391) | 結合数: 1 (単独)
+      ハイパーエッジ: [c-kit(CD117)]
+  - 頂点: Carcinoma with lymphoid stroma (ID:483) | 結合数: 1 (単独)
+      ハイパーエッジ: [EBV]
+  - 頂点: Plexiform fibrohistiocytic tumour (ID:495) | 結合数: 1 (単独)
+      ハイパーエッジ: [SMA(Smooth muscle actin)]
+  - 頂点: Mixed squamous cell and glandular papilloma (ID:515) | 結合数: 1 (単独)
+      ハイパーエッジ: [HPV]
+  - 頂点: Giant cell fibroblastoma (ID:528) | 結合数: 1 (単独)
+      ハイパーエッジ: [CD34]
+  - 頂点: Alveolar soft-part sarcoma (ID:538) | 結合数: 1 (単独)
+      ハイパーエッジ: [TFE3]
+  - 頂点: TFE3-rearranged renal cell carcinomas (ID:539) | 結合数: 1 (単独)
+      ハイパーエッジ: [TFE3]
+  - 頂点: Benign lymphoid polyp (ID:542) | 結合数: 1 (単独)
+      ハイパーエッジ: [BCL2]
+  - 頂点: Hodgkin lymphoma (ID:561) | 結合数: 1 (単独)
+      ハイパーエッジ: [CD30]
+  - 頂点: choriocarcinoma (ID:572) | 結合数: 1 (単独)
+      ハイパーエッジ: [HCG]
+  - 頂点: Tunnel clusters (ID:573) | 結合数: 1 (単独)
+      ハイパーエッジ: [Gastric MUCIN]
+  - 頂点: Pyloric gland type hyperplastic polyp (ID:575) | 結合数: 1 (単独)
+      ハイパーエッジ: [MUC6]
+  - 頂点: Cowden syndrome (ID:578) | 結合数: 1 (単独)
+      ハイパーエッジ: [PTEN]
+  - 頂点: Cowden-associated polyp (ID:577) | 結合数: 1 (単独)
+      ハイパーエッジ: [PTEN]
+  - 頂点: Lobrar carcinoma (ID:584) | 結合数: 1 (単独)
+      ハイパーエッジ: [E-cadherin]
+  - 頂点: signet-ring cell type (ID:589) | 結合数: 1 (単独)
+      ハイパーエッジ: [p16]
+  - 頂点: Low-grade squamous intraepithelial lesions (LSIL)/Cervical intraepithelial neoplasia (CIN)1 (ID:585) | 結合数: 1 (単独)
+      ハイパーエッジ: [p16]
+  - 頂点: Squamous metaplasia (ID:587) | 結合数: 1 (単独)
+      ハイパーエッジ: [p16]
+  - 頂点: High-grade squamous intraepithelial lesions (HSIL)/Cervical intraepithelial neoplasia (CIN)2 (ID:586) | 結合数: 1 (単独)
+      ハイパーエッジ: [p16]
+  - 頂点: Transitional metaplasia (ID:588) | 結合数: 1 (単独)
+      ハイパーエッジ: [p16]
+  - 頂点: non-keratinizing type (ID:590) | 結合数: 1 (単独)
+      ハイパーエッジ: [Neuroendocrine marker]
+  - 頂点: Leiomyoma with bizarre nuclei (ID:595) | 結合数: 1 (単独)
+      ハイパーエッジ: [See leiomyoma]
+  - 頂点: Hydropic leiomyoma (ID:597) | 結合数: 1 (単独)
+      ハイパーエッジ: [See leiomyoma]
+  - 頂点: Epithelioid leiomyoma (ID:599) | 結合数: 1 (単独)
+      ハイパーエッジ: [See leiomyoma]
+  - 頂点: Intravenous leiomyomatosis (ID:603) | 結合数: 1 (単独)
+      ハイパーエッジ: [See leiomyoma]
+  - 頂点: Myxoid leiomyoma (ID:600) | 結合数: 1 (単独)
+      ハイパーエッジ: [See leiomyoma]
+  - 頂点: Diffuse leiomyoma (ID:602) | 結合数: 1 (単独)
+      ハイパーエッジ: [See leiomyoma]
+  - 頂点: Dissecting (cotyledonoid) leiomyoma (ID:601) | 結合数: 1 (単独)
+      ハイパーエッジ: [See leiomyoma]
+  - 頂点: Apoplectic leiomyoma (ID:598) | 結合数: 1 (単独)
+      ハイパーエッジ: [See leiomyoma]
+  - 頂点: Cellular leiomyoma (ID:594) | 結合数: 1 (単独)
+      ハイパーエッジ: [See leiomyoma]
+  - 頂点: Metastasizing leiomyoma (ID:604) | 結合数: 1 (単独)
+      ハイパーエッジ: [See leiomyoma]
+  - 頂点: Mitotically active leiomyoma (ID:596) | 結合数: 1 (単独)
+      ハイパーエッジ: [See leiomyoma]
+  - 頂点: Luteinized thecoma associated with sclerosing peritonitis (ID:610) | 結合数: 1 (単独)
+      ハイパーエッジ: [Sex cord markers]
+  - 頂点: High-grade prostatic intraepithelial neoplasia (ID:614) | 結合数: 1 (単独)
+      ハイパーエッジ: [AMACR]
+  - 頂点: Fibroma of tendon sheath (ID:617) | 結合数: 1 (単独)
+      ハイパーエッジ: [FOSL1]
+  - 頂点: D5F3) (ID:618) | 結合数: 1 (単独)
+      ハイパーエッジ: [ALK (5A4]
+  - 頂点: Succinate dehydrogenase-deficient renal cell carcinoma (ID:620) | 結合数: 1 (単独)
+      ハイパーエッジ: [SDHB]
+  - 頂点: Extraskeletal osteosarcoma (ID:621) | 結合数: 1 (単独)
+      ハイパーエッジ: [SATB2]
+  - 頂点: Cystic partially differentiated nephroblastoma (CPDN) (ID:626) | 結合数: 1 (単独)
+      ハイパーエッジ: [DICER1 mutation]
 
---- Component 10 (5 hyperedges) ---
-  - ID: 257 | Connections:   4 | Label: FGFR3 mutation
-  - ID: 258 | Connections:   4 | Label: HRAS Q61R mutation
-  - ID: 259 | Connections:   4 | Label: 9p loss
-  - ID: 260 | Connections:   4 | Label: 9q loss
-  - ID: 261 | Connections:   4 | Label: 17p loss
+--- Component 10 (5 個のハイパーエッジ) ---
+  [共通頂点（ノード）と、それに含まれるハイパーエッジの一覧]
+  - 共通頂点: Inverted urothelial papilloma (ID:613) | 結合数: 5
+      ハイパーエッジ: [FGFR3 mutation, HRAS Q61R mutation, 9p loss, 9q loss, 17p loss]
 
---- Component 3 (3 hyperedges) ---
-  - ID: 152 | Connections:   2 | Label: STK11(LKB1)
-  - ID: 112 | Connections:   1 | Label: STK11(LKB1) mutation
-  - ID: 233 | Connections:   1 | Label: PTCH(LOH)
+--- Component 3 (3 個のハイパーエッジ) ---
+  [共通頂点（ノード）と、それに含まれるハイパーエッジの一覧]
+  - 共通頂点: Peutz-Jeghers syndrome (ID:576) | 結合数: 2
+      ハイパーエッジ: [STK11(LKB1) mutation, STK11(LKB1)]
+  - 共通頂点: Cellular fibroma (ID:582) | 結合数: 2
+      ハイパーエッジ: [STK11(LKB1), PTCH(LOH)]
 
---- Component 5 (2 hyperedges) ---
-  - ID: 153 | Connections:   1 | Label: BMPR1A
-  - ID: 154 | Connections:   1 | Label: SMAD4
+--- Component 5 (2 個のハイパーエッジ) ---
+  [共通頂点（ノード）と、それに含まれるハイパーエッジの一覧]
+  - 共通頂点: Juvenile polyposis (ID:583) | 結合数: 2
+      ハイパーエッジ: [BMPR1A, SMAD4]
 
---- Component 1 (1 hyperedges) ---
-  - ID:  41 | Connections:   0 | Label: NUT fusion
+--- Component 1 (1 個のハイパーエッジ) ---
+  [共通頂点（ノード）と、それに含まれるハイパーエッジの一覧]
+  - 頂点: NUT carcinoma (ID:486) | 結合数: 1 (単独)
+      ハイパーエッジ: [NUT fusion]
 
---- Component 2 (1 hyperedges) ---
-  - ID:  54 | Connections:   0 | Label: LPP::HMGA2
+--- Component 2 (1 個のハイパーエッジ) ---
+  [共通頂点（ノード）と、それに含まれるハイパーエッジの一覧]
+  - 頂点: Pulmonary hamartoma (ID:533) | 結合数: 1 (単独)
+      ハイパーエッジ: [LPP::HMGA2]
 
---- Component 4 (1 hyperedges) ---
-  - ID: 143 | Connections:   0 | Label: CDH1
+--- Component 4 (1 個のハイパーエッジ) ---
+  [共通頂点（ノード）と、それに含まれるハイパーエッジの一覧]
+  - 頂点: Hereditary diffuse gastric carcinoma (HDGC) (ID:581) | 結合数: 1 (単独)
+      ハイパーエッジ: [CDH1]
 
---- Component 6 (1 hyperedges) ---
-  - ID: 189 | Connections:   0 | Label: See leiomyosarcoma
+--- Component 6 (1 個のハイパーエッジ) ---
+  [共通頂点（ノード）と、それに含まれるハイパーエッジの一覧]
+  - 頂点: Epithelioid leiomyosarcoma (ID:605) | 結合数: 1 (単独)
+      ハイパーエッジ: [See leiomyosarcoma]
+  - 頂点: Myxoid leiomyosarcoma (ID:606) | 結合数: 1 (単独)
+      ハイパーエッジ: [See leiomyosarcoma]
 
---- Component 7 (1 hyperedges) ---
-  - ID: 214 | Connections:   0 | Label: PAX5
+--- Component 7 (1 個のハイパーエッジ) ---
+  [共通頂点（ノード）と、それに含まれるハイパーエッジの一覧]
+  - 頂点: Plasmacy (ID:607) | 結合数: 1 (単独)
+      ハイパーエッジ: [PAX5]
 
---- Component 8 (1 hyperedges) ---
-  - ID: 229 | Connections:   0 | Label: YWHAE::FAM22
+--- Component 8 (1 個のハイパーエッジ) ---
+  [共通頂点（ノード）と、それに含まれるハイパーエッジの一覧]
+  - 頂点: High-grade endometrioid stromal sarcoma (ID:608) | 結合数: 1 (単独)
+      ハイパーエッジ: [YWHAE::FAM22]
 
---- Component 9 (1 hyperedges) ---
-  - ID: 243 | Connections:   0 | Label: Oil red-O
+--- Component 9 (1 個のハイパーエッジ) ---
+  [共通頂点（ノード）と、それに含まれるハイパーエッジの一覧]
+  - 頂点: Sebaceous adenoma (ID:611) | 結合数: 1 (単独)
+      ハイパーエッジ: [Oil red-O]
+  - 頂点: Sebaceous carcinoma (ID:612) | 結合数: 1 (単独)
+      ハイパーエッジ: [Oil red-O]
 
---- Component 11 (1 hyperedges) ---
-  - ID: 288 | Connections:   0 | Label: Elastic-Masson
+--- Component 11 (1 個のハイパーエッジ) ---
+  [共通頂点（ノード）と、それに含まれるハイパーエッジの一覧]
+  - 頂点: Elastofibroma (ID:616) | 結合数: 1 (単独)
+      ハイパーエッジ: [Elastic-Masson]
 
---- Component 12 (1 hyperedges) ---
-  - ID: 298 | Connections:   0 | Label: Elastin
+--- Component 12 (1 個のハイパーエッジ) ---
+  [共通頂点（ノード）と、それに含まれるハイパーエッジの一覧]
+  - 頂点: Venous haemangioma (ID:619) | 結合数: 1 (単独)
+      ハイパーエッジ: [Elastin]
 
---- Component 13 (1 hyperedges) ---
-  - ID: 357 | Connections:   0 | Label: RCCAcquired cystic disease-associated renal cell carcinoma
+--- Component 13 (1 個のハイパーエッジ) ---
+  [共通頂点（ノード）と、それに含まれるハイパーエッジの一覧]
 
---- Component 14 (1 hyperedges) ---
-  - ID: 358 | Connections:   0 | Label: TFEB
+--- Component 14 (1 個のハイパーエッジ) ---
+  [共通頂点（ノード）と、それに含まれるハイパーエッジの一覧]
+  - 頂点: TFEB-altered renal cell carcinomas (ID:624) | 結合数: 1 (単独)
+      ハイパーエッジ: [TFEB]
 

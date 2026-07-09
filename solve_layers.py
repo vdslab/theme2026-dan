@@ -202,20 +202,68 @@ def solve_layer_assignment(input_path, output_path, reg_val):
     dsatur_num_colors = max(dsatur_colors.values()) + 1 if N > 0 else 0
     print(f"Graph coloring completed. Total colors/layers used: {dsatur_num_colors}")
 
-    # 6. Phase 1: Shortest Hamiltonian Path Heuristic (Nearest Neighbor)
+    # 6. Phase 1: Graph Coloring Layout (DSatur)
+    # print("Phase 1: Computing Graph Coloring using DSatur on overlap graph C...")
+    # color_assignment = dsatur_coloring(N, C)
+    # num_colors = max(color_assignment.values()) + 1 if N > 0 else 0
+    # print(f"Graph coloring completed. Total colors/layers used: {num_colors}")
+
+    # todo最短ハミルトン路
+    # ポリゴンの重なりでできるグラフと、ポリゴンの共通する頂点でできるグラフの2種類ある
+    # 最短ハミルトン路は共通する頂点でできるグラフを使う
+
+    # 6. Phase 1: Shortest Hamiltonian Path Heuristic (Nearest Neighbor) per Connected Component
     print(
-        "Phase 1: Computing Shortest Hamiltonian Path (Nearest Neighbor) on shared nodes graph W..."
+        "Phase 1: Computing Shortest Hamiltonian Path (Nearest Neighbor) per connected component..."
     )
 
-    # 共通ノードでできるグラフ(W)を用いたハミルトン路問題の近似解法
-    # (共有ノード数が多い＝距離が近いとしてNearest Neighborで経路を構築)
-    unvisited = set(range(N))
-    path = []
+    # 共通ノードでできるグラフ(W)ではなく、ポリゴンの重なり(C)に基づいて連結成分に分割する
+    adj_C = {i: [] for i in range(N)}
+    for u, v in C:
+        adj_C[u].append(v)
+        adj_C[v].append(u)
 
-    if N > 0:
-        # 開始ノードは最も結合度が高いハイパーエッジを選択
-        current = int(np.argmax(np.sum(W, axis=1)))
-        path.append(current)
+    visited = set()
+    components = []
+    for i in range(N):
+        if i not in visited:
+            comp = []
+            queue = [i]
+            visited.add(i)
+            while queue:
+                curr = queue.pop(0)
+                comp.append(curr)
+                for neighbor in adj_C[curr]:
+                    if neighbor not in visited:
+                        visited.add(neighbor)
+                        queue.append(neighbor)
+            components.append(comp)
+
+    print(f"Divided into {len(components)} connected component(s).")
+
+    color_assignment = {}
+    pos = {}
+
+    for comp in components:
+        if len(comp) == 1:
+            color_assignment[comp[0]] = 0
+            pos[comp[0]] = 0
+            continue
+
+        unvisited = set(comp)
+        comp_path = []
+
+        # 開始ノードは連結成分内で最も共有ノード数が多いハイパーエッジを選択
+        best_start = None
+        max_deg = -1
+        for u in comp:
+            deg = sum(W[u, v] for v in comp)
+            if deg > max_deg:
+                max_deg = deg
+                best_start = u
+        
+        current = best_start
+        comp_path.append(current)
         unvisited.remove(current)
 
         while unvisited:
@@ -226,23 +274,16 @@ def solve_layer_assignment(input_path, output_path, reg_val):
                     best_w = W[current, v]
                     best_neighbor = v
 
-            path.append(best_neighbor)
+            comp_path.append(best_neighbor)
             current = best_neighbor
             unvisited.remove(current)
 
-    # 経路の順番(0, 1, ..., N-1)をレイヤー（色）の初期順序として扱う
-    color_assignment = {node: i for i, node in enumerate(path)}
+        # 経路の順番をレイヤー（色）および相対順序として扱う
+        for i, node in enumerate(comp_path):
+            color_assignment[node] = i
+            pos[node] = i
 
-    num_colors = N if N > 0 else 0
-    print(
-        f"Hamiltonian Path completed. Total layers used for initial layout: {num_colors}"
-    )
-
-    # Stable sort the hyperedges based on assigned color (and index as secondary key)
-    sorted_indices = sorted(range(N), key=lambda idx: (color_assignment[idx], idx))
-
-    # Map each hyperedge index to its rank in the sorted list
-    pos = {idx: rank for rank, idx in enumerate(sorted_indices)}
+    print("Hamiltonian Path per component completed.")
 
     # 7. Phase 2: Convex QP Solver (Reduced strictly convex system)
     print(
