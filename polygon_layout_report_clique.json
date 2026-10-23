@@ -1,0 +1,167 @@
+{
+  "method": "primal PR/PA/PS/PI + starrization + L-BFGS + bounded pair swaps",
+  "paper": "https://doi.org/10.1109/TVCG.2021.3114759",
+  "context_paper": "https://doi.org/10.1109/TVCG.2024.3456367",
+  "adaptations": [
+    "cardinality and pair-count normalization",
+    "hull-deficit, reflex-turn and vertex-repulsion penalties",
+    "vertex-mean PS centers",
+    "no topology-changing simplification or dual optimization"
+  ],
+  "nodes": 627,
+  "hyperedges": 383,
+  "weights": {
+    "regularity": 0.3,
+    "length": 0.16,
+    "separation": 0.36,
+    "intersection": 0.18,
+    "convexity": 40.0,
+    "collision": 0.08
+  },
+  "term_normalizers": {
+    "regularity": 1.0,
+    "length": 1.0,
+    "separation": 0.00614079976606477,
+    "intersection": 0.19881656804733727,
+    "convexity": 1.0,
+    "collision": 1.0
+  },
+  "seed": 7,
+  "initial_energy": 1437.3062403887805,
+  "final_energy": 629.0739148004496,
+  "initialization": "clique",
+  "clique_initializer": {
+    "edges": 35239,
+    "iterations": 200,
+    "force_model": "Fruchterman-Reingold spring/electrical",
+    "repulsion": "exact all-pairs",
+    "coarsening": false
+  },
+  "initial_terms": {
+    "regularity": 415.5480809795403,
+    "length": 1388.7691605715897,
+    "separation": 738.7889984388323,
+    "intersection": 536.4486278818854,
+    "convexity": 18.19323656799222,
+    "collision": 2.306190338204513
+  },
+  "final_terms": {
+    "regularity": 191.68472418698713,
+    "length": 408.2082909336195,
+    "separation": 269.18380722756257,
+    "intersection": 1070.6630104919143,
+    "convexity": 5.4060361131511,
+    "collision": 4.852674730791873
+  },
+  "before": {
+    "faces": 168,
+    "invalid_faces": 0,
+    "degenerate_faces": 0,
+    "concave_faces": 113,
+    "mean_regularity_ratio": 4.963881786951028,
+    "median_regularity_ratio": 2.5771970420570414,
+    "mean_hull_deficit": 0.15762538427548456,
+    "minimum_node_distance": 0.0
+  },
+  "before_starrized": {
+    "faces": 168,
+    "invalid_faces": 0,
+    "degenerate_faces": 0,
+    "concave_faces": 113,
+    "mean_regularity_ratio": 4.849394490792607,
+    "median_regularity_ratio": 2.539001064538457,
+    "mean_hull_deficit": 0.14976832333514145,
+    "minimum_node_distance": 0.0
+  },
+  "after": {
+    "faces": 168,
+    "invalid_faces": 0,
+    "degenerate_faces": 0,
+    "concave_faces": 93,
+    "mean_regularity_ratio": 2.763352795138116,
+    "median_regularity_ratio": 1.550488576939002,
+    "mean_hull_deficit": 0.04901183886245873,
+    "minimum_node_distance": 0.0019151138873584816
+  },
+  "target_side_length_world": 0.03361599790739769,
+  "pair_swap_trials": 24,
+  "pair_swaps_accepted": 0,
+  "evaluations": 237,
+  "elapsed_seconds": 70.0,
+  "stages": [
+    {
+      "stage": "separation",
+      "iterations": 50,
+      "success": false,
+      "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+      "energy": 876.8538669743064,
+      "terms": {
+        "regularity": 253.16566234823995,
+        "length": 332.68489173435694,
+        "separation": 252.29598009424663,
+        "intersection": 1164.5632726264287,
+        "convexity": 11.177527811657589,
+        "collision": 1.569140241846652
+      },
+      "metrics": {
+        "faces": 168,
+        "invalid_faces": 0,
+        "degenerate_faces": 0,
+        "concave_faces": 106,
+        "mean_regularity_ratio": 2.9487183201960474,
+        "median_regularity_ratio": 1.624953813153394,
+        "mean_hull_deficit": 0.10090418441427278,
+        "minimum_node_distance": 0.005424335850809004
+      }
+    },
+    {
+      "stage": "joint",
+      "iterations": 44,
+      "success": true,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "energy": 629.0739148004496,
+      "terms": {
+        "regularity": 191.68472418698713,
+        "length": 408.2082909336195,
+        "separation": 269.18380722756257,
+        "intersection": 1070.6630104919143,
+        "convexity": 5.4060361131511,
+        "collision": 4.852674730791873
+      },
+      "metrics": {
+        "faces": 168,
+        "invalid_faces": 0,
+        "degenerate_faces": 0,
+        "concave_faces": 93,
+        "mean_regularity_ratio": 2.7633527951381147,
+        "median_regularity_ratio": 1.5504885769389918,
+        "mean_hull_deficit": 0.049011838862458586,
+        "minimum_node_distance": 0.056970311951888855
+      }
+    }
+  ],
+  "incidence_preserved": true,
+  "initial_layout": null,
+  "warmup": true,
+  "input": "original.json",
+  "output": "original_polygon_candidate_clique.json",
+  "before_overlaps": {
+    "area_threshold": 1e-09,
+    "overlapping_pairs": 4431,
+    "pairs_without_shared_nodes": 2422,
+    "pairs_with_at_most_two_shared_nodes": 3623
+  },
+  "after_overlaps": {
+    "area_threshold": 1e-09,
+    "overlapping_pairs": 4818,
+    "pairs_without_shared_nodes": 2689,
+    "pairs_with_at_most_two_shared_nodes": 3982
+  },
+  "applied_to_input": false,
+  "status": "experimental candidate; high-cardinality indentations remain and overlap count increased",
+  "limitations": [
+    "FR force initializer differs from the paper default Hu implementation",
+    "Cardinality and pair-count normalization, mean PS centers and extra penalties are adaptations",
+    "A smaller objective is not proof of solver convergence or a globally optimal layout"
+  ]
+}

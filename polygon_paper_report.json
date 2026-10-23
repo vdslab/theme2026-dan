@@ -1,0 +1,209 @@
+{
+  "mode": "paper",
+  "method": "Hu initialization + raw PR/PA/PS/PI + area centroids + L-BFGS + exhaustive pair swaps",
+  "paper": "https://arxiv.org/html/2108.00671v1",
+  "context_paper": "https://arxiv.org/html/2407.19621v1",
+  "initializer": {
+    "algorithm": "Hu multilevel force-directed (Graphviz sfdp)",
+    "representation": "clique",
+    "seed": 7,
+    "graph_vertices": 627,
+    "graph_edges": 35239,
+    "executable": "C:\\Program Files (x86)\\Graphviz\\bin\\sfdp.exe",
+    "version": "sfdp - graphviz version 14.0.2 (20251019.1705)"
+  },
+  "dual": false,
+  "seed": 7,
+  "nodes": 627,
+  "hyperedges": 383,
+  "incidence_preserved": true,
+  "paper_weights": [
+    0.3,
+    0.16,
+    0.36,
+    0.18,
+    0.0,
+    0.0
+  ],
+  "final_weights": [
+    0.3,
+    0.16,
+    0.36,
+    0.18,
+    0.0,
+    0.0
+  ],
+  "source_energy_normalized_by_input_side_length": 281965.02887830813,
+  "initial_energy": 230699.0780040106,
+  "initial_terms": {
+    "regularity": 5404.6608087455725,
+    "length": 1620.4358269031873,
+    "separation": 418304.2607853287,
+    "intersection": 434604.8674798006,
+    "regular_fit": 0.0,
+    "collision": 0.0
+  },
+  "paper_baseline_energy": 121653.9722393218,
+  "paper_baseline_terms": {
+    "regularity": 42752.66580603198,
+    "length": 3535.1725178089414,
+    "separation": 183941.7591594786,
+    "intersection": 233575.06442916943,
+    "regular_fit": 0.0,
+    "collision": 0.0
+  },
+  "final_energy": 121653.9722393218,
+  "final_terms": {
+    "regularity": 42752.66580603198,
+    "length": 3535.1725178089414,
+    "separation": 183941.7591594786,
+    "intersection": 233575.06442916943,
+    "regular_fit": 0.0,
+    "collision": 0.0
+  },
+  "final_paper_energy": 121653.9722393218,
+  "before": {
+    "faces": 168,
+    "invalid_faces": 0,
+    "degenerate_faces": 0,
+    "concave_faces": 113,
+    "mean_regularity_ratio": 4.963881786951028,
+    "median_regularity_ratio": 2.5771970420570414,
+    "mean_hull_deficit": 0.15762538427548456,
+    "minimum_node_distance": 0.0
+  },
+  "initializer_metrics": {
+    "faces": 168,
+    "invalid_faces": 0,
+    "degenerate_faces": 0,
+    "concave_faces": 117,
+    "mean_regularity_ratio": 6.829059579822572,
+    "median_regularity_ratio": 2.9679507783923365,
+    "mean_hull_deficit": 0.18859007602236916,
+    "minimum_node_distance": 0.024996740814441712
+  },
+  "paper_baseline_metrics": {
+    "faces": 168,
+    "invalid_faces": 0,
+    "degenerate_faces": 0,
+    "concave_faces": 117,
+    "mean_regularity_ratio": 3.384304987876876,
+    "median_regularity_ratio": 1.895546020841181,
+    "mean_hull_deficit": 0.1099039447454283,
+    "minimum_node_distance": 0.00033426611062079004
+  },
+  "after": {
+    "faces": 168,
+    "invalid_faces": 0,
+    "degenerate_faces": 0,
+    "concave_faces": 117,
+    "mean_regularity_ratio": 3.3843049878768277,
+    "median_regularity_ratio": 1.8955460208411812,
+    "mean_hull_deficit": 0.10990394474542832,
+    "minimum_node_distance": 0.0002980671984524347
+  },
+  "before_overlaps": {
+    "area_threshold": 1e-09,
+    "overlapping_pairs": 4431,
+    "pairs_without_shared_nodes": 2422,
+    "pairs_with_at_most_two_shared_nodes": 3623
+  },
+  "after_overlaps": {
+    "area_threshold": 1e-09,
+    "overlapping_pairs": 8307,
+    "pairs_without_shared_nodes": 5940,
+    "pairs_with_at_most_two_shared_nodes": 7463
+  },
+  "target_side_length_world": 0.8917063051914383,
+  "pair_sweeps": [
+    {
+      "tested": 26284,
+      "equivalent_zero_gain": 8955,
+      "accepted": 650,
+      "gain": 15683.608867578198,
+      "stage": "paper",
+      "cycle": 1,
+      "before": 141176.814381324,
+      "after": 125493.20551374543
+    },
+    {
+      "tested": 26284,
+      "equivalent_zero_gain": 8955,
+      "accepted": 278,
+      "gain": 2819.6835768785445,
+      "stage": "paper",
+      "cycle": 2,
+      "before": 125491.58234231034,
+      "after": 122671.8987654318
+    },
+    {
+      "tested": 26284,
+      "equivalent_zero_gain": 8955,
+      "accepted": 131,
+      "gain": 928.9693457503889,
+      "stage": "paper",
+      "cycle": 3,
+      "before": 122582.94158507203,
+      "after": 121653.9722393218
+    }
+  ],
+  "stages": [
+    {
+      "stage": "paper_1",
+      "iterations": 105,
+      "restarts": 5,
+      "start_energy": 230699.0780040106,
+      "final_energy": 141176.814381324,
+      "stationary": true,
+      "solver_messages": [
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+      ]
+    },
+    {
+      "stage": "paper_2",
+      "iterations": 5,
+      "restarts": 2,
+      "start_energy": 125493.20551374543,
+      "final_energy": 125491.58234231034,
+      "stationary": true,
+      "solver_messages": [
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+      ]
+    },
+    {
+      "stage": "paper_3",
+      "iterations": 9,
+      "restarts": 2,
+      "start_energy": 122671.8987654318,
+      "final_energy": 122582.94158507203,
+      "stationary": true,
+      "solver_messages": [
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+      ]
+    }
+  ],
+  "paper_pair_search_converged": false,
+  "extension_pair_search_converged": null,
+  "max_cycles": 3,
+  "iterations_per_cycle": 900,
+  "fixed_coordinate_indices_during_line_search": [
+    0,
+    1,
+    1238,
+    1239
+  ],
+  "extensions": [],
+  "elapsed_seconds": 124.56199999997625,
+  "reproduction_limits": [
+    "HGPolyVis source and original numerical defaults are not publicly provided",
+    "Unary glyph orientations and binary lens rendering are not stored in this XY JSON",
+    "Empty input hyperedges are preserved and excluded from polygon energies",
+    "2023/2024 topology-changing hypergraph simplification is not applied"
+  ]
+}

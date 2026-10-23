@@ -1,0 +1,4341 @@
+{
+  "mode": "scalable",
+  "method": "Hu initialization + raw PR/PA/PS/PI + area centroids + L-BFGS + exhaustive pair swaps",
+  "paper": "https://arxiv.org/html/2108.00671v1",
+  "context_paper": "https://arxiv.org/html/2407.19621v1",
+  "initializer": {
+    "algorithm": "Hu multilevel force-directed (Graphviz sfdp)",
+    "representation": "bipartite",
+    "seed": 7,
+    "graph_vertices": 1010,
+    "graph_edges": 2747,
+    "executable": "C:\\Program Files (x86)\\Graphviz\\bin\\sfdp.exe",
+    "version": "sfdp - graphviz version 14.0.2 (20251019.1705)"
+  },
+  "dual": false,
+  "seed": 7,
+  "nodes": 627,
+  "hyperedges": 383,
+  "incidence_preserved": true,
+  "paper_weights": [
+    0.3,
+    0.16,
+    0.36,
+    0.18,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "final_weights": [
+    0.3,
+    0.16,
+    0.36,
+    0.18,
+    1.0,
+    0.05,
+    10.0
+  ],
+  "source_energy_normalized_by_input_side_length": 281965.02887830813,
+  "initial_energy": 282770.1130968246,
+  "initial_terms": {
+    "regularity": 625.2342891220213,
+    "length": 2323.2658740278134,
+    "separation": 515694.82879229676,
+    "intersection": 536448.2328056486,
+    "regular_fit": 0.0,
+    "collision": 0.0,
+    "convexity": 0.0
+  },
+  "paper_baseline_energy": 112921.04648285754,
+  "paper_baseline_terms": {
+    "regularity": 46541.13327178713,
+    "length": 5249.62009054433,
+    "separation": 159715.1116737877,
+    "intersection": 225674.0393570596,
+    "regular_fit": 0.0,
+    "collision": 0.0,
+    "convexity": 0.0
+  },
+  "final_energy": 167632.56813095545,
+  "final_terms": {
+    "regularity": 30245.874362754414,
+    "length": 7021.205893467293,
+    "separation": 113049.28250508705,
+    "intersection": 436819.8219662916,
+    "regular_fit": 36397.29634105936,
+    "collision": 51.43438424017433,
+    "convexity": 171.02351631391713
+  },
+  "final_paper_energy": 129522.4649075449,
+  "before": {
+    "faces": 168,
+    "invalid_faces": 0,
+    "degenerate_faces": 0,
+    "concave_faces": 113,
+    "mean_regularity_ratio": 4.963881786951028,
+    "median_regularity_ratio": 2.5771970420570414,
+    "mean_hull_deficit": 0.15762538427548456,
+    "minimum_node_distance": 0.0
+  },
+  "initializer_metrics": {
+    "faces": 168,
+    "invalid_faces": 0,
+    "degenerate_faces": 0,
+    "concave_faces": 118,
+    "mean_regularity_ratio": 6.922067547077662,
+    "median_regularity_ratio": 2.4849180721954514,
+    "mean_hull_deficit": 0.18778269895267652,
+    "minimum_node_distance": 0.012847356743315089
+  },
+  "paper_baseline_metrics": {
+    "faces": 168,
+    "invalid_faces": 0,
+    "degenerate_faces": 0,
+    "concave_faces": 110,
+    "mean_regularity_ratio": 3.029381575315643,
+    "median_regularity_ratio": 1.993596967178091,
+    "mean_hull_deficit": 0.11576224347220802,
+    "minimum_node_distance": 0.0014076829948461737
+  },
+  "after": {
+    "faces": 168,
+    "invalid_faces": 0,
+    "degenerate_faces": 0,
+    "concave_faces": 93,
+    "mean_regularity_ratio": 2.1147051498830542,
+    "median_regularity_ratio": 1.4118935032933013,
+    "mean_hull_deficit": 0.02752590847655748,
+    "minimum_node_distance": 0.0007609147070963601
+  },
+  "face_metrics_before": [
+    {
+      "id": 24,
+      "label": "No recommendation",
+      "vertices": 161,
+      "regularity_ratio": 30.03954132280239,
+      "hull_deficit": 0.3287190845330379,
+      "side_length_cv": 0.9029897425692073
+    },
+    {
+      "id": 43,
+      "label": "SMA(Smooth muscle actin)",
+      "vertices": 77,
+      "regularity_ratio": 16.047204910937197,
+      "hull_deficit": 0.4498329561375146,
+      "side_length_cv": 0.7827075994203557
+    },
+    {
+      "id": 52,
+      "label": "CD34",
+      "vertices": 75,
+      "regularity_ratio": 20.416118675277126,
+      "hull_deficit": 0.4661685346616853,
+      "side_length_cv": 0.8357324335525741
+    },
+    {
+      "id": 4,
+      "label": "CK7",
+      "vertices": 67,
+      "regularity_ratio": 20.916685508921333,
+      "hull_deficit": 0.5316327677267108,
+      "side_length_cv": 0.7441165282956445
+    },
+    {
+      "id": 45,
+      "label": "S100",
+      "vertices": 67,
+      "regularity_ratio": 12.843592565308667,
+      "hull_deficit": 0.47296948861194654,
+      "side_length_cv": 0.8051004562245792
+    },
+    {
+      "id": 5,
+      "label": "CK20",
+      "vertices": 65,
+      "regularity_ratio": 27.35033524213656,
+      "hull_deficit": 0.6013749849234109,
+      "side_length_cv": 0.9009086202401626
+    },
+    {
+      "id": 34,
+      "label": "Desmin",
+      "vertices": 65,
+      "regularity_ratio": 12.997500984386791,
+      "hull_deficit": 0.39537686240140224,
+      "side_length_cv": 0.7643789367229752
+    },
+    {
+      "id": 31,
+      "label": "Keratins",
+      "vertices": 62,
+      "regularity_ratio": 22.685423673092508,
+      "hull_deficit": 0.5704607046070463,
+      "side_length_cv": 0.6031099906539822
+    },
+    {
+      "id": 38,
+      "label": "EMA",
+      "vertices": 59,
+      "regularity_ratio": 14.7416001303922,
+      "hull_deficit": 0.45960278673182886,
+      "side_length_cv": 0.7336454433334526
+    },
+    {
+      "id": 0,
+      "label": "TTF-1",
+      "vertices": 52,
+      "regularity_ratio": 13.309731555042287,
+      "hull_deficit": 0.461359223300971,
+      "side_length_cv": 0.7236987263945286
+    },
+    {
+      "id": 75,
+      "label": "CD10",
+      "vertices": 49,
+      "regularity_ratio": 8.68266743494445,
+      "hull_deficit": 0.3615029663810152,
+      "side_length_cv": 0.7309165545421038
+    },
+    {
+      "id": 25,
+      "label": "CD56",
+      "vertices": 43,
+      "regularity_ratio": 8.320187844347307,
+      "hull_deficit": 0.4715240216353803,
+      "side_length_cv": 0.9282381453027994
+    },
+    {
+      "id": 50,
+      "label": "PgR(Progesteron receptor)",
+      "vertices": 42,
+      "regularity_ratio": 6.318451276876702,
+      "hull_deficit": 0.3952831347500305,
+      "side_length_cv": 0.7752376748962728
+    },
+    {
+      "id": 11,
+      "label": "Synaptophysin",
+      "vertices": 41,
+      "regularity_ratio": 8.033472635314881,
+      "hull_deficit": 0.3832391713747646,
+      "side_length_cv": 0.744941742194896
+    },
+    {
+      "id": 29,
+      "label": "Vimentin",
+      "vertices": 41,
+      "regularity_ratio": 12.764488045574339,
+      "hull_deficit": 0.5364190886257624,
+      "side_length_cv": 0.5783581773678519
+    },
+    {
+      "id": 49,
+      "label": "ER(Estrogen receptor)",
+      "vertices": 39,
+      "regularity_ratio": 7.187369373828486,
+      "hull_deficit": 0.3989855251762958,
+      "side_length_cv": 0.8047051000494758
+    },
+    {
+      "id": 12,
+      "label": "Chromogranin",
+      "vertices": 38,
+      "regularity_ratio": 6.6048443159418255,
+      "hull_deficit": 0.40268038023998753,
+      "side_length_cv": 0.7424068873070709
+    },
+    {
+      "id": 20,
+      "label": "p63",
+      "vertices": 38,
+      "regularity_ratio": 12.363298908915011,
+      "hull_deficit": 0.3686310270147044,
+      "side_length_cv": 0.7061515121782944
+    },
+    {
+      "id": 8,
+      "label": "CDX2",
+      "vertices": 34,
+      "regularity_ratio": 4.42002694746506,
+      "hull_deficit": 0.4436363636363637,
+      "side_length_cv": 0.9019144123982787
+    },
+    {
+      "id": 26,
+      "label": "Ki67",
+      "vertices": 34,
+      "regularity_ratio": 13.226116993411045,
+      "hull_deficit": 0.5898417295955312,
+      "side_length_cv": 0.7065043365999688
+    },
+    {
+      "id": 103,
+      "label": "PAX8",
+      "vertices": 32,
+      "regularity_ratio": 12.540777968541821,
+      "hull_deficit": 0.5887850467289719,
+      "side_length_cv": 0.7508583178377073
+    },
+    {
+      "id": 158,
+      "label": "p16",
+      "vertices": 30,
+      "regularity_ratio": 5.109977692578892,
+      "hull_deficit": 0.27983119906868437,
+      "side_length_cv": 0.8525582387380507
+    },
+    {
+      "id": 172,
+      "label": "WT1",
+      "vertices": 30,
+      "regularity_ratio": 3.8166449504298336,
+      "hull_deficit": 0.3709929273445396,
+      "side_length_cv": 0.7997375527385286
+    },
+    {
+      "id": 70,
+      "label": "Calretinin",
+      "vertices": 27,
+      "regularity_ratio": 4.203724800961728,
+      "hull_deficit": 0.35569422776911086,
+      "side_length_cv": 0.6004034824858069
+    },
+    {
+      "id": 56,
+      "label": "Melan-A",
+      "vertices": 25,
+      "regularity_ratio": 6.0521237193079465,
+      "hull_deficit": 0.4861237076002175,
+      "side_length_cv": 0.9661867124516845
+    },
+    {
+      "id": 97,
+      "label": "GATA3",
+      "vertices": 25,
+      "regularity_ratio": 6.174086661794995,
+      "hull_deficit": 0.420387359836901,
+      "side_length_cv": 0.8535582418934597
+    },
+    {
+      "id": 17,
+      "label": "p53",
+      "vertices": 24,
+      "regularity_ratio": 3.1121396012944182,
+      "hull_deficit": 0.3468566456384601,
+      "side_length_cv": 0.9711849762996639
+    },
+    {
+      "id": 230,
+      "label": "Inhibin",
+      "vertices": 23,
+      "regularity_ratio": 4.5286952398268605,
+      "hull_deficit": 0.39162834945298863,
+      "side_length_cv": 0.6745174399738058
+    },
+    {
+      "id": 2,
+      "label": "NapsinA",
+      "vertices": 22,
+      "regularity_ratio": 1.9013726457535334,
+      "hull_deficit": 0.08311791608669727,
+      "side_length_cv": 0.9811499283808621
+    },
+    {
+      "id": 55,
+      "label": "HMB45",
+      "vertices": 22,
+      "regularity_ratio": 4.103143869562244,
+      "hull_deficit": 0.280141843971631,
+      "side_length_cv": 1.106624213934133
+    },
+    {
+      "id": 36,
+      "label": "CK 34E12",
+      "vertices": 21,
+      "regularity_ratio": 5.536782770790612,
+      "hull_deficit": 0.3408555069046817,
+      "side_length_cv": 0.6468329690377506
+    },
+    {
+      "id": 268,
+      "label": "AMACR",
+      "vertices": 21,
+      "regularity_ratio": 2.6707319011723762,
+      "hull_deficit": 0.20711473565804284,
+      "side_length_cv": 0.7743265747101971
+    },
+    {
+      "id": 3,
+      "label": "CK5/6",
+      "vertices": 20,
+      "regularity_ratio": 1.8024978787211123,
+      "hull_deficit": 0.22650977677798934,
+      "side_length_cv": 0.9615452873525705
+    },
+    {
+      "id": 99,
+      "label": "PSA",
+      "vertices": 20,
+      "regularity_ratio": 1.8247223746991024,
+      "hull_deficit": 0.20778971603990792,
+      "side_length_cv": 0.8590804099124397
+    },
+    {
+      "id": 27,
+      "label": "c-kit(CD117)",
+      "vertices": 19,
+      "regularity_ratio": 2.6035190205990095,
+      "hull_deficit": 0.3053728949478748,
+      "side_length_cv": 0.686355947959222
+    },
+    {
+      "id": 35,
+      "label": "AE1/AE3",
+      "vertices": 19,
+      "regularity_ratio": 4.449236349815764,
+      "hull_deficit": 0.507899356348742,
+      "side_length_cv": 0.7471965923114764
+    },
+    {
+      "id": 173,
+      "label": "ERG",
+      "vertices": 19,
+      "regularity_ratio": 2.8704755549025824,
+      "hull_deficit": 0.24046757584191514,
+      "side_length_cv": 0.7525579267833399
+    },
+    {
+      "id": 1,
+      "label": "p40",
+      "vertices": 17,
+      "regularity_ratio": 1.5724585109770042,
+      "hull_deficit": 0.0814176245210727,
+      "side_length_cv": 0.912479216910555
+    },
+    {
+      "id": 13,
+      "label": "-catenin",
+      "vertices": 17,
+      "regularity_ratio": 1.6989973815586648,
+      "hull_deficit": 0.11089258698940974,
+      "side_length_cv": 1.181255675947594
+    },
+    {
+      "id": 39,
+      "label": "MSA(Muscle Specific Actin)",
+      "vertices": 17,
+      "regularity_ratio": 2.3392171467274205,
+      "hull_deficit": 0.11833360350137756,
+      "side_length_cv": 0.6703203927495232
+    },
+    {
+      "id": 61,
+      "label": "D2-40",
+      "vertices": 17,
+      "regularity_ratio": 1.9370849911410102,
+      "hull_deficit": 0.2324154658296479,
+      "side_length_cv": 0.8498081418700445
+    },
+    {
+      "id": 9,
+      "label": "KRAS mutation",
+      "vertices": 16,
+      "regularity_ratio": 2.1297352674930154,
+      "hull_deficit": 0.20560495823228242,
+      "side_length_cv": 1.0978184743897499
+    },
+    {
+      "id": 10,
+      "label": "MUC2",
+      "vertices": 16,
+      "regularity_ratio": 3.686159056185735,
+      "hull_deficit": 0.3550998381003776,
+      "side_length_cv": 0.7635247554956753
+    },
+    {
+      "id": 37,
+      "label": "CEA",
+      "vertices": 16,
+      "regularity_ratio": 3.0488027848871644,
+      "hull_deficit": 0.33655705996131524,
+      "side_length_cv": 0.7068643918055589
+    },
+    {
+      "id": 68,
+      "label": "CD99",
+      "vertices": 16,
+      "regularity_ratio": 3.6543742226580593,
+      "hull_deficit": 0.24642652944539722,
+      "side_length_cv": 0.7880313299931551
+    },
+    {
+      "id": 46,
+      "label": "GFAP",
+      "vertices": 15,
+      "regularity_ratio": 1.7227440362029438,
+      "hull_deficit": 0.15562483762016055,
+      "side_length_cv": 0.8700659295748442
+    },
+    {
+      "id": 60,
+      "label": "CD31",
+      "vertices": 15,
+      "regularity_ratio": 2.5287003672571076,
+      "hull_deficit": 0.27436374922408446,
+      "side_length_cv": 0.8890816528272608
+    },
+    {
+      "id": 69,
+      "label": "BCL2",
+      "vertices": 15,
+      "regularity_ratio": 3.3212076732332085,
+      "hull_deficit": 0.3511519544395547,
+      "side_length_cv": 0.6495466767157978
+    },
+    {
+      "id": 73,
+      "label": "CD20",
+      "vertices": 15,
+      "regularity_ratio": 2.944323930995583,
+      "hull_deficit": 0.2305008721654621,
+      "side_length_cv": 0.829708893164258
+    },
+    {
+      "id": 33,
+      "label": "Myogenin",
+      "vertices": 14,
+      "regularity_ratio": 3.7318693914661325,
+      "hull_deficit": 0.46407710280373826,
+      "side_length_cv": 0.595349194841889
+    },
+    {
+      "id": 104,
+      "label": "CD117",
+      "vertices": 13,
+      "regularity_ratio": 2.216766571276022,
+      "hull_deficit": 0.21751412429378536,
+      "side_length_cv": 1.0430238390688618
+    },
+    {
+      "id": 234,
+      "label": "Steroidgenic factor-1",
+      "vertices": 13,
+      "regularity_ratio": 1.7949778837257926,
+      "hull_deficit": 0.08465068842427359,
+      "side_length_cv": 1.0265345674430868
+    },
+    {
+      "id": 235,
+      "label": "FOXL2",
+      "vertices": 13,
+      "regularity_ratio": 1.3386980614806465,
+      "hull_deficit": 0.030233448143896058,
+      "side_length_cv": 0.9676421757630196
+    },
+    {
+      "id": 16,
+      "label": "SALL4",
+      "vertices": 12,
+      "regularity_ratio": 3.538437275896278,
+      "hull_deficit": 0.3851570964247022,
+      "side_length_cv": 0.7753230444532023
+    },
+    {
+      "id": 44,
+      "label": "Calponin",
+      "vertices": 12,
+      "regularity_ratio": 3.1517298381252927,
+      "hull_deficit": 0.13266068759342298,
+      "side_length_cv": 0.7346585736670468
+    },
+    {
+      "id": 94,
+      "label": "SOX10",
+      "vertices": 12,
+      "regularity_ratio": 2.1257411931951777,
+      "hull_deficit": 0.15797285835453756,
+      "side_length_cv": 0.8603329253936648
+    },
+    {
+      "id": 119,
+      "label": "DOG1",
+      "vertices": 12,
+      "regularity_ratio": 1.6368935883916165,
+      "hull_deficit": 0.09028815368196375,
+      "side_length_cv": 0.679326841126546
+    },
+    {
+      "id": 163,
+      "label": "MyoD1",
+      "vertices": 12,
+      "regularity_ratio": 2.6253584323680723,
+      "hull_deficit": 0.2774532710280373,
+      "side_length_cv": 0.6887684371772107
+    },
+    {
+      "id": 188,
+      "label": "See leiomyoma",
+      "vertices": 12,
+      "regularity_ratio": 2.6130123707595354,
+      "hull_deficit": 0.04037005887300149,
+      "side_length_cv": 1.5218105705624148
+    },
+    {
+      "id": 192,
+      "label": "CAM5.2",
+      "vertices": 12,
+      "regularity_ratio": 2.18789684766351,
+      "hull_deficit": 0.13610478359908862,
+      "side_length_cv": 0.7488114202579021
+    },
+    {
+      "id": 71,
+      "label": "MDM2",
+      "vertices": 11,
+      "regularity_ratio": 3.7674169334746397,
+      "hull_deficit": 0.10776699029126213,
+      "side_length_cv": 1.1346824431869305
+    },
+    {
+      "id": 90,
+      "label": "CD68",
+      "vertices": 11,
+      "regularity_ratio": 2.6137664556846767,
+      "hull_deficit": 0.23728813559322026,
+      "side_length_cv": 0.8244779340396958
+    },
+    {
+      "id": 120,
+      "label": "NSE",
+      "vertices": 11,
+      "regularity_ratio": 1.8260985271784673,
+      "hull_deficit": 0.16783455819518034,
+      "side_length_cv": 0.6354768128078423
+    },
+    {
+      "id": 174,
+      "label": "MITF",
+      "vertices": 11,
+      "regularity_ratio": 2.142276884986176,
+      "hull_deficit": 0.2374854481955765,
+      "side_length_cv": 0.8561250832047574
+    },
+    {
+      "id": 7,
+      "label": "MUC5AC",
+      "vertices": 10,
+      "regularity_ratio": 5.078910027604151,
+      "hull_deficit": 0.42264573991031373,
+      "side_length_cv": 0.34834558357216505
+    },
+    {
+      "id": 21,
+      "label": "PAS",
+      "vertices": 10,
+      "regularity_ratio": 1.3259710847140869,
+      "hull_deficit": 0.0388528005883072,
+      "side_length_cv": 0.6826355665197816
+    },
+    {
+      "id": 23,
+      "label": "SP(Surfactant protein)",
+      "vertices": 10,
+      "regularity_ratio": 1.4087165577623357,
+      "hull_deficit": 0.02977761025254433,
+      "side_length_cv": 0.9096204123178384
+    },
+    {
+      "id": 40,
+      "label": "EBV",
+      "vertices": 10,
+      "regularity_ratio": 2.168867529089797,
+      "hull_deficit": 0.2558109504132232,
+      "side_length_cv": 0.5491591989849064
+    },
+    {
+      "id": 58,
+      "label": "TFE3",
+      "vertices": 10,
+      "regularity_ratio": 2.550875063515073,
+      "hull_deficit": 0.32137518684603894,
+      "side_length_cv": 0.9243525371042625
+    },
+    {
+      "id": 110,
+      "label": "MUC6",
+      "vertices": 10,
+      "regularity_ratio": 3.143785246771471,
+      "hull_deficit": 0.08656832298136674,
+      "side_length_cv": 1.239796008714837
+    },
+    {
+      "id": 167,
+      "label": "Caldesmon",
+      "vertices": 10,
+      "regularity_ratio": 2.001798924260107,
+      "hull_deficit": 0.21806665661287883,
+      "side_length_cv": 0.5051448802206923
+    },
+    {
+      "id": 14,
+      "label": "AFP",
+      "vertices": 9,
+      "regularity_ratio": 1.2571897644905925,
+      "hull_deficit": 0.006308724832214785,
+      "side_length_cv": 0.8569344843446999
+    },
+    {
+      "id": 48,
+      "label": "HPV",
+      "vertices": 9,
+      "regularity_ratio": 1.4040084037810385,
+      "hull_deficit": 0.06666666666666665,
+      "side_length_cv": 0.7973935884254575
+    },
+    {
+      "id": 82,
+      "label": "CD3",
+      "vertices": 9,
+      "regularity_ratio": 2.1995853120094173,
+      "hull_deficit": 0.31603375527426136,
+      "side_length_cv": 0.6863031864399006
+    },
+    {
+      "id": 122,
+      "label": "Cyclin D1",
+      "vertices": 9,
+      "regularity_ratio": 1.6382436915357816,
+      "hull_deficit": 0.11925465838509319,
+      "side_length_cv": 0.9383569595386443
+    },
+    {
+      "id": 77,
+      "label": "BCL6",
+      "vertices": 8,
+      "regularity_ratio": 2.810242615193402,
+      "hull_deficit": 0.3167358229598892,
+      "side_length_cv": 0.6864488959988416
+    },
+    {
+      "id": 78,
+      "label": "CD43",
+      "vertices": 8,
+      "regularity_ratio": 1.8623208915218556,
+      "hull_deficit": 0.07318161535028977,
+      "side_length_cv": 1.0872013563613767
+    },
+    {
+      "id": 80,
+      "label": "CD30",
+      "vertices": 8,
+      "regularity_ratio": 1.532877761586005,
+      "hull_deficit": 0.028362508309328405,
+      "side_length_cv": 0.7324779763705093
+    },
+    {
+      "id": 115,
+      "label": "PTEN",
+      "vertices": 8,
+      "regularity_ratio": 1.4870399118565611,
+      "hull_deficit": 0.011144332699102977,
+      "side_length_cv": 1.0670003559647159
+    },
+    {
+      "id": 169,
+      "label": "KIT(CD117)",
+      "vertices": 8,
+      "regularity_ratio": 1.6873659324187131,
+      "hull_deficit": 0.1535229476405947,
+      "side_length_cv": 0.6016020197165227
+    },
+    {
+      "id": 236,
+      "label": "4-Oct",
+      "vertices": 8,
+      "regularity_ratio": 2.383414451316576,
+      "hull_deficit": 0.1533873029399231,
+      "side_length_cv": 1.0014512809990825
+    },
+    {
+      "id": 270,
+      "label": "Cathepsin K",
+      "vertices": 8,
+      "regularity_ratio": 1.5956917042014795,
+      "hull_deficit": 0.07392423685178373,
+      "side_length_cv": 0.7629258972369234
+    },
+    {
+      "id": 283,
+      "label": "CDK4",
+      "vertices": 8,
+      "regularity_ratio": 5.026508673063016,
+      "hull_deficit": 0.08196721311475419,
+      "side_length_cv": 0.9440162691027305
+    },
+    {
+      "id": 326,
+      "label": "SMARCB1(INI1)",
+      "vertices": 8,
+      "regularity_ratio": 1.6488022860085976,
+      "hull_deficit": 0.09327115256495688,
+      "side_length_cv": 0.7953565591123294
+    },
+    {
+      "id": 15,
+      "label": "Glypican3",
+      "vertices": 7,
+      "regularity_ratio": 2.7139647105055684,
+      "hull_deficit": 0.06132329209252285,
+      "side_length_cv": 0.8532279469800715
+    },
+    {
+      "id": 22,
+      "label": "Alcian blue",
+      "vertices": 7,
+      "regularity_ratio": 2.003537591211493,
+      "hull_deficit": 0.12252964426877466,
+      "side_length_cv": 0.8989692774128363
+    },
+    {
+      "id": 47,
+      "label": "Actin",
+      "vertices": 7,
+      "regularity_ratio": 3.0551243165935342,
+      "hull_deficit": 0.44532803180914515,
+      "side_length_cv": 0.34082387360459815
+    },
+    {
+      "id": 64,
+      "label": "FLI1",
+      "vertices": 7,
+      "regularity_ratio": 1.5033156513198482,
+      "hull_deficit": 0.15172101449275355,
+      "side_length_cv": 0.4519954293555375
+    },
+    {
+      "id": 84,
+      "label": "CD5",
+      "vertices": 7,
+      "regularity_ratio": 3.4671632766680043,
+      "hull_deficit": 0.23875802997858653,
+      "side_length_cv": 0.7375820771794991
+    },
+    {
+      "id": 165,
+      "label": "GLUT1",
+      "vertices": 7,
+      "regularity_ratio": 2.4952443964267474,
+      "hull_deficit": 0.20033670033669992,
+      "side_length_cv": 0.8984262532660506
+    },
+    {
+      "id": 178,
+      "label": "PIK3CA mutation",
+      "vertices": 7,
+      "regularity_ratio": 1.7702873459916562,
+      "hull_deficit": 0.018080667593880828,
+      "side_length_cv": 0.8122752637695573
+    },
+    {
+      "id": 181,
+      "label": "TP53 mutation",
+      "vertices": 7,
+      "regularity_ratio": 1.7702873459916562,
+      "hull_deficit": 0.018080667593880828,
+      "side_length_cv": 0.8122752637695573
+    },
+    {
+      "id": 226,
+      "label": "Thrombomodulin",
+      "vertices": 7,
+      "regularity_ratio": 4.556652387247517,
+      "hull_deficit": 0.2435374149659867,
+      "side_length_cv": 0.9875720886234594
+    },
+    {
+      "id": 28,
+      "label": "Pancytokerain",
+      "vertices": 6,
+      "regularity_ratio": 2.255017014293489,
+      "hull_deficit": 0.045028142589118025,
+      "side_length_cv": 0.8877953441195836
+    },
+    {
+      "id": 107,
+      "label": "PLAP",
+      "vertices": 6,
+      "regularity_ratio": 2.1841723486383904,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.9899578512992435
+    },
+    {
+      "id": 117,
+      "label": "CK18",
+      "vertices": 6,
+      "regularity_ratio": 1.647002371935834,
+      "hull_deficit": 0.00032123353678126243,
+      "side_length_cv": 0.8253496264560172
+    },
+    {
+      "id": 135,
+      "label": "CK19",
+      "vertices": 6,
+      "regularity_ratio": 1.2622014085151791,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.7543950903173501
+    },
+    {
+      "id": 138,
+      "label": "BerEP4",
+      "vertices": 6,
+      "regularity_ratio": 2.036761245302708,
+      "hull_deficit": 0.004219409282700148,
+      "side_length_cv": 1.0405508869852305
+    },
+    {
+      "id": 251,
+      "label": "Dpc4",
+      "vertices": 6,
+      "regularity_ratio": 1.7270188569735128,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.23034614374483406
+    },
+    {
+      "id": 252,
+      "label": "S100P",
+      "vertices": 6,
+      "regularity_ratio": 1.697107272503381,
+      "hull_deficit": 0.018518518518517935,
+      "side_length_cv": 0.7286186143224773
+    },
+    {
+      "id": 271,
+      "label": "STAT6",
+      "vertices": 6,
+      "regularity_ratio": 1.9300145949533327,
+      "hull_deficit": 0.0675853018372704,
+      "side_length_cv": 0.963714574155585
+    },
+    {
+      "id": 301,
+      "label": "PROX1",
+      "vertices": 6,
+      "regularity_ratio": 2.89443650521082,
+      "hull_deficit": 0.2129032258064515,
+      "side_length_cv": 0.6866530445491684
+    },
+    {
+      "id": 6,
+      "label": "HNF4a",
+      "vertices": 5,
+      "regularity_ratio": 9.381897193730444,
+      "hull_deficit": 0.1176470588235301,
+      "side_length_cv": 0.3755632480940877
+    },
+    {
+      "id": 51,
+      "label": "Neuroendocline markers",
+      "vertices": 5,
+      "regularity_ratio": 1.204523083375266,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5195181765177781
+    },
+    {
+      "id": 57,
+      "label": "16p13(TSC2) loss",
+      "vertices": 5,
+      "regularity_ratio": 2.27566509137248,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.8763296029027213
+    },
+    {
+      "id": 116,
+      "label": "CK8",
+      "vertices": 5,
+      "regularity_ratio": 1.40728265133258,
+      "hull_deficit": 0.004210526315789442,
+      "side_length_cv": 0.617790931863469
+    },
+    {
+      "id": 130,
+      "label": "Myeloperoxidase(MPO)",
+      "vertices": 5,
+      "regularity_ratio": 2.5355301287404055,
+      "hull_deficit": 0.2370786516853941,
+      "side_length_cv": 0.7159546795302408
+    },
+    {
+      "id": 155,
+      "label": "E-cadherin",
+      "vertices": 5,
+      "regularity_ratio": 1.3593448828895365,
+      "hull_deficit": 1.1102230246251565e-16,
+      "side_length_cv": 0.5088498449029428
+    },
+    {
+      "id": 176,
+      "label": "PAX2",
+      "vertices": 5,
+      "regularity_ratio": 2.5424720003365087,
+      "hull_deficit": 0.20740138267588448,
+      "side_length_cv": 0.40336915348562413
+    },
+    {
+      "id": 272,
+      "label": "NAB2::STAT6",
+      "vertices": 5,
+      "regularity_ratio": 1.658491412922833,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.8350892679452806
+    },
+    {
+      "id": 284,
+      "label": "RB1",
+      "vertices": 5,
+      "regularity_ratio": 4.753871319684613,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.817972207213119
+    },
+    {
+      "id": 345,
+      "label": "CAIX(CA9)",
+      "vertices": 5,
+      "regularity_ratio": 3.102439746765663,
+      "hull_deficit": 0.026315789473684736,
+      "side_length_cv": 0.5082197214514103
+    },
+    {
+      "id": 367,
+      "label": "SMA",
+      "vertices": 5,
+      "regularity_ratio": 1.9003325102090538,
+      "hull_deficit": 0.030663329161451536,
+      "side_length_cv": 0.6780793012871315
+    },
+    {
+      "id": 19,
+      "label": "EGFR mutation",
+      "vertices": 4,
+      "regularity_ratio": 3.0059250609999713,
+      "hull_deficit": 0.04462474645030434,
+      "side_length_cv": 0.7648398757902255
+    },
+    {
+      "id": 30,
+      "label": "Mucin",
+      "vertices": 4,
+      "regularity_ratio": 1.51253394393053,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.36855377529510774
+    },
+    {
+      "id": 62,
+      "label": "Factor",
+      "vertices": 4,
+      "regularity_ratio": 1.3017458751506779,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.49054830838109065
+    },
+    {
+      "id": 83,
+      "label": "CD8",
+      "vertices": 4,
+      "regularity_ratio": 2.0619717825936594,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5178789457877395
+    },
+    {
+      "id": 87,
+      "label": "BRAF V600E",
+      "vertices": 4,
+      "regularity_ratio": 1.3446679403777173,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.4007887310049474
+    },
+    {
+      "id": 88,
+      "label": "Lysozyme",
+      "vertices": 4,
+      "regularity_ratio": 1.4552388538599605,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5370738135544911
+    },
+    {
+      "id": 91,
+      "label": "CD4",
+      "vertices": 4,
+      "regularity_ratio": 1.3717451714984654,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.4175853908203128
+    },
+    {
+      "id": 100,
+      "label": "AR (Androgen receptor)",
+      "vertices": 4,
+      "regularity_ratio": 4.369246876997283,
+      "hull_deficit": 0.0687237026647971,
+      "side_length_cv": 0.775733254622908
+    },
+    {
+      "id": 101,
+      "label": "NF(Neurofilament)",
+      "vertices": 4,
+      "regularity_ratio": 1.4374785760849138,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5857496988137105
+    },
+    {
+      "id": 105,
+      "label": "Uroplakin2",
+      "vertices": 4,
+      "regularity_ratio": 1.8802453201632878,
+      "hull_deficit": 0.14893617021276662,
+      "side_length_cv": 0.498171549071248
+    },
+    {
+      "id": 106,
+      "label": "Uroplakin3",
+      "vertices": 4,
+      "regularity_ratio": 1.8802453201632878,
+      "hull_deficit": 0.14893617021276662,
+      "side_length_cv": 0.498171549071248
+    },
+    {
+      "id": 111,
+      "label": "MUC4",
+      "vertices": 4,
+      "regularity_ratio": 1.5844353127234503,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6217371099907955
+    },
+    {
+      "id": 123,
+      "label": "MUM1",
+      "vertices": 4,
+      "regularity_ratio": 2.364064597723323,
+      "hull_deficit": 1.1102230246251565e-16,
+      "side_length_cv": 0.5209010222056814
+    },
+    {
+      "id": 124,
+      "label": "CMYC::Ig",
+      "vertices": 4,
+      "regularity_ratio": 6.120432338977773,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6012228940340071
+    },
+    {
+      "id": 166,
+      "label": "Claudin-1",
+      "vertices": 4,
+      "regularity_ratio": 2.1520568450806845,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.3720830073868001
+    },
+    {
+      "id": 179,
+      "label": "PIK3R1 mutation",
+      "vertices": 4,
+      "regularity_ratio": 1.6055148278312164,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5991263396927395
+    },
+    {
+      "id": 180,
+      "label": "ARID1A mutation",
+      "vertices": 4,
+      "regularity_ratio": 1.6055148278312164,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5991263396927395
+    },
+    {
+      "id": 194,
+      "label": "Monotypic slg",
+      "vertices": 4,
+      "regularity_ratio": 1.7602598033711334,
+      "hull_deficit": 1.1102230246251565e-16,
+      "side_length_cv": 0.472701233142743
+    },
+    {
+      "id": 211,
+      "label": "CD19",
+      "vertices": 4,
+      "regularity_ratio": 4.070443948797118,
+      "hull_deficit": 0.08263305322128811,
+      "side_length_cv": 0.3744660974382213
+    },
+    {
+      "id": 212,
+      "label": "TdT",
+      "vertices": 4,
+      "regularity_ratio": 1.8163482667436213,
+      "hull_deficit": 0.24460431654676262,
+      "side_length_cv": 0.2750319225239619
+    },
+    {
+      "id": 221,
+      "label": "BRAF",
+      "vertices": 4,
+      "regularity_ratio": 8.353065777872464,
+      "hull_deficit": 0.01538461538461433,
+      "side_length_cv": 0.9014338560233901
+    },
+    {
+      "id": 231,
+      "label": "Sex cord markers",
+      "vertices": 4,
+      "regularity_ratio": 6.9933029314248385,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.862991164285544
+    },
+    {
+      "id": 264,
+      "label": "PSAP",
+      "vertices": 4,
+      "regularity_ratio": 2.694213712491135,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.653129238707369
+    },
+    {
+      "id": 296,
+      "label": "NTRK fusion",
+      "vertices": 4,
+      "regularity_ratio": 1.7074168304391435,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6317303660007407
+    },
+    {
+      "id": 318,
+      "label": "SATB2",
+      "vertices": 4,
+      "regularity_ratio": 3.011053413349952,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6295690464427026
+    },
+    {
+      "id": 363,
+      "label": "Cytokeratins",
+      "vertices": 4,
+      "regularity_ratio": 3.198355447822224,
+      "hull_deficit": 0.19471947194719463,
+      "side_length_cv": 0.6159732591325499
+    },
+    {
+      "id": 364,
+      "label": "ER",
+      "vertices": 4,
+      "regularity_ratio": 1.551593403787607,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5375848659305822
+    },
+    {
+      "id": 74,
+      "label": "CD79a",
+      "vertices": 3,
+      "regularity_ratio": 2.686076351263154,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.45894276744769985
+    },
+    {
+      "id": 81,
+      "label": "CD15",
+      "vertices": 3,
+      "regularity_ratio": 7.550206238724826,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5614731538869613
+    },
+    {
+      "id": 85,
+      "label": "CD1a",
+      "vertices": 3,
+      "regularity_ratio": 74.3862837930273,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.3930971632026941
+    },
+    {
+      "id": 109,
+      "label": "Gastric MUCIN",
+      "vertices": 3,
+      "regularity_ratio": 2.121233725040174,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.44492425162231486
+    },
+    {
+      "id": 118,
+      "label": "-SMA",
+      "vertices": 3,
+      "regularity_ratio": 8.410447161764976,
+      "hull_deficit": 2.1094237467877974e-15,
+      "side_length_cv": 0.6302096841288393
+    },
+    {
+      "id": 127,
+      "label": "ALK",
+      "vertices": 3,
+      "regularity_ratio": 1.0029133547091398,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.03104128658232023
+    },
+    {
+      "id": 131,
+      "label": "CD163",
+      "vertices": 3,
+      "regularity_ratio": 5.102861000936425,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.3518010182041343
+    },
+    {
+      "id": 137,
+      "label": "HPV18",
+      "vertices": 3,
+      "regularity_ratio": 1.3192036395279874,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.2479811805241652
+    },
+    {
+      "id": 144,
+      "label": "PGP9.5",
+      "vertices": 3,
+      "regularity_ratio": 1.7941094115627336,
+      "hull_deficit": 1.1102230246251565e-16,
+      "side_length_cv": 0.4357728640376306
+    },
+    {
+      "id": 145,
+      "label": "GPC3",
+      "vertices": 3,
+      "regularity_ratio": 6.031514166918404,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6195249606514639
+    },
+    {
+      "id": 160,
+      "label": "TP53",
+      "vertices": 3,
+      "regularity_ratio": 4.555248715093701,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5068309592966116
+    },
+    {
+      "id": 168,
+      "label": "HDAC8",
+      "vertices": 3,
+      "regularity_ratio": 1.977666845221665,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.3314803143536733
+    },
+    {
+      "id": 186,
+      "label": "HNF1B",
+      "vertices": 3,
+      "regularity_ratio": 1.1630318204675987,
+      "hull_deficit": 2.220446049250313e-16,
+      "side_length_cv": 0.20130097801744276
+    },
+    {
+      "id": 225,
+      "label": "Uroplakin",
+      "vertices": 3,
+      "regularity_ratio": 7.1348559924147,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6210873795615697
+    },
+    {
+      "id": 232,
+      "label": "12 trysomy",
+      "vertices": 3,
+      "regularity_ratio": 2.120155418029111,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.4662708915074922
+    },
+    {
+      "id": 237,
+      "label": "NANOG",
+      "vertices": 3,
+      "regularity_ratio": 3.3650439694242973,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.508134908458971
+    },
+    {
+      "id": 239,
+      "label": "SOX2",
+      "vertices": 3,
+      "regularity_ratio": 2.046302638775643,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.3959632667973886
+    },
+    {
+      "id": 242,
+      "label": "Thyroglobulin",
+      "vertices": 3,
+      "regularity_ratio": 12.477566941502651,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6736519165997368
+    },
+    {
+      "id": 254,
+      "label": "CA125",
+      "vertices": 3,
+      "regularity_ratio": 3.5697626710967225,
+      "hull_deficit": 2.220446049250313e-16,
+      "side_length_cv": 0.5111862514704938
+    },
+    {
+      "id": 269,
+      "label": "Tyrosinase",
+      "vertices": 3,
+      "regularity_ratio": 24.91233904717568,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5457245752744904
+    },
+    {
+      "id": 277,
+      "label": "PAP",
+      "vertices": 3,
+      "regularity_ratio": 1.187665839551862,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.23078978437109818
+    },
+    {
+      "id": 279,
+      "label": "IGH rearrangement",
+      "vertices": 3,
+      "regularity_ratio": 1.5327102049778922,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.30305624336265397
+    },
+    {
+      "id": 281,
+      "label": "HMGA2",
+      "vertices": 3,
+      "regularity_ratio": 3.2441379186154427,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.3385634954778754
+    },
+    {
+      "id": 295,
+      "label": "pan-TRK",
+      "vertices": 3,
+      "regularity_ratio": 3.744263559704327,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.588552365984509
+    },
+    {
+      "id": 329,
+      "label": "EWSR1 fusion",
+      "vertices": 3,
+      "regularity_ratio": 33.41190098288053,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6611366203059553
+    },
+    {
+      "id": 353,
+      "label": "34E12",
+      "vertices": 3,
+      "regularity_ratio": 1.227096143537047,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.267817307891487
+    },
+    {
+      "id": 365,
+      "label": "PR",
+      "vertices": 3,
+      "regularity_ratio": 2.6588921166598958,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.44075703364113095
+    },
+    {
+      "id": 366,
+      "label": "DICER1 mutation",
+      "vertices": 3,
+      "regularity_ratio": 3.2221020660818933,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5233438152607128
+    }
+  ],
+  "face_metrics_after": [
+    {
+      "id": 24,
+      "label": "No recommendation",
+      "vertices": 161,
+      "regularity_ratio": 1.897487512167551,
+      "hull_deficit": 0.026783421384855788,
+      "side_length_cv": 1.104816252066208
+    },
+    {
+      "id": 43,
+      "label": "SMA(Smooth muscle actin)",
+      "vertices": 77,
+      "regularity_ratio": 1.4216936254704584,
+      "hull_deficit": 0.0609465757141302,
+      "side_length_cv": 0.7555691497883527
+    },
+    {
+      "id": 52,
+      "label": "CD34",
+      "vertices": 75,
+      "regularity_ratio": 1.772312977748261,
+      "hull_deficit": 0.07199412111871017,
+      "side_length_cv": 0.8129244754522725
+    },
+    {
+      "id": 4,
+      "label": "CK7",
+      "vertices": 67,
+      "regularity_ratio": 1.9307674681299472,
+      "hull_deficit": 0.09768276842496615,
+      "side_length_cv": 0.6557913104801549
+    },
+    {
+      "id": 45,
+      "label": "S100",
+      "vertices": 67,
+      "regularity_ratio": 1.6632159387469896,
+      "hull_deficit": 0.08176761735464932,
+      "side_length_cv": 0.8501921104242572
+    },
+    {
+      "id": 5,
+      "label": "CK20",
+      "vertices": 65,
+      "regularity_ratio": 1.8033963733711553,
+      "hull_deficit": 0.08353941170724877,
+      "side_length_cv": 0.5542834180684955
+    },
+    {
+      "id": 34,
+      "label": "Desmin",
+      "vertices": 65,
+      "regularity_ratio": 1.7035059881255932,
+      "hull_deficit": 0.0729476362820427,
+      "side_length_cv": 0.734179966634712
+    },
+    {
+      "id": 31,
+      "label": "Keratins",
+      "vertices": 62,
+      "regularity_ratio": 1.6186478530620356,
+      "hull_deficit": 0.08876658131372339,
+      "side_length_cv": 0.6937079849992676
+    },
+    {
+      "id": 38,
+      "label": "EMA",
+      "vertices": 59,
+      "regularity_ratio": 1.7315221028541377,
+      "hull_deficit": 0.09350654792336355,
+      "side_length_cv": 0.6561813648060666
+    },
+    {
+      "id": 0,
+      "label": "TTF-1",
+      "vertices": 52,
+      "regularity_ratio": 1.631520440731583,
+      "hull_deficit": 0.09901427815621122,
+      "side_length_cv": 0.7554196127650458
+    },
+    {
+      "id": 75,
+      "label": "CD10",
+      "vertices": 49,
+      "regularity_ratio": 1.3553984950643712,
+      "hull_deficit": 0.06360961018541922,
+      "side_length_cv": 0.9216027527196974
+    },
+    {
+      "id": 25,
+      "label": "CD56",
+      "vertices": 43,
+      "regularity_ratio": 1.4581822339762418,
+      "hull_deficit": 0.08116073438325666,
+      "side_length_cv": 0.5623434066332215
+    },
+    {
+      "id": 50,
+      "label": "PgR(Progesteron receptor)",
+      "vertices": 42,
+      "regularity_ratio": 1.2561730139557539,
+      "hull_deficit": 0.0359740183146966,
+      "side_length_cv": 0.6784579023507533
+    },
+    {
+      "id": 11,
+      "label": "Synaptophysin",
+      "vertices": 41,
+      "regularity_ratio": 1.1494700480458706,
+      "hull_deficit": 0.0354462728780246,
+      "side_length_cv": 0.6057858275988761
+    },
+    {
+      "id": 29,
+      "label": "Vimentin",
+      "vertices": 41,
+      "regularity_ratio": 1.1467441892140136,
+      "hull_deficit": 0.029627339585848844,
+      "side_length_cv": 0.7147806922151189
+    },
+    {
+      "id": 49,
+      "label": "ER(Estrogen receptor)",
+      "vertices": 39,
+      "regularity_ratio": 1.2521985700555422,
+      "hull_deficit": 0.0337975195619733,
+      "side_length_cv": 0.6511272115198578
+    },
+    {
+      "id": 12,
+      "label": "Chromogranin",
+      "vertices": 38,
+      "regularity_ratio": 1.1543826006416729,
+      "hull_deficit": 0.038364142413840896,
+      "side_length_cv": 0.6149295932139295
+    },
+    {
+      "id": 20,
+      "label": "p63",
+      "vertices": 38,
+      "regularity_ratio": 1.3482087935022884,
+      "hull_deficit": 0.055627783772706385,
+      "side_length_cv": 0.7172529688261463
+    },
+    {
+      "id": 8,
+      "label": "CDX2",
+      "vertices": 34,
+      "regularity_ratio": 1.2444249320862333,
+      "hull_deficit": 0.040307767006222406,
+      "side_length_cv": 0.6327682990278908
+    },
+    {
+      "id": 26,
+      "label": "Ki67",
+      "vertices": 34,
+      "regularity_ratio": 1.125527961225837,
+      "hull_deficit": 0.023192196818250355,
+      "side_length_cv": 0.6787462174248647
+    },
+    {
+      "id": 103,
+      "label": "PAX8",
+      "vertices": 32,
+      "regularity_ratio": 1.1313139294489798,
+      "hull_deficit": 0.019037262023429702,
+      "side_length_cv": 0.5172534993693547
+    },
+    {
+      "id": 158,
+      "label": "p16",
+      "vertices": 30,
+      "regularity_ratio": 1.2254863967665643,
+      "hull_deficit": 0.024519374445137077,
+      "side_length_cv": 0.6449849855679658
+    },
+    {
+      "id": 172,
+      "label": "WT1",
+      "vertices": 30,
+      "regularity_ratio": 1.1505733433876397,
+      "hull_deficit": 0.028880848729805897,
+      "side_length_cv": 0.659831042663647
+    },
+    {
+      "id": 70,
+      "label": "Calretinin",
+      "vertices": 27,
+      "regularity_ratio": 1.1668971209713028,
+      "hull_deficit": 0.027328458229975316,
+      "side_length_cv": 0.7204184556990825
+    },
+    {
+      "id": 56,
+      "label": "Melan-A",
+      "vertices": 25,
+      "regularity_ratio": 2.0390712032438705,
+      "hull_deficit": 0.07348044983916191,
+      "side_length_cv": 1.0243499556473976
+    },
+    {
+      "id": 97,
+      "label": "GATA3",
+      "vertices": 25,
+      "regularity_ratio": 1.122006224316877,
+      "hull_deficit": 0.025862666654779876,
+      "side_length_cv": 0.8236862446272137
+    },
+    {
+      "id": 17,
+      "label": "p53",
+      "vertices": 24,
+      "regularity_ratio": 1.194439066508036,
+      "hull_deficit": 0.024104914314315162,
+      "side_length_cv": 0.9490778334227776
+    },
+    {
+      "id": 230,
+      "label": "Inhibin",
+      "vertices": 23,
+      "regularity_ratio": 1.1055170241585572,
+      "hull_deficit": 0.008183389573005684,
+      "side_length_cv": 0.6760550741764741
+    },
+    {
+      "id": 2,
+      "label": "NapsinA",
+      "vertices": 22,
+      "regularity_ratio": 1.1030951186409883,
+      "hull_deficit": 0.003154342333583582,
+      "side_length_cv": 0.6502953959209383
+    },
+    {
+      "id": 55,
+      "label": "HMB45",
+      "vertices": 22,
+      "regularity_ratio": 1.4897348269912865,
+      "hull_deficit": 0.024716533240364824,
+      "side_length_cv": 1.0961131072610977
+    },
+    {
+      "id": 36,
+      "label": "CK 34E12",
+      "vertices": 21,
+      "regularity_ratio": 1.0953112938678087,
+      "hull_deficit": 0.006224396380626995,
+      "side_length_cv": 1.1187999194773222
+    },
+    {
+      "id": 268,
+      "label": "AMACR",
+      "vertices": 21,
+      "regularity_ratio": 1.165659934234066,
+      "hull_deficit": 0.026896931286893966,
+      "side_length_cv": 0.9184832137635675
+    },
+    {
+      "id": 3,
+      "label": "CK5/6",
+      "vertices": 20,
+      "regularity_ratio": 1.1105767575456207,
+      "hull_deficit": 0.011423581968439955,
+      "side_length_cv": 0.5800705426203656
+    },
+    {
+      "id": 99,
+      "label": "PSA",
+      "vertices": 20,
+      "regularity_ratio": 1.5720553240756652,
+      "hull_deficit": 0.06042706110775509,
+      "side_length_cv": 1.2211579513062587
+    },
+    {
+      "id": 27,
+      "label": "c-kit(CD117)",
+      "vertices": 19,
+      "regularity_ratio": 1.405767201989619,
+      "hull_deficit": 0.13228382214660994,
+      "side_length_cv": 0.6900303463755532
+    },
+    {
+      "id": 35,
+      "label": "AE1/AE3",
+      "vertices": 19,
+      "regularity_ratio": 1.307700285558937,
+      "hull_deficit": 0.032766247233863566,
+      "side_length_cv": 0.9916209613812417
+    },
+    {
+      "id": 173,
+      "label": "ERG",
+      "vertices": 19,
+      "regularity_ratio": 1.9402439117609076,
+      "hull_deficit": 0.1338982424678974,
+      "side_length_cv": 1.2463438228632449
+    },
+    {
+      "id": 1,
+      "label": "p40",
+      "vertices": 17,
+      "regularity_ratio": 1.2764967893088208,
+      "hull_deficit": 0.030596683989249196,
+      "side_length_cv": 0.5587501680296637
+    },
+    {
+      "id": 13,
+      "label": "-catenin",
+      "vertices": 17,
+      "regularity_ratio": 1.168724416528147,
+      "hull_deficit": 0.02486551999940323,
+      "side_length_cv": 0.5887549839383366
+    },
+    {
+      "id": 39,
+      "label": "MSA(Muscle Specific Actin)",
+      "vertices": 17,
+      "regularity_ratio": 1.091265237707606,
+      "hull_deficit": 0.009041543610061487,
+      "side_length_cv": 0.6492198378763966
+    },
+    {
+      "id": 61,
+      "label": "D2-40",
+      "vertices": 17,
+      "regularity_ratio": 2.8476131701031884,
+      "hull_deficit": 0.18547262933657993,
+      "side_length_cv": 0.9354837965783588
+    },
+    {
+      "id": 9,
+      "label": "KRAS mutation",
+      "vertices": 16,
+      "regularity_ratio": 1.354120048224693,
+      "hull_deficit": 0.03175956439427119,
+      "side_length_cv": 1.1850581439431092
+    },
+    {
+      "id": 10,
+      "label": "MUC2",
+      "vertices": 16,
+      "regularity_ratio": 1.2465699313748433,
+      "hull_deficit": 0.021728545248339226,
+      "side_length_cv": 0.9667747759716675
+    },
+    {
+      "id": 37,
+      "label": "CEA",
+      "vertices": 16,
+      "regularity_ratio": 1.3176432054605576,
+      "hull_deficit": 0.019495704161482386,
+      "side_length_cv": 1.1071773535711094
+    },
+    {
+      "id": 68,
+      "label": "CD99",
+      "vertices": 16,
+      "regularity_ratio": 1.039679346505697,
+      "hull_deficit": 0.003164622454773003,
+      "side_length_cv": 0.6112463502830611
+    },
+    {
+      "id": 46,
+      "label": "GFAP",
+      "vertices": 15,
+      "regularity_ratio": 1.0547639294748363,
+      "hull_deficit": 0.000171347214252493,
+      "side_length_cv": 0.5606228856161513
+    },
+    {
+      "id": 60,
+      "label": "CD31",
+      "vertices": 15,
+      "regularity_ratio": 1.557081819220611,
+      "hull_deficit": 0.005717448599090069,
+      "side_length_cv": 1.4895776627474866
+    },
+    {
+      "id": 69,
+      "label": "BCL2",
+      "vertices": 15,
+      "regularity_ratio": 1.8021168986127347,
+      "hull_deficit": 0.11955951100989026,
+      "side_length_cv": 0.8550568272099421
+    },
+    {
+      "id": 73,
+      "label": "CD20",
+      "vertices": 15,
+      "regularity_ratio": 1.4068193185284392,
+      "hull_deficit": 0.061991898959323,
+      "side_length_cv": 0.8111730062062333
+    },
+    {
+      "id": 33,
+      "label": "Myogenin",
+      "vertices": 14,
+      "regularity_ratio": 1.0923579418443699,
+      "hull_deficit": 0.0021100839451035913,
+      "side_length_cv": 0.8136261052478971
+    },
+    {
+      "id": 104,
+      "label": "CD117",
+      "vertices": 13,
+      "regularity_ratio": 1.4417874775066766,
+      "hull_deficit": 0.014756366224516926,
+      "side_length_cv": 1.2334694605995804
+    },
+    {
+      "id": 234,
+      "label": "Steroidgenic factor-1",
+      "vertices": 13,
+      "regularity_ratio": 1.03988976708732,
+      "hull_deficit": 2.3601371045511854e-05,
+      "side_length_cv": 0.5168540456851306
+    },
+    {
+      "id": 235,
+      "label": "FOXL2",
+      "vertices": 13,
+      "regularity_ratio": 1.0401514149875026,
+      "hull_deficit": 2.4171741859202456e-05,
+      "side_length_cv": 0.5874424568135326
+    },
+    {
+      "id": 16,
+      "label": "SALL4",
+      "vertices": 12,
+      "regularity_ratio": 1.65943037577831,
+      "hull_deficit": 0.11779165218410192,
+      "side_length_cv": 0.7513572185028999
+    },
+    {
+      "id": 44,
+      "label": "Calponin",
+      "vertices": 12,
+      "regularity_ratio": 1.1073322440907436,
+      "hull_deficit": 0.0011094017844890391,
+      "side_length_cv": 0.7323789810452449
+    },
+    {
+      "id": 94,
+      "label": "SOX10",
+      "vertices": 12,
+      "regularity_ratio": 1.098989002329853,
+      "hull_deficit": 0.00361853580025151,
+      "side_length_cv": 0.7767516217877471
+    },
+    {
+      "id": 119,
+      "label": "DOG1",
+      "vertices": 12,
+      "regularity_ratio": 1.0475619357989685,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.67360181616751
+    },
+    {
+      "id": 163,
+      "label": "MyoD1",
+      "vertices": 12,
+      "regularity_ratio": 1.0830866811976496,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6719643366580824
+    },
+    {
+      "id": 188,
+      "label": "See leiomyoma",
+      "vertices": 12,
+      "regularity_ratio": 1.2027695666662974,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6431019765478194
+    },
+    {
+      "id": 192,
+      "label": "CAM5.2",
+      "vertices": 12,
+      "regularity_ratio": 1.2265379987066027,
+      "hull_deficit": 0.010516787800964322,
+      "side_length_cv": 0.9659779958074151
+    },
+    {
+      "id": 71,
+      "label": "MDM2",
+      "vertices": 11,
+      "regularity_ratio": 1.5482353096994652,
+      "hull_deficit": 0.06168974217728407,
+      "side_length_cv": 0.4431991358799788
+    },
+    {
+      "id": 90,
+      "label": "CD68",
+      "vertices": 11,
+      "regularity_ratio": 1.703017996256744,
+      "hull_deficit": 0.07843677635360635,
+      "side_length_cv": 1.0194839385026875
+    },
+    {
+      "id": 120,
+      "label": "NSE",
+      "vertices": 11,
+      "regularity_ratio": 1.13837343300701,
+      "hull_deficit": 0.004255749200356096,
+      "side_length_cv": 0.6316819093843892
+    },
+    {
+      "id": 174,
+      "label": "MITF",
+      "vertices": 11,
+      "regularity_ratio": 1.3720589844704683,
+      "hull_deficit": 0.0005953540845456962,
+      "side_length_cv": 1.1172893957265495
+    },
+    {
+      "id": 7,
+      "label": "MUC5AC",
+      "vertices": 10,
+      "regularity_ratio": 1.4169676880581636,
+      "hull_deficit": 0.00031141315135452263,
+      "side_length_cv": 1.0391512972781525
+    },
+    {
+      "id": 21,
+      "label": "PAS",
+      "vertices": 10,
+      "regularity_ratio": 1.4892492384374807,
+      "hull_deficit": 0.0067870389540265474,
+      "side_length_cv": 0.9169310414582118
+    },
+    {
+      "id": 23,
+      "label": "SP(Surfactant protein)",
+      "vertices": 10,
+      "regularity_ratio": 1.266329495846345,
+      "hull_deficit": 0.024135494287330972,
+      "side_length_cv": 0.8215478493112692
+    },
+    {
+      "id": 40,
+      "label": "EBV",
+      "vertices": 10,
+      "regularity_ratio": 1.5158486605900596,
+      "hull_deficit": 0.02880128494234213,
+      "side_length_cv": 0.8483017905079342
+    },
+    {
+      "id": 58,
+      "label": "TFE3",
+      "vertices": 10,
+      "regularity_ratio": 1.498146682747832,
+      "hull_deficit": 0.021462976597877548,
+      "side_length_cv": 1.069066519223685
+    },
+    {
+      "id": 110,
+      "label": "MUC6",
+      "vertices": 10,
+      "regularity_ratio": 1.422418874590348,
+      "hull_deficit": 0.00032146960468504293,
+      "side_length_cv": 1.0747190456155031
+    },
+    {
+      "id": 167,
+      "label": "Caldesmon",
+      "vertices": 10,
+      "regularity_ratio": 1.0481240678298063,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5197171334944843
+    },
+    {
+      "id": 14,
+      "label": "AFP",
+      "vertices": 9,
+      "regularity_ratio": 2.6407322575465604,
+      "hull_deficit": 0.1157053413423923,
+      "side_length_cv": 0.7712742135051499
+    },
+    {
+      "id": 48,
+      "label": "HPV",
+      "vertices": 9,
+      "regularity_ratio": 1.5900488660687908,
+      "hull_deficit": 0.055726143970765474,
+      "side_length_cv": 0.89702499117275
+    },
+    {
+      "id": 82,
+      "label": "CD3",
+      "vertices": 9,
+      "regularity_ratio": 1.840667979029069,
+      "hull_deficit": 0.0450842903603087,
+      "side_length_cv": 1.1481100794799224
+    },
+    {
+      "id": 122,
+      "label": "Cyclin D1",
+      "vertices": 9,
+      "regularity_ratio": 1.4697271273292047,
+      "hull_deficit": 0.11417893535580004,
+      "side_length_cv": 0.6510401794389008
+    },
+    {
+      "id": 77,
+      "label": "BCL6",
+      "vertices": 8,
+      "regularity_ratio": 1.4727516818440654,
+      "hull_deficit": 0.07223627042925385,
+      "side_length_cv": 0.7512145062693769
+    },
+    {
+      "id": 78,
+      "label": "CD43",
+      "vertices": 8,
+      "regularity_ratio": 1.7920239356101404,
+      "hull_deficit": 0.175440355311965,
+      "side_length_cv": 0.5390250115608715
+    },
+    {
+      "id": 80,
+      "label": "CD30",
+      "vertices": 8,
+      "regularity_ratio": 1.3296116365914403,
+      "hull_deficit": 0.0002569098735024644,
+      "side_length_cv": 0.5542555097536747
+    },
+    {
+      "id": 115,
+      "label": "PTEN",
+      "vertices": 8,
+      "regularity_ratio": 1.3149255413735113,
+      "hull_deficit": 0.010201637849552747,
+      "side_length_cv": 0.7801765708807041
+    },
+    {
+      "id": 169,
+      "label": "KIT(CD117)",
+      "vertices": 8,
+      "regularity_ratio": 1.247020612831529,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.8495939522924895
+    },
+    {
+      "id": 236,
+      "label": "4-Oct",
+      "vertices": 8,
+      "regularity_ratio": 1.9180135216807357,
+      "hull_deficit": 0.09364740812949046,
+      "side_length_cv": 0.9884214578246713
+    },
+    {
+      "id": 270,
+      "label": "Cathepsin K",
+      "vertices": 8,
+      "regularity_ratio": 1.3299052648125467,
+      "hull_deficit": 0.010144731055761969,
+      "side_length_cv": 0.8761963630195466
+    },
+    {
+      "id": 283,
+      "label": "CDK4",
+      "vertices": 8,
+      "regularity_ratio": 1.2639898414505497,
+      "hull_deficit": 0.011122430572920172,
+      "side_length_cv": 0.35417783933161695
+    },
+    {
+      "id": 326,
+      "label": "SMARCB1(INI1)",
+      "vertices": 8,
+      "regularity_ratio": 1.0618591663106252,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.46335144469219364
+    },
+    {
+      "id": 15,
+      "label": "Glypican3",
+      "vertices": 7,
+      "regularity_ratio": 1.3138889645776766,
+      "hull_deficit": 0.04480806976361407,
+      "side_length_cv": 0.6754025351823368
+    },
+    {
+      "id": 22,
+      "label": "Alcian blue",
+      "vertices": 7,
+      "regularity_ratio": 1.3290129443924625,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.7916329363775576
+    },
+    {
+      "id": 47,
+      "label": "Actin",
+      "vertices": 7,
+      "regularity_ratio": 1.418868550098185,
+      "hull_deficit": 0.06594492032310562,
+      "side_length_cv": 0.4696082406941389
+    },
+    {
+      "id": 64,
+      "label": "FLI1",
+      "vertices": 7,
+      "regularity_ratio": 1.9577496909393994,
+      "hull_deficit": 0.1738162474158107,
+      "side_length_cv": 0.6665022766668863
+    },
+    {
+      "id": 84,
+      "label": "CD5",
+      "vertices": 7,
+      "regularity_ratio": 1.1992732738489607,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.532995198395292
+    },
+    {
+      "id": 165,
+      "label": "GLUT1",
+      "vertices": 7,
+      "regularity_ratio": 2.7051576973746734,
+      "hull_deficit": 0.043195610649816474,
+      "side_length_cv": 0.5633239046327916
+    },
+    {
+      "id": 178,
+      "label": "PIK3CA mutation",
+      "vertices": 7,
+      "regularity_ratio": 1.3193632820854393,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.7258630615618603
+    },
+    {
+      "id": 181,
+      "label": "TP53 mutation",
+      "vertices": 7,
+      "regularity_ratio": 1.3193632820854393,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.7258630615618603
+    },
+    {
+      "id": 226,
+      "label": "Thrombomodulin",
+      "vertices": 7,
+      "regularity_ratio": 1.1027054515611752,
+      "hull_deficit": 0.0024758677139796736,
+      "side_length_cv": 0.5771491670020915
+    },
+    {
+      "id": 28,
+      "label": "Pancytokerain",
+      "vertices": 6,
+      "regularity_ratio": 1.600029467298505,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.7439757634138874
+    },
+    {
+      "id": 107,
+      "label": "PLAP",
+      "vertices": 6,
+      "regularity_ratio": 2.1184697880212506,
+      "hull_deficit": 0.20444369731593937,
+      "side_length_cv": 0.5580759440519422
+    },
+    {
+      "id": 117,
+      "label": "CK18",
+      "vertices": 6,
+      "regularity_ratio": 1.4540811330683638,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.7745370255535986
+    },
+    {
+      "id": 135,
+      "label": "CK19",
+      "vertices": 6,
+      "regularity_ratio": 2.2821989741381445,
+      "hull_deficit": 0.10970262558369082,
+      "side_length_cv": 0.8087072499257332
+    },
+    {
+      "id": 138,
+      "label": "BerEP4",
+      "vertices": 6,
+      "regularity_ratio": 1.2475831531531578,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6920440358970016
+    },
+    {
+      "id": 251,
+      "label": "Dpc4",
+      "vertices": 6,
+      "regularity_ratio": 1.1754632498625253,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5348511011340756
+    },
+    {
+      "id": 252,
+      "label": "S100P",
+      "vertices": 6,
+      "regularity_ratio": 1.3038879552208955,
+      "hull_deficit": 1.1102230246251565e-16,
+      "side_length_cv": 0.6531457968247885
+    },
+    {
+      "id": 271,
+      "label": "STAT6",
+      "vertices": 6,
+      "regularity_ratio": 1.3031855430090957,
+      "hull_deficit": 0.002223410596589037,
+      "side_length_cv": 0.6737904528857656
+    },
+    {
+      "id": 301,
+      "label": "PROX1",
+      "vertices": 6,
+      "regularity_ratio": 2.0400324343375402,
+      "hull_deficit": 0.0004099490631814806,
+      "side_length_cv": 0.9106944883877626
+    },
+    {
+      "id": 6,
+      "label": "HNF4a",
+      "vertices": 5,
+      "regularity_ratio": 1.8346068248674685,
+      "hull_deficit": 0.013733710475347105,
+      "side_length_cv": 0.751366944570641
+    },
+    {
+      "id": 51,
+      "label": "Neuroendocline markers",
+      "vertices": 5,
+      "regularity_ratio": 1.3174632922359435,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5326395629785867
+    },
+    {
+      "id": 57,
+      "label": "16p13(TSC2) loss",
+      "vertices": 5,
+      "regularity_ratio": 1.375591418844659,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5346501541594008
+    },
+    {
+      "id": 116,
+      "label": "CK8",
+      "vertices": 5,
+      "regularity_ratio": 1.7206252020364174,
+      "hull_deficit": 0.017067020795258903,
+      "side_length_cv": 0.6841160420114392
+    },
+    {
+      "id": 130,
+      "label": "Myeloperoxidase(MPO)",
+      "vertices": 5,
+      "regularity_ratio": 1.5820926031787825,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.7871424302823683
+    },
+    {
+      "id": 155,
+      "label": "E-cadherin",
+      "vertices": 5,
+      "regularity_ratio": 1.9691524589966392,
+      "hull_deficit": 0.2326744710309432,
+      "side_length_cv": 0.5469735544416447
+    },
+    {
+      "id": 176,
+      "label": "PAX2",
+      "vertices": 5,
+      "regularity_ratio": 3.9067877447016537,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.7940297703968707
+    },
+    {
+      "id": 272,
+      "label": "NAB2::STAT6",
+      "vertices": 5,
+      "regularity_ratio": 1.239628436509797,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.48533693617305956
+    },
+    {
+      "id": 284,
+      "label": "RB1",
+      "vertices": 5,
+      "regularity_ratio": 2.086340810718636,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6341311091964127
+    },
+    {
+      "id": 345,
+      "label": "CAIX(CA9)",
+      "vertices": 5,
+      "regularity_ratio": 1.3457332011538692,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5373584379892713
+    },
+    {
+      "id": 367,
+      "label": "SMA",
+      "vertices": 5,
+      "regularity_ratio": 1.7748216743128258,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.7523862969265814
+    },
+    {
+      "id": 19,
+      "label": "EGFR mutation",
+      "vertices": 4,
+      "regularity_ratio": 1.7831282801057942,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.48798623041367833
+    },
+    {
+      "id": 30,
+      "label": "Mucin",
+      "vertices": 4,
+      "regularity_ratio": 1.330995431748692,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.45288400134974427
+    },
+    {
+      "id": 62,
+      "label": "Factor",
+      "vertices": 4,
+      "regularity_ratio": 3.0363917780320278,
+      "hull_deficit": 0.0570107054170893,
+      "side_length_cv": 0.5624039455508316
+    },
+    {
+      "id": 83,
+      "label": "CD8",
+      "vertices": 4,
+      "regularity_ratio": 1.6390383768262613,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5363879012261585
+    },
+    {
+      "id": 87,
+      "label": "BRAF V600E",
+      "vertices": 4,
+      "regularity_ratio": 1.2735041738673216,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.46631934037579603
+    },
+    {
+      "id": 88,
+      "label": "Lysozyme",
+      "vertices": 4,
+      "regularity_ratio": 2.014858661653096,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.10768748363150918
+    },
+    {
+      "id": 91,
+      "label": "CD4",
+      "vertices": 4,
+      "regularity_ratio": 1.087223882404367,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.19767907438911947
+    },
+    {
+      "id": 100,
+      "label": "AR (Androgen receptor)",
+      "vertices": 4,
+      "regularity_ratio": 1.9376432761469782,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5400511425378259
+    },
+    {
+      "id": 101,
+      "label": "NF(Neurofilament)",
+      "vertices": 4,
+      "regularity_ratio": 1.6957592789246843,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5915875327457606
+    },
+    {
+      "id": 105,
+      "label": "Uroplakin2",
+      "vertices": 4,
+      "regularity_ratio": 2.076269888914016,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5576740039088008
+    },
+    {
+      "id": 106,
+      "label": "Uroplakin3",
+      "vertices": 4,
+      "regularity_ratio": 2.076269888914016,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5576740039088008
+    },
+    {
+      "id": 111,
+      "label": "MUC4",
+      "vertices": 4,
+      "regularity_ratio": 2.131709222537265,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.3083454998334319
+    },
+    {
+      "id": 123,
+      "label": "MUM1",
+      "vertices": 4,
+      "regularity_ratio": 1.424527172910181,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.39766731659534355
+    },
+    {
+      "id": 124,
+      "label": "CMYC::Ig",
+      "vertices": 4,
+      "regularity_ratio": 1.0718230265821835,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.2361529495137973
+    },
+    {
+      "id": 166,
+      "label": "Claudin-1",
+      "vertices": 4,
+      "regularity_ratio": 3.716993584201885,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6370419183973637
+    },
+    {
+      "id": 179,
+      "label": "PIK3R1 mutation",
+      "vertices": 4,
+      "regularity_ratio": 1.1705240927629157,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.34775833807161577
+    },
+    {
+      "id": 180,
+      "label": "ARID1A mutation",
+      "vertices": 4,
+      "regularity_ratio": 1.1705240927629157,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.34775833807161577
+    },
+    {
+      "id": 194,
+      "label": "Monotypic slg",
+      "vertices": 4,
+      "regularity_ratio": 1.277110131948985,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.49605549211296834
+    },
+    {
+      "id": 211,
+      "label": "CD19",
+      "vertices": 4,
+      "regularity_ratio": 1.6382798843815853,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.06680392938428557
+    },
+    {
+      "id": 212,
+      "label": "TdT",
+      "vertices": 4,
+      "regularity_ratio": 1.269959269397606,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.4779142459854292
+    },
+    {
+      "id": 221,
+      "label": "BRAF",
+      "vertices": 4,
+      "regularity_ratio": 1.2044869674713927,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.38722890070536614
+    },
+    {
+      "id": 231,
+      "label": "Sex cord markers",
+      "vertices": 4,
+      "regularity_ratio": 1.6670476674409695,
+      "hull_deficit": 0.021142598892878617,
+      "side_length_cv": 0.591693945342847
+    },
+    {
+      "id": 264,
+      "label": "PSAP",
+      "vertices": 4,
+      "regularity_ratio": 3.58911268217648,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6325705388008886
+    },
+    {
+      "id": 296,
+      "label": "NTRK fusion",
+      "vertices": 4,
+      "regularity_ratio": 1.9970767694690326,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5930144058236549
+    },
+    {
+      "id": 318,
+      "label": "SATB2",
+      "vertices": 4,
+      "regularity_ratio": 1.4897091211570217,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.36258682083478927
+    },
+    {
+      "id": 363,
+      "label": "Cytokeratins",
+      "vertices": 4,
+      "regularity_ratio": 2.4587394865056753,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5322754672221442
+    },
+    {
+      "id": 364,
+      "label": "ER",
+      "vertices": 4,
+      "regularity_ratio": 3.263959573579365,
+      "hull_deficit": 0.16440147931445237,
+      "side_length_cv": 0.2205553716809349
+    },
+    {
+      "id": 74,
+      "label": "CD79a",
+      "vertices": 3,
+      "regularity_ratio": 1.2218615561388733,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.2642421701113817
+    },
+    {
+      "id": 81,
+      "label": "CD15",
+      "vertices": 3,
+      "regularity_ratio": 19.14275247398383,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.3876689515951633
+    },
+    {
+      "id": 85,
+      "label": "CD1a",
+      "vertices": 3,
+      "regularity_ratio": 2.6377205097098,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.4127104744551432
+    },
+    {
+      "id": 109,
+      "label": "Gastric MUCIN",
+      "vertices": 3,
+      "regularity_ratio": 1.6229448834610127,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.307067084026154
+    },
+    {
+      "id": 118,
+      "label": "-SMA",
+      "vertices": 3,
+      "regularity_ratio": 1.1319099352454627,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.1778786056257462
+    },
+    {
+      "id": 127,
+      "label": "ALK",
+      "vertices": 3,
+      "regularity_ratio": 1.2921951199863153,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.24590115002020801
+    },
+    {
+      "id": 131,
+      "label": "CD163",
+      "vertices": 3,
+      "regularity_ratio": 13.96573282984788,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5786649008276253
+    },
+    {
+      "id": 137,
+      "label": "HPV18",
+      "vertices": 3,
+      "regularity_ratio": 1.8052942260756104,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.41614140704880653
+    },
+    {
+      "id": 144,
+      "label": "PGP9.5",
+      "vertices": 3,
+      "regularity_ratio": 1.6299837553185523,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.3177887352114213
+    },
+    {
+      "id": 145,
+      "label": "GPC3",
+      "vertices": 3,
+      "regularity_ratio": 50.50760747423719,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6893775801790032
+    },
+    {
+      "id": 160,
+      "label": "TP53",
+      "vertices": 3,
+      "regularity_ratio": 1.10650542845789,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.16878532315722156
+    },
+    {
+      "id": 168,
+      "label": "HDAC8",
+      "vertices": 3,
+      "regularity_ratio": 1.513425318106919,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.2736415573939674
+    },
+    {
+      "id": 186,
+      "label": "HNF1B",
+      "vertices": 3,
+      "regularity_ratio": 1.4308613033908384,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.26246413619393166
+    },
+    {
+      "id": 225,
+      "label": "Uroplakin",
+      "vertices": 3,
+      "regularity_ratio": 1.0363694146542517,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.10669914750911655
+    },
+    {
+      "id": 232,
+      "label": "12 trysomy",
+      "vertices": 3,
+      "regularity_ratio": 10.080789365000323,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.35355590419045524
+    },
+    {
+      "id": 237,
+      "label": "NANOG",
+      "vertices": 3,
+      "regularity_ratio": 2.0310594036618865,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.4797170732902317
+    },
+    {
+      "id": 239,
+      "label": "SOX2",
+      "vertices": 3,
+      "regularity_ratio": 1.2374346833214984,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.26143579253603144
+    },
+    {
+      "id": 242,
+      "label": "Thyroglobulin",
+      "vertices": 3,
+      "regularity_ratio": 9.008763419372373,
+      "hull_deficit": 3.552713678800501e-15,
+      "side_length_cv": 0.6595719728751305
+    },
+    {
+      "id": 254,
+      "label": "CA125",
+      "vertices": 3,
+      "regularity_ratio": 1.3058946726164726,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.251664319875567
+    },
+    {
+      "id": 269,
+      "label": "Tyrosinase",
+      "vertices": 3,
+      "regularity_ratio": 1.3933318993940513,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.3027481145979417
+    },
+    {
+      "id": 277,
+      "label": "PAP",
+      "vertices": 3,
+      "regularity_ratio": 2.0581602289247805,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.41118715865445826
+    },
+    {
+      "id": 279,
+      "label": "IGH rearrangement",
+      "vertices": 3,
+      "regularity_ratio": 1.1478474670467083,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.19569321502608467
+    },
+    {
+      "id": 281,
+      "label": "HMGA2",
+      "vertices": 3,
+      "regularity_ratio": 1.5729424387197624,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.3792189990173295
+    },
+    {
+      "id": 295,
+      "label": "pan-TRK",
+      "vertices": 3,
+      "regularity_ratio": 1.520268576081043,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.3301594983884613
+    },
+    {
+      "id": 329,
+      "label": "EWSR1 fusion",
+      "vertices": 3,
+      "regularity_ratio": 1.2782595407983925,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.25016961491391754
+    },
+    {
+      "id": 353,
+      "label": "34E12",
+      "vertices": 3,
+      "regularity_ratio": 1.762781805338357,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.30891304722242086
+    },
+    {
+      "id": 365,
+      "label": "PR",
+      "vertices": 3,
+      "regularity_ratio": 2.9271337848430443,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.3438205567478176
+    },
+    {
+      "id": 366,
+      "label": "DICER1 mutation",
+      "vertices": 3,
+      "regularity_ratio": 1.1817430384684422,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.23165489591397526
+    }
+  ],
+  "before_overlaps": {
+    "area_threshold": 1e-09,
+    "overlapping_pairs": 4431,
+    "pairs_without_shared_nodes": 2422,
+    "pairs_with_at_most_two_shared_nodes": 3623
+  },
+  "after_overlaps": {
+    "area_threshold": 1e-09,
+    "overlapping_pairs": 7734,
+    "pairs_without_shared_nodes": 5420,
+    "pairs_with_at_most_two_shared_nodes": 6896
+  },
+  "target_side_length_world": 0.16633458087449424,
+  "pair_sweeps": [
+    {
+      "tested": 26284,
+      "equivalent_zero_gain": 8955,
+      "accepted": 709,
+      "gain": 17289.85812279299,
+      "stage": "paper",
+      "cycle": 1,
+      "before": 134701.64810866726,
+      "after": 117411.78998587414
+    },
+    {
+      "tested": 26284,
+      "equivalent_zero_gain": 8955,
+      "accepted": 259,
+      "gain": 2884.6669632003354,
+      "stage": "paper",
+      "cycle": 2,
+      "before": 117327.28319463179,
+      "after": 114442.61623143157
+    },
+    {
+      "tested": 26284,
+      "equivalent_zero_gain": 8955,
+      "accepted": 124,
+      "gain": 570.5253034250409,
+      "stage": "paper",
+      "cycle": 3,
+      "before": 114433.4887926261,
+      "after": 113862.96348920047
+    },
+    {
+      "tested": 26284,
+      "equivalent_zero_gain": 8955,
+      "accepted": 89,
+      "gain": 535.7183406492702,
+      "stage": "paper",
+      "cycle": 4,
+      "before": 113862.96348919961,
+      "after": 113327.2451485504
+    },
+    {
+      "tested": 26284,
+      "equivalent_zero_gain": 8955,
+      "accepted": 56,
+      "gain": 203.002803903506,
+      "stage": "paper",
+      "cycle": 5,
+      "before": 113327.2451485504,
+      "after": 113124.24234464674
+    },
+    {
+      "tested": 26284,
+      "equivalent_zero_gain": 8955,
+      "accepted": 43,
+      "gain": 193.36847877833623,
+      "stage": "paper",
+      "cycle": 6,
+      "before": 113114.41496163562,
+      "after": 112921.04648285754
+    },
+    {
+      "tested": 26284,
+      "equivalent_zero_gain": 8955,
+      "accepted": 370,
+      "gain": 7561.7144090516595,
+      "stage": "regular_polygon_fit",
+      "cycle": 1,
+      "before": 181556.32241729175,
+      "after": 173994.60800823994
+    },
+    {
+      "tested": 26284,
+      "equivalent_zero_gain": 8955,
+      "accepted": 106,
+      "gain": 1099.265360638432,
+      "stage": "regular_polygon_fit",
+      "cycle": 2,
+      "before": 169986.86845837254,
+      "after": 168887.6030977341
+    },
+    {
+      "tested": 26284,
+      "equivalent_zero_gain": 8955,
+      "accepted": 69,
+      "gain": 391.22486804241134,
+      "stage": "regular_polygon_fit",
+      "cycle": 3,
+      "before": 168715.58798855537,
+      "after": 168324.36312051257
+    },
+    {
+      "tested": 26284,
+      "equivalent_zero_gain": 8955,
+      "accepted": 44,
+      "gain": 372.37131444872756,
+      "stage": "regular_polygon_fit",
+      "cycle": 4,
+      "before": 168323.3688731068,
+      "after": 167950.997558658
+    },
+    {
+      "tested": 26284,
+      "equivalent_zero_gain": 8955,
+      "accepted": 37,
+      "gain": 216.6239837671994,
+      "stage": "regular_polygon_fit",
+      "cycle": 5,
+      "before": 167950.6573941163,
+      "after": 167734.03341034905
+    },
+    {
+      "tested": 26284,
+      "equivalent_zero_gain": 8955,
+      "accepted": 29,
+      "gain": 101.4652793934359,
+      "stage": "regular_polygon_fit",
+      "cycle": 6,
+      "before": 167734.03341034896,
+      "after": 167632.56813095548
+    }
+  ],
+  "stages": [
+    {
+      "stage": "paper_1",
+      "iterations": 138,
+      "restarts": 4,
+      "start_energy": 282770.1130968246,
+      "final_energy": 134701.64810866726,
+      "stationary": true,
+      "solver_messages": [
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+      ]
+    },
+    {
+      "stage": "paper_2",
+      "iterations": 8,
+      "restarts": 2,
+      "start_energy": 117411.78998587414,
+      "final_energy": 117327.28319463179,
+      "stationary": false,
+      "solver_messages": [
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "ABNORMAL: "
+      ]
+    },
+    {
+      "stage": "paper_3",
+      "iterations": 8,
+      "restarts": 2,
+      "start_energy": 114442.61623143157,
+      "final_energy": 114433.4887926261,
+      "stationary": false,
+      "solver_messages": [
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "ABNORMAL: "
+      ]
+    },
+    {
+      "stage": "paper_4",
+      "iterations": 1,
+      "restarts": 1,
+      "start_energy": 113862.96348920047,
+      "final_energy": 113862.96348919961,
+      "stationary": true,
+      "solver_messages": [
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+      ]
+    },
+    {
+      "stage": "paper_5",
+      "iterations": 1,
+      "restarts": 1,
+      "start_energy": 113327.2451485504,
+      "final_energy": 113327.2451485504,
+      "stationary": false,
+      "solver_messages": [
+        "ABNORMAL: "
+      ]
+    },
+    {
+      "stage": "paper_6",
+      "iterations": 6,
+      "restarts": 2,
+      "start_energy": 113124.24234464674,
+      "final_energy": 113114.41496163562,
+      "stationary": true,
+      "solver_messages": [
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+      ]
+    },
+    {
+      "stage": "paper_final_refine",
+      "iterations": 1,
+      "restarts": 1,
+      "start_energy": 112921.04648285754,
+      "final_energy": 112921.04648285754,
+      "stationary": false,
+      "solver_messages": [
+        "ABNORMAL: "
+      ]
+    },
+    {
+      "stage": "consensus_initial_refine",
+      "iterations": 413,
+      "restarts": 8,
+      "start_energy": 875747.1250864582,
+      "final_energy": 181556.32241729175,
+      "stationary": true,
+      "solver_messages": [
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+      ]
+    },
+    {
+      "stage": "regular_polygon_fit_1",
+      "iterations": 1,
+      "restarts": 1,
+      "start_energy": 181556.32241729175,
+      "final_energy": 181556.32241729175,
+      "stationary": false,
+      "solver_messages": [
+        "ABNORMAL: "
+      ]
+    },
+    {
+      "stage": "regular_polygon_fit_2",
+      "iterations": 56,
+      "restarts": 4,
+      "start_energy": 173994.60800823994,
+      "final_energy": 169986.86845837254,
+      "stationary": true,
+      "solver_messages": [
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+      ]
+    },
+    {
+      "stage": "regular_polygon_fit_3",
+      "iterations": 12,
+      "restarts": 3,
+      "start_energy": 168887.6030977341,
+      "final_energy": 168715.58798855537,
+      "stationary": true,
+      "solver_messages": [
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+      ]
+    },
+    {
+      "stage": "regular_polygon_fit_4",
+      "iterations": 6,
+      "restarts": 2,
+      "start_energy": 168324.36312051257,
+      "final_energy": 168323.3688731068,
+      "stationary": false,
+      "solver_messages": [
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "ABNORMAL: "
+      ]
+    },
+    {
+      "stage": "regular_polygon_fit_5",
+      "iterations": 8,
+      "restarts": 2,
+      "start_energy": 167950.997558658,
+      "final_energy": 167950.6573941163,
+      "stationary": true,
+      "solver_messages": [
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+      ]
+    },
+    {
+      "stage": "regular_polygon_fit_6",
+      "iterations": 1,
+      "restarts": 1,
+      "start_energy": 167734.03341034905,
+      "final_energy": 167734.03341034896,
+      "stationary": true,
+      "solver_messages": [
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+      ]
+    },
+    {
+      "stage": "regular_polygon_fit_final_refine",
+      "iterations": 1,
+      "restarts": 1,
+      "start_energy": 167632.56813095548,
+      "final_energy": 167632.56813095545,
+      "stationary": true,
+      "solver_messages": [
+        "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH"
+      ]
+    }
+  ],
+  "paper_pair_search_converged": false,
+  "extension_pair_search_converged": false,
+  "max_cycles": 6,
+  "iterations_per_cycle": 600,
+  "fixed_coordinate_indices_during_line_search": [
+    0,
+    1,
+    1222,
+    1223
+  ],
+  "extension_fixed_coordinates": [],
+  "consensus_initializer": {
+    "iterations": 300,
+    "tether": 0.002,
+    "maximum_last_displacement": 0.0006702454041197109,
+    "refined_energy": 181556.32241729175,
+    "paper_solution_extended_energy": 281164.0149147811,
+    "accepted": true
+  },
+  "monogons": {
+    "glyphs": [
+      {
+        "hyperedge_id": 18,
+        "angle": -0.48786577438594864,
+        "center": [
+          -0.2751057628676117,
+          -0.10861032023517223
+        ]
+      },
+      {
+        "hyperedge_id": 41,
+        "angle": 2.4957679180609933,
+        "center": [
+          -0.20125431252033804,
+          0.2750536897659158
+        ]
+      },
+      {
+        "hyperedge_id": 42,
+        "angle": -0.2735598511069356,
+        "center": [
+          -0.36226088591230104,
+          -0.3635605703997521
+        ]
+      },
+      {
+        "hyperedge_id": 53,
+        "angle": -0.004648104174718837,
+        "center": [
+          -0.2966780996608882,
+          0.15989925961747156
+        ]
+      },
+      {
+        "hyperedge_id": 54,
+        "angle": -1.2555922625248999,
+        "center": [
+          -0.14601626669010048,
+          -0.038819027850472324
+        ]
+      },
+      {
+        "hyperedge_id": 59,
+        "angle": 5.210224068754213,
+        "center": [
+          -0.7459558707816246,
+          -0.6683293897424122
+        ]
+      },
+      {
+        "hyperedge_id": 65,
+        "angle": -1.5704974024211793,
+        "center": [
+          -1.8072636090418,
+          0.05233406314401588
+        ]
+      },
+      {
+        "hyperedge_id": 66,
+        "angle": 1.6779395047989774,
+        "center": [
+          -1.816182238516612,
+          0.2181917306615048
+        ]
+      },
+      {
+        "hyperedge_id": 76,
+        "angle": 1.2940623773338908,
+        "center": [
+          -0.9576079968405942,
+          -0.6010681661962137
+        ]
+      },
+      {
+        "hyperedge_id": 79,
+        "angle": -0.40775452371914483,
+        "center": [
+          -0.9039818732465019,
+          -0.7140510844581356
+        ]
+      },
+      {
+        "hyperedge_id": 86,
+        "angle": -3.3112132230177584,
+        "center": [
+          -1.968518876243355,
+          -0.6126080455562974
+        ]
+      },
+      {
+        "hyperedge_id": 92,
+        "angle": -3.387903297995315,
+        "center": [
+          -1.7989201271251158,
+          -0.6082080825884647
+        ]
+      },
+      {
+        "hyperedge_id": 93,
+        "angle": -4.866642194734345,
+        "center": [
+          -1.705484935627823,
+          -0.5463067578911001
+        ]
+      },
+      {
+        "hyperedge_id": 98,
+        "angle": -3.145332555345499,
+        "center": [
+          -1.6942538523360358,
+          0.6247841781264833
+        ]
+      },
+      {
+        "hyperedge_id": 102,
+        "angle": 1.4536833903747008,
+        "center": [
+          -1.2429632482410273,
+          1.0756153071642562
+        ]
+      },
+      {
+        "hyperedge_id": 112,
+        "angle": 3.1564055858554227,
+        "center": [
+          0.23743015830557856,
+          0.04294774137056403
+        ]
+      },
+      {
+        "hyperedge_id": 113,
+        "angle": 4.049428301006546,
+        "center": [
+          5.978317238902142,
+          -0.8774517123023615
+        ]
+      },
+      {
+        "hyperedge_id": 114,
+        "angle": 0.9080386335422252,
+        "center": [
+          6.08067506134836,
+          -0.7463408100334552
+        ]
+      },
+      {
+        "hyperedge_id": 121,
+        "angle": 0.8741649378559911,
+        "center": [
+          -0.7215147147027599,
+          -0.516034340443011
+        ]
+      },
+      {
+        "hyperedge_id": 125,
+        "angle": 5.556067316698282,
+        "center": [
+          -0.8508114750522275,
+          -1.1132151734828934
+        ]
+      },
+      {
+        "hyperedge_id": 128,
+        "angle": -1.294489929703931,
+        "center": [
+          -1.81640400968725,
+          -1.288123633707375
+        ]
+      },
+      {
+        "hyperedge_id": 129,
+        "angle": -2.866039832063551,
+        "center": [
+          -1.9191221792631383,
+          -1.2307389781315459
+        ]
+      },
+      {
+        "hyperedge_id": 132,
+        "angle": 0.35055930242383837,
+        "center": [
+          -0.6668868065090473,
+          1.0004376928475511
+        ]
+      },
+      {
+        "hyperedge_id": 133,
+        "angle": -1.5777708048165506,
+        "center": [
+          -0.7455759711450031,
+          0.8887108525410382
+        ]
+      },
+      {
+        "hyperedge_id": 134,
+        "angle": -4.07794039513841,
+        "center": [
+          -0.7942919662042864,
+          1.0388589445674088
+        ]
+      },
+      {
+        "hyperedge_id": 142,
+        "angle": 0.5507038328140399,
+        "center": [
+          -1.7096616860370675,
+          0.12147989942050419
+        ]
+      },
+      {
+        "hyperedge_id": 143,
+        "angle": -0.21233380514734268,
+        "center": [
+          0.35310675573162853,
+          -0.03276501592241633
+        ]
+      },
+      {
+        "hyperedge_id": 146,
+        "angle": 3.6127075768359407,
+        "center": [
+          -1.2963828201835201,
+          0.9983611826631626
+        ]
+      },
+      {
+        "hyperedge_id": 147,
+        "angle": 1.285285027952217,
+        "center": [
+          -1.198851633067978,
+          1.1159096484686821
+        ]
+      },
+      {
+        "hyperedge_id": 153,
+        "angle": 1.6052223057012995,
+        "center": [
+          0.03827998153880329,
+          0.23426414865167997
+        ]
+      },
+      {
+        "hyperedge_id": 154,
+        "angle": -1.5361633008126596,
+        "center": [
+          0.0440222905865331,
+          0.06802871805705216
+        ]
+      },
+      {
+        "hyperedge_id": 156,
+        "angle": -2.713102867217285,
+        "center": [
+          -1.8802307658864537,
+          -0.12688715746815457
+        ]
+      },
+      {
+        "hyperedge_id": 162,
+        "angle": -2.8999346853176453,
+        "center": [
+          -1.0624622091711293,
+          -0.650096792613776
+        ]
+      },
+      {
+        "hyperedge_id": 170,
+        "angle": -3.415809373189959,
+        "center": [
+          -1.2678388957516178,
+          0.9525265783264871
+        ]
+      },
+      {
+        "hyperedge_id": 171,
+        "angle": 0.6325499715651881,
+        "center": [
+          -1.1207026372080389,
+          0.9791742333525332
+        ]
+      },
+      {
+        "hyperedge_id": 175,
+        "angle": -0.37176697556680105,
+        "center": [
+          -1.7455000397828413,
+          -0.0024532497227209888
+        ]
+      },
+      {
+        "hyperedge_id": 182,
+        "angle": 1.7077044649214403,
+        "center": [
+          -1.071378003129413,
+          1.2126850750373697
+        ]
+      },
+      {
+        "hyperedge_id": 187,
+        "angle": -5.264379997971274,
+        "center": [
+          -0.5378491817404609,
+          0.991987059883697
+        ]
+      },
+      {
+        "hyperedge_id": 190,
+        "angle": 2.2136139758592766,
+        "center": [
+          -0.7001597480164389,
+          0.7823964094486773
+        ]
+      },
+      {
+        "hyperedge_id": 191,
+        "angle": -0.35313802061991734,
+        "center": [
+          -0.5722696495707832,
+          0.6870655888922399
+        ]
+      },
+      {
+        "hyperedge_id": 193,
+        "angle": 1.653689454404602,
+        "center": [
+          -1.464380134970537,
+          0.9393072537490624
+        ]
+      },
+      {
+        "hyperedge_id": 195,
+        "angle": 2.803794159097695,
+        "center": [
+          -1.4454726748785602,
+          -0.5600767036915077
+        ]
+      },
+      {
+        "hyperedge_id": 196,
+        "angle": 1.4615846260653405,
+        "center": [
+          -1.3579406580894415,
+          -0.5049674355160714
+        ]
+      },
+      {
+        "hyperedge_id": 197,
+        "angle": 2.4784247795800507,
+        "center": [
+          -1.0430443217496317,
+          -0.6342086498478376
+        ]
+      },
+      {
+        "hyperedge_id": 198,
+        "angle": 1.3601861321255868,
+        "center": [
+          -0.9601179965515448,
+          -0.6040782080303505
+        ]
+      },
+      {
+        "hyperedge_id": 199,
+        "angle": 1.9114141196723922,
+        "center": [
+          -1.0052883231392926,
+          -0.6070185935595
+        ]
+      },
+      {
+        "hyperedge_id": 200,
+        "angle": -1.9395656659350595,
+        "center": [
+          -1.0074838002237083,
+          -0.7629838870678938
+        ]
+      },
+      {
+        "hyperedge_id": 201,
+        "angle": 0.2748703292980867,
+        "center": [
+          -0.8974594479782958,
+          -0.6628343514143755
+        ]
+      },
+      {
+        "hyperedge_id": 202,
+        "angle": -0.2667487964616012,
+        "center": [
+          -0.8972787588786866,
+          -0.7073304114732126
+        ]
+      },
+      {
+        "hyperedge_id": 203,
+        "angle": 3.080768524180396,
+        "center": [
+          -1.0605181677587538,
+          -0.6803523355418164
+        ]
+      },
+      {
+        "hyperedge_id": 204,
+        "angle": -1.3659581226640767,
+        "center": [
+          -0.9605877171771098,
+          -0.7668363824714888
+        ]
+      },
+      {
+        "hyperedge_id": 205,
+        "angle": 0.816191067133846,
+        "center": [
+          -0.9205349831802395,
+          -0.6248169311537528
+        ]
+      },
+      {
+        "hyperedge_id": 206,
+        "angle": -2.554550628606685,
+        "center": [
+          -1.0467483225427618,
+          -0.7314742146785793
+        ]
+      },
+      {
+        "hyperedge_id": 207,
+        "angle": -0.8119965012083608,
+        "center": [
+          -0.9202813327249236,
+          -0.7457591635180951
+        ]
+      },
+      {
+        "hyperedge_id": 208,
+        "angle": 0.6774484058588469,
+        "center": [
+          -0.9130140243607894,
+          -0.5750046238045992
+        ]
+      },
+      {
+        "hyperedge_id": 209,
+        "angle": -0.6081329335302977,
+        "center": [
+          -0.9095591253860468,
+          -0.6746509351975503
+        ]
+      },
+      {
+        "hyperedge_id": 210,
+        "angle": 1.9718505002874276,
+        "center": [
+          -1.010283467801115,
+          -0.5505664944747923
+        ]
+      },
+      {
+        "hyperedge_id": 213,
+        "angle": -0.0798955399445214,
+        "center": [
+          -0.5249736863354443,
+          -0.9992986382463978
+        ]
+      },
+      {
+        "hyperedge_id": 214,
+        "angle": 3.0080616731758987,
+        "center": [
+          0.0784432293692711,
+          0.23613766055977592
+        ]
+      },
+      {
+        "hyperedge_id": 222,
+        "angle": 2.7562787881608792,
+        "center": [
+          -1.616047799632128,
+          0.7414884624778685
+        ]
+      },
+      {
+        "hyperedge_id": 223,
+        "angle": -0.5359133402572829,
+        "center": [
+          -0.898768034759094,
+          1.1281330967899559
+        ]
+      },
+      {
+        "hyperedge_id": 227,
+        "angle": 0.8374277723978008,
+        "center": [
+          -1.2570014869016997,
+          1.011526428185228
+        ]
+      },
+      {
+        "hyperedge_id": 229,
+        "angle": 1.1086695793727674,
+        "center": [
+          -0.07927931565502358,
+          0.003809152207257114
+        ]
+      },
+      {
+        "hyperedge_id": 233,
+        "angle": 0.009595464733236421,
+        "center": [
+          0.5709521556584147,
+          0.046950743840210675
+        ]
+      },
+      {
+        "hyperedge_id": 240,
+        "angle": -0.3284440544249592,
+        "center": [
+          -1.6591308755360596,
+          -0.21351826306943958
+        ]
+      },
+      {
+        "hyperedge_id": 241,
+        "angle": -2.931790952309549,
+        "center": [
+          -2.253935895213654,
+          -0.22954477972371784
+        ]
+      },
+      {
+        "hyperedge_id": 249,
+        "angle": -1.3041138693396903,
+        "center": [
+          -1.6247331912518979,
+          0.4491310823461542
+        ]
+      },
+      {
+        "hyperedge_id": 253,
+        "angle": 0.13914088967466137,
+        "center": [
+          -0.4759595408003125,
+          0.803136014356672
+        ]
+      },
+      {
+        "hyperedge_id": 256,
+        "angle": 5.544748637129817,
+        "center": [
+          -0.46091726471404715,
+          -0.31081387960686774
+        ]
+      },
+      {
+        "hyperedge_id": 257,
+        "angle": -2.2324536720324675,
+        "center": [
+          0.10540800254922307,
+          0.3150088171383601
+        ]
+      },
+      {
+        "hyperedge_id": 258,
+        "angle": 1.5373158058544794,
+        "center": [
+          0.1592920538875935,
+          0.4637464119692936
+        ]
+      },
+      {
+        "hyperedge_id": 259,
+        "angle": -0.9757964738350486,
+        "center": [
+          0.20312407410911443,
+          0.3117508565863415
+        ]
+      },
+      {
+        "hyperedge_id": 260,
+        "angle": 2.7941941991887473,
+        "center": [
+          0.07830908051140986,
+          0.4089402694696453
+        ]
+      },
+      {
+        "hyperedge_id": 261,
+        "angle": 0.2809129650711545,
+        "center": [
+          0.2364154499539146,
+          0.40368244288453686
+        ]
+      },
+      {
+        "hyperedge_id": 262,
+        "angle": -1.8239764687207893,
+        "center": [
+          -0.6845211037638309,
+          -0.9872920573925574
+        ]
+      },
+      {
+        "hyperedge_id": 263,
+        "angle": 0.05063592230456968,
+        "center": [
+          -0.5806283367891603,
+          -0.9025666252261604
+        ]
+      },
+      {
+        "hyperedge_id": 266,
+        "angle": 4.160454480615196,
+        "center": [
+          -1.7325224858542907,
+          0.3087476821292183
+        ]
+      },
+      {
+        "hyperedge_id": 267,
+        "angle": 1.6175098180803376,
+        "center": [
+          -1.6927985481978451,
+          0.4626421755843635
+        ]
+      },
+      {
+        "hyperedge_id": 273,
+        "angle": -2.0589578917332414,
+        "center": [
+          -1.5323533559912532,
+          -0.6042731569014577
+        ]
+      },
+      {
+        "hyperedge_id": 278,
+        "angle": -4.442731928184215,
+        "center": [
+          -1.6570279156465904,
+          0.6432095975123855
+        ]
+      },
+      {
+        "hyperedge_id": 280,
+        "angle": 0.5475616133434891,
+        "center": [
+          -1.8474905831900754,
+          0.2776686942028918
+        ]
+      },
+      {
+        "hyperedge_id": 282,
+        "angle": 2.652186101204224,
+        "center": [
+          -2.613751378191783,
+          0.22505348519610355
+        ]
+      },
+      {
+        "hyperedge_id": 285,
+        "angle": 2.294553022356317,
+        "center": [
+          -3.190192096803649,
+          0.017009631664473255
+        ]
+      },
+      {
+        "hyperedge_id": 287,
+        "angle": -1.2980946261681643,
+        "center": [
+          -3.112718555653183,
+          -0.12540354760421032
+        ]
+      },
+      {
+        "hyperedge_id": 288,
+        "angle": 2.413100634736285,
+        "center": [
+          -0.10449829617567043,
+          -0.07071216136482
+        ]
+      },
+      {
+        "hyperedge_id": 289,
+        "angle": -1.5441903761364093,
+        "center": [
+          -0.8435700177688653,
+          -0.6979345268331116
+        ]
+      },
+      {
+        "hyperedge_id": 291,
+        "angle": 1.2093227675676637,
+        "center": [
+          -0.848751383580575,
+          0.9253447382708654
+        ]
+      },
+      {
+        "hyperedge_id": 292,
+        "angle": 0.6769952803523589,
+        "center": [
+          -0.7764987406849416,
+          0.8859502267929437
+        ]
+      },
+      {
+        "hyperedge_id": 294,
+        "angle": -2.3713887435579615,
+        "center": [
+          -2.002623188470054,
+          -0.008097752073776464
+        ]
+      },
+      {
+        "hyperedge_id": 297,
+        "angle": -2.6442820636394977,
+        "center": [
+          -1.5986344022271488,
+          -0.8042408364448682
+        ]
+      },
+      {
+        "hyperedge_id": 298,
+        "angle": -2.9024716690202785,
+        "center": [
+          -0.27108624832023864,
+          0.13146761865153367
+        ]
+      },
+      {
+        "hyperedge_id": 300,
+        "angle": 0.06964983862328468,
+        "center": [
+          -0.9481683948075093,
+          0.9141336319673232
+        ]
+      },
+      {
+        "hyperedge_id": 305,
+        "angle": 2.061838377459463,
+        "center": [
+          -1.3970403969917038,
+          1.0531114201528495
+        ]
+      },
+      {
+        "hyperedge_id": 306,
+        "angle": -0.6245556402718326,
+        "center": [
+          -1.7443806220954994,
+          0.2494631067235414
+        ]
+      },
+      {
+        "hyperedge_id": 307,
+        "angle": -2.203921627634705,
+        "center": [
+          -1.8610552020326876,
+          0.23104608827950235
+        ]
+      },
+      {
+        "hyperedge_id": 308,
+        "angle": 2.588343114491495,
+        "center": [
+          -1.8826083651063537,
+          0.34179473662315785
+        ]
+      },
+      {
+        "hyperedge_id": 309,
+        "angle": -4.9248348049456485,
+        "center": [
+          -1.4170818199593704,
+          1.0542970188797955
+        ]
+      },
+      {
+        "hyperedge_id": 310,
+        "angle": 0.6722670481132774,
+        "center": [
+          -0.388604527582518,
+          -0.3524731502913876
+        ]
+      },
+      {
+        "hyperedge_id": 311,
+        "angle": -1.9977853329938737,
+        "center": [
+          -0.48811783950436444,
+          -0.4799667913196202
+        ]
+      },
+      {
+        "hyperedge_id": 312,
+        "angle": -0.8921799092213126,
+        "center": [
+          -0.6350961416769906,
+          -0.5981406858499579
+        ]
+      },
+      {
+        "hyperedge_id": 314,
+        "angle": 3.426929790023631,
+        "center": [
+          -0.8546825453234276,
+          -0.603234324194664
+        ]
+      },
+      {
+        "hyperedge_id": 315,
+        "angle": 2.154550743426818,
+        "center": [
+          -0.8207164988427801,
+          -0.5104295897157582
+        ]
+      },
+      {
+        "hyperedge_id": 316,
+        "angle": -1.614947483493809,
+        "center": [
+          -0.7785487129910861,
+          -0.6629105580055682
+        ]
+      },
+      {
+        "hyperedge_id": 317,
+        "angle": -0.3793483077233028,
+        "center": [
+          -0.6976233650067193,
+          -0.6106224251461482
+        ]
+      },
+      {
+        "hyperedge_id": 320,
+        "angle": 4.115303503587163,
+        "center": [
+          -1.2873694325638674,
+          -0.6583187941982702
+        ]
+      },
+      {
+        "hyperedge_id": 321,
+        "angle": -0.10604552259063861,
+        "center": [
+          -1.1579098094521043,
+          -0.5983442916112667
+        ]
+      },
+      {
+        "hyperedge_id": 323,
+        "angle": 2.491906879142956,
+        "center": [
+          -1.961099911623398,
+          -0.06177732694367215
+        ]
+      },
+      {
+        "hyperedge_id": 324,
+        "angle": 3.8165189191829483,
+        "center": [
+          -1.7421046314485427,
+          -0.3323811755341518
+        ]
+      },
+      {
+        "hyperedge_id": 325,
+        "angle": -3.424704550758042,
+        "center": [
+          -1.807774971603153,
+          0.3649704309468319
+        ]
+      },
+      {
+        "hyperedge_id": 327,
+        "angle": 2.4227020242982817,
+        "center": [
+          -2.0050275140786575,
+          -0.029979451415604007
+        ]
+      },
+      {
+        "hyperedge_id": 328,
+        "angle": -0.5475922117669206,
+        "center": [
+          -0.7561294750577455,
+          -0.6508653366494466
+        ]
+      },
+      {
+        "hyperedge_id": 333,
+        "angle": 1.9516035434261125,
+        "center": [
+          -1.7528574272826305,
+          0.3551589789192433
+        ]
+      },
+      {
+        "hyperedge_id": 334,
+        "angle": -0.1868286469777219,
+        "center": [
+          -1.6402266092221944,
+          0.2625015863811804
+        ]
+      },
+      {
+        "hyperedge_id": 335,
+        "angle": 3.9238133217542304,
+        "center": [
+          -1.7809413624224242,
+          0.21932838815000574
+        ]
+      },
+      {
+        "hyperedge_id": 336,
+        "angle": -2.9686213705549185,
+        "center": [
+          -1.5804818470220434,
+          -0.5403943482418776
+        ]
+      },
+      {
+        "hyperedge_id": 337,
+        "angle": 1.262074794404411,
+        "center": [
+          -1.3471486463381832,
+          -0.5082508157668935
+        ]
+      },
+      {
+        "hyperedge_id": 338,
+        "angle": 3.665342156059678,
+        "center": [
+          -1.4444369850674377,
+          -0.6290806903512848
+        ]
+      },
+      {
+        "hyperedge_id": 339,
+        "angle": -0.7302817515118268,
+        "center": [
+          -1.3104597603184631,
+          -0.6429653892272195
+        ]
+      },
+      {
+        "hyperedge_id": 340,
+        "angle": 2.393876102616539,
+        "center": [
+          -1.997841386391866,
+          0.1477763514820435
+        ]
+      },
+      {
+        "hyperedge_id": 341,
+        "angle": -0.07360374891047979,
+        "center": [
+          -0.2621507938500655,
+          0.0034903290480026213
+        ]
+      },
+      {
+        "hyperedge_id": 342,
+        "angle": -1.8294060154062877,
+        "center": [
+          -1.9036682650875334,
+          0.0416750138908655
+        ]
+      },
+      {
+        "hyperedge_id": 343,
+        "angle": 1.7584370247288206,
+        "center": [
+          -1.897913488292391,
+          0.203784159388091
+        ]
+      },
+      {
+        "hyperedge_id": 344,
+        "angle": 2.3029701075771265,
+        "center": [
+          -1.9297123706443966,
+          0.2892547173552007
+        ]
+      },
+      {
+        "hyperedge_id": 348,
+        "angle": 1.9904210435341108,
+        "center": [
+          -1.4126143057266625,
+          -0.4903770273492371
+        ]
+      },
+      {
+        "hyperedge_id": 349,
+        "angle": 3.555217721351714,
+        "center": [
+          -1.4548842521506338,
+          -0.5997564212134608
+        ]
+      },
+      {
+        "hyperedge_id": 350,
+        "angle": -2.194748051886591,
+        "center": [
+          -1.8621560691724437,
+          -0.05784046132412251
+        ]
+      },
+      {
+        "hyperedge_id": 351,
+        "angle": -3.8321983282514163,
+        "center": [
+          -1.8776762083085798,
+          0.0626340294078683
+        ]
+      },
+      {
+        "hyperedge_id": 352,
+        "angle": -0.028683952608726974,
+        "center": [
+          -1.730432763555682,
+          0.007270877458443091
+        ]
+      },
+      {
+        "hyperedge_id": 355,
+        "angle": -3.5473960144107344,
+        "center": [
+          -1.6537396539477196,
+          0.8308596728493924
+        ]
+      },
+      {
+        "hyperedge_id": 358,
+        "angle": -0.9672245039768455,
+        "center": [
+          0.2264956583639488,
+          -0.23153773396890207
+        ]
+      },
+      {
+        "hyperedge_id": 359,
+        "angle": 1.0398065882826324,
+        "center": [
+          -1.0522691103966295,
+          1.0510399647536635
+        ]
+      },
+      {
+        "hyperedge_id": 360,
+        "angle": 2.386319042160431,
+        "center": [
+          -2.612156030746937,
+          1.803268401538846
+        ]
+      },
+      {
+        "hyperedge_id": 362,
+        "angle": 0.2691650998737449,
+        "center": [
+          -1.5449007889509927,
+          -0.32616716324339706
+        ]
+      },
+      {
+        "hyperedge_id": 368,
+        "angle": -1.8054790539085235,
+        "center": [
+          -2.016261608369301,
+          -0.5410453024378018
+        ]
+      },
+      {
+        "hyperedge_id": 369,
+        "angle": -0.4502581779800499,
+        "center": [
+          -0.6717435959570902,
+          -0.5273491612420642
+        ]
+      },
+      {
+        "hyperedge_id": 370,
+        "angle": -1.1290386989618633,
+        "center": [
+          -1.4302614011159471,
+          -0.6356548730412107
+        ]
+      },
+      {
+        "hyperedge_id": 371,
+        "angle": 4.834635124790002,
+        "center": [
+          -1.439463366122573,
+          -0.6256022012769241
+        ]
+      },
+      {
+        "hyperedge_id": 373,
+        "angle": -1.14355861620005,
+        "center": [
+          -1.4554424158762937,
+          -0.6109082883743419
+        ]
+      },
+      {
+        "hyperedge_id": 374,
+        "angle": -1.8668722748789113,
+        "center": [
+          -0.9851257930419649,
+          -0.7248657254864643
+        ]
+      },
+      {
+        "hyperedge_id": 375,
+        "angle": 1.2263795000386892,
+        "center": [
+          -0.9327788898559013,
+          -0.5670340613173787
+        ]
+      },
+      {
+        "hyperedge_id": 376,
+        "angle": 0.19518284378977738,
+        "center": [
+          -0.8792720147467277,
+          -0.6291871905116856
+        ]
+      },
+      {
+        "hyperedge_id": 377,
+        "angle": -0.8119925578420917,
+        "center": [
+          -0.9036365663515403,
+          -0.7056682891621237
+        ]
+      },
+      {
+        "hyperedge_id": 378,
+        "angle": -3.1867640171889025,
+        "center": [
+          -1.9029818729951646,
+          0.16936433838675916
+        ]
+      },
+      {
+        "hyperedge_id": 379,
+        "angle": 5.013885935233391,
+        "center": [
+          -0.8906365971855473,
+          -0.6740341805340663
+        ]
+      }
+    ],
+    "energy": 186.8445613147598,
+    "distance": 0.5,
+    "radius": 0.15,
+    "iterations": 600,
+    "converged": false,
+    "note": "Post-layout glyph orientations; XY positions are fixed. Sizes are chosen defaults.",
+    "distance_world": 0.08316729043724712,
+    "radius_world": 0.024950187131174136
+  },
+  "extensions": [
+    "regular n-gon consensus initialization",
+    "regular n-gon least-squares fit",
+    "short-range vertex repulsion",
+    "hull area deficit",
+    "free scale during extended line searches"
+  ],
+  "elapsed_seconds": 536.359000000055,
+  "reproduction_limits": [
+    "HGPolyVis source and original numerical defaults are not publicly provided",
+    "Unary glyph orientations are in the report; binary lens rendering is not part of XY layout",
+    "Empty input hyperedges are preserved and excluded from polygon energies",
+    "2023/2024 topology-changing hypergraph simplification is not applied"
+  ],
+  "initial_layout": null,
+  "input": "original.json",
+  "output": "original.json",
+  "backup": "original_before_polygon_layout.json",
+  "input_sha256": "9b0e99ae896243a2136f3264ed2c0862746e69e6eb615d34d206dccd361982c2",
+  "candidate": "original_polygon_scalable.json",
+  "large_faces_30_plus": {
+    "before": 13.075480824194202,
+    "after": 1.44226759946864
+  },
+  "energy_terms": [
+    "regularity",
+    "length",
+    "separation",
+    "intersection",
+    "regular_fit",
+    "collision",
+    "convexity"
+  ],
+  "energy_comparison_note": "Initial and paper_baseline use paper_weights; final uses final_weights. Compare energies within the same weight set."
+}

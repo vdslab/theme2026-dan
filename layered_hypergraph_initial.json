@@ -29282,7 +29282,7 @@
       "max_solver_calls_per_batch": 3,
       "max_solver_calls_total": 15,
       "max_batches": 5,
-      "time_budget": 1800.0,
+      "time_budget": 3600.0,
       "max_blockers": 0,
       "constraint_tol": 1e-05,
       "objective_rtol": 1e-07,
@@ -30563,7 +30563,7 @@
         "success": true,
         "message": "Optimization terminated successfully",
         "iterations": 144,
-        "elapsed_seconds": 119.90804090000165,
+        "elapsed_seconds": 176.1345280999958,
         "reported_objective": 6182.946023659371,
         "status": "optimized"
       },
@@ -31836,7 +31836,7 @@
         "success": true,
         "message": "Optimization terminated successfully",
         "iterations": 144,
-        "elapsed_seconds": 119.90804090000165,
+        "elapsed_seconds": 176.1345280999958,
         "reported_objective": 6182.946023659371,
         "status": "optimized"
       },
@@ -31851,7 +31851,7 @@
       "evaluated": 0,
       "batches": 0,
       "adoptions": 0,
-      "initial_seconds": 120.00043240000014,
+      "initial_seconds": 176.28293710001162,
       "timing_seconds": {
         "generation": 0.0,
         "validation": 0.0,

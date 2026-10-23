@@ -46,6 +46,73 @@ Parse raw data from `original.txt` (containing node locations and hyperedge defi
 python convert.py
 ```
 
+### Step 1b: Optimize the polygon coordinates
+
+Run the polygon optimizer before assigning heights:
+
+```powershell
+.\.venv\Scripts\python.exe solve_polygon_layout.py
+```
+
+With no arguments, both input and output are `original.json`. The input is backed
+up as `original_before_polygon_layout.json` (or a unique additional backup)
+before replacement. IDs, all memberships including repeated IDs, labels, colors,
+and other metadata are preserved. Each node has one shared XY coordinate.
+
+The new implementation uses Qu et al.'s unnormalized PR/PA/PS/PI energies,
+convex-hull-centroid starrization, L-BFGS, and exhaustive within-face coordinate
+pair swaps. `--dual` additionally optimizes the dual view and DD energy. Hu
+initialization uses Graphviz `sfdp`; the former approximate force initializer
+and cardinality-normalized objective have been removed.
+
+The default `--mode scalable` uses a bipartite Hu initialization, records a paper
+objective baseline, and then adds global regular-polygon consensus, a regular
+polygon fitting term, a convex-hull area deficit penalty and short-range vertex
+repulsion. These extensions help high-cardinality faces retain their outlines.
+They are distinct from the topology-changing simplifiers in the 2023/2024 papers.
+See [the Japanese implementation and source audit](polygon_layout_reproduction.md)
+for equations, settings, reproduction scope, and geometric limitations.
+
+Requirements: Python with `numpy scipy shapely`, Graphviz including `sfdp`, and a
+C++17-capable `g++`. The Python entry point automatically compiles
+`polygon_kernel.cpp` into a cached shared library in `.polygon_cache/` on first
+use. **Run the Python script, not the C++ file as an executable.** On this Windows
+installation Graphviz is also discovered in `Program Files (x86)/Graphviz/bin`.
+Use `--sfdp PATH` for another installation.
+
+To save a candidate separately, or run only the paper coordinate objective:
+
+```powershell
+.\.venv\Scripts\python.exe solve_polygon_layout.py original.json candidate.json --report candidate_report.json --preview candidate.svg
+.\.venv\Scripts\python.exe solve_polygon_layout.py original.json paper.json --mode paper --initialization hu-clique --report paper_report.json --preview paper.svg
+.\.venv\Scripts\python.exe -m unittest test_solve_polygon_layout -v
+```
+
+Available initializations: `hu-clique`, `hu-bipartite`, `input`, `circular`, and
+`random`. `--initial-layout FILE --initialization input` warm-starts from another
+JSON with identical IDs and memberships. `--iterations 600 --max-cycles 6` are the
+default budgets per phase. `--fit-weight 1 --convexity-weight 10
+--collision-weight 0.05` control only the scalable extension. Budget exhaustion
+is reported separately from convergence; regular polygons are not guaranteed
+for arbitrary shared memberships.
+
+`polygon_layout_report.json` records whole-graph and per-face regularity ratios
+(1 is ideal), concavity, hull deficits, actual polygon overlap counts, stages,
+weights and initializer versions. `polygon_layout_comparison.svg` compares the
+largest faces and representative smaller ones, retaining all member vertices.
+Inspect both shape and overlap metrics: improving shape can increase overlaps.
+An optional PNG including the full graph can be rendered with matplotlib:
+
+```powershell
+.\.venv\Scripts\python.exe plot_polygon_comparison.py original_before_polygon_layout.json original.json polygon_layout_comparison.png
+```
+
+The source remains the existing JSON; this command does not reimport
+`masuta.csv` or repair earlier parsing changes. Regenerate layer assignments
+after changing XY, since their overlap constraints refer to the previous
+geometry. Running `convert.py` again restores the text export's coordinates.
+The earlier `original_polygon_candidate*.json` files are historical experiments.
+
 ### Step 2: Run the Layer Assignment Optimization
 Perform the 2-phase layer assignment algorithm to determine optimal Z-levels for each hyperedge:
 ```bash
