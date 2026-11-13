@@ -2,7 +2,7 @@
 
 作成日: 2026-11-13
 
-本書は、ポリゴンベースのハイパーグラフを2.5次元で表示するための、新しいレイヤー割り当て手法の設計案をまとめる。現段階の成果物はこの計画書であり、ソルバーの実装や既存データの上書きは行っていない。
+本書は、ポリゴンベースのハイパーグラフを2.5次元で表示するための、新しいレイヤー割り当て手法の設計をまとめる。初版を [solve_layers_tree.py](solve_layers_tree.py) に実装した。実装状況と具体化した規則は末尾に記載する。元の入力や既存の表示用データは上書きしない。
 
 ## 1. 目的と、これまでの手法から変更する点
 
@@ -331,10 +331,10 @@ $$
 | --- | --- |
 | solve_layers_tree.py | 根付き木による初期化、修復、探索、CLI |
 | tests/test_solve_layers_tree.py | 木・修復・差分評価・保存の意味のある検証 |
-| results/layers/layered_hypergraph_tree_initial.json | 修復済み初期解 |
-| results/layers/layered_hypergraph_tree_checkpoint.json | 最良の実行可能解のチェックポイント |
-| results/layers/layered_hypergraph_tree.json | 最終結果 |
-| results/reports/layered_hypergraph_tree_report.json | 設定、指標、時間、探索統計 |
+| results/layers/layers_hypergraph_initial.json | 修復済み初期解 |
+| results/layers/layers_hypergraph_checkpoint.json | 最良の実行可能解のチェックポイント |
+| layers_hypergraph.json | 旧版と同じ形式の最終結果 |
+| results/reports/layers_hypergraph_report.json | 設定、指標、時間、探索統計 |
 
 初版は既存のソルバーや表示用JSONを上書きしない独立したファイル構成を提案する。
 
@@ -344,9 +344,9 @@ $$
 
 ### 10.2 出力形式
 
-入力JSONの情報を保持し、各ハイパーエッジへ表示用のlayerを付与する。layerは整数値に対応する高さとし、既存ビューアとの互換性のためfloat形式で出力してもよい。
+各ハイパーエッジへ表示用のlayerを付与する。layerは整数値に対応する高さとし、既存ビューアとの互換性のためfloat形式で出力する。ユーザーの追加指定により、完了後のlayers_hypergraph.jsonは旧版と同じnodes、hyperedges、overlapsの3項目に揃える。
 
-木の情報、仮想根、設定、指標などは専用のtree_layer_searchメタデータに格納する。仮想根を表示用のhyperedgesへ追加しない。
+木の情報、仮想根、設定、指標などは初期解・チェックポイントのtree_layer_searchメタデータとレポートに格納する。入力の独自メタデータも初期解・チェックポイントで保持する。仮想根を表示用のhyperedgesへ追加しない。
 
 記録する主な情報:
 
@@ -362,13 +362,13 @@ $$
 
 [index.html](index.html) は現在layered_hypergraph.jsonを読むため、新結果の表示には読み込み先の切り替えが別途必要になる。ソルバーの実装時に既存結果を暗黙に置換せず、結果を比較する段階で接続方法を決める。
 
-### 10.3 将来のCLI例
+### 10.3 CLI例
 
-以下は実装後のインターフェース案であり、現在実行できるコマンドではない。
+プロジェクトのルートから実行する。
 
 ~~~powershell
-python solve_layers_tree.py original.json results/layers/layered_hypergraph_tree.json --seed 0 --time-budget 300
-python solve_layers_tree.py original.json results/layers/layered_hypergraph_tree.json --seed 0 --max-iterations 10000
+python solve_layers_tree.py original.json layers_hypergraph.json --seed 0 --time-budget 300
+python solve_layers_tree.py original.json layers_hypergraph.json --seed 0 --time-budget 0 --max-iterations 10000
 ~~~
 
 初期解のみを作るモード、比較対象JSONを指定するオプション、レポート出力先の指定も用意する。
@@ -447,3 +447,66 @@ python solve_layers_tree.py original.json results/layers/layered_hypergraph_tree
 - 整数レイヤー探索の後、最後に一度だけ従来のQPで連続高さを調整するか。
 
 最後のQPを追加する場合、その結果は「木の深さ＝整数レイヤー」の結果とは別に保存・評価する。候補ごとのQP再求解は初版に導入しない。
+
+## 15. 初版の実装状況
+
+2026-11-13時点で、次を新規ファイルへ実装した。
+
+- [solve_layers_tree.py](solve_layers_tree.py): 初期化、修復、近傍操作、探索、保存、比較、CLI。
+- [tests/test_solve_layers_tree.py](tests/test_solve_layers_tree.py): 木の不変条件、独立した数値計算、修復・探索・保存の検証。
+
+具体化した規則:
+
+- 初期木は重なり次数、親密度合計、入力順の優先順位で開始ノードを選ぶBFSとする。
+- 修復は現在のすべての衝突端点を対象とし、新設の上下レイヤーと作業中の空レイヤーも含めて合法な一手の目的値増分を比較する。
+- 修復の同点は移動距離、ノードの入力順、移動先座標の順で解消する。
+- 部分木付け替え、単独ノード移動、単独ノード交換、同深さの親変更を実装した。近傍の既定比率は順に0.25、0.4、0.3、0.05とし、CLIで変更できる。
+- 空レイヤー圧縮後、維持できる親子関係をすべて残し、新しい親が必要なノードだけ左から接続する。
+- 二乗距離の一手・複数手の差分を計算し、独立した全ペア計算と照合する。
+- 焼きなましと、改善・同値のみを採用するgreedyモードを用意する。
+- 未指定の温度は、初期解から生成・修復した候補の正の目的値差の中央値と、初期採用確率0.8から求める。正の差が得られない場合は、明示した代替温度を使い、その理由を記録する。
+- 温度は既定で初期値の0.001倍まで幾何的に冷却する。固定試行回数と時間予算の進行に合わせて計算する。
+- 初期解・最良解・チェックポイント・レポートを専用ファイルへ保存する。中断や時間切れでも、得られた最良の実行可能解を保持する。
+- 大きなJSONの書き込みが探索時間を消費しないよう、途中保存は既定で5秒間隔とする。メモリ上の最良状態は毎回更新し、探索終了時は最新の最良解を必ず保存する。--checkpoint-interval 0 で改善ごとの保存に切り替えられる。
+- 入力、比較対象、ルートの表示用layered_hypergraph.jsonを出力先に指定することは拒否する。
+
+既定の予算は最大10,000試行または300秒である。時間予算は前処理・初期化・温度調整・探索を含み、終了時の検証と保存に必要な処理は完了させる。--time-budget 0 は時間上限を無効にする。
+
+この初版には、連続高さへのQP仕上げ、DFSとの比較、根選択の最適化、目的関数への高さ幅罰則は含めていない。これらは第14節の拡張候補として残す。
+
+## 16. 初回の検証記録
+
+2026-11-13に、新規26件を含む全91件のテストが成功した。
+
+現在のoriginal.jsonに対して、seed=0、最大1,000試行、時間予算20秒、
+温度調整用サンプル4件で動作確認した。約16.5秒で1,000試行を完了した。
+これは動作確認の一試行であり、複数seedや同じ時間予算での性能比較実験は別途行う。
+
+| 指標 | BFS＋修復の初期解 | 探索後の最良解 | 現在の既存表示データ |
+| --- | ---: | ---: | ---: |
+| 二乗目的値（既存QPと同じ尺度） | 11,960.003 | 4,438.978 | 6,182.946 |
+| 高さ幅 | 49 | 43 | 約38 |
+| 柱の総長 | 11,658 | 7,568 | 約8,643.020 |
+| 重なり制約違反 | 0 | 0 | 0 |
+
+初期解からの目的値改善は約62.9%。既存結果より目的値と柱の総長は小さくなった一方、
+高さ幅は増えている。目的関数に高さ幅が直接含まれないことを、今後の評価でも考慮する。
+
+結果は [レイヤー配置](results/layers/layered_hypergraph_tree.json)、
+[初期解](results/layers/layered_hypergraph_tree_initial.json)、
+[レポート](results/reports/layered_hypergraph_tree_report.json) に保存した。
+実データでも別計算で二乗目的値・木の深さ・全4,431組の重なり制約を照合した。
+original.json、original.txt、masuta.csv、既存のlayered_hypergraph.json、
+index.htmlのハッシュが実行前後で一致することを確認した。
+
+## 17. 出力互換性の更新
+
+ユーザーの追加指定に合わせ、完了後の既定保存先をlayers_hypergraph.jsonへ変更した。
+完成JSONの形式と実行ログの主要項目をsolve_layers.pyに揃え、木の詳細情報は別ファイルに残す。
+旧版はQPの収束を報告するが、今回の焼きなましでは停止理由と探索中の最良値を報告する。
+
+Objective value (solve_layers.py) として、最終配置を旧版のアンカーへ平行移動した
+y = z[1:] - z[0] に対する 2 * scale * y.T @ L_yy @ y を再計算して表示する。
+この値は探索目的のl2_scaled_qpと一致することも検証する。
+正規化前の二乗和、--compareで指定した配置の値、改善量も別に出力する。
+レポートにはobjective_value_solve_layersと計算式を保存する。

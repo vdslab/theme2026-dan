@@ -3,7 +3,7 @@
 ## フォルダ構成
 
 ルートには solve で始まるPythonファイル、original.json、original.txt、
-masuta.csv、layered_hypergraph.json、index.html、Markdownを配置する。
+masuta.csv、layered_hypergraph.json、layers_hypergraph.json、index.html、Markdownを配置する。
 Git・Python環境・エディター設定・自動生成キャッシュは従来の場所に保持する。
 
 | フォルダ | 内容 |
@@ -30,6 +30,44 @@ python tools/convert.py
 python tools/plot_polygon_comparison.py backups/original_before_polygon_layout.json original.json results/previews/polygon_layout_comparison.png
 python -B -m unittest discover -s tests -v
 ~~~
+
+## 根付き木によるレイヤー割り当て
+
+[solve_layers_tree.py](solve_layers_tree.py) は、仮想根付きのBFS木を初期値とし、
+重なり違反を修復してから、移動・交換・部分木の付け替えを焼きなまし法で探索する。
+修復では移動側と外側を区別せず、一手の二乗距離目的値の増分が小さい合法な移動を選ぶ。
+維持可能な親子関係と子の順序を保持し、候補ごとのQP再求解は行わない。
+
+~~~powershell
+python solve_layers_tree.py --seed 0 --time-budget 300
+python solve_layers_tree.py --time-budget 0 --max-iterations 10000 --seed 0
+python solve_layers_tree.py original.json results/layers/tree_bfs.json --initial-only
+python solve_layers_tree.py --method greedy --time-budget 60 --compare layered_hypergraph.json
+python -B -m unittest tests.test_solve_layers_tree -v
+~~~
+
+入力の既定値は original.json。完了後の既定保存先はルートの layers_hypergraph.json。
+完成JSONは solve_layers.py と同じ nodes / hyperedges / overlaps の3項目とし、
+各hyperedgeにlayerを付ける。元のXY・所属・頂点順序・hyperedgeのメタデータを保持する。
+木の詳細と入力の独自メタデータは results/layers/layers_hypergraph_initial.json と
+results/layers/layers_hypergraph_checkpoint.json に保存する。
+レポートは results/reports/layers_hypergraph_report.json に保存する。
+ビューアは引き続きルートの layered_hypergraph.json を読む。
+
+実行ログには読み込み件数、重なり件数、重み・正則化、目的値、制約検証、座標範囲、
+保存先を表示する。Objective value (solve_layers.py) は、旧版と同じ
+2 * scale * y.T @ L_yy @ y を用い、y = z[1:] - z[0] として再計算した値である。
+新方式の探索目的も同じ式と等価であり、正規化前の二乗和も別に表示する。
+--compare を指定すると、その保存配置の目的値と改善量も表示する。
+焼きなましの結果は探索中に見つかった最良値として報告し、大域最適や収束を断定しない。
+
+--time-budget 0 は時間制限を無効にする。固定試行回数と同じseedを使う場合に指定する。
+時間予算には前処理・初期化・温度調整も含め、終了時の検証と保存は最後まで行う。
+--initial-temperature で温度を指定でき、未指定時は修復済み候補の目的値差から調整する。
+--max-repair-steps、--move-weights MOVE SWAP SUBTREE REWIRE、--log-limit も指定できる。
+最良解の途中保存は既定で5秒間隔とし、--checkpoint-interval で変更できる。
+最良状態はメモリ上で毎回更新し、正常終了・時間切れ・中断時には最新の最良解を保存する。
+詳細は [実装計画と実装状況](rooted_tree_layer_assignment_plan.md) を参照。
 
 This project is a complete pipeline for assigning layers (Z-levels) to hyperedges in a hypergraph to avoid overlapping polygons, and rendering them in an interactive 2.5D 3D space.
 
