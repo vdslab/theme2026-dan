@@ -1,0 +1,4254 @@
+{
+  "mode": "arrange",
+  "method": "rigid shape preservation + directional support separation + exact intersection acceptance",
+  "source": "https://arxiv.org/html/2308.05043v1#S4.SS3",
+  "polygon_separation_source": "https://arxiv.org/html/2108.00671v1#S3.SS2",
+  "reproduction_note": "Post-layout extension, not the paper simplification/reversal pipeline",
+  "nodes": 627,
+  "hyperedges": 383,
+  "incidence_preserved": true,
+  "before": {
+    "faces": 168,
+    "invalid_faces": 0,
+    "degenerate_faces": 0,
+    "concave_faces": 93,
+    "mean_regularity_ratio": 2.1147051498830542,
+    "median_regularity_ratio": 1.4118935032933013,
+    "mean_hull_deficit": 0.02752590847655748,
+    "minimum_node_distance": 0.0007609147070963601
+  },
+  "after": {
+    "faces": 168,
+    "invalid_faces": 0,
+    "degenerate_faces": 0,
+    "concave_faces": 90,
+    "mean_regularity_ratio": 2.1281265925788793,
+    "median_regularity_ratio": 1.4152390408113855,
+    "mean_hull_deficit": 0.02744916143111622,
+    "minimum_node_distance": 0.00040034379335065497
+  },
+  "before_overlaps": {
+    "area_threshold": 1e-09,
+    "overlapping_pairs": 7734,
+    "pairs_without_shared_nodes": 5420,
+    "pairs_with_at_most_two_shared_nodes": 6896
+  },
+  "after_overlaps": {
+    "area_threshold": 1e-09,
+    "overlapping_pairs": 7564,
+    "pairs_without_shared_nodes": 5255,
+    "pairs_with_at_most_two_shared_nodes": 6725
+  },
+  "placement_before": {
+    "target_pairs": 6896,
+    "target_area": 1953.5303558503654,
+    "normalized_target_area": 3356.2300809275216,
+    "nonincident_pairs": 5420,
+    "nonincident_area": 1222.762356171204
+  },
+  "placement_after": {
+    "target_pairs": 6725,
+    "target_area": 1896.7101141016406,
+    "normalized_target_area": 3227.446713240062,
+    "nonincident_pairs": 5255,
+    "nonincident_area": 1181.070718010025
+  },
+  "shape_tolerance": 0.1,
+  "shape_audit": {
+    "violating_face_ids": [],
+    "area_bounds_satisfied": true,
+    "mean_regularity_ratio": 2.1281265925788793,
+    "minimum_node_distance": 0.00040034379335065497,
+    "node_distance_floor": 0.00019022867677409003,
+    "node_distance_satisfied": true,
+    "area_ratio_min": 0.947766384515385,
+    "area_ratio_max": 1.0178911486239062
+  },
+  "shape_weights": [
+    1000.0,
+    300.0,
+    100.0,
+    30.0
+  ],
+  "directions": 64,
+  "boundary_order_preserved": true,
+  "iteration_limit": 300,
+  "round_limit": 3,
+  "shape_limits": {
+    "individual_ratio_factor": 1.1,
+    "mean_ratio_factor": 1.02,
+    "area_ratio_bounds": [
+      0.8,
+      1.2
+    ],
+    "hull_deficit_increase": 0.02,
+    "minimum_node_distance": 0.00019022867677409003
+  },
+  "native_kernel_sha256": "fab562d97fab1f4bc3d314a61ab52ef45a12be4f36379cb66fc893d2b9ccd7d3",
+  "history": [
+    {
+      "round": 1,
+      "shape_weight": 1000.0,
+      "iterations": 300,
+      "solver_message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+      "solver_success": false,
+      "accepted": true,
+      "trials": [
+        {
+          "step_fraction": 1.0,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.133277071198637,
+            "minimum_node_distance": 0.0006798833213173359,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.923680684121724,
+            "area_ratio_max": 1.0325033236496681
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.5,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1231596166204887,
+            "minimum_node_distance": 0.0007046594019665194,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9618178988634591,
+            "area_ratio_max": 1.0162360085563864
+          },
+          "actual_overlap": {
+            "target_pairs": 6807,
+            "target_area": 1921.656625736748,
+            "normalized_target_area": 3287.2712701877836,
+            "nonincident_pairs": 5333,
+            "nonincident_area": 1199.4524852842
+          },
+          "rejection": null
+        }
+      ],
+      "step_fraction": 0.5,
+      "actual_overlap": {
+        "target_pairs": 6807,
+        "target_area": 1921.656625736748,
+        "normalized_target_area": 3287.2712701877836,
+        "nonincident_pairs": 5333,
+        "nonincident_area": 1199.4524852842
+      },
+      "shape_audit": {
+        "violating_face_ids": [],
+        "area_bounds_satisfied": true,
+        "mean_regularity_ratio": 2.1231596166204887,
+        "minimum_node_distance": 0.0007046594019665194,
+        "node_distance_floor": 0.00019022867677409003,
+        "node_distance_satisfied": true,
+        "area_ratio_min": 0.9618178988634591,
+        "area_ratio_max": 1.0162360085563864
+      }
+    },
+    {
+      "round": 1,
+      "shape_weight": 300.0,
+      "iterations": 300,
+      "solver_message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+      "solver_success": false,
+      "accepted": true,
+      "trials": [
+        {
+          "step_fraction": 1.0,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1310524643335924,
+            "minimum_node_distance": 0.00044527366082808793,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.8545287479345295,
+            "area_ratio_max": 1.0780542974466492
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.5,
+          "shape_ok": false,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1246676230003274,
+            "minimum_node_distance": 0.00018631613448222306,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": false,
+            "area_ratio_min": 0.9168440333558079,
+            "area_ratio_max": 1.0365300040324184
+          },
+          "rejection": "shape_or_node_distance_limits"
+        },
+        {
+          "step_fraction": 0.25,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.123341681772907,
+            "minimum_node_distance": 0.0013798743076833704,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.948235305650564,
+            "area_ratio_max": 1.020318317320544
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.125,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1231124557472203,
+            "minimum_node_distance": 0.001096985318376354,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9555916945659413,
+            "area_ratio_max": 1.0182766136135946
+          },
+          "actual_overlap": {
+            "target_pairs": 6774,
+            "target_area": 1907.0170477380316,
+            "normalized_target_area": 3253.9173453290146,
+            "nonincident_pairs": 5302,
+            "nonincident_area": 1188.6615856260273
+          },
+          "rejection": null
+        }
+      ],
+      "step_fraction": 0.125,
+      "actual_overlap": {
+        "target_pairs": 6774,
+        "target_area": 1907.0170477380316,
+        "normalized_target_area": 3253.9173453290146,
+        "nonincident_pairs": 5302,
+        "nonincident_area": 1188.6615856260273
+      },
+      "shape_audit": {
+        "violating_face_ids": [],
+        "area_bounds_satisfied": true,
+        "mean_regularity_ratio": 2.1231124557472203,
+        "minimum_node_distance": 0.001096985318376354,
+        "node_distance_floor": 0.00019022867677409003,
+        "node_distance_satisfied": true,
+        "area_ratio_min": 0.9555916945659413,
+        "area_ratio_max": 1.0182766136135946
+      }
+    },
+    {
+      "round": 1,
+      "shape_weight": 100.0,
+      "iterations": 144,
+      "solver_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "solver_success": true,
+      "accepted": true,
+      "trials": [
+        {
+          "step_fraction": 1.0,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1460063527365145,
+            "minimum_node_distance": 0.0015074350944774355,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.8495779455597142,
+            "area_ratio_max": 1.0564345330077436
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.5,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1320024623522844,
+            "minimum_node_distance": 0.0011843225752556274,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9095660724532393,
+            "area_ratio_max": 1.027650767254464
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.25,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.126932437068946,
+            "minimum_node_distance": 0.0022305983189841424,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9375818506373652,
+            "area_ratio_max": 1.0215028889871214
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.125,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1248532068253496,
+            "minimum_node_distance": 0.0010526071538527857,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9484337519830902,
+            "area_ratio_max": 1.0198948559743402
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.0625,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1239413924626533,
+            "minimum_node_distance": 0.0006518976565453878,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9520114494468835,
+            "area_ratio_max": 1.0190870109624657
+          },
+          "actual_overlap": {
+            "target_pairs": 6738,
+            "target_area": 1899.9860094826918,
+            "normalized_target_area": 3236.154529292576,
+            "nonincident_pairs": 5269,
+            "nonincident_area": 1183.4559306996482
+          },
+          "rejection": null
+        }
+      ],
+      "step_fraction": 0.0625,
+      "actual_overlap": {
+        "target_pairs": 6738,
+        "target_area": 1899.9860094826918,
+        "normalized_target_area": 3236.154529292576,
+        "nonincident_pairs": 5269,
+        "nonincident_area": 1183.4559306996482
+      },
+      "shape_audit": {
+        "violating_face_ids": [],
+        "area_bounds_satisfied": true,
+        "mean_regularity_ratio": 2.1239413924626533,
+        "minimum_node_distance": 0.0006518976565453878,
+        "node_distance_floor": 0.00019022867677409003,
+        "node_distance_satisfied": true,
+        "area_ratio_min": 0.9520114494468835,
+        "area_ratio_max": 1.0190870109624657
+      }
+    },
+    {
+      "round": 1,
+      "shape_weight": 30.0,
+      "iterations": 145,
+      "solver_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "solver_success": true,
+      "accepted": false,
+      "trials": [
+        {
+          "step_fraction": 1.0,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1084888310472345,
+            "minimum_node_distance": 0.0012184969504585685,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.8517034059384393,
+            "area_ratio_max": 1.1431358314874
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.5,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1120130808542825,
+            "minimum_node_distance": 0.0002774422936052761,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.907067222998301,
+            "area_ratio_max": 1.068494066313851
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.25,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1168727653830968,
+            "minimum_node_distance": 0.001814556012441051,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9325840474749919,
+            "area_ratio_max": 1.031696216480062
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.125,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1201155833615446,
+            "minimum_node_distance": 0.001527976199481391,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9449745451005302,
+            "area_ratio_max": 1.0251814964404247
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.0625,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.121953017741298,
+            "minimum_node_distance": 0.0013984038910749364,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.951176331656533,
+            "area_ratio_max": 1.0220817243812554
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.03125,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.12292863857406,
+            "minimum_node_distance": 0.0006326867387405804,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9542788593703431,
+            "area_ratio_max": 1.0205712353417902
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.015625,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.123430406076557,
+            "minimum_node_distance": 0.000463833655194114,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9540881431984045,
+            "area_ratio_max": 1.0198258400696276
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        }
+      ],
+      "step_fraction": 0.0,
+      "actual_overlap": {
+        "target_pairs": 6738,
+        "target_area": 1899.9860094826918,
+        "normalized_target_area": 3236.154529292576,
+        "nonincident_pairs": 5269,
+        "nonincident_area": 1183.4559306996482
+      },
+      "shape_audit": {
+        "violating_face_ids": [],
+        "area_bounds_satisfied": true,
+        "mean_regularity_ratio": 2.123430406076557,
+        "minimum_node_distance": 0.000463833655194114,
+        "node_distance_floor": 0.00019022867677409003,
+        "node_distance_satisfied": true,
+        "area_ratio_min": 0.9540881431984045,
+        "area_ratio_max": 1.0198258400696276
+      }
+    },
+    {
+      "round": 2,
+      "shape_weight": 1000.0,
+      "iterations": 300,
+      "solver_message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+      "solver_success": false,
+      "accepted": true,
+      "trials": [
+        {
+          "step_fraction": 1.0,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1446716999100537,
+            "minimum_node_distance": 0.0003037062757017685,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9209110456517071,
+            "area_ratio_max": 1.0501304476546909
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.5,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1338460170507103,
+            "minimum_node_distance": 0.0004636365858451637,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9364635453490355,
+            "area_ratio_max": 1.0346119734119363
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.25,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1287743577961775,
+            "minimum_node_distance": 0.0005559257441796532,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9442380718478949,
+            "area_ratio_max": 1.0268503032130172
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.125,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.126327632645166,
+            "minimum_node_distance": 0.0006035595847081234,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9481249042598782,
+            "area_ratio_max": 1.0229688598442148
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.0625,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1251269479889907,
+            "minimum_node_distance": 0.0006276507054628589,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9500682127565014,
+            "area_ratio_max": 1.0210279860924487
+          },
+          "actual_overlap": {
+            "target_pairs": 6738,
+            "target_area": 1898.9063479052559,
+            "normalized_target_area": 3233.677537043193,
+            "nonincident_pairs": 5268,
+            "nonincident_area": 1182.6823883236107
+          },
+          "rejection": null
+        }
+      ],
+      "step_fraction": 0.0625,
+      "actual_overlap": {
+        "target_pairs": 6738,
+        "target_area": 1898.9063479052559,
+        "normalized_target_area": 3233.677537043193,
+        "nonincident_pairs": 5268,
+        "nonincident_area": 1182.6823883236107
+      },
+      "shape_audit": {
+        "violating_face_ids": [],
+        "area_bounds_satisfied": true,
+        "mean_regularity_ratio": 2.1251269479889907,
+        "minimum_node_distance": 0.0006276507054628589,
+        "node_distance_floor": 0.00019022867677409003,
+        "node_distance_satisfied": true,
+        "area_ratio_min": 0.9500682127565014,
+        "area_ratio_max": 1.0210279860924487
+      }
+    },
+    {
+      "round": 2,
+      "shape_weight": 300.0,
+      "iterations": 300,
+      "solver_message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+      "solver_success": false,
+      "accepted": false,
+      "trials": [
+        {
+          "step_fraction": 1.0,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.117339544281641,
+            "minimum_node_distance": 0.00029764305920211256,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.8612321972246604,
+            "area_ratio_max": 1.149480006799719
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.5,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1187287052893535,
+            "minimum_node_distance": 0.0012097453137600498,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.909194698795455,
+            "area_ratio_max": 1.0771408235669433
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.25,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.121290449116671,
+            "minimum_node_distance": 0.0012715795830666424,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9333263700850404,
+            "area_ratio_max": 1.0410943978304432
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.125,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.123047625288118,
+            "minimum_node_distance": 0.0010520322621064189,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9446080611488408,
+            "area_ratio_max": 1.0231019764321545
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.0625,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.124046703113872,
+            "minimum_node_distance": 0.000935546234060852,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9473308225697977,
+            "area_ratio_max": 1.0205416483250356
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.03125,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.124576640266292,
+            "minimum_node_distance": 0.0006840666352853674,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9486976890674306,
+            "area_ratio_max": 1.0207848450642294
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.015625,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.124849242822405,
+            "minimum_node_distance": 0.000623926321491925,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9493824937630361,
+            "area_ratio_max": 1.0209064225422122
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        }
+      ],
+      "step_fraction": 0.0,
+      "actual_overlap": {
+        "target_pairs": 6738,
+        "target_area": 1898.9063479052559,
+        "normalized_target_area": 3233.677537043193,
+        "nonincident_pairs": 5268,
+        "nonincident_area": 1182.6823883236107
+      },
+      "shape_audit": {
+        "violating_face_ids": [],
+        "area_bounds_satisfied": true,
+        "mean_regularity_ratio": 2.124849242822405,
+        "minimum_node_distance": 0.000623926321491925,
+        "node_distance_floor": 0.00019022867677409003,
+        "node_distance_satisfied": true,
+        "area_ratio_min": 0.9493824937630361,
+        "area_ratio_max": 1.0209064225422122
+      }
+    },
+    {
+      "round": 2,
+      "shape_weight": 100.0,
+      "iterations": 40,
+      "solver_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "solver_success": true,
+      "accepted": true,
+      "trials": [
+        {
+          "step_fraction": 1.0,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1458427472298505,
+            "minimum_node_distance": 0.0012182145474235516,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.855174872783279,
+            "area_ratio_max": 1.1204699306903578
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.5,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.134075698383784,
+            "minimum_node_distance": 0.0019601922237441395,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9181594108730196,
+            "area_ratio_max": 1.05367153101984
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.25,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1292480785131636,
+            "minimum_node_distance": 0.0014151274739415928,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.943805999545068,
+            "area_ratio_max": 1.0199077494412947
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.125,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1270972993806714,
+            "minimum_node_distance": 0.000990344840478934,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9506773427153236,
+            "area_ratio_max": 1.010783450623976
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.0625,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1260904808063903,
+            "minimum_node_distance": 0.00045238769733530886,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9522898198919013,
+            "area_ratio_max": 1.0159075431678035
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.03125,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.125603404150789,
+            "minimum_node_distance": 0.00042263771325783166,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9511795828750736,
+            "area_ratio_max": 1.0184682208325144
+          },
+          "actual_overlap": {
+            "target_pairs": 6730,
+            "target_area": 1897.244013884332,
+            "normalized_target_area": 3229.2743136504587,
+            "nonincident_pairs": 5260,
+            "nonincident_area": 1181.4617944327738
+          },
+          "rejection": null
+        }
+      ],
+      "step_fraction": 0.03125,
+      "actual_overlap": {
+        "target_pairs": 6730,
+        "target_area": 1897.244013884332,
+        "normalized_target_area": 3229.2743136504587,
+        "nonincident_pairs": 5260,
+        "nonincident_area": 1181.4617944327738
+      },
+      "shape_audit": {
+        "violating_face_ids": [],
+        "area_bounds_satisfied": true,
+        "mean_regularity_ratio": 2.125603404150789,
+        "minimum_node_distance": 0.00042263771325783166,
+        "node_distance_floor": 0.00019022867677409003,
+        "node_distance_satisfied": true,
+        "area_ratio_min": 0.9511795828750736,
+        "area_ratio_max": 1.0184682208325144
+      }
+    },
+    {
+      "round": 2,
+      "shape_weight": 30.0,
+      "iterations": 7,
+      "solver_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "solver_success": true,
+      "accepted": true,
+      "trials": [
+        {
+          "step_fraction": 1.0,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.146609512311143,
+            "minimum_node_distance": 0.0008894419895831263,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9238759909818467,
+            "area_ratio_max": 1.0138529442283613
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.5,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1358679750392855,
+            "minimum_node_distance": 0.0005176216682684197,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9375272169329603,
+            "area_ratio_max": 1.0161602107976644
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.25,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.130678094245135,
+            "minimum_node_distance": 0.00041114991273502073,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9443532574051432,
+            "area_ratio_max": 1.0173141228819038
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.125,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1281265925788793,
+            "minimum_node_distance": 0.00040034379335065497,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.947766384515385,
+            "area_ratio_max": 1.0178911486239062
+          },
+          "actual_overlap": {
+            "target_pairs": 6725,
+            "target_area": 1896.7101141016406,
+            "normalized_target_area": 3227.446713240062,
+            "nonincident_pairs": 5255,
+            "nonincident_area": 1181.070718010025
+          },
+          "rejection": null
+        }
+      ],
+      "step_fraction": 0.125,
+      "actual_overlap": {
+        "target_pairs": 6725,
+        "target_area": 1896.7101141016406,
+        "normalized_target_area": 3227.446713240062,
+        "nonincident_pairs": 5255,
+        "nonincident_area": 1181.070718010025
+      },
+      "shape_audit": {
+        "violating_face_ids": [],
+        "area_bounds_satisfied": true,
+        "mean_regularity_ratio": 2.1281265925788793,
+        "minimum_node_distance": 0.00040034379335065497,
+        "node_distance_floor": 0.00019022867677409003,
+        "node_distance_satisfied": true,
+        "area_ratio_min": 0.947766384515385,
+        "area_ratio_max": 1.0178911486239062
+      }
+    },
+    {
+      "round": 3,
+      "shape_weight": 1000.0,
+      "iterations": 300,
+      "solver_message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+      "solver_success": false,
+      "accepted": false,
+      "trials": [
+        {
+          "step_fraction": 1.0,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1458038605628,
+            "minimum_node_distance": 0.0004229196402430368,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9208583426288606,
+            "area_ratio_max": 1.0295032137137858
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.5,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.136615965297417,
+            "minimum_node_distance": 0.00035499512334084664,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9343152555601469,
+            "area_ratio_max": 1.0236980329443988
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.25,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1322801583835687,
+            "minimum_node_distance": 0.0003636780276038575,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9410415430347769,
+            "area_ratio_max": 1.0207948037280354
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.125,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.130180002654316,
+            "minimum_node_distance": 0.0003788756668748651,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9444041445243335,
+            "area_ratio_max": 1.0193430294119583
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.0625,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1291474068457097,
+            "minimum_node_distance": 0.00038888371921455317,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9460853097071725,
+            "area_ratio_max": 1.0186171023269284
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.03125,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.128635523909794,
+            "minimum_node_distance": 0.0003944397878784192,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9469258584081034,
+            "area_ratio_max": 1.0182541288026492
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.015625,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1283806890483956,
+            "minimum_node_distance": 0.0003973492464325656,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9473461242859511,
+            "area_ratio_max": 1.0180726395450976
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        }
+      ],
+      "step_fraction": 0.0,
+      "actual_overlap": {
+        "target_pairs": 6725,
+        "target_area": 1896.7101141016406,
+        "normalized_target_area": 3227.446713240062,
+        "nonincident_pairs": 5255,
+        "nonincident_area": 1181.070718010025
+      },
+      "shape_audit": {
+        "violating_face_ids": [],
+        "area_bounds_satisfied": true,
+        "mean_regularity_ratio": 2.1283806890483956,
+        "minimum_node_distance": 0.0003973492464325656,
+        "node_distance_floor": 0.00019022867677409003,
+        "node_distance_satisfied": true,
+        "area_ratio_min": 0.9473461242859511,
+        "area_ratio_max": 1.0180726395450976
+      }
+    },
+    {
+      "round": 3,
+      "shape_weight": 300.0,
+      "iterations": 300,
+      "solver_message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+      "solver_success": false,
+      "accepted": false,
+      "trials": [
+        {
+          "step_fraction": 1.0,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.146395260518684,
+            "minimum_node_distance": 0.0003219179134910159,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.8572706653553839,
+            "area_ratio_max": 1.0470443720824036
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.5,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1357911848621685,
+            "minimum_node_distance": 0.0009292586584972596,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9060733774608548,
+            "area_ratio_max": 1.0324515311605083
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.25,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.13161519352314,
+            "minimum_node_distance": 0.0012029677568739427,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9306359269607956,
+            "area_ratio_max": 1.0251672825940599
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.125,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1297885422699805,
+            "minimum_node_distance": 0.0008129102651970769,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9426654998195139,
+            "area_ratio_max": 1.021528201284448
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.0625,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1289372315288326,
+            "minimum_node_distance": 0.001168680343671703,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9452072919896642,
+            "area_ratio_max": 1.019709421373037
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.03125,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1285268493489475,
+            "minimum_node_distance": 0.0007584091622317884,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9464846757080717,
+            "area_ratio_max": 1.0188002216031946
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.015625,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1283254576745727,
+            "minimum_node_distance": 0.0005663610219067286,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9471249894756223,
+            "area_ratio_max": 1.01834566926473
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        }
+      ],
+      "step_fraction": 0.0,
+      "actual_overlap": {
+        "target_pairs": 6725,
+        "target_area": 1896.7101141016406,
+        "normalized_target_area": 3227.446713240062,
+        "nonincident_pairs": 5255,
+        "nonincident_area": 1181.070718010025
+      },
+      "shape_audit": {
+        "violating_face_ids": [],
+        "area_bounds_satisfied": true,
+        "mean_regularity_ratio": 2.1283254576745727,
+        "minimum_node_distance": 0.0005663610219067286,
+        "node_distance_floor": 0.00019022867677409003,
+        "node_distance_satisfied": true,
+        "area_ratio_min": 0.9471249894756223,
+        "area_ratio_max": 1.01834566926473
+      }
+    },
+    {
+      "round": 3,
+      "shape_weight": 100.0,
+      "iterations": 158,
+      "solver_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "solver_success": true,
+      "accepted": false,
+      "trials": [
+        {
+          "step_fraction": 1.0,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1464451322224427,
+            "minimum_node_distance": 0.0003170047947278346,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.8499271700021397,
+            "area_ratio_max": 1.1459028902619384
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.5,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1341772231392393,
+            "minimum_node_distance": 0.0008429440913182253,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9050367725042066,
+            "area_ratio_max": 1.057109778887237
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.25,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1303669705498787,
+            "minimum_node_distance": 0.002291340027379206,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9308887910445389,
+            "area_ratio_max": 1.024084780661505
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.125,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1290307438032,
+            "minimum_node_distance": 0.0016849060853486692,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9417254842636118,
+            "area_ratio_max": 1.0093875371740133
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.0625,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.128517779367215,
+            "minimum_node_distance": 0.0012716628346818438,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9447457334592627,
+            "area_ratio_max": 1.013643015021001
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.03125,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.12830652279598,
+            "minimum_node_distance": 0.000751458183412507,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.946256008754765,
+            "area_ratio_max": 1.0157679998529718
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.015625,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1282126710368203,
+            "minimum_node_distance": 0.0005305463577786857,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9470111840769334,
+            "area_ratio_max": 1.016829803746075
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        }
+      ],
+      "step_fraction": 0.0,
+      "actual_overlap": {
+        "target_pairs": 6725,
+        "target_area": 1896.7101141016406,
+        "normalized_target_area": 3227.446713240062,
+        "nonincident_pairs": 5255,
+        "nonincident_area": 1181.070718010025
+      },
+      "shape_audit": {
+        "violating_face_ids": [],
+        "area_bounds_satisfied": true,
+        "mean_regularity_ratio": 2.1282126710368203,
+        "minimum_node_distance": 0.0005305463577786857,
+        "node_distance_floor": 0.00019022867677409003,
+        "node_distance_satisfied": true,
+        "area_ratio_min": 0.9470111840769334,
+        "area_ratio_max": 1.016829803746075
+      }
+    },
+    {
+      "round": 3,
+      "shape_weight": 30.0,
+      "iterations": 16,
+      "solver_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "solver_success": true,
+      "accepted": false,
+      "trials": [
+        {
+          "step_fraction": 1.0,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1466034360055537,
+            "minimum_node_distance": 0.0020997564389424995,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.8982897825629567,
+            "area_ratio_max": 1.0541794908294937
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.5,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1370129015289776,
+            "minimum_node_distance": 0.0014152896527192147,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9317505638182655,
+            "area_ratio_max": 1.0229918434079341
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.25,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1324805883011155,
+            "minimum_node_distance": 0.001138772944181918,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9402021139774118,
+            "area_ratio_max": 1.0111922851443234
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.125,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.13028188683278,
+            "minimum_node_distance": 0.0007340628144018682,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9439850866654701,
+            "area_ratio_max": 1.0145423071535848
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.0625,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1291989135277163,
+            "minimum_node_distance": 0.0004982759009926898,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9458759449451942,
+            "area_ratio_max": 1.0162168754561247
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.03125,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.1286614314862313,
+            "minimum_node_distance": 0.0004230322807119833,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9468212170689787,
+            "area_ratio_max": 1.017054048931851
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        },
+        {
+          "step_fraction": 0.015625,
+          "shape_ok": true,
+          "shape_audit": {
+            "violating_face_ids": [],
+            "area_bounds_satisfied": true,
+            "mean_regularity_ratio": 2.128393682713991,
+            "minimum_node_distance": 0.00040408607502924416,
+            "node_distance_floor": 0.00019022867677409003,
+            "node_distance_satisfied": true,
+            "area_ratio_min": 0.9472938138768568,
+            "area_ratio_max": 1.0174726080008412
+          },
+          "actual_overlap": null,
+          "rejection": "invalid_geometry"
+        }
+      ],
+      "step_fraction": 0.0,
+      "actual_overlap": {
+        "target_pairs": 6725,
+        "target_area": 1896.7101141016406,
+        "normalized_target_area": 3227.446713240062,
+        "nonincident_pairs": 5255,
+        "nonincident_area": 1181.070718010025
+      },
+      "shape_audit": {
+        "violating_face_ids": [],
+        "area_bounds_satisfied": true,
+        "mean_regularity_ratio": 2.128393682713991,
+        "minimum_node_distance": 0.00040408607502924416,
+        "node_distance_floor": 0.00019022867677409003,
+        "node_distance_satisfied": true,
+        "area_ratio_min": 0.9472938138768568,
+        "area_ratio_max": 1.0174726080008412
+      }
+    }
+  ],
+  "elapsed_seconds": 87.82799999997951,
+  "improved": true,
+  "face_metrics_before": [
+    {
+      "id": 24,
+      "label": "No recommendation",
+      "vertices": 161,
+      "regularity_ratio": 1.897487512167551,
+      "hull_deficit": 0.026783421384855788,
+      "side_length_cv": 1.104816252066208
+    },
+    {
+      "id": 43,
+      "label": "SMA(Smooth muscle actin)",
+      "vertices": 77,
+      "regularity_ratio": 1.4216936254704584,
+      "hull_deficit": 0.0609465757141302,
+      "side_length_cv": 0.7555691497883527
+    },
+    {
+      "id": 52,
+      "label": "CD34",
+      "vertices": 75,
+      "regularity_ratio": 1.772312977748261,
+      "hull_deficit": 0.07199412111871017,
+      "side_length_cv": 0.8129244754522725
+    },
+    {
+      "id": 4,
+      "label": "CK7",
+      "vertices": 67,
+      "regularity_ratio": 1.9307674681299472,
+      "hull_deficit": 0.09768276842496615,
+      "side_length_cv": 0.6557913104801549
+    },
+    {
+      "id": 45,
+      "label": "S100",
+      "vertices": 67,
+      "regularity_ratio": 1.6632159387469896,
+      "hull_deficit": 0.08176761735464932,
+      "side_length_cv": 0.8501921104242572
+    },
+    {
+      "id": 5,
+      "label": "CK20",
+      "vertices": 65,
+      "regularity_ratio": 1.8033963733711553,
+      "hull_deficit": 0.08353941170724877,
+      "side_length_cv": 0.5542834180684955
+    },
+    {
+      "id": 34,
+      "label": "Desmin",
+      "vertices": 65,
+      "regularity_ratio": 1.7035059881255932,
+      "hull_deficit": 0.0729476362820427,
+      "side_length_cv": 0.734179966634712
+    },
+    {
+      "id": 31,
+      "label": "Keratins",
+      "vertices": 62,
+      "regularity_ratio": 1.6186478530620356,
+      "hull_deficit": 0.08876658131372339,
+      "side_length_cv": 0.6937079849992676
+    },
+    {
+      "id": 38,
+      "label": "EMA",
+      "vertices": 59,
+      "regularity_ratio": 1.7315221028541377,
+      "hull_deficit": 0.09350654792336355,
+      "side_length_cv": 0.6561813648060666
+    },
+    {
+      "id": 0,
+      "label": "TTF-1",
+      "vertices": 52,
+      "regularity_ratio": 1.631520440731583,
+      "hull_deficit": 0.09901427815621122,
+      "side_length_cv": 0.7554196127650458
+    },
+    {
+      "id": 75,
+      "label": "CD10",
+      "vertices": 49,
+      "regularity_ratio": 1.3553984950643712,
+      "hull_deficit": 0.06360961018541922,
+      "side_length_cv": 0.9216027527196974
+    },
+    {
+      "id": 25,
+      "label": "CD56",
+      "vertices": 43,
+      "regularity_ratio": 1.4581822339762418,
+      "hull_deficit": 0.08116073438325666,
+      "side_length_cv": 0.5623434066332215
+    },
+    {
+      "id": 50,
+      "label": "PgR(Progesteron receptor)",
+      "vertices": 42,
+      "regularity_ratio": 1.2561730139557539,
+      "hull_deficit": 0.0359740183146966,
+      "side_length_cv": 0.6784579023507533
+    },
+    {
+      "id": 11,
+      "label": "Synaptophysin",
+      "vertices": 41,
+      "regularity_ratio": 1.1494700480458706,
+      "hull_deficit": 0.0354462728780246,
+      "side_length_cv": 0.6057858275988761
+    },
+    {
+      "id": 29,
+      "label": "Vimentin",
+      "vertices": 41,
+      "regularity_ratio": 1.1467441892140136,
+      "hull_deficit": 0.029627339585848844,
+      "side_length_cv": 0.7147806922151189
+    },
+    {
+      "id": 49,
+      "label": "ER(Estrogen receptor)",
+      "vertices": 39,
+      "regularity_ratio": 1.2521985700555422,
+      "hull_deficit": 0.0337975195619733,
+      "side_length_cv": 0.6511272115198578
+    },
+    {
+      "id": 12,
+      "label": "Chromogranin",
+      "vertices": 38,
+      "regularity_ratio": 1.1543826006416729,
+      "hull_deficit": 0.038364142413840896,
+      "side_length_cv": 0.6149295932139295
+    },
+    {
+      "id": 20,
+      "label": "p63",
+      "vertices": 38,
+      "regularity_ratio": 1.3482087935022884,
+      "hull_deficit": 0.055627783772706385,
+      "side_length_cv": 0.7172529688261463
+    },
+    {
+      "id": 8,
+      "label": "CDX2",
+      "vertices": 34,
+      "regularity_ratio": 1.2444249320862333,
+      "hull_deficit": 0.040307767006222406,
+      "side_length_cv": 0.6327682990278908
+    },
+    {
+      "id": 26,
+      "label": "Ki67",
+      "vertices": 34,
+      "regularity_ratio": 1.125527961225837,
+      "hull_deficit": 0.023192196818250355,
+      "side_length_cv": 0.6787462174248647
+    },
+    {
+      "id": 103,
+      "label": "PAX8",
+      "vertices": 32,
+      "regularity_ratio": 1.1313139294489798,
+      "hull_deficit": 0.019037262023429702,
+      "side_length_cv": 0.5172534993693547
+    },
+    {
+      "id": 158,
+      "label": "p16",
+      "vertices": 30,
+      "regularity_ratio": 1.2254863967665643,
+      "hull_deficit": 0.024519374445137077,
+      "side_length_cv": 0.6449849855679658
+    },
+    {
+      "id": 172,
+      "label": "WT1",
+      "vertices": 30,
+      "regularity_ratio": 1.1505733433876397,
+      "hull_deficit": 0.028880848729805897,
+      "side_length_cv": 0.659831042663647
+    },
+    {
+      "id": 70,
+      "label": "Calretinin",
+      "vertices": 27,
+      "regularity_ratio": 1.1668971209713028,
+      "hull_deficit": 0.027328458229975316,
+      "side_length_cv": 0.7204184556990825
+    },
+    {
+      "id": 56,
+      "label": "Melan-A",
+      "vertices": 25,
+      "regularity_ratio": 2.0390712032438705,
+      "hull_deficit": 0.07348044983916191,
+      "side_length_cv": 1.0243499556473976
+    },
+    {
+      "id": 97,
+      "label": "GATA3",
+      "vertices": 25,
+      "regularity_ratio": 1.122006224316877,
+      "hull_deficit": 0.025862666654779876,
+      "side_length_cv": 0.8236862446272137
+    },
+    {
+      "id": 17,
+      "label": "p53",
+      "vertices": 24,
+      "regularity_ratio": 1.194439066508036,
+      "hull_deficit": 0.024104914314315162,
+      "side_length_cv": 0.9490778334227776
+    },
+    {
+      "id": 230,
+      "label": "Inhibin",
+      "vertices": 23,
+      "regularity_ratio": 1.1055170241585572,
+      "hull_deficit": 0.008183389573005684,
+      "side_length_cv": 0.6760550741764741
+    },
+    {
+      "id": 2,
+      "label": "NapsinA",
+      "vertices": 22,
+      "regularity_ratio": 1.1030951186409883,
+      "hull_deficit": 0.003154342333583582,
+      "side_length_cv": 0.6502953959209383
+    },
+    {
+      "id": 55,
+      "label": "HMB45",
+      "vertices": 22,
+      "regularity_ratio": 1.4897348269912865,
+      "hull_deficit": 0.024716533240364824,
+      "side_length_cv": 1.0961131072610977
+    },
+    {
+      "id": 36,
+      "label": "CK 34E12",
+      "vertices": 21,
+      "regularity_ratio": 1.0953112938678087,
+      "hull_deficit": 0.006224396380626995,
+      "side_length_cv": 1.1187999194773222
+    },
+    {
+      "id": 268,
+      "label": "AMACR",
+      "vertices": 21,
+      "regularity_ratio": 1.165659934234066,
+      "hull_deficit": 0.026896931286893966,
+      "side_length_cv": 0.9184832137635675
+    },
+    {
+      "id": 3,
+      "label": "CK5/6",
+      "vertices": 20,
+      "regularity_ratio": 1.1105767575456207,
+      "hull_deficit": 0.011423581968439955,
+      "side_length_cv": 0.5800705426203656
+    },
+    {
+      "id": 99,
+      "label": "PSA",
+      "vertices": 20,
+      "regularity_ratio": 1.5720553240756652,
+      "hull_deficit": 0.06042706110775509,
+      "side_length_cv": 1.2211579513062587
+    },
+    {
+      "id": 27,
+      "label": "c-kit(CD117)",
+      "vertices": 19,
+      "regularity_ratio": 1.405767201989619,
+      "hull_deficit": 0.13228382214660994,
+      "side_length_cv": 0.6900303463755532
+    },
+    {
+      "id": 35,
+      "label": "AE1/AE3",
+      "vertices": 19,
+      "regularity_ratio": 1.307700285558937,
+      "hull_deficit": 0.032766247233863566,
+      "side_length_cv": 0.9916209613812417
+    },
+    {
+      "id": 173,
+      "label": "ERG",
+      "vertices": 19,
+      "regularity_ratio": 1.9402439117609076,
+      "hull_deficit": 0.1338982424678974,
+      "side_length_cv": 1.2463438228632449
+    },
+    {
+      "id": 1,
+      "label": "p40",
+      "vertices": 17,
+      "regularity_ratio": 1.2764967893088208,
+      "hull_deficit": 0.030596683989249196,
+      "side_length_cv": 0.5587501680296637
+    },
+    {
+      "id": 13,
+      "label": "-catenin",
+      "vertices": 17,
+      "regularity_ratio": 1.168724416528147,
+      "hull_deficit": 0.02486551999940323,
+      "side_length_cv": 0.5887549839383366
+    },
+    {
+      "id": 39,
+      "label": "MSA(Muscle Specific Actin)",
+      "vertices": 17,
+      "regularity_ratio": 1.091265237707606,
+      "hull_deficit": 0.009041543610061487,
+      "side_length_cv": 0.6492198378763966
+    },
+    {
+      "id": 61,
+      "label": "D2-40",
+      "vertices": 17,
+      "regularity_ratio": 2.8476131701031884,
+      "hull_deficit": 0.18547262933657993,
+      "side_length_cv": 0.9354837965783588
+    },
+    {
+      "id": 9,
+      "label": "KRAS mutation",
+      "vertices": 16,
+      "regularity_ratio": 1.354120048224693,
+      "hull_deficit": 0.03175956439427119,
+      "side_length_cv": 1.1850581439431092
+    },
+    {
+      "id": 10,
+      "label": "MUC2",
+      "vertices": 16,
+      "regularity_ratio": 1.2465699313748433,
+      "hull_deficit": 0.021728545248339226,
+      "side_length_cv": 0.9667747759716675
+    },
+    {
+      "id": 37,
+      "label": "CEA",
+      "vertices": 16,
+      "regularity_ratio": 1.3176432054605576,
+      "hull_deficit": 0.019495704161482386,
+      "side_length_cv": 1.1071773535711094
+    },
+    {
+      "id": 68,
+      "label": "CD99",
+      "vertices": 16,
+      "regularity_ratio": 1.039679346505697,
+      "hull_deficit": 0.003164622454773003,
+      "side_length_cv": 0.6112463502830611
+    },
+    {
+      "id": 46,
+      "label": "GFAP",
+      "vertices": 15,
+      "regularity_ratio": 1.0547639294748363,
+      "hull_deficit": 0.000171347214252493,
+      "side_length_cv": 0.5606228856161513
+    },
+    {
+      "id": 60,
+      "label": "CD31",
+      "vertices": 15,
+      "regularity_ratio": 1.557081819220611,
+      "hull_deficit": 0.005717448599090069,
+      "side_length_cv": 1.4895776627474866
+    },
+    {
+      "id": 69,
+      "label": "BCL2",
+      "vertices": 15,
+      "regularity_ratio": 1.8021168986127347,
+      "hull_deficit": 0.11955951100989026,
+      "side_length_cv": 0.8550568272099421
+    },
+    {
+      "id": 73,
+      "label": "CD20",
+      "vertices": 15,
+      "regularity_ratio": 1.4068193185284392,
+      "hull_deficit": 0.061991898959323,
+      "side_length_cv": 0.8111730062062333
+    },
+    {
+      "id": 33,
+      "label": "Myogenin",
+      "vertices": 14,
+      "regularity_ratio": 1.0923579418443699,
+      "hull_deficit": 0.0021100839451035913,
+      "side_length_cv": 0.8136261052478971
+    },
+    {
+      "id": 104,
+      "label": "CD117",
+      "vertices": 13,
+      "regularity_ratio": 1.4417874775066766,
+      "hull_deficit": 0.014756366224516926,
+      "side_length_cv": 1.2334694605995804
+    },
+    {
+      "id": 234,
+      "label": "Steroidgenic factor-1",
+      "vertices": 13,
+      "regularity_ratio": 1.03988976708732,
+      "hull_deficit": 2.3601371045511854e-05,
+      "side_length_cv": 0.5168540456851306
+    },
+    {
+      "id": 235,
+      "label": "FOXL2",
+      "vertices": 13,
+      "regularity_ratio": 1.0401514149875026,
+      "hull_deficit": 2.4171741859202456e-05,
+      "side_length_cv": 0.5874424568135326
+    },
+    {
+      "id": 16,
+      "label": "SALL4",
+      "vertices": 12,
+      "regularity_ratio": 1.65943037577831,
+      "hull_deficit": 0.11779165218410192,
+      "side_length_cv": 0.7513572185028999
+    },
+    {
+      "id": 44,
+      "label": "Calponin",
+      "vertices": 12,
+      "regularity_ratio": 1.1073322440907436,
+      "hull_deficit": 0.0011094017844890391,
+      "side_length_cv": 0.7323789810452449
+    },
+    {
+      "id": 94,
+      "label": "SOX10",
+      "vertices": 12,
+      "regularity_ratio": 1.098989002329853,
+      "hull_deficit": 0.00361853580025151,
+      "side_length_cv": 0.7767516217877471
+    },
+    {
+      "id": 119,
+      "label": "DOG1",
+      "vertices": 12,
+      "regularity_ratio": 1.0475619357989685,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.67360181616751
+    },
+    {
+      "id": 163,
+      "label": "MyoD1",
+      "vertices": 12,
+      "regularity_ratio": 1.0830866811976496,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6719643366580824
+    },
+    {
+      "id": 188,
+      "label": "See leiomyoma",
+      "vertices": 12,
+      "regularity_ratio": 1.2027695666662974,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6431019765478194
+    },
+    {
+      "id": 192,
+      "label": "CAM5.2",
+      "vertices": 12,
+      "regularity_ratio": 1.2265379987066027,
+      "hull_deficit": 0.010516787800964322,
+      "side_length_cv": 0.9659779958074151
+    },
+    {
+      "id": 71,
+      "label": "MDM2",
+      "vertices": 11,
+      "regularity_ratio": 1.5482353096994652,
+      "hull_deficit": 0.06168974217728407,
+      "side_length_cv": 0.4431991358799788
+    },
+    {
+      "id": 90,
+      "label": "CD68",
+      "vertices": 11,
+      "regularity_ratio": 1.703017996256744,
+      "hull_deficit": 0.07843677635360635,
+      "side_length_cv": 1.0194839385026875
+    },
+    {
+      "id": 120,
+      "label": "NSE",
+      "vertices": 11,
+      "regularity_ratio": 1.13837343300701,
+      "hull_deficit": 0.004255749200356096,
+      "side_length_cv": 0.6316819093843892
+    },
+    {
+      "id": 174,
+      "label": "MITF",
+      "vertices": 11,
+      "regularity_ratio": 1.3720589844704683,
+      "hull_deficit": 0.0005953540845456962,
+      "side_length_cv": 1.1172893957265495
+    },
+    {
+      "id": 7,
+      "label": "MUC5AC",
+      "vertices": 10,
+      "regularity_ratio": 1.4169676880581636,
+      "hull_deficit": 0.00031141315135452263,
+      "side_length_cv": 1.0391512972781525
+    },
+    {
+      "id": 21,
+      "label": "PAS",
+      "vertices": 10,
+      "regularity_ratio": 1.4892492384374807,
+      "hull_deficit": 0.0067870389540265474,
+      "side_length_cv": 0.9169310414582118
+    },
+    {
+      "id": 23,
+      "label": "SP(Surfactant protein)",
+      "vertices": 10,
+      "regularity_ratio": 1.266329495846345,
+      "hull_deficit": 0.024135494287330972,
+      "side_length_cv": 0.8215478493112692
+    },
+    {
+      "id": 40,
+      "label": "EBV",
+      "vertices": 10,
+      "regularity_ratio": 1.5158486605900596,
+      "hull_deficit": 0.02880128494234213,
+      "side_length_cv": 0.8483017905079342
+    },
+    {
+      "id": 58,
+      "label": "TFE3",
+      "vertices": 10,
+      "regularity_ratio": 1.498146682747832,
+      "hull_deficit": 0.021462976597877548,
+      "side_length_cv": 1.069066519223685
+    },
+    {
+      "id": 110,
+      "label": "MUC6",
+      "vertices": 10,
+      "regularity_ratio": 1.422418874590348,
+      "hull_deficit": 0.00032146960468504293,
+      "side_length_cv": 1.0747190456155031
+    },
+    {
+      "id": 167,
+      "label": "Caldesmon",
+      "vertices": 10,
+      "regularity_ratio": 1.0481240678298063,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5197171334944843
+    },
+    {
+      "id": 14,
+      "label": "AFP",
+      "vertices": 9,
+      "regularity_ratio": 2.6407322575465604,
+      "hull_deficit": 0.1157053413423923,
+      "side_length_cv": 0.7712742135051499
+    },
+    {
+      "id": 48,
+      "label": "HPV",
+      "vertices": 9,
+      "regularity_ratio": 1.5900488660687908,
+      "hull_deficit": 0.055726143970765474,
+      "side_length_cv": 0.89702499117275
+    },
+    {
+      "id": 82,
+      "label": "CD3",
+      "vertices": 9,
+      "regularity_ratio": 1.840667979029069,
+      "hull_deficit": 0.0450842903603087,
+      "side_length_cv": 1.1481100794799224
+    },
+    {
+      "id": 122,
+      "label": "Cyclin D1",
+      "vertices": 9,
+      "regularity_ratio": 1.4697271273292047,
+      "hull_deficit": 0.11417893535580004,
+      "side_length_cv": 0.6510401794389008
+    },
+    {
+      "id": 77,
+      "label": "BCL6",
+      "vertices": 8,
+      "regularity_ratio": 1.4727516818440654,
+      "hull_deficit": 0.07223627042925385,
+      "side_length_cv": 0.7512145062693769
+    },
+    {
+      "id": 78,
+      "label": "CD43",
+      "vertices": 8,
+      "regularity_ratio": 1.7920239356101404,
+      "hull_deficit": 0.175440355311965,
+      "side_length_cv": 0.5390250115608715
+    },
+    {
+      "id": 80,
+      "label": "CD30",
+      "vertices": 8,
+      "regularity_ratio": 1.3296116365914403,
+      "hull_deficit": 0.0002569098735024644,
+      "side_length_cv": 0.5542555097536747
+    },
+    {
+      "id": 115,
+      "label": "PTEN",
+      "vertices": 8,
+      "regularity_ratio": 1.3149255413735113,
+      "hull_deficit": 0.010201637849552747,
+      "side_length_cv": 0.7801765708807041
+    },
+    {
+      "id": 169,
+      "label": "KIT(CD117)",
+      "vertices": 8,
+      "regularity_ratio": 1.247020612831529,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.8495939522924895
+    },
+    {
+      "id": 236,
+      "label": "4-Oct",
+      "vertices": 8,
+      "regularity_ratio": 1.9180135216807357,
+      "hull_deficit": 0.09364740812949046,
+      "side_length_cv": 0.9884214578246713
+    },
+    {
+      "id": 270,
+      "label": "Cathepsin K",
+      "vertices": 8,
+      "regularity_ratio": 1.3299052648125467,
+      "hull_deficit": 0.010144731055761969,
+      "side_length_cv": 0.8761963630195466
+    },
+    {
+      "id": 283,
+      "label": "CDK4",
+      "vertices": 8,
+      "regularity_ratio": 1.2639898414505497,
+      "hull_deficit": 0.011122430572920172,
+      "side_length_cv": 0.35417783933161695
+    },
+    {
+      "id": 326,
+      "label": "SMARCB1(INI1)",
+      "vertices": 8,
+      "regularity_ratio": 1.0618591663106252,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.46335144469219364
+    },
+    {
+      "id": 15,
+      "label": "Glypican3",
+      "vertices": 7,
+      "regularity_ratio": 1.3138889645776766,
+      "hull_deficit": 0.04480806976361407,
+      "side_length_cv": 0.6754025351823368
+    },
+    {
+      "id": 22,
+      "label": "Alcian blue",
+      "vertices": 7,
+      "regularity_ratio": 1.3290129443924625,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.7916329363775576
+    },
+    {
+      "id": 47,
+      "label": "Actin",
+      "vertices": 7,
+      "regularity_ratio": 1.418868550098185,
+      "hull_deficit": 0.06594492032310562,
+      "side_length_cv": 0.4696082406941389
+    },
+    {
+      "id": 64,
+      "label": "FLI1",
+      "vertices": 7,
+      "regularity_ratio": 1.9577496909393994,
+      "hull_deficit": 0.1738162474158107,
+      "side_length_cv": 0.6665022766668863
+    },
+    {
+      "id": 84,
+      "label": "CD5",
+      "vertices": 7,
+      "regularity_ratio": 1.1992732738489607,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.532995198395292
+    },
+    {
+      "id": 165,
+      "label": "GLUT1",
+      "vertices": 7,
+      "regularity_ratio": 2.7051576973746734,
+      "hull_deficit": 0.043195610649816474,
+      "side_length_cv": 0.5633239046327916
+    },
+    {
+      "id": 178,
+      "label": "PIK3CA mutation",
+      "vertices": 7,
+      "regularity_ratio": 1.3193632820854393,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.7258630615618603
+    },
+    {
+      "id": 181,
+      "label": "TP53 mutation",
+      "vertices": 7,
+      "regularity_ratio": 1.3193632820854393,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.7258630615618603
+    },
+    {
+      "id": 226,
+      "label": "Thrombomodulin",
+      "vertices": 7,
+      "regularity_ratio": 1.1027054515611752,
+      "hull_deficit": 0.0024758677139796736,
+      "side_length_cv": 0.5771491670020915
+    },
+    {
+      "id": 28,
+      "label": "Pancytokerain",
+      "vertices": 6,
+      "regularity_ratio": 1.600029467298505,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.7439757634138874
+    },
+    {
+      "id": 107,
+      "label": "PLAP",
+      "vertices": 6,
+      "regularity_ratio": 2.1184697880212506,
+      "hull_deficit": 0.20444369731593937,
+      "side_length_cv": 0.5580759440519422
+    },
+    {
+      "id": 117,
+      "label": "CK18",
+      "vertices": 6,
+      "regularity_ratio": 1.4540811330683638,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.7745370255535986
+    },
+    {
+      "id": 135,
+      "label": "CK19",
+      "vertices": 6,
+      "regularity_ratio": 2.2821989741381445,
+      "hull_deficit": 0.10970262558369082,
+      "side_length_cv": 0.8087072499257332
+    },
+    {
+      "id": 138,
+      "label": "BerEP4",
+      "vertices": 6,
+      "regularity_ratio": 1.2475831531531578,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6920440358970016
+    },
+    {
+      "id": 251,
+      "label": "Dpc4",
+      "vertices": 6,
+      "regularity_ratio": 1.1754632498625253,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5348511011340756
+    },
+    {
+      "id": 252,
+      "label": "S100P",
+      "vertices": 6,
+      "regularity_ratio": 1.3038879552208955,
+      "hull_deficit": 1.1102230246251565e-16,
+      "side_length_cv": 0.6531457968247885
+    },
+    {
+      "id": 271,
+      "label": "STAT6",
+      "vertices": 6,
+      "regularity_ratio": 1.3031855430090957,
+      "hull_deficit": 0.002223410596589037,
+      "side_length_cv": 0.6737904528857656
+    },
+    {
+      "id": 301,
+      "label": "PROX1",
+      "vertices": 6,
+      "regularity_ratio": 2.0400324343375402,
+      "hull_deficit": 0.0004099490631814806,
+      "side_length_cv": 0.9106944883877626
+    },
+    {
+      "id": 6,
+      "label": "HNF4a",
+      "vertices": 5,
+      "regularity_ratio": 1.8346068248674685,
+      "hull_deficit": 0.013733710475347105,
+      "side_length_cv": 0.751366944570641
+    },
+    {
+      "id": 51,
+      "label": "Neuroendocline markers",
+      "vertices": 5,
+      "regularity_ratio": 1.3174632922359435,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5326395629785867
+    },
+    {
+      "id": 57,
+      "label": "16p13(TSC2) loss",
+      "vertices": 5,
+      "regularity_ratio": 1.375591418844659,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5346501541594008
+    },
+    {
+      "id": 116,
+      "label": "CK8",
+      "vertices": 5,
+      "regularity_ratio": 1.7206252020364174,
+      "hull_deficit": 0.017067020795258903,
+      "side_length_cv": 0.6841160420114392
+    },
+    {
+      "id": 130,
+      "label": "Myeloperoxidase(MPO)",
+      "vertices": 5,
+      "regularity_ratio": 1.5820926031787825,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.7871424302823683
+    },
+    {
+      "id": 155,
+      "label": "E-cadherin",
+      "vertices": 5,
+      "regularity_ratio": 1.9691524589966392,
+      "hull_deficit": 0.2326744710309432,
+      "side_length_cv": 0.5469735544416447
+    },
+    {
+      "id": 176,
+      "label": "PAX2",
+      "vertices": 5,
+      "regularity_ratio": 3.9067877447016537,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.7940297703968707
+    },
+    {
+      "id": 272,
+      "label": "NAB2::STAT6",
+      "vertices": 5,
+      "regularity_ratio": 1.239628436509797,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.48533693617305956
+    },
+    {
+      "id": 284,
+      "label": "RB1",
+      "vertices": 5,
+      "regularity_ratio": 2.086340810718636,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6341311091964127
+    },
+    {
+      "id": 345,
+      "label": "CAIX(CA9)",
+      "vertices": 5,
+      "regularity_ratio": 1.3457332011538692,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5373584379892713
+    },
+    {
+      "id": 367,
+      "label": "SMA",
+      "vertices": 5,
+      "regularity_ratio": 1.7748216743128258,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.7523862969265814
+    },
+    {
+      "id": 19,
+      "label": "EGFR mutation",
+      "vertices": 4,
+      "regularity_ratio": 1.7831282801057942,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.48798623041367833
+    },
+    {
+      "id": 30,
+      "label": "Mucin",
+      "vertices": 4,
+      "regularity_ratio": 1.330995431748692,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.45288400134974427
+    },
+    {
+      "id": 62,
+      "label": "Factor",
+      "vertices": 4,
+      "regularity_ratio": 3.0363917780320278,
+      "hull_deficit": 0.0570107054170893,
+      "side_length_cv": 0.5624039455508316
+    },
+    {
+      "id": 83,
+      "label": "CD8",
+      "vertices": 4,
+      "regularity_ratio": 1.6390383768262613,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5363879012261585
+    },
+    {
+      "id": 87,
+      "label": "BRAF V600E",
+      "vertices": 4,
+      "regularity_ratio": 1.2735041738673216,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.46631934037579603
+    },
+    {
+      "id": 88,
+      "label": "Lysozyme",
+      "vertices": 4,
+      "regularity_ratio": 2.014858661653096,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.10768748363150918
+    },
+    {
+      "id": 91,
+      "label": "CD4",
+      "vertices": 4,
+      "regularity_ratio": 1.087223882404367,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.19767907438911947
+    },
+    {
+      "id": 100,
+      "label": "AR (Androgen receptor)",
+      "vertices": 4,
+      "regularity_ratio": 1.9376432761469782,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5400511425378259
+    },
+    {
+      "id": 101,
+      "label": "NF(Neurofilament)",
+      "vertices": 4,
+      "regularity_ratio": 1.6957592789246843,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5915875327457606
+    },
+    {
+      "id": 105,
+      "label": "Uroplakin2",
+      "vertices": 4,
+      "regularity_ratio": 2.076269888914016,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5576740039088008
+    },
+    {
+      "id": 106,
+      "label": "Uroplakin3",
+      "vertices": 4,
+      "regularity_ratio": 2.076269888914016,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5576740039088008
+    },
+    {
+      "id": 111,
+      "label": "MUC4",
+      "vertices": 4,
+      "regularity_ratio": 2.131709222537265,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.3083454998334319
+    },
+    {
+      "id": 123,
+      "label": "MUM1",
+      "vertices": 4,
+      "regularity_ratio": 1.424527172910181,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.39766731659534355
+    },
+    {
+      "id": 124,
+      "label": "CMYC::Ig",
+      "vertices": 4,
+      "regularity_ratio": 1.0718230265821835,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.2361529495137973
+    },
+    {
+      "id": 166,
+      "label": "Claudin-1",
+      "vertices": 4,
+      "regularity_ratio": 3.716993584201885,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6370419183973637
+    },
+    {
+      "id": 179,
+      "label": "PIK3R1 mutation",
+      "vertices": 4,
+      "regularity_ratio": 1.1705240927629157,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.34775833807161577
+    },
+    {
+      "id": 180,
+      "label": "ARID1A mutation",
+      "vertices": 4,
+      "regularity_ratio": 1.1705240927629157,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.34775833807161577
+    },
+    {
+      "id": 194,
+      "label": "Monotypic slg",
+      "vertices": 4,
+      "regularity_ratio": 1.277110131948985,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.49605549211296834
+    },
+    {
+      "id": 211,
+      "label": "CD19",
+      "vertices": 4,
+      "regularity_ratio": 1.6382798843815853,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.06680392938428557
+    },
+    {
+      "id": 212,
+      "label": "TdT",
+      "vertices": 4,
+      "regularity_ratio": 1.269959269397606,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.4779142459854292
+    },
+    {
+      "id": 221,
+      "label": "BRAF",
+      "vertices": 4,
+      "regularity_ratio": 1.2044869674713927,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.38722890070536614
+    },
+    {
+      "id": 231,
+      "label": "Sex cord markers",
+      "vertices": 4,
+      "regularity_ratio": 1.6670476674409695,
+      "hull_deficit": 0.021142598892878617,
+      "side_length_cv": 0.591693945342847
+    },
+    {
+      "id": 264,
+      "label": "PSAP",
+      "vertices": 4,
+      "regularity_ratio": 3.58911268217648,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6325705388008886
+    },
+    {
+      "id": 296,
+      "label": "NTRK fusion",
+      "vertices": 4,
+      "regularity_ratio": 1.9970767694690326,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5930144058236549
+    },
+    {
+      "id": 318,
+      "label": "SATB2",
+      "vertices": 4,
+      "regularity_ratio": 1.4897091211570217,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.36258682083478927
+    },
+    {
+      "id": 363,
+      "label": "Cytokeratins",
+      "vertices": 4,
+      "regularity_ratio": 2.4587394865056753,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5322754672221442
+    },
+    {
+      "id": 364,
+      "label": "ER",
+      "vertices": 4,
+      "regularity_ratio": 3.263959573579365,
+      "hull_deficit": 0.16440147931445237,
+      "side_length_cv": 0.2205553716809349
+    },
+    {
+      "id": 74,
+      "label": "CD79a",
+      "vertices": 3,
+      "regularity_ratio": 1.2218615561388733,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.2642421701113817
+    },
+    {
+      "id": 81,
+      "label": "CD15",
+      "vertices": 3,
+      "regularity_ratio": 19.14275247398383,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.3876689515951633
+    },
+    {
+      "id": 85,
+      "label": "CD1a",
+      "vertices": 3,
+      "regularity_ratio": 2.6377205097098,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.4127104744551432
+    },
+    {
+      "id": 109,
+      "label": "Gastric MUCIN",
+      "vertices": 3,
+      "regularity_ratio": 1.6229448834610127,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.307067084026154
+    },
+    {
+      "id": 118,
+      "label": "-SMA",
+      "vertices": 3,
+      "regularity_ratio": 1.1319099352454627,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.1778786056257462
+    },
+    {
+      "id": 127,
+      "label": "ALK",
+      "vertices": 3,
+      "regularity_ratio": 1.2921951199863153,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.24590115002020801
+    },
+    {
+      "id": 131,
+      "label": "CD163",
+      "vertices": 3,
+      "regularity_ratio": 13.96573282984788,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5786649008276253
+    },
+    {
+      "id": 137,
+      "label": "HPV18",
+      "vertices": 3,
+      "regularity_ratio": 1.8052942260756104,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.41614140704880653
+    },
+    {
+      "id": 144,
+      "label": "PGP9.5",
+      "vertices": 3,
+      "regularity_ratio": 1.6299837553185523,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.3177887352114213
+    },
+    {
+      "id": 145,
+      "label": "GPC3",
+      "vertices": 3,
+      "regularity_ratio": 50.50760747423719,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6893775801790032
+    },
+    {
+      "id": 160,
+      "label": "TP53",
+      "vertices": 3,
+      "regularity_ratio": 1.10650542845789,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.16878532315722156
+    },
+    {
+      "id": 168,
+      "label": "HDAC8",
+      "vertices": 3,
+      "regularity_ratio": 1.513425318106919,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.2736415573939674
+    },
+    {
+      "id": 186,
+      "label": "HNF1B",
+      "vertices": 3,
+      "regularity_ratio": 1.4308613033908384,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.26246413619393166
+    },
+    {
+      "id": 225,
+      "label": "Uroplakin",
+      "vertices": 3,
+      "regularity_ratio": 1.0363694146542517,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.10669914750911655
+    },
+    {
+      "id": 232,
+      "label": "12 trysomy",
+      "vertices": 3,
+      "regularity_ratio": 10.080789365000323,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.35355590419045524
+    },
+    {
+      "id": 237,
+      "label": "NANOG",
+      "vertices": 3,
+      "regularity_ratio": 2.0310594036618865,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.4797170732902317
+    },
+    {
+      "id": 239,
+      "label": "SOX2",
+      "vertices": 3,
+      "regularity_ratio": 1.2374346833214984,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.26143579253603144
+    },
+    {
+      "id": 242,
+      "label": "Thyroglobulin",
+      "vertices": 3,
+      "regularity_ratio": 9.008763419372373,
+      "hull_deficit": 3.552713678800501e-15,
+      "side_length_cv": 0.6595719728751305
+    },
+    {
+      "id": 254,
+      "label": "CA125",
+      "vertices": 3,
+      "regularity_ratio": 1.3058946726164726,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.251664319875567
+    },
+    {
+      "id": 269,
+      "label": "Tyrosinase",
+      "vertices": 3,
+      "regularity_ratio": 1.3933318993940513,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.3027481145979417
+    },
+    {
+      "id": 277,
+      "label": "PAP",
+      "vertices": 3,
+      "regularity_ratio": 2.0581602289247805,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.41118715865445826
+    },
+    {
+      "id": 279,
+      "label": "IGH rearrangement",
+      "vertices": 3,
+      "regularity_ratio": 1.1478474670467083,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.19569321502608467
+    },
+    {
+      "id": 281,
+      "label": "HMGA2",
+      "vertices": 3,
+      "regularity_ratio": 1.5729424387197624,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.3792189990173295
+    },
+    {
+      "id": 295,
+      "label": "pan-TRK",
+      "vertices": 3,
+      "regularity_ratio": 1.520268576081043,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.3301594983884613
+    },
+    {
+      "id": 329,
+      "label": "EWSR1 fusion",
+      "vertices": 3,
+      "regularity_ratio": 1.2782595407983925,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.25016961491391754
+    },
+    {
+      "id": 353,
+      "label": "34E12",
+      "vertices": 3,
+      "regularity_ratio": 1.762781805338357,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.30891304722242086
+    },
+    {
+      "id": 365,
+      "label": "PR",
+      "vertices": 3,
+      "regularity_ratio": 2.9271337848430443,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.3438205567478176
+    },
+    {
+      "id": 366,
+      "label": "DICER1 mutation",
+      "vertices": 3,
+      "regularity_ratio": 1.1817430384684422,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.23165489591397526
+    }
+  ],
+  "face_metrics_after": [
+    {
+      "id": 24,
+      "label": "No recommendation",
+      "vertices": 161,
+      "regularity_ratio": 1.8921447404136236,
+      "hull_deficit": 0.026533726008105996,
+      "side_length_cv": 1.0972065808951827
+    },
+    {
+      "id": 43,
+      "label": "SMA(Smooth muscle actin)",
+      "vertices": 77,
+      "regularity_ratio": 1.4523388226267961,
+      "hull_deficit": 0.0629784778522634,
+      "side_length_cv": 0.7440646036655769
+    },
+    {
+      "id": 52,
+      "label": "CD34",
+      "vertices": 75,
+      "regularity_ratio": 1.785295711765462,
+      "hull_deficit": 0.07359935272126628,
+      "side_length_cv": 0.8037996634857271
+    },
+    {
+      "id": 4,
+      "label": "CK7",
+      "vertices": 67,
+      "regularity_ratio": 1.962515500981401,
+      "hull_deficit": 0.09848797060559578,
+      "side_length_cv": 0.6529785699663159
+    },
+    {
+      "id": 45,
+      "label": "S100",
+      "vertices": 67,
+      "regularity_ratio": 1.7107576427204163,
+      "hull_deficit": 0.08778179118467577,
+      "side_length_cv": 0.8396365708363478
+    },
+    {
+      "id": 5,
+      "label": "CK20",
+      "vertices": 65,
+      "regularity_ratio": 1.832025178003497,
+      "hull_deficit": 0.08268379096899592,
+      "side_length_cv": 0.5540947853453014
+    },
+    {
+      "id": 34,
+      "label": "Desmin",
+      "vertices": 65,
+      "regularity_ratio": 1.7252622922705692,
+      "hull_deficit": 0.07528966520495906,
+      "side_length_cv": 0.7216438280129551
+    },
+    {
+      "id": 31,
+      "label": "Keratins",
+      "vertices": 62,
+      "regularity_ratio": 1.6762897753815444,
+      "hull_deficit": 0.09097803141362737,
+      "side_length_cv": 0.6990434310548361
+    },
+    {
+      "id": 38,
+      "label": "EMA",
+      "vertices": 59,
+      "regularity_ratio": 1.7784453359575425,
+      "hull_deficit": 0.09522110898343694,
+      "side_length_cv": 0.6432392923855742
+    },
+    {
+      "id": 0,
+      "label": "TTF-1",
+      "vertices": 52,
+      "regularity_ratio": 1.6372102482822308,
+      "hull_deficit": 0.09927955302989344,
+      "side_length_cv": 0.7658995169722651
+    },
+    {
+      "id": 75,
+      "label": "CD10",
+      "vertices": 49,
+      "regularity_ratio": 1.3689314738551914,
+      "hull_deficit": 0.061327120912658906,
+      "side_length_cv": 0.9208904521412664
+    },
+    {
+      "id": 25,
+      "label": "CD56",
+      "vertices": 43,
+      "regularity_ratio": 1.5119817764590295,
+      "hull_deficit": 0.08494535808152237,
+      "side_length_cv": 0.5541088955907624
+    },
+    {
+      "id": 50,
+      "label": "PgR(Progesteron receptor)",
+      "vertices": 42,
+      "regularity_ratio": 1.2749957119081805,
+      "hull_deficit": 0.03705334031568097,
+      "side_length_cv": 0.6710792924738278
+    },
+    {
+      "id": 11,
+      "label": "Synaptophysin",
+      "vertices": 41,
+      "regularity_ratio": 1.16256022525945,
+      "hull_deficit": 0.03818398724257055,
+      "side_length_cv": 0.6052980196815232
+    },
+    {
+      "id": 29,
+      "label": "Vimentin",
+      "vertices": 41,
+      "regularity_ratio": 1.1575120497821514,
+      "hull_deficit": 0.03271386026215273,
+      "side_length_cv": 0.7123617388706099
+    },
+    {
+      "id": 49,
+      "label": "ER(Estrogen receptor)",
+      "vertices": 39,
+      "regularity_ratio": 1.272216921198878,
+      "hull_deficit": 0.03582261236627582,
+      "side_length_cv": 0.6512321856825544
+    },
+    {
+      "id": 12,
+      "label": "Chromogranin",
+      "vertices": 38,
+      "regularity_ratio": 1.1660332454796183,
+      "hull_deficit": 0.03848154680846816,
+      "side_length_cv": 0.6182216877662022
+    },
+    {
+      "id": 20,
+      "label": "p63",
+      "vertices": 38,
+      "regularity_ratio": 1.3778556837958251,
+      "hull_deficit": 0.06261618097518606,
+      "side_length_cv": 0.6914914220142714
+    },
+    {
+      "id": 8,
+      "label": "CDX2",
+      "vertices": 34,
+      "regularity_ratio": 1.2434334518385706,
+      "hull_deficit": 0.03630812025811858,
+      "side_length_cv": 0.6300370042687609
+    },
+    {
+      "id": 26,
+      "label": "Ki67",
+      "vertices": 34,
+      "regularity_ratio": 1.1264837527500176,
+      "hull_deficit": 0.022845268542240227,
+      "side_length_cv": 0.6667598555055044
+    },
+    {
+      "id": 103,
+      "label": "PAX8",
+      "vertices": 32,
+      "regularity_ratio": 1.1416399543459188,
+      "hull_deficit": 0.02179578011675931,
+      "side_length_cv": 0.5256304286798638
+    },
+    {
+      "id": 158,
+      "label": "p16",
+      "vertices": 30,
+      "regularity_ratio": 1.2439727439575776,
+      "hull_deficit": 0.025605831769623832,
+      "side_length_cv": 0.6362029925080466
+    },
+    {
+      "id": 172,
+      "label": "WT1",
+      "vertices": 30,
+      "regularity_ratio": 1.1638037263550236,
+      "hull_deficit": 0.02947004183444224,
+      "side_length_cv": 0.6612817822570186
+    },
+    {
+      "id": 70,
+      "label": "Calretinin",
+      "vertices": 27,
+      "regularity_ratio": 1.1721822083678333,
+      "hull_deficit": 0.029553199012506526,
+      "side_length_cv": 0.7186783125135432
+    },
+    {
+      "id": 56,
+      "label": "Melan-A",
+      "vertices": 25,
+      "regularity_ratio": 2.047983514100013,
+      "hull_deficit": 0.07396138521917772,
+      "side_length_cv": 1.030022046533158
+    },
+    {
+      "id": 97,
+      "label": "GATA3",
+      "vertices": 25,
+      "regularity_ratio": 1.1274891127300646,
+      "hull_deficit": 0.027704593416724932,
+      "side_length_cv": 0.8262881749229029
+    },
+    {
+      "id": 17,
+      "label": "p53",
+      "vertices": 24,
+      "regularity_ratio": 1.1995273170591614,
+      "hull_deficit": 0.02377260732571429,
+      "side_length_cv": 0.9552781772046066
+    },
+    {
+      "id": 230,
+      "label": "Inhibin",
+      "vertices": 23,
+      "regularity_ratio": 1.1133368654234077,
+      "hull_deficit": 0.00929189687911125,
+      "side_length_cv": 0.6723252390428393
+    },
+    {
+      "id": 2,
+      "label": "NapsinA",
+      "vertices": 22,
+      "regularity_ratio": 1.105277913206426,
+      "hull_deficit": 0.003715307682075397,
+      "side_length_cv": 0.6566020301276835
+    },
+    {
+      "id": 55,
+      "label": "HMB45",
+      "vertices": 22,
+      "regularity_ratio": 1.4953151536357543,
+      "hull_deficit": 0.024156341974793882,
+      "side_length_cv": 1.1039114267381984
+    },
+    {
+      "id": 36,
+      "label": "CK 34E12",
+      "vertices": 21,
+      "regularity_ratio": 1.0963397472507337,
+      "hull_deficit": 0.006408574578672055,
+      "side_length_cv": 1.1175154373438525
+    },
+    {
+      "id": 268,
+      "label": "AMACR",
+      "vertices": 21,
+      "regularity_ratio": 1.1680038663999608,
+      "hull_deficit": 0.028608453560239555,
+      "side_length_cv": 0.9149357517038622
+    },
+    {
+      "id": 3,
+      "label": "CK5/6",
+      "vertices": 20,
+      "regularity_ratio": 1.1074840292453054,
+      "hull_deficit": 0.011534763650044022,
+      "side_length_cv": 0.5722383613790135
+    },
+    {
+      "id": 99,
+      "label": "PSA",
+      "vertices": 20,
+      "regularity_ratio": 1.5589133239501338,
+      "hull_deficit": 0.04992879702903874,
+      "side_length_cv": 1.225944894568285
+    },
+    {
+      "id": 27,
+      "label": "c-kit(CD117)",
+      "vertices": 19,
+      "regularity_ratio": 1.403486400546522,
+      "hull_deficit": 0.13111696002390438,
+      "side_length_cv": 0.6876675824561629
+    },
+    {
+      "id": 35,
+      "label": "AE1/AE3",
+      "vertices": 19,
+      "regularity_ratio": 1.317485001396754,
+      "hull_deficit": 0.03793035519742405,
+      "side_length_cv": 1.0022343680721315
+    },
+    {
+      "id": 173,
+      "label": "ERG",
+      "vertices": 19,
+      "regularity_ratio": 1.9471043974952444,
+      "hull_deficit": 0.12915189210134403,
+      "side_length_cv": 1.243333709440158
+    },
+    {
+      "id": 1,
+      "label": "p40",
+      "vertices": 17,
+      "regularity_ratio": 1.2752212251876527,
+      "hull_deficit": 0.031929701370438046,
+      "side_length_cv": 0.5445848882419018
+    },
+    {
+      "id": 13,
+      "label": "-catenin",
+      "vertices": 17,
+      "regularity_ratio": 1.1669314781338678,
+      "hull_deficit": 0.022425589592577122,
+      "side_length_cv": 0.5792112669420594
+    },
+    {
+      "id": 39,
+      "label": "MSA(Muscle Specific Actin)",
+      "vertices": 17,
+      "regularity_ratio": 1.0925738595554326,
+      "hull_deficit": 0.00912323465996534,
+      "side_length_cv": 0.6526001421129751
+    },
+    {
+      "id": 61,
+      "label": "D2-40",
+      "vertices": 17,
+      "regularity_ratio": 2.8050707266545976,
+      "hull_deficit": 0.17758179385228534,
+      "side_length_cv": 0.9358891180618135
+    },
+    {
+      "id": 9,
+      "label": "KRAS mutation",
+      "vertices": 16,
+      "regularity_ratio": 1.3685472861252912,
+      "hull_deficit": 0.032000827683478894,
+      "side_length_cv": 1.195885144420759
+    },
+    {
+      "id": 10,
+      "label": "MUC2",
+      "vertices": 16,
+      "regularity_ratio": 1.2447443019266924,
+      "hull_deficit": 0.01876756167126703,
+      "side_length_cv": 0.98267555991077
+    },
+    {
+      "id": 37,
+      "label": "CEA",
+      "vertices": 16,
+      "regularity_ratio": 1.3123022410640452,
+      "hull_deficit": 0.016207217197597323,
+      "side_length_cv": 1.0983593560789062
+    },
+    {
+      "id": 68,
+      "label": "CD99",
+      "vertices": 16,
+      "regularity_ratio": 1.0415593084908563,
+      "hull_deficit": 0.0035756556305551745,
+      "side_length_cv": 0.6112617114747544
+    },
+    {
+      "id": 46,
+      "label": "GFAP",
+      "vertices": 15,
+      "regularity_ratio": 1.0628439411274142,
+      "hull_deficit": 0.0017033402469533998,
+      "side_length_cv": 0.5581625094853943
+    },
+    {
+      "id": 60,
+      "label": "CD31",
+      "vertices": 15,
+      "regularity_ratio": 1.578406624450475,
+      "hull_deficit": 0.00831259192000855,
+      "side_length_cv": 1.499939678999016
+    },
+    {
+      "id": 69,
+      "label": "BCL2",
+      "vertices": 15,
+      "regularity_ratio": 1.7826039567358933,
+      "hull_deficit": 0.10892042263506829,
+      "side_length_cv": 0.8499872776634375
+    },
+    {
+      "id": 73,
+      "label": "CD20",
+      "vertices": 15,
+      "regularity_ratio": 1.4055036116303834,
+      "hull_deficit": 0.062018339164483405,
+      "side_length_cv": 0.8144431768281519
+    },
+    {
+      "id": 33,
+      "label": "Myogenin",
+      "vertices": 14,
+      "regularity_ratio": 1.0902239885869205,
+      "hull_deficit": 0.002029177962120432,
+      "side_length_cv": 0.8097341700889052
+    },
+    {
+      "id": 104,
+      "label": "CD117",
+      "vertices": 13,
+      "regularity_ratio": 1.4387184384749794,
+      "hull_deficit": 0.014921106099091364,
+      "side_length_cv": 1.232359022466349
+    },
+    {
+      "id": 234,
+      "label": "Steroidgenic factor-1",
+      "vertices": 13,
+      "regularity_ratio": 1.037438638106387,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5129121626485549
+    },
+    {
+      "id": 235,
+      "label": "FOXL2",
+      "vertices": 13,
+      "regularity_ratio": 1.0390407713102918,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5816670472720205
+    },
+    {
+      "id": 16,
+      "label": "SALL4",
+      "vertices": 12,
+      "regularity_ratio": 1.6694463929472878,
+      "hull_deficit": 0.11410664155298755,
+      "side_length_cv": 0.7498293555679211
+    },
+    {
+      "id": 44,
+      "label": "Calponin",
+      "vertices": 12,
+      "regularity_ratio": 1.1056940489456533,
+      "hull_deficit": 0.0007352597080257928,
+      "side_length_cv": 0.7356735276187276
+    },
+    {
+      "id": 94,
+      "label": "SOX10",
+      "vertices": 12,
+      "regularity_ratio": 1.0984718473799173,
+      "hull_deficit": 0.0024288218988796073,
+      "side_length_cv": 0.7805079076753967
+    },
+    {
+      "id": 119,
+      "label": "DOG1",
+      "vertices": 12,
+      "regularity_ratio": 1.0477839649233862,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6762518801793251
+    },
+    {
+      "id": 163,
+      "label": "MyoD1",
+      "vertices": 12,
+      "regularity_ratio": 1.081333612136837,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6681612780227717
+    },
+    {
+      "id": 188,
+      "label": "See leiomyoma",
+      "vertices": 12,
+      "regularity_ratio": 1.2027680130057579,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6431003653871668
+    },
+    {
+      "id": 192,
+      "label": "CAM5.2",
+      "vertices": 12,
+      "regularity_ratio": 1.2353816944384612,
+      "hull_deficit": 0.012012352907210144,
+      "side_length_cv": 0.967463888621182
+    },
+    {
+      "id": 71,
+      "label": "MDM2",
+      "vertices": 11,
+      "regularity_ratio": 1.5663331642949467,
+      "hull_deficit": 0.06383587334746887,
+      "side_length_cv": 0.44328207960532706
+    },
+    {
+      "id": 90,
+      "label": "CD68",
+      "vertices": 11,
+      "regularity_ratio": 1.706681426018182,
+      "hull_deficit": 0.07713107925608975,
+      "side_length_cv": 1.0225889606530947
+    },
+    {
+      "id": 120,
+      "label": "NSE",
+      "vertices": 11,
+      "regularity_ratio": 1.1354905811935512,
+      "hull_deficit": 0.003844917809092796,
+      "side_length_cv": 0.6390931190568891
+    },
+    {
+      "id": 174,
+      "label": "MITF",
+      "vertices": 11,
+      "regularity_ratio": 1.3786543088868075,
+      "hull_deficit": 0.00032136463922227687,
+      "side_length_cv": 1.1222560367944403
+    },
+    {
+      "id": 7,
+      "label": "MUC5AC",
+      "vertices": 10,
+      "regularity_ratio": 1.4249744699923874,
+      "hull_deficit": 0.00021508627016886273,
+      "side_length_cv": 1.0534317388183063
+    },
+    {
+      "id": 21,
+      "label": "PAS",
+      "vertices": 10,
+      "regularity_ratio": 1.5173883317450454,
+      "hull_deficit": 0.006147341385253746,
+      "side_length_cv": 0.9122337093420394
+    },
+    {
+      "id": 23,
+      "label": "SP(Surfactant protein)",
+      "vertices": 10,
+      "regularity_ratio": 1.28356500140587,
+      "hull_deficit": 0.02616446538841355,
+      "side_length_cv": 0.8311138522732119
+    },
+    {
+      "id": 40,
+      "label": "EBV",
+      "vertices": 10,
+      "regularity_ratio": 1.5204303673169366,
+      "hull_deficit": 0.02791348416041184,
+      "side_length_cv": 0.8462204298562417
+    },
+    {
+      "id": 58,
+      "label": "TFE3",
+      "vertices": 10,
+      "regularity_ratio": 1.50196827174786,
+      "hull_deficit": 0.0184297346557053,
+      "side_length_cv": 1.0744229158210703
+    },
+    {
+      "id": 110,
+      "label": "MUC6",
+      "vertices": 10,
+      "regularity_ratio": 1.4413835186941453,
+      "hull_deficit": 0.00029686405149464967,
+      "side_length_cv": 1.089865432059376
+    },
+    {
+      "id": 167,
+      "label": "Caldesmon",
+      "vertices": 10,
+      "regularity_ratio": 1.0481038272045298,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5214973097226091
+    },
+    {
+      "id": 14,
+      "label": "AFP",
+      "vertices": 9,
+      "regularity_ratio": 2.622636996843186,
+      "hull_deficit": 0.11604935538491734,
+      "side_length_cv": 0.7761335395833028
+    },
+    {
+      "id": 48,
+      "label": "HPV",
+      "vertices": 9,
+      "regularity_ratio": 1.6165726570138659,
+      "hull_deficit": 0.056583445697677925,
+      "side_length_cv": 0.896992799270825
+    },
+    {
+      "id": 82,
+      "label": "CD3",
+      "vertices": 9,
+      "regularity_ratio": 1.8395227914726664,
+      "hull_deficit": 0.04513817085998273,
+      "side_length_cv": 1.1460477849596369
+    },
+    {
+      "id": 122,
+      "label": "Cyclin D1",
+      "vertices": 9,
+      "regularity_ratio": 1.4697554475782915,
+      "hull_deficit": 0.11558322623847561,
+      "side_length_cv": 0.6485393059854344
+    },
+    {
+      "id": 77,
+      "label": "BCL6",
+      "vertices": 8,
+      "regularity_ratio": 1.4616719750629983,
+      "hull_deficit": 0.06613264892577764,
+      "side_length_cv": 0.7500530224102461
+    },
+    {
+      "id": 78,
+      "label": "CD43",
+      "vertices": 8,
+      "regularity_ratio": 1.775681522914093,
+      "hull_deficit": 0.16962429316701544,
+      "side_length_cv": 0.5374107576249805
+    },
+    {
+      "id": 80,
+      "label": "CD30",
+      "vertices": 8,
+      "regularity_ratio": 1.3348878009213856,
+      "hull_deficit": 0.0022439883556519824,
+      "side_length_cv": 0.5590168029567101
+    },
+    {
+      "id": 115,
+      "label": "PTEN",
+      "vertices": 8,
+      "regularity_ratio": 1.325718821425483,
+      "hull_deficit": 0.01256629587610314,
+      "side_length_cv": 0.788200170034914
+    },
+    {
+      "id": 169,
+      "label": "KIT(CD117)",
+      "vertices": 8,
+      "regularity_ratio": 1.2492310271367006,
+      "hull_deficit": 1.1102230246251565e-16,
+      "side_length_cv": 0.8532844047055101
+    },
+    {
+      "id": 236,
+      "label": "4-Oct",
+      "vertices": 8,
+      "regularity_ratio": 1.9325621993379638,
+      "hull_deficit": 0.09390536183255482,
+      "side_length_cv": 0.9861334563606724
+    },
+    {
+      "id": 270,
+      "label": "Cathepsin K",
+      "vertices": 8,
+      "regularity_ratio": 1.329058463646016,
+      "hull_deficit": 0.008771845463623085,
+      "side_length_cv": 0.8884297676908205
+    },
+    {
+      "id": 283,
+      "label": "CDK4",
+      "vertices": 8,
+      "regularity_ratio": 1.2667774550405695,
+      "hull_deficit": 0.012301918882801188,
+      "side_length_cv": 0.35582508523529593
+    },
+    {
+      "id": 326,
+      "label": "SMARCB1(INI1)",
+      "vertices": 8,
+      "regularity_ratio": 1.0638029189249314,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.457833205810152
+    },
+    {
+      "id": 15,
+      "label": "Glypican3",
+      "vertices": 7,
+      "regularity_ratio": 1.3156311919053518,
+      "hull_deficit": 0.04439922634238014,
+      "side_length_cv": 0.6774222643479976
+    },
+    {
+      "id": 22,
+      "label": "Alcian blue",
+      "vertices": 7,
+      "regularity_ratio": 1.3351520951380722,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.7903438296998279
+    },
+    {
+      "id": 47,
+      "label": "Actin",
+      "vertices": 7,
+      "regularity_ratio": 1.431784600187131,
+      "hull_deficit": 0.07027171553386302,
+      "side_length_cv": 0.47254163639261126
+    },
+    {
+      "id": 64,
+      "label": "FLI1",
+      "vertices": 7,
+      "regularity_ratio": 1.969617825008002,
+      "hull_deficit": 0.16862139494512784,
+      "side_length_cv": 0.6729179724099579
+    },
+    {
+      "id": 84,
+      "label": "CD5",
+      "vertices": 7,
+      "regularity_ratio": 1.2002106842720621,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5328211487904942
+    },
+    {
+      "id": 165,
+      "label": "GLUT1",
+      "vertices": 7,
+      "regularity_ratio": 2.733582907251297,
+      "hull_deficit": 0.04271423011809938,
+      "side_length_cv": 0.5655432874053699
+    },
+    {
+      "id": 178,
+      "label": "PIK3CA mutation",
+      "vertices": 7,
+      "regularity_ratio": 1.3367587886370391,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.7355410522157794
+    },
+    {
+      "id": 181,
+      "label": "TP53 mutation",
+      "vertices": 7,
+      "regularity_ratio": 1.3367587886370391,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.7355410522157794
+    },
+    {
+      "id": 226,
+      "label": "Thrombomodulin",
+      "vertices": 7,
+      "regularity_ratio": 1.102980925920997,
+      "hull_deficit": 0.00271757712267795,
+      "side_length_cv": 0.5777246937282995
+    },
+    {
+      "id": 28,
+      "label": "Pancytokerain",
+      "vertices": 6,
+      "regularity_ratio": 1.6191017958827245,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.7506321010562266
+    },
+    {
+      "id": 107,
+      "label": "PLAP",
+      "vertices": 6,
+      "regularity_ratio": 2.1169326544614244,
+      "hull_deficit": 0.2037688552448832,
+      "side_length_cv": 0.5582802749406517
+    },
+    {
+      "id": 117,
+      "label": "CK18",
+      "vertices": 6,
+      "regularity_ratio": 1.4626317217904752,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.7780716748269113
+    },
+    {
+      "id": 135,
+      "label": "CK19",
+      "vertices": 6,
+      "regularity_ratio": 2.278662437866396,
+      "hull_deficit": 0.10097994221535789,
+      "side_length_cv": 0.8119128917316702
+    },
+    {
+      "id": 138,
+      "label": "BerEP4",
+      "vertices": 6,
+      "regularity_ratio": 1.2581577332160718,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.7040445715747735
+    },
+    {
+      "id": 251,
+      "label": "Dpc4",
+      "vertices": 6,
+      "regularity_ratio": 1.180956355645,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.539547636331573
+    },
+    {
+      "id": 252,
+      "label": "S100P",
+      "vertices": 6,
+      "regularity_ratio": 1.3126381395449134,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6645633227941009
+    },
+    {
+      "id": 271,
+      "label": "STAT6",
+      "vertices": 6,
+      "regularity_ratio": 1.304335529673994,
+      "hull_deficit": 0.002115395186999436,
+      "side_length_cv": 0.6744549842894767
+    },
+    {
+      "id": 301,
+      "label": "PROX1",
+      "vertices": 6,
+      "regularity_ratio": 2.0530164247217635,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.9122664941960281
+    },
+    {
+      "id": 6,
+      "label": "HNF4a",
+      "vertices": 5,
+      "regularity_ratio": 1.8556302253409218,
+      "hull_deficit": 0.015246816701993238,
+      "side_length_cv": 0.7508311918719764
+    },
+    {
+      "id": 51,
+      "label": "Neuroendocline markers",
+      "vertices": 5,
+      "regularity_ratio": 1.3220569112862448,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5358398054963063
+    },
+    {
+      "id": 57,
+      "label": "16p13(TSC2) loss",
+      "vertices": 5,
+      "regularity_ratio": 1.384895443929114,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5374434427911057
+    },
+    {
+      "id": 116,
+      "label": "CK8",
+      "vertices": 5,
+      "regularity_ratio": 1.731355057989684,
+      "hull_deficit": 0.017425663930881297,
+      "side_length_cv": 0.6868966748186621
+    },
+    {
+      "id": 130,
+      "label": "Myeloperoxidase(MPO)",
+      "vertices": 5,
+      "regularity_ratio": 1.5978132949122006,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.7938151037108142
+    },
+    {
+      "id": 155,
+      "label": "E-cadherin",
+      "vertices": 5,
+      "regularity_ratio": 1.9643679049952907,
+      "hull_deficit": 0.23080036389913627,
+      "side_length_cv": 0.5473872955144564
+    },
+    {
+      "id": 176,
+      "label": "PAX2",
+      "vertices": 5,
+      "regularity_ratio": 3.9830897857852174,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.7966423358656254
+    },
+    {
+      "id": 272,
+      "label": "NAB2::STAT6",
+      "vertices": 5,
+      "regularity_ratio": 1.2408943409393969,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.4864915124920904
+    },
+    {
+      "id": 284,
+      "label": "RB1",
+      "vertices": 5,
+      "regularity_ratio": 2.1023377255887197,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.636469395215536
+    },
+    {
+      "id": 345,
+      "label": "CAIX(CA9)",
+      "vertices": 5,
+      "regularity_ratio": 1.3459556052919364,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5370917009489289
+    },
+    {
+      "id": 367,
+      "label": "SMA",
+      "vertices": 5,
+      "regularity_ratio": 1.7713891548293181,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.7533147698938983
+    },
+    {
+      "id": 19,
+      "label": "EGFR mutation",
+      "vertices": 4,
+      "regularity_ratio": 1.7948854383695814,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.48910838852638383
+    },
+    {
+      "id": 30,
+      "label": "Mucin",
+      "vertices": 4,
+      "regularity_ratio": 1.3315246342476528,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.4550339870599488
+    },
+    {
+      "id": 62,
+      "label": "Factor",
+      "vertices": 4,
+      "regularity_ratio": 3.0618707243378385,
+      "hull_deficit": 0.05555437162497756,
+      "side_length_cv": 0.5634761103963163
+    },
+    {
+      "id": 83,
+      "label": "CD8",
+      "vertices": 4,
+      "regularity_ratio": 1.6408515141290523,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5368163168131531
+    },
+    {
+      "id": 87,
+      "label": "BRAF V600E",
+      "vertices": 4,
+      "regularity_ratio": 1.2778141750481846,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.4681056839217274
+    },
+    {
+      "id": 88,
+      "label": "Lysozyme",
+      "vertices": 4,
+      "regularity_ratio": 2.0306840238167805,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.10750684684205482
+    },
+    {
+      "id": 91,
+      "label": "CD4",
+      "vertices": 4,
+      "regularity_ratio": 1.0870450426681137,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.19738859567963438
+    },
+    {
+      "id": 100,
+      "label": "AR (Androgen receptor)",
+      "vertices": 4,
+      "regularity_ratio": 1.9835948586932373,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5472192268203653
+    },
+    {
+      "id": 101,
+      "label": "NF(Neurofilament)",
+      "vertices": 4,
+      "regularity_ratio": 1.7129272242264426,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5932355475985767
+    },
+    {
+      "id": 105,
+      "label": "Uroplakin2",
+      "vertices": 4,
+      "regularity_ratio": 2.0995067300648613,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5590800322827552
+    },
+    {
+      "id": 106,
+      "label": "Uroplakin3",
+      "vertices": 4,
+      "regularity_ratio": 2.0995067300648613,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5590800322827552
+    },
+    {
+      "id": 111,
+      "label": "MUC4",
+      "vertices": 4,
+      "regularity_ratio": 2.1844894762549476,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.31047207098204244
+    },
+    {
+      "id": 123,
+      "label": "MUM1",
+      "vertices": 4,
+      "regularity_ratio": 1.4313877397713846,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.39916152172238184
+    },
+    {
+      "id": 124,
+      "label": "CMYC::Ig",
+      "vertices": 4,
+      "regularity_ratio": 1.0719192166258216,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.23643218691054899
+    },
+    {
+      "id": 166,
+      "label": "Claudin-1",
+      "vertices": 4,
+      "regularity_ratio": 3.7487405243982526,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6372507732559386
+    },
+    {
+      "id": 179,
+      "label": "PIK3R1 mutation",
+      "vertices": 4,
+      "regularity_ratio": 1.1771447632479972,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.3515616313372676
+    },
+    {
+      "id": 180,
+      "label": "ARID1A mutation",
+      "vertices": 4,
+      "regularity_ratio": 1.1771447632479972,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.3515616313372676
+    },
+    {
+      "id": 194,
+      "label": "Monotypic slg",
+      "vertices": 4,
+      "regularity_ratio": 1.2796642989469795,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.4986406554113463
+    },
+    {
+      "id": 211,
+      "label": "CD19",
+      "vertices": 4,
+      "regularity_ratio": 1.6382347590497686,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.06705411997049329
+    },
+    {
+      "id": 212,
+      "label": "TdT",
+      "vertices": 4,
+      "regularity_ratio": 1.2670501620951529,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.4757967622961514
+    },
+    {
+      "id": 221,
+      "label": "BRAF",
+      "vertices": 4,
+      "regularity_ratio": 1.2153415271796861,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.3957294493340805
+    },
+    {
+      "id": 231,
+      "label": "Sex cord markers",
+      "vertices": 4,
+      "regularity_ratio": 1.6634512824781376,
+      "hull_deficit": 0.020470265309335267,
+      "side_length_cv": 0.5918565484130814
+    },
+    {
+      "id": 264,
+      "label": "PSAP",
+      "vertices": 4,
+      "regularity_ratio": 3.6326426278362445,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6341560598971033
+    },
+    {
+      "id": 296,
+      "label": "NTRK fusion",
+      "vertices": 4,
+      "regularity_ratio": 2.00845815911305,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5893550953757775
+    },
+    {
+      "id": 318,
+      "label": "SATB2",
+      "vertices": 4,
+      "regularity_ratio": 1.5057333331083629,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.3666789698640433
+    },
+    {
+      "id": 363,
+      "label": "Cytokeratins",
+      "vertices": 4,
+      "regularity_ratio": 2.4514482516448144,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5317906595366625
+    },
+    {
+      "id": 364,
+      "label": "ER",
+      "vertices": 4,
+      "regularity_ratio": 3.248716393004525,
+      "hull_deficit": 0.16753525974162586,
+      "side_length_cv": 0.21981471574908062
+    },
+    {
+      "id": 74,
+      "label": "CD79a",
+      "vertices": 3,
+      "regularity_ratio": 1.2219937031544978,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.26409777288828096
+    },
+    {
+      "id": 81,
+      "label": "CD15",
+      "vertices": 3,
+      "regularity_ratio": 18.874036628243857,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.38779026326389354
+    },
+    {
+      "id": 85,
+      "label": "CD1a",
+      "vertices": 3,
+      "regularity_ratio": 2.686156419244862,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.41484075531573716
+    },
+    {
+      "id": 109,
+      "label": "Gastric MUCIN",
+      "vertices": 3,
+      "regularity_ratio": 1.6213943369544608,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.30811674915023685
+    },
+    {
+      "id": 118,
+      "label": "-SMA",
+      "vertices": 3,
+      "regularity_ratio": 1.1342765870485538,
+      "hull_deficit": 1.1102230246251565e-16,
+      "side_length_cv": 0.17921231875768384
+    },
+    {
+      "id": 127,
+      "label": "ALK",
+      "vertices": 3,
+      "regularity_ratio": 1.2928737668537398,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.2459242510446208
+    },
+    {
+      "id": 131,
+      "label": "CD163",
+      "vertices": 3,
+      "regularity_ratio": 14.64403944403187,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.5814675362948334
+    },
+    {
+      "id": 137,
+      "label": "HPV18",
+      "vertices": 3,
+      "regularity_ratio": 1.792048808025063,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.4128520559020419
+    },
+    {
+      "id": 144,
+      "label": "PGP9.5",
+      "vertices": 3,
+      "regularity_ratio": 1.6537508040115088,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.31967424092416724
+    },
+    {
+      "id": 145,
+      "label": "GPC3",
+      "vertices": 3,
+      "regularity_ratio": 50.64706912669168,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6894658966339505
+    },
+    {
+      "id": 160,
+      "label": "TP53",
+      "vertices": 3,
+      "regularity_ratio": 1.117971543575647,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.17611478989763182
+    },
+    {
+      "id": 168,
+      "label": "HDAC8",
+      "vertices": 3,
+      "regularity_ratio": 1.5031950229351945,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.2724800144460559
+    },
+    {
+      "id": 186,
+      "label": "HNF1B",
+      "vertices": 3,
+      "regularity_ratio": 1.4518388216617044,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.2654528885530447
+    },
+    {
+      "id": 225,
+      "label": "Uroplakin",
+      "vertices": 3,
+      "regularity_ratio": 1.0389164277162162,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.11057535035478393
+    },
+    {
+      "id": 232,
+      "label": "12 trysomy",
+      "vertices": 3,
+      "regularity_ratio": 10.377108810756223,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.35379315729547484
+    },
+    {
+      "id": 237,
+      "label": "NANOG",
+      "vertices": 3,
+      "regularity_ratio": 2.040624195315032,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.4808738966087797
+    },
+    {
+      "id": 239,
+      "label": "SOX2",
+      "vertices": 3,
+      "regularity_ratio": 1.2354080651735349,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.26186267876454583
+    },
+    {
+      "id": 242,
+      "label": "Thyroglobulin",
+      "vertices": 3,
+      "regularity_ratio": 9.006206259968696,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.6597225348799085
+    },
+    {
+      "id": 254,
+      "label": "CA125",
+      "vertices": 3,
+      "regularity_ratio": 1.3162054033756376,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.25519308619017605
+    },
+    {
+      "id": 269,
+      "label": "Tyrosinase",
+      "vertices": 3,
+      "regularity_ratio": 1.3982232528371803,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.30425327710642586
+    },
+    {
+      "id": 277,
+      "label": "PAP",
+      "vertices": 3,
+      "regularity_ratio": 2.086631280552431,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.414269811001333
+    },
+    {
+      "id": 279,
+      "label": "IGH rearrangement",
+      "vertices": 3,
+      "regularity_ratio": 1.1460748586112413,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.19432339561122922
+    },
+    {
+      "id": 281,
+      "label": "HMGA2",
+      "vertices": 3,
+      "regularity_ratio": 1.5764112353537616,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.3808762631263913
+    },
+    {
+      "id": 295,
+      "label": "pan-TRK",
+      "vertices": 3,
+      "regularity_ratio": 1.5286074680610853,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.33144623117852956
+    },
+    {
+      "id": 329,
+      "label": "EWSR1 fusion",
+      "vertices": 3,
+      "regularity_ratio": 1.2903129728183593,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.25485369799620505
+    },
+    {
+      "id": 353,
+      "label": "34E12",
+      "vertices": 3,
+      "regularity_ratio": 1.7694998634670656,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.30957244706954307
+    },
+    {
+      "id": 365,
+      "label": "PR",
+      "vertices": 3,
+      "regularity_ratio": 2.9044142593994104,
+      "hull_deficit": 0.0,
+      "side_length_cv": 0.3435371791022332
+    },
+    {
+      "id": 366,
+      "label": "DICER1 mutation",
+      "vertices": 3,
+      "regularity_ratio": 1.1804056297430108,
+      "hull_deficit": 1.1102230246251565e-16,
+      "side_length_cv": 0.2306367861168172
+    }
+  ],
+  "limitations": [
+    "Shared-node constraints can prevent complete separation",
+    "Pairs sharing three or more vertices are not directly repelled",
+    "Directional convex-hull penetration is a conservative search surrogate"
+  ],
+  "initial_layout": null,
+  "input": "original.json",
+  "output": "original.json",
+  "input_sha256": "b16478769b881bcfb1f84697e15626f5b5726f11aa3dcaab06e440a6e266bd55",
+  "wrote_layout": true,
+  "backup": "original_before_polygon_arrangement.json"
+}

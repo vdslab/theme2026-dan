@@ -122,7 +122,7 @@ subject to:
 
 初期状態は比較基準として保存する。探索用の状態は独立したコピーにし、候補の変更によって初期状態が書き換わらないようにする。大きな共通配列 `W` や `L` は、候補ごとにコピーしない。
 
-保存先は `layered_hypergraph_initial.json` を想定する。従来の `nodes`・`hyperedges`・`overlaps` を含め、各ハイパーエッジの `layer` にQP後の高さを格納する。探索用の情報と評価値は追加フィールドに保存する。
+保存先は `results/layers/layered_hypergraph_initial.json` を想定する。従来の `nodes`・`hyperedges`・`overlaps` を含め、各ハイパーエッジの `layer` にQP後の高さを格納する。探索用の情報と評価値は追加フィールドに保存する。
 
 ## 4. 関数の分割案
 

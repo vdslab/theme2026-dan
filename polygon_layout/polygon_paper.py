@@ -24,7 +24,7 @@ def kernel_library():
         return _DLL
     source = Path(__file__).with_name('polygon_kernel.cpp')
     digest = hashlib.sha256(source.read_bytes()).hexdigest()[:16]
-    cache = source.parent / '.polygon_cache'
+    cache = source.parent.parent / '.polygon_cache'
     cache.mkdir(exist_ok=True)
     library = cache / ('polygon_' + digest + ('.dll' if os.name == 'nt' else '.so'))
     if not library.exists():

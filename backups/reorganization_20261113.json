@@ -1,0 +1,212 @@
+[
+  {
+    "from": "convert.py",
+    "to": "tools/convert.py",
+    "sha256_before_code_reference_updates": "f7c9d4381152dd9dc053b9d59bc645fe15bc66d8e5ada49717089f3cf8b14e8e"
+  },
+  {
+    "from": "layered_hypergraph_checkpoint.json",
+    "to": "results/layers/layered_hypergraph_checkpoint.json",
+    "sha256_before_code_reference_updates": "d2a9279cd2f14bdfb0987bf8cc8b00aef3fe63d4d2014fc2b792170d266d78e1"
+  },
+  {
+    "from": "layered_hypergraph_initial.json",
+    "to": "results/layers/layered_hypergraph_initial.json",
+    "sha256_before_code_reference_updates": "eee7c90d9e66a61a752039237d0b0010710f4f70704892dbd693421f5b95ca19"
+  },
+  {
+    "from": "layered_hypergraph_l2.json",
+    "to": "results/layers/layered_hypergraph_l2.json",
+    "sha256_before_code_reference_updates": "5f15e5c170449fdd3608e2d1b62dd8e18c41b1ebdf49319c32f96c301b305579"
+  },
+  {
+    "from": "original_before_polygon_arrangement.json",
+    "to": "backups/original_before_polygon_arrangement.json",
+    "sha256_before_code_reference_updates": "b16478769b881bcfb1f84697e15626f5b5726f11aa3dcaab06e440a6e266bd55"
+  },
+  {
+    "from": "original_before_polygon_layout.json",
+    "to": "backups/original_before_polygon_layout.json",
+    "sha256_before_code_reference_updates": "9b0e99ae896243a2136f3264ed2c0862746e69e6eb615d34d206dccd361982c2"
+  },
+  {
+    "from": "original_before_polygon_layout_1792734295861617000.json",
+    "to": "backups/original_before_polygon_layout_1792734295861617000.json",
+    "sha256_before_code_reference_updates": "7455d26668183e956563d58976566708929aace0258aa1a753f33ba5bb617ee5"
+  },
+  {
+    "from": "original_polygon_arranged.json",
+    "to": "results/layouts/original_polygon_arranged.json",
+    "sha256_before_code_reference_updates": "7455d26668183e956563d58976566708929aace0258aa1a753f33ba5bb617ee5"
+  },
+  {
+    "from": "original_polygon_candidate.json",
+    "to": "results/layouts/original_polygon_candidate.json",
+    "sha256_before_code_reference_updates": "5008a288e9e46dbea84258069792dea7198161f687bb231792290e2a6ceb3ac9"
+  },
+  {
+    "from": "original_polygon_candidate_clique.json",
+    "to": "results/layouts/original_polygon_candidate_clique.json",
+    "sha256_before_code_reference_updates": "fadb17778f240f1a16ed326ec711b00552d279f424663b75c01f58be77d81ad2"
+  },
+  {
+    "from": "original_polygon_paper.json",
+    "to": "results/layouts/original_polygon_paper.json",
+    "sha256_before_code_reference_updates": "cd25bb25d0ab893fdad6e0b1452862e9202c24a690f1148e8d6d646e24011e83"
+  },
+  {
+    "from": "original_polygon_scalable.json",
+    "to": "results/layouts/original_polygon_scalable.json",
+    "sha256_before_code_reference_updates": "2c57e0aad109c4c6e60bd5606ac9a8981c0288bad48c140059f5380188edcd84"
+  },
+  {
+    "from": "plot_polygon_comparison.py",
+    "to": "tools/plot_polygon_comparison.py",
+    "sha256_before_code_reference_updates": "41c5ee5b40d3e389ce9db3b5bb9d0836a3b4fce98f73e060d86bc9927d7b3c48"
+  },
+  {
+    "from": "polygon_arrange.py",
+    "to": "polygon_layout/polygon_arrange.py",
+    "sha256_before_code_reference_updates": "aaaad0703ed4161d616449e277ba52678e2450a00e8fd5d8d97c59b31012d4bd"
+  },
+  {
+    "from": "polygon_arrangement_comparison.png",
+    "to": "results/previews/polygon_arrangement_comparison.png",
+    "sha256_before_code_reference_updates": "af7430a27912cf6768c2b09e517c1bc404dc59e35eddf8254760fe381d01e041"
+  },
+  {
+    "from": "polygon_arrangement_comparison.svg",
+    "to": "results/previews/polygon_arrangement_comparison.svg",
+    "sha256_before_code_reference_updates": "cebef54ce5cc057f921334d9e2db62f61fd2681d76fd3db1cebfceebff7f817c"
+  },
+  {
+    "from": "polygon_arrangement_report.json",
+    "to": "results/reports/polygon_arrangement_report.json",
+    "sha256_before_code_reference_updates": "aad3ff6cb1ef95e7ab22dd4a56150c48834ed4c15ccddf873ee17f2e5c4d1336"
+  },
+  {
+    "from": "polygon_consensus.py",
+    "to": "polygon_layout/polygon_consensus.py",
+    "sha256_before_code_reference_updates": "63f6b229907175395577595925d71b831e7fe6465bd6c49ea4ef6efd437a95c2"
+  },
+  {
+    "from": "polygon_kernel.cpp",
+    "to": "polygon_layout/polygon_kernel.cpp",
+    "sha256_before_code_reference_updates": "fab562d97fab1f4bc3d314a61ab52ef45a12be4f36379cb66fc893d2b9ccd7d3"
+  },
+  {
+    "from": "polygon_layout_comparison.png",
+    "to": "results/previews/polygon_layout_comparison.png",
+    "sha256_before_code_reference_updates": "3c9e730b0e80ff4158c58bc3d6807e1fddb04efa681f5f0393c55989af18638d"
+  },
+  {
+    "from": "polygon_layout_comparison.svg",
+    "to": "results/previews/polygon_layout_comparison.svg",
+    "sha256_before_code_reference_updates": "811b869ba88f034b0f78b1cdc18cd31dd77b21d7be4cf08f9675c3d19703d10a"
+  },
+  {
+    "from": "polygon_layout_comparison_clique.png",
+    "to": "results/previews/polygon_layout_comparison_clique.png",
+    "sha256_before_code_reference_updates": "71fa5f40d52950becf9f42bb375095d40197e461c00adfaf124d393b8761ace7"
+  },
+  {
+    "from": "polygon_layout_comparison_clique.svg",
+    "to": "results/previews/polygon_layout_comparison_clique.svg",
+    "sha256_before_code_reference_updates": "c2e3c8c7f1959fc6bac6bee604b17f091f772dfaf71f7106ac1528e36be04abe"
+  },
+  {
+    "from": "polygon_layout_report.json",
+    "to": "results/reports/polygon_layout_report.json",
+    "sha256_before_code_reference_updates": "0ac25d8697f977c205f5aaf7289fabf213493aa9c926f858e01c81b30b4ffbde"
+  },
+  {
+    "from": "polygon_layout_report_clique.json",
+    "to": "results/reports/polygon_layout_report_clique.json",
+    "sha256_before_code_reference_updates": "ce0b10b0f110a849f2e935c5f02ea781e64dd00a2997cb1f6064520a794ccf1e"
+  },
+  {
+    "from": "polygon_monogons.py",
+    "to": "polygon_layout/polygon_monogons.py",
+    "sha256_before_code_reference_updates": "fdff2ee610295f1a5b2d6dfde3c10cc78a07efd85f04d70c2b5c2c3dc3dfdc4e"
+  },
+  {
+    "from": "polygon_optimize.py",
+    "to": "polygon_layout/polygon_optimize.py",
+    "sha256_before_code_reference_updates": "28b4e5011524374dadfd67a2d4f28675d6d754919da17b1e805ae7a809527c99"
+  },
+  {
+    "from": "polygon_paper.py",
+    "to": "polygon_layout/polygon_paper.py",
+    "sha256_before_code_reference_updates": "204e7520928af470791792a96d315fd36b85d9ac9e84a31007e62c53dbbd1bd2"
+  },
+  {
+    "from": "polygon_paper_comparison.svg",
+    "to": "results/previews/polygon_paper_comparison.svg",
+    "sha256_before_code_reference_updates": "b731026b4c3f5d7b551e60837d77feb2ef9c072d59c092d3f0e912f0e0cb39dd"
+  },
+  {
+    "from": "polygon_paper_report.json",
+    "to": "results/reports/polygon_paper_report.json",
+    "sha256_before_code_reference_updates": "079db29b7ca54be45d4fdffb15f53a399b97b9406fdb7f0f15d28ba4b0ca9c27"
+  },
+  {
+    "from": "polygon_quality.py",
+    "to": "polygon_layout/polygon_quality.py",
+    "sha256_before_code_reference_updates": "d699caac358fe5ec526e00634aebf343cf3488e421f34096fdbbf795728b0606"
+  },
+  {
+    "from": "polygon_quality_all_faces.html",
+    "to": "results/previews/polygon_quality_all_faces.html",
+    "sha256_before_code_reference_updates": "ae59c18475703005d5fe153a0a2f9cc9d914642aead9a19d98565f4e69a3704c"
+  },
+  {
+    "from": "polygon_quality_report.json",
+    "to": "results/reports/polygon_quality_report.json",
+    "sha256_before_code_reference_updates": "7cf65dfaaeb010dcf9670a6ec656c4a2bfb91c3bd1ccf0ef7b1a913ff734cd16"
+  },
+  {
+    "from": "polygon_scalable_comparison.png",
+    "to": "results/previews/polygon_scalable_comparison.png",
+    "sha256_before_code_reference_updates": "3c9e730b0e80ff4158c58bc3d6807e1fddb04efa681f5f0393c55989af18638d"
+  },
+  {
+    "from": "polygon_scalable_comparison.svg",
+    "to": "results/previews/polygon_scalable_comparison.svg",
+    "sha256_before_code_reference_updates": "9a7d49cd54094653755fa76caabdcfa8b09f6298b9f48408f40949e5db2a74a6"
+  },
+  {
+    "from": "polygon_scalable_report.json",
+    "to": "results/reports/polygon_scalable_report.json",
+    "sha256_before_code_reference_updates": "c555ec87c9999cb60c011163ffb8b814d078bdbd770838453427029007c787f9"
+  },
+  {
+    "from": "polygon_shape_recovery_comparison.png",
+    "to": "results/previews/polygon_shape_recovery_comparison.png",
+    "sha256_before_code_reference_updates": "166013ca5d2e46d1a4f24abcce4724a073a51133111e6b0a69375101131f91dc"
+  },
+  {
+    "from": "polygon_shape_recovery_report.json",
+    "to": "results/reports/polygon_shape_recovery_report.json",
+    "sha256_before_code_reference_updates": "04fe29628ed4d7eaae9c23ea708075bc09d58c92d47e5aa2425f4ffbcaf59417"
+  },
+  {
+    "from": "test_polygon_arrange.py",
+    "to": "tests/test_polygon_arrange.py",
+    "sha256_before_code_reference_updates": "7d54f425de916eedf33c907bd0172d95800a8b10d109e05c102d8b759410f6d1"
+  },
+  {
+    "from": "test_polygon_quality.py",
+    "to": "tests/test_polygon_quality.py",
+    "sha256_before_code_reference_updates": "993ea15fedab4227872b14f585dcc02d7c9dcca63b8af67b067ef749ace394c6"
+  },
+  {
+    "from": "test_solve_layers_dummy.py",
+    "to": "tests/test_solve_layers_dummy.py",
+    "sha256_before_code_reference_updates": "e00ca18d7e0f873843120cbe8397eb7dd7d9fcc323088af25d64d9a7c91efd4a"
+  },
+  {
+    "from": "test_solve_polygon_layout.py",
+    "to": "tests/test_solve_polygon_layout.py",
+    "sha256_before_code_reference_updates": "cea514d049612443df6379cd16798f041328158299f1a50ac5309441986cf896"
+  }
+]

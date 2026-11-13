@@ -6,8 +6,8 @@ and the same directed overlap constraints as solve_layers.py. Heights remain
 continuous; hyperedges of the same color are not forced to share a height.
 
 Save a QP baseline, then solve and compare the L1 layout:
-    python solve_layers.py original.json layered_hypergraph_l2.json
-    python solve_layers_dsatur_l1.py --compare layered_hypergraph_l2.json
+    python solve_layers.py original.json results/layers/layered_hypergraph_l2.json
+    python solve_layers_dsatur_l1.py --compare results/layers/layered_hypergraph_l2.json
 
 The default output, layered_hypergraph.json, can be opened in index.html.
 """

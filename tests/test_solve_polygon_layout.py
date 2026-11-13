@@ -16,9 +16,9 @@ from shapely.geometry import Polygon
 from shapely.geometry import MultiPoint
 
 import solve_polygon_layout as layout
-from polygon_paper import PaperEnergy, JointEnergy, TERMS, PAPER_WEIGHTS, hu_layout, find_sfdp
-from polygon_consensus import regular_polygon_consensus
-from polygon_monogons import orient_monogons
+from polygon_layout.polygon_paper import PaperEnergy, JointEnergy, TERMS, PAPER_WEIGHTS, hu_layout, find_sfdp
+from polygon_layout.polygon_consensus import regular_polygon_consensus
+from polygon_layout.polygon_monogons import orient_monogons
 
 
 def fixture():
@@ -284,6 +284,71 @@ class PolygonLayoutTests(unittest.TestCase):
                 self.assertEqual(report['backup'], 'original_before_polygon_layout.json')
             finally:
                 os.chdir(old_cwd)
+
+    def test_same_file_shape_run_rejects_regression_without_changing_bytes(self):
+        data = {'nodes': [{'id': i, 'x': x, 'y': y} for i, (x, y) in enumerate(
+                    [(0., 0.), (1., 0.), (1., 1.), (0., 1.)])],
+                'hyperedges': [{'id': 0, 'nodes': [0, 1, 2, 3]}]}
+        problem = layout.PolygonProblem(data)
+        candidate = problem.initial*np.array([3., .3])
+        # The write guard must measure actual geometry, even if an optimizer's
+        # reported score erroneously claims an improvement.
+        report = {'before': layout.measure(problem, problem.initial),
+                  'after': layout.measure(problem, problem.initial),
+                  'initial_energy': 10., 'paper_baseline_energy': 9., 'final_energy': 8.}
+        payload = json.dumps(data, indent=1).encode()
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); source = root/'original.json'
+            source.write_bytes(payload)
+            def run(destination):
+                argv = ['solve_polygon_layout.py', str(source), str(destination),
+                        '--report', str(root/'report.json'), '--preview', str(root/'preview.svg')]
+                with patch('sys.argv', argv), patch.object(layout, 'optimize', return_value=(candidate, copy.deepcopy(report))), redirect_stdout(io.StringIO()):
+                    layout.main()
+                return json.loads((root/'report.json').read_text(encoding='utf-8'))
+            rejected = run(source)
+            self.assertEqual(source.read_bytes(), payload)
+            self.assertFalse(rejected['wrote_layout'])
+            self.assertFalse(rejected['inplace_replacement_allowed'])
+            self.assertIn('mean_regularity_worsened', rejected['shape_replacement_check']['reasons'])
+            self.assertFalse(list(root.glob('original_before_*.json')))
+            # Explicit separate candidates remain available for experiments.
+            separate = root/'candidate.json'
+            inspected = run(separate)
+            self.assertTrue(separate.is_file())
+            self.assertTrue(inspected['wrote_layout'])
+            self.assertFalse(inspected['inplace_replacement_allowed'])
+            self.assertEqual(source.read_bytes(), payload)
+
+    def test_shape_guard_rejects_local_damage_despite_better_mean(self):
+        before = np.array([[0., 0.], [1., 0.], [1., 1.], [0., 1.],
+                           [4., 0.], [14., 0.], [14., 1.], [4., 1.]])
+        after = np.array([[0., 0.], [2., 0.], [2., 1.], [0., 1.],
+                          [4., 0.], [5., 0.], [5., 1.], [4., 1.]])
+        data = {'nodes': [{'id': i, 'x': x, 'y': y} for i, (x, y) in enumerate(before)],
+                'hyperedges': [{'id': 1, 'nodes': [0, 1, 2, 3]}, {'id': 2, 'nodes': [4, 5, 6, 7]}]}
+        p = layout.PolygonProblem(data)
+        allowed, info = layout.shape_replacement_check(p, layout.make_output(p, after))
+        self.assertFalse(allowed)
+        self.assertLess(info['candidate']['mean_regularity_ratio'], info['before']['mean_regularity_ratio'])
+        self.assertEqual(info['degraded_face_ids'], [1])
+
+    def test_shape_guard_protects_large_faces_and_allows_geometry_repair(self):
+        angle = np.linspace(0., 2*np.pi, 40, endpoint=False)
+        circle = np.column_stack((np.cos(angle), np.sin(angle)))
+        before = np.vstack((circle, [[4., 0.], [14., 0.], [14., 1.], [4., 1.]]))
+        after = np.vstack((circle*[1.4, 1.], [[4., 0.], [5., 0.], [5., 1.], [4., 1.]]))
+        data = {'nodes': [{'id': i, 'x': x, 'y': y} for i, (x, y) in enumerate(before)],
+                'hyperedges': [{'id': 1, 'nodes': list(range(40))}, {'id': 2, 'nodes': list(range(40, 44))}]}
+        p = layout.PolygonProblem(data)
+        allowed, info = layout.shape_replacement_check(p, layout.make_output(p, after))
+        self.assertFalse(allowed)
+        self.assertIn('large_face_regularity_worsened', info['reasons'])
+        self.assertNotIn('mean_regularity_worsened', info['reasons'])
+        for n in data['nodes']:
+            n['x'] = n['y'] = 0.
+        broken = layout.PolygonProblem(data)
+        self.assertTrue(layout.shape_replacement_check(broken, layout.make_output(broken, before))[0])
 
 
 if __name__ == "__main__":

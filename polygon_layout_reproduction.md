@@ -1,5 +1,10 @@
 # ポリゴン配置の再実装と多ノード対応
 
+この文書は主に `paper` / `scalable` による形状整形を扱う。
+整形後の XY 配置調整 `--mode arrange` は [別の実装説明](polygon_arrangement.md) を参照。
+自動配置の原論文・多段階配置・現在の実装との差、および全件判定の結果は
+[2026-10-26の調査](polygon_auto_layout_research.md) を参照。
+
 ## 対象と参照関係
 
 対象は `original.json` の XY 座標と、各面の境界をたどるノード順序。
@@ -21,7 +26,7 @@ clique は元の所属関係を置き換える出力表現ではない。
 
 ## 実装した配置エネルギー
 
-以下は `polygon_kernel.cpp` の計算仕様。`paper` モードでは原式にない
+以下は `polygon_layout/polygon_kernel.cpp` の計算仕様。`paper` モードでは原式にない
 ノード数の二乗による除算、面数による平均化、ペア数での正規化を行わない。
 `n` は面に所属する異なる ID の数、辺の目標長は 1。
 重複 ID の出現回数は入出力にはそのまま保存する。
@@ -112,20 +117,61 @@ primal の重みは `[0.30, 0.16, 0.36, 0.18]`。
 
 ## 出力と読み方
 
-`polygon_layout_report.json` に全体指標と各面の指標、重なり件数、初期化の情報、
+`results/reports/polygon_layout_report.json` に全体指標と各面の指標、重なり件数、初期化の情報、
 探索の予算と収束状態を記録する。正多角形比 `P²/(4n tan(π/n) A)` は 1 が理想。
 比だけで重なりが減ったとは判断せず、`after_overlaps` も確認する。
-`polygon_layout_comparison.svg` では頂点数の大きい面を優先して比較できる。
+`results/previews/polygon_layout_comparison.svg` では頂点数の大きい面を優先して比較できる。
 各パネルの表示スケールは独立で、全メンバーを点で描く。
 
 `masuta.csv` の再取り込みはこのコマンドでは行わない。
 過去の読み込みで変わったラベルや所属は、この XY 再配置で復元したとは扱わない。
 `original.json` 更新後は、以前の座標に対するレイヤー配置を再計算する必要がある。
 
+## 再実行による上書きの防止（2026-10-23 修正）
+
+`--mode scalable` の既定は Hu による新規初期配置なので、整形済みの入力に
+再実行しても必ず改善するとは限らない。形状と分離を合わせた目的関数の低下だけでは、
+個別ポリゴンの形状改善も保証できない。
+
+実際に、14:44 の再実行で平均正多角形比が 2.128127 から 2.875368 に悪化した
+結果が `original.json` に上書きされた。レイヤー出力はこの XY と境界順をそのまま
+引き継いでいた。再実行直前の座標は
+`backups/original_before_polygon_layout_1792734295861617000.json` に残っており、
+`results/layouts/original_polygon_arranged.json` と一致するため、そこから復元した。
+悪化したデータとそのレイヤー計算結果・レポートは `backups/shape_recovery_*` に保持する。
+
+2026-10-23の修正では、`paper` / `scalable` の同名出力を保存する前に実際の境界を測り直し、
+全体平均と 30 頂点以上の面の平均が悪化しないこと、個別面の比の増加が
+既定で 10% 以下であることを検査する。失敗した候補は元ファイルを変更せず、
+レポートに `wrote_layout: false` と理由を残す。レポートと比較 SVG はその試行の
+候補を記録するので、採用された現在の `original.json` と同一とは限らない。
+別名への候補出力は保存を許可し、検査結果も記録する。
+
+2026-10-26 に判定を全件で共通化し、個別の悪化許容率の既定を **0%** に変更した。
+不正な入力面を修復する場合も、他の有効な面の個別判定を省略しない。
+全件の品質達成と非悪化を別々に記録し、HTML に全168面を表示する。
+実行方法・確認用しきい値・自動配置の調査結果は上記の調査文書を参照。
+
+復元は「以前より良かった座標に戻す」処理であり、全ポリゴンを正多角形にする処理
+ではない。復元後も 168 面中 90 面に凹みがある。
+選択済みの整形・配置結果が `original.json` にある場合、毎回形状計算から
+やり直す必要はなく、レイヤー計算から実行できる。
+
+2026-10-26 に、復元後の XY から再計算済みの DSatur + L2 QP 初期配置を検証し、
+`layered_hypergraph.json`、`results/layers/layered_hypergraph_initial.json`、
+`results/layers/layered_hypergraph_checkpoint.json` へ反映した。627 ノードの座標と全境界順が
+`original.json` と一致し、7,564 組の重なりに対するレイヤー間隔制約の違反は 0。
+この復旧結果は初期割り当てまでで、ダミーレイヤーの追加探索は実行していない。
+復旧記録とファイルの SHA-256 は `results/reports/polygon_shape_recovery_report.json` に保存した。
+`results/reports/polygon_layout_report.json` は復旧前の形状再計算の記録なので、現在の座標の評価には
+復旧レポートを使う。比較図は `results/previews/polygon_shape_recovery_comparison.png`。
+`.polygon_cache/recover_shapes.py` などは今回の復旧用の一時スクリプトであり、
+通常の実行手順には含めない。
+
 ## 今回の実データでの結果（2026-10-21）
 
 627 ノード・383 ハイパーエッジの既存 JSON に対し、既定の scalable モードを実行した。
-`original.json` を更新し、元のバイト列は `original_before_polygon_layout.json` に保存した。
+`original.json` を更新し、元のバイト列は `backups/original_before_polygon_layout.json` に保存した。
 実行時間は約 536 秒。43 件の単体・回帰テストが通過した。
 
 | 指標 | 更新前 | 更新後 |
@@ -144,6 +190,6 @@ primal の重みは `[0.30, 0.16, 0.36, 0.18]`。
 単項 glyph の方向最適化も 600 反復の上限に達した状態をレポートに記録した。
 これらを著者実装との完全一致や、全体の大域最適解の達成とは扱わない。
 
-比較画像は [polygon_layout_comparison.png](polygon_layout_comparison.png)、
-詳細数値は [polygon_layout_report.json](polygon_layout_report.json)。
+比較画像は [results/previews/polygon_layout_comparison.png](results/previews/polygon_layout_comparison.png)、
+詳細数値は [results/reports/polygon_layout_report.json](results/reports/polygon_layout_report.json)。
 今回の形状改善は、所属を変更せずに得た数値である。

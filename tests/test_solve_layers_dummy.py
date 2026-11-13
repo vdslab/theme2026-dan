@@ -1,6 +1,6 @@
 """Numerical and state-integrity tests for dummy-layer neighbourhood search.
 
-Run with: python -m unittest test_solve_layers_dummy -v
+Run with: python -m unittest tests.test_solve_layers_dummy -v
 The small synthetic overlap graphs keep these tests independent of original.json.
 """
 

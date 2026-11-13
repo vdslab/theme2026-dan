@@ -42,7 +42,7 @@ V centroid(const std::vector<int>& ids,const double* x) {
     }
     return std::abs(twice)>1e-12 ? numerator/(3*twice) : mean/std::max(n,1);
 }
-Geo geometry(const std::vector<int>& members,const double* x) {
+Geo geometry(const std::vector<int>& members,const double* x,bool reorder=true) {
     Geo g; g.ids=members;
     int n=(int)members.size();
     if(!n) return g;
@@ -68,7 +68,7 @@ Geo geometry(const std::vector<int>& members,const double* x) {
         if(hull.size()>1) hull.pop_back();
         g.hull=hull;
         V c=centroid(hull,x);
-        std::sort(g.ids.begin(),g.ids.end(),[&](int a,int b) {
+        if(reorder) std::sort(g.ids.begin(),g.ids.end(),[&](int a,int b) {
             V p=point(x,a)-c,q=point(x,b)-c;
             double aa=std::atan2(p.y,p.x),ab=std::atan2(q.y,q.x);
             if(aa!=ab) return aa<ab;
@@ -196,6 +196,57 @@ struct Context {
         }
     }
 };
+
+// Post-layout placement extension. Support intervals in fixed directions
+// approximate convex-hull penetration; all gradients are piecewise analytic.
+// The original polygon shape is retained by a best rigid-fit residual, with
+// one common coordinate pair for every original node (no per-face copies).
+struct PlacementTarget {
+    std::vector<int> ids;
+    std::vector<V> reference;
+    double scale=1, radius=1;
+    double area=0, ratio=1, hull_deficit=0;
+};
+struct PlacementPair {int a,b,common; double scale;};
+struct PlacementContext {
+    int n,k;
+    double tolerance=.10, mean_ratio=1;
+    std::vector<PlacementTarget> targets;
+    std::vector<PlacementPair> pairs;
+    std::vector<V> axes;
+    PlacementContext(int n_,int m,const int* offsets,const int* ids,const double* x,int k_):n(n_),k(k_) {
+        for(int i=0;i<k;i++) axes.push_back({std::cos(PI*i/k),std::sin(PI*i/k)});
+        for(int f=0;f<m;f++) {
+            if(offsets[f+1]-offsets[f]<2) continue;
+            PlacementTarget t; V center;
+            t.ids.assign(ids+offsets[f],ids+offsets[f+1]);
+            for(int id:t.ids) center+=point(x,id);
+            center=center/t.ids.size(); t.scale=0;
+            for(int id:t.ids) {V p=point(x,id)-center;t.reference.push_back(p);t.scale+=dot(p,p);}
+            t.scale=std::max(t.scale,1e-12);t.radius=std::sqrt(t.scale/t.ids.size());
+            if(t.ids.size()>=3) {
+                Geo g=geometry(t.ids,x,false);t.area=std::max(g.area,1e-12);
+                t.ratio=g.perimeter*g.perimeter/(4*t.ids.size()*std::tan(PI/t.ids.size())*t.area);
+                double hull_area=0;
+                for(size_t z=0;z<g.hull.size();z++) hull_area+=cross(point(x,g.hull[z]),point(x,g.hull[(z+1)%g.hull.size()]))*.5;
+                t.hull_deficit=std::max(0.,1-t.area/std::max(hull_area,1e-12));
+            }
+            targets.push_back(t);
+        }
+        double total=0;int count=0;
+        for(const auto& t:targets) if(t.ids.size()>=3) {total+=t.ratio;count++;}
+        mean_ratio=count?total/count:1;
+        for(int a=0;a<(int)targets.size();a++) for(int b=a+1;b<(int)targets.size();b++) {
+            if(targets[a].ids.size()<3||targets[b].ids.size()<3) continue;
+            int count=0;
+            for(int id:targets[a].ids) if(std::find(targets[b].ids.begin(),targets[b].ids.end(),id)!=targets[b].ids.end()) count++;
+            if(count<=2) {
+                double radius=targets[a].radius+targets[b].radius;
+                pairs.push_back({a,b,count,std::max(radius*radius,1e-12)});
+            }
+        }
+    }
+};
 double arc_energy(const Geo& f,const Geo& common,const double* x,double weight,double* grad) {
     std::vector<int> positions; int n=(int)f.ids.size(),k=(int)common.ids.size();
     for(int i=0;i<n;i++) if(std::find(common.ids.begin(),common.ids.end(),f.ids[i])!=common.ids.end()) positions.push_back(i);
@@ -237,6 +288,119 @@ double shape_value(const Geo& f,const double* x,const double* w) {
 }
 
 extern "C" {
+void* placement_create(int n,int m,const int* offsets,const int* ids,const double* x,int directions) {
+    try {return new PlacementContext(n,m,offsets,ids,x,directions);} catch(...) {return nullptr;}
+}
+void placement_destroy(void* p) {delete static_cast<PlacementContext*>(p);}
+void placement_limits(void* p,double tolerance) {static_cast<PlacementContext*>(p)->tolerance=tolerance;}
+double placement_evaluate(void* handle,const double* x,double shape_weight,double shared_weight,double margin,
+                          double* grad,double* terms) {
+    auto& c=*static_cast<PlacementContext*>(handle);
+    std::fill(grad,grad+2*c.n,0.);std::fill(terms,terms+4,0.);
+    int m=(int)c.targets.size();
+    std::vector<double> low(m*c.k),high(m*c.k);
+    std::vector<double> low_gradient(m*c.k),high_gradient(m*c.k);
+    std::vector<std::vector<double>> low_weights(m),high_weights(m);
+    std::vector<Geo> geometries(m);std::vector<double> ratios(m);
+    double mean_ratio=0;int face_count=0;
+    for(int f=0;f<m;f++) if(c.targets[f].ids.size()>=3) {
+        geometries[f]=geometry(c.targets[f].ids,x,false);const auto& g=geometries[f];
+        ratios[f]=g.perimeter*g.perimeter/(4*g.ids.size()*std::tan(PI/g.ids.size())*std::max(g.area,1e-12));
+        mean_ratio+=ratios[f];face_count++;
+    }
+    mean_ratio/=std::max(face_count,1);
+    double mean_limit=c.mean_ratio*1.015,mean_excess=std::max(0.,mean_ratio/mean_limit-1);
+    terms[3]+=face_count*mean_excess*mean_excess;
+    const double guard_weight=100000.;
+    for(int f=0;f<m;f++) {
+        const auto& t=c.targets[f]; int n=(int)t.ids.size(); V mean;
+        low_weights[f].resize(n*c.k);high_weights[f].resize(n*c.k);
+        for(int id:t.ids) mean+=point(x,id);
+        mean=mean/n;double a=0,b=0;
+        for(int i=0;i<n;i++) {V p=point(x,t.ids[i])-mean;a+=dot(t.reference[i],p);b+=cross(t.reference[i],p);}
+        double angle=std::atan2(b,a),co=std::cos(angle),si=std::sin(angle);
+        for(int i=0;i<n;i++) {
+            V r=t.reference[i];V rotated={co*r.x-si*r.y,si*r.x+co*r.y};
+            V residual=point(x,t.ids[i])-mean-rotated;
+            terms[0]+=dot(residual,residual)/t.scale;
+            add(grad,t.ids[i],residual*(2*shape_weight/t.scale));
+        }
+        if(n>=3) {
+            const auto& g=geometries[f];double area=std::max(g.area,1e-12);
+            double ratio_limit=t.ratio*(1+c.tolerance*.8);
+            double excess=std::max(0.,ratios[f]/ratio_limit-1);
+            double ratio_gradient=2*excess/ratio_limit+2*mean_excess/mean_limit;
+            double area_ratio=area/t.area;
+            double area_deficit=std::min(0.,area_ratio-.85),area_excess=std::max(0.,area_ratio-1.15);
+            double hull_area=0;
+            for(size_t i=0;i<g.hull.size();i++) hull_area+=cross(point(x,g.hull[i]),point(x,g.hull[(i+1)%g.hull.size()]))*.5;
+            hull_area=std::max(hull_area,1e-12);
+            double deficit=std::max(0.,1-area/hull_area-t.hull_deficit-.015);
+            terms[3]+=excess*excess+area_deficit*area_deficit+area_excess*area_excess+deficit*deficit;
+            double da=(-ratio_gradient*ratios[f]/area+2*(area_deficit+area_excess)/t.area-2*deficit/hull_area)*guard_weight;
+            if(g.area<=1e-12) da=0;
+            double dp=ratio_gradient*2*ratios[f]/g.perimeter*guard_weight;
+            double dh=2*deficit*area/(hull_area*hull_area)*guard_weight;
+            for(int i=0;i<n;i++) {
+                int a=g.ids[i],b=g.ids[(i+1)%n];V p=point(x,a),q=point(x,b);
+                V force=(p-q)*(dp/g.lengths[i]);
+                add(grad,a,force+cw(q)*(.5*da));add(grad,b,force*(-1)-cw(p)*(.5*da));
+            }
+            for(size_t i=0;i<g.hull.size();i++) {
+                int a=g.hull[i],b=g.hull[(i+1)%g.hull.size()];
+                add(grad,a,cw(point(x,b))*(.5*dh));add(grad,b,cw(point(x,a))*(-.5*dh));
+            }
+        }
+        for(int axis=0;axis<c.k;axis++) {
+            int index=f*c.k+axis;
+            low[index]=high[index]=dot(point(x,t.ids[0]),c.axes[axis]);
+            for(int id:t.ids) {
+                double projection=dot(point(x,id),c.axes[axis]);
+                low[index]=std::min(low[index],projection);
+                high[index]=std::max(high[index],projection);
+            }
+            // Outward log-sum-exp supports avoid arbitrary single-vertex
+            // gradients on a flat edge. They conservatively contain the hull.
+            double tau=std::max(t.radius*.01,1e-9),sl=0,sh=0;
+            for(int i=0;i<n;i++) {
+                double projection=dot(point(x,t.ids[i]),c.axes[axis]);
+                double wl=std::exp((low[index]-projection)/tau),wh=std::exp((projection-high[index])/tau);
+                low_weights[f][axis*n+i]=wl;high_weights[f][axis*n+i]=wh;
+                sl+=wl;sh+=wh;
+            }
+            low[index]-=tau*std::log(sl);high[index]+=tau*std::log(sh);
+            for(int i=0;i<n;i++) {low_weights[f][axis*n+i]/=sl;high_weights[f][axis*n+i]/=sh;}
+        }
+    }
+    for(const auto& p:c.pairs) {
+        double best=-1e100;int ia=0,ib=0;
+        for(int axis=0;axis<c.k;axis++) {
+            int a=p.a*c.k+axis,b=p.b*c.k+axis;
+            double gap=low[b]-high[a];
+            if(gap>best) {best=gap;ia=a;ib=b;}
+            gap=low[a]-high[b];
+            if(gap>best) {best=gap;ia=b;ib=a;}
+        }
+        double required=p.common?0:margin*std::sqrt(p.scale);
+        double depth=std::max(0.,required-best);
+        int category=p.common?2:1;double w=p.common?shared_weight:1.;
+        terms[category]+=depth*depth/p.scale;
+        double force=2*w*depth/p.scale;
+        high_gradient[ia]+=force;low_gradient[ib]-=force;
+    }
+    for(int f=0;f<m;f++) {
+        const auto& t=c.targets[f];int n=(int)t.ids.size();
+        for(int axis=0;axis<c.k;axis++) {
+            int index=f*c.k+axis;
+            if(low_gradient[index]==0&&high_gradient[index]==0) continue;
+            for(int i=0;i<n;i++) {
+                double force=low_gradient[index]*low_weights[f][axis*n+i]+high_gradient[index]*high_weights[f][axis*n+i];
+                add(grad,t.ids[i],c.axes[axis]*force);
+            }
+        }
+    }
+    return shape_weight*terms[0]+terms[1]+shared_weight*terms[2]+guard_weight*terms[3];
+}
 void* polygon_create(int n,int m,const int* offsets,const int* ids) {
     try { return new Context(n,m,offsets,ids); } catch(...) { return nullptr; }
 }

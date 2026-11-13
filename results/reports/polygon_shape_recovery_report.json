@@ -1,0 +1,87 @@
+{
+  "restored_from": "original_before_polygon_layout_1792734295861617000.json",
+  "backup_directory": "backups\\shape_recovery_20261023_1792736968180566200",
+  "preserved_sha256": {
+    "original.json": "106b5f4a8a5c50374ae3bd0f0c537cd2e6967d017440c45bf9042e8b2aa14b06",
+    "layered_hypergraph.json": "4d482eac5b950407fd0c64e6832b5774c9c32f87f4c49312b63364f0b6693223",
+    "layered_hypergraph_initial.json": "05975f0bca2ca9d7b27b8f938bbb501228f22648f56bec5f3d85e1b207ae8cc3",
+    "layered_hypergraph_checkpoint.json": "4d482eac5b950407fd0c64e6832b5774c9c32f87f4c49312b63364f0b6693223",
+    "polygon_layout_report.json": "0ac25d8697f977c205f5aaf7289fabf213493aa9c926f858e01c81b30b4ffbde",
+    "polygon_layout_comparison.svg": "811b869ba88f034b0f78b1cdc18cd31dd77b21d7be4cf08f9675c3d19703d10a"
+  },
+  "before": {
+    "faces": 168,
+    "invalid_faces": 0,
+    "degenerate_faces": 0,
+    "concave_faces": 100,
+    "mean_regularity_ratio": 2.8753683407484223,
+    "median_regularity_ratio": 1.408670616863759,
+    "mean_hull_deficit": 0.024157632502424302,
+    "minimum_node_distance": 0.0003816175069135817
+  },
+  "restored": {
+    "faces": 168,
+    "invalid_faces": 0,
+    "degenerate_faces": 0,
+    "concave_faces": 90,
+    "mean_regularity_ratio": 2.1281265925788793,
+    "median_regularity_ratio": 1.4152390408113855,
+    "mean_hull_deficit": 0.02744916143111622,
+    "minimum_node_distance": 0.00040034379335065497
+  },
+  "restored_original_sha256": "7455d26668183e956563d58976566708929aace0258aa1a753f33ba5bb617ee5",
+  "layer_regeneration": "complete",
+  "installed_on": "2026-10-26",
+  "layer_method": "DSatur + L2 QP baseline; no dummy-layer search",
+  "layer_output_validation": {
+    "layered_hypergraph.json": {
+      "nodes": 627,
+      "hyperedges": 383,
+      "xy_and_boundary_order_preserved": true,
+      "overlap_pairs": 7564,
+      "minimum_signed_layer_gap": 0.9999999988013464,
+      "layer_constraint_violations": 0,
+      "l2_objective": 18393.35532447335,
+      "state": "state-000000",
+      "sha256": "3bcf2da9e6d190f690949d20ae9a7406e8c4ddc892145da66fa4def9994242a0"
+    },
+    "layered_hypergraph_initial.json": {
+      "nodes": 627,
+      "hyperedges": 383,
+      "xy_and_boundary_order_preserved": true,
+      "overlap_pairs": 7564,
+      "minimum_signed_layer_gap": 0.9999999988013464,
+      "layer_constraint_violations": 0,
+      "l2_objective": 18393.35532447335,
+      "state": "state-000000",
+      "sha256": "92c4ff30afefa71c04f0721d6e2a6232f0a5aa479130eb323b257ad84139b221"
+    },
+    "layered_hypergraph_checkpoint.json": {
+      "nodes": 627,
+      "hyperedges": 383,
+      "xy_and_boundary_order_preserved": true,
+      "overlap_pairs": 7564,
+      "minimum_signed_layer_gap": 0.9999999988013464,
+      "layer_constraint_violations": 0,
+      "l2_objective": 18393.35532447335,
+      "state": "state-000000",
+      "sha256": "3bcf2da9e6d190f690949d20ae9a7406e8c4ddc892145da66fa4def9994242a0"
+    }
+  },
+  "current_shape_metrics": {
+    "faces": 168,
+    "invalid_faces": 0,
+    "degenerate_faces": 0,
+    "concave_faces": 90,
+    "mean_regularity_ratio": 2.1281265925788793,
+    "median_regularity_ratio": 1.4152390408113855,
+    "mean_hull_deficit": 0.02744916143111622,
+    "minimum_node_distance": 0.00040034379335065497
+  },
+  "regression_guard_verified_against_rejected_layout": true,
+  "regression_tests": {
+    "passed": 55,
+    "run_on": "2026-10-23"
+  },
+  "historical_shape_report": "polygon_layout_report.json describes the pre-recovery shape run"
+}

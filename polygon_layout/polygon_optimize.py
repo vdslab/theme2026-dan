@@ -4,7 +4,7 @@ import time
 import numpy as np
 from scipy.optimize import minimize
 
-from polygon_paper import PaperEnergy, JointEnergy, PAPER_WEIGHTS, TERMS, hu_layout
+from .polygon_paper import PaperEnergy, JointEnergy, PAPER_WEIGHTS, TERMS, hu_layout
 
 
 def optimize_reproduction(problem, iterations=600, seed=7, mode='scalable',
@@ -147,7 +147,7 @@ def optimize_reproduction(problem, iterations=600, seed=7, mode='scalable',
     extended_swaps_converged = None
     consensus_info = None
     if mode == 'scalable':
-        from polygon_consensus import regular_polygon_consensus
+        from .polygon_consensus import regular_polygon_consensus
         extension_weights[4:] = [fit_weight, collision_weight, convexity_weight]
         # A second starting basin counteracts the collapsed large faces seen in
         # raw energy minimization. Retain the paper solution as a fallback.
@@ -170,7 +170,7 @@ def optimize_reproduction(problem, iterations=600, seed=7, mode='scalable',
     final_paper_energy = energy.evaluate(xy, weights)[0]
     # Save the scale conversion rather than conflating resized display geometry
     # with the unit-side optimization objective.
-    from polygon_monogons import orient_monogons
+    from .polygon_monogons import orient_monogons
     monogons = orient_monogons(problem, xy[:problem.n], energy.primal if dual else energy, seed)
     translation = xy[:problem.n].mean(axis=0)
     xy -= translation
