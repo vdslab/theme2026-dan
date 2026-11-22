@@ -27,7 +27,10 @@ import time
 import numpy as np
 
 from solve_layers_dsatur_l1 import (
-    compute_weights, evaluate_layout, extract_overlaps, load_comparison,
+    compute_weights,
+    evaluate_layout,
+    extract_overlaps,
+    load_comparison,
 )
 from solve_layers_dummy import atomic_write_json
 
@@ -44,8 +47,8 @@ class RepairFailed(RuntimeError):
 class Config:
     reg: float = 1e-5
     seed: int = 0
-    max_iterations: int = 10000
-    time_budget: float = 300.0  # Includes preprocessing and initialization in CLI.
+    max_iterations: int = 20000
+    time_budget: float = 600.0  # Includes preprocessing and initialization in CLI.
     method: str = "anneal"
     initial_temperature: object = None
     temperature_samples: int = 16
@@ -64,21 +67,27 @@ class Config:
             if type(getattr(self, name)) is not int or getattr(self, name) < 0:
                 raise ValueError(f"{name} must be a nonnegative integer")
         if self.max_repair_steps is not None and (
-                type(self.max_repair_steps) is not int or self.max_repair_steps < 0):
+            type(self.max_repair_steps) is not int or self.max_repair_steps < 0
+        ):
             raise ValueError("max_repair_steps must be a nonnegative integer")
         if self.method not in ("anneal", "greedy"):
             raise ValueError("method must be anneal or greedy")
         if self.initial_temperature is not None and (
-                not math.isfinite(self.initial_temperature) or self.initial_temperature <= 0):
+            not math.isfinite(self.initial_temperature) or self.initial_temperature <= 0
+        ):
             raise ValueError("initial_temperature must be finite and positive")
         if not 0 < self.initial_acceptance < 1:
             raise ValueError("initial_acceptance must be between zero and one")
         if not 0 < self.final_temperature_ratio <= 1:
             raise ValueError("final_temperature_ratio must be in (0, 1]")
-        if (len(self.move_weights) != 4 or
-                any(not math.isfinite(w) or w < 0 for w in self.move_weights) or
-                not 0 < sum(self.move_weights) < math.inf):
-            raise ValueError("four nonnegative move weights with a positive sum are required")
+        if (
+            len(self.move_weights) != 4
+            or any(not math.isfinite(w) or w < 0 for w in self.move_weights)
+            or not 0 < sum(self.move_weights) < math.inf
+        ):
+            raise ValueError(
+                "four nonnegative move weights with a positive sum are required"
+            )
 
 
 @dataclass(frozen=True)
@@ -179,7 +188,9 @@ def prepare_problem(data, reg=1e-5, overlaps=None, progress=None):
     edge_ids = [edge["id"] for edge in hyperedges]
     if len(set(node_ids)) != len(nodes) or len(set(edge_ids)) != len(hyperedges):
         raise ValueError("Node IDs and hyperedge IDs must each be unique")
-    if any(not math.isfinite(float(node[axis])) for node in nodes for axis in ("x", "y")):
+    if any(
+        not math.isfinite(float(node[axis])) for node in nodes for axis in ("x", "y")
+    ):
         raise ValueError("Node coordinates must be finite")
     known = set(node_ids)
     if any(set(edge["nodes"]) - known for edge in hyperedges):
@@ -191,8 +202,15 @@ def prepare_problem(data, reg=1e-5, overlaps=None, progress=None):
         progress("Computing overlap set C...")
     raw = extract_overlaps(nodes, hyperedges) if overlaps is None else overlaps
     for i, j in raw:
-        if any(isinstance(v, (bool, np.bool_)) or not isinstance(v, (int, np.integer))
-               or not 0 <= v < n for v in (i, j)) or i == j:
+        if (
+            any(
+                isinstance(v, (bool, np.bool_))
+                or not isinstance(v, (int, np.integer))
+                or not 0 <= v < n
+                for v in (i, j)
+            )
+            or i == j
+        ):
             raise ValueError("Invalid overlap endpoints")
         pairs.add(tuple(sorted((int(i), int(j)))))
     overlaps = tuple(sorted(pairs))
@@ -206,16 +224,29 @@ def prepare_problem(data, reg=1e-5, overlaps=None, progress=None):
         adjacency[j].add(i)
     weights, regularized, scale = compute_weights(hyperedges, reg)
     pair_i, pair_j = np.triu_indices(n, 1)
-    signature = hashlib.sha256(json.dumps(
-        {"data": data, "overlaps": overlaps, "reg": reg},
-        sort_keys=True, ensure_ascii=False, allow_nan=False,
-    ).encode("utf-8")).hexdigest()
+    signature = hashlib.sha256(
+        json.dumps(
+            {"data": data, "overlaps": overlaps, "reg": reg},
+            sort_keys=True,
+            ensure_ascii=False,
+            allow_nan=False,
+        ).encode("utf-8")
+    ).hexdigest()
     return Problem(
-        data, n, overlaps, readonly(overlaps, int).reshape(-1, 2),
-        tuple(frozenset(a) for a in adjacency), readonly(weights),
-        readonly(regularized), readonly(regularized.sum(axis=1)),
-        readonly(pair_i, int), readonly(pair_j, int),
-        readonly(regularized[pair_i, pair_j]), scale, reg, signature,
+        data,
+        n,
+        overlaps,
+        readonly(overlaps, int).reshape(-1, 2),
+        tuple(frozenset(a) for a in adjacency),
+        readonly(weights),
+        readonly(regularized),
+        readonly(regularized.sum(axis=1)),
+        readonly(pair_i, int),
+        readonly(pair_j, int),
+        readonly(regularized[pair_i, pair_j]),
+        scale,
+        reg,
+        signature,
     )
 
 
@@ -256,7 +287,9 @@ def move_delta(problem, layers, node, target, weighted_moments=None):
     z = np.asarray(layers)
     m = moments(problem, z) if weighted_moments is None else weighted_moments
     old = int(z[node])
-    return float((target - old) * ((target + old) * problem.row_sums[node] - 2 * m[node]))
+    return float(
+        (target - old) * ((target + old) * problem.row_sums[node] - 2 * m[node])
+    )
 
 
 def changed_layers_delta(problem, before, after):
@@ -330,8 +363,9 @@ def tree_for_layers(layers, previous):
     children = [[] for _ in range(n + 1)]
     for old_parent, old_children in enumerate(previous.children):
         for node in old_children:
-            compatible = (z[node] == 0 if old_parent == n
-                          else z[node] == z[old_parent] + 1)
+            compatible = (
+                z[node] == 0 if old_parent == n else z[node] == z[old_parent] + 1
+            )
             if compatible:
                 parent[node] = old_parent
                 children[old_parent].append(node)
@@ -355,7 +389,9 @@ def bfs_tree(problem):
     children = [[] for _ in range(problem.n + 1)]
     affinity = problem.weights.sum(axis=1)
     while remaining:
-        root = min(remaining, key=lambda i: (-len(problem.adjacency[i]), -affinity[i], i))
+        root = min(
+            remaining, key=lambda i: (-len(problem.adjacency[i]), -affinity[i], i)
+        )
         parent[root] = problem.n
         children[problem.n].append(root)
         remaining.remove(root)
@@ -394,8 +430,9 @@ def repair_layers(problem, layers, max_steps=None, deadline=None):
             node = int(raw_node)
             forbidden = z[list(problem.adjacency[node])]
             allowed = targets[~np.isin(targets, forbidden)]
-            deltas = ((allowed - z[node]) *
-                      ((allowed + z[node]) * problem.row_sums[node] - 2 * m[node]))
+            deltas = (allowed - z[node]) * (
+                (allowed + z[node]) * problem.row_sums[node] - 2 * m[node]
+            )
             choice = int(np.lexsort((allowed, np.abs(allowed - z[node]), deltas))[0])
             target = int(allowed[choice])
             key = (float(deltas[choice]), abs(target - int(z[node])), node, target)
@@ -409,20 +446,37 @@ def repair_layers(problem, layers, max_steps=None, deadline=None):
         bad = violating_edges(problem, z)
         if len(bad) >= count_before:
             raise RuntimeError("Repair did not reduce the collision count")
-        steps.append({"node": node, "from": old, "to": target, "delta": delta,
-                      "violations_before": count_before, "violations_after": len(bad)})
+        steps.append(
+            {
+                "node": node,
+                "from": old,
+                "to": target,
+                "delta": delta,
+                "violations_before": count_before,
+                "violations_after": len(bad),
+            }
+        )
     if not math.isclose(expected, objective(problem, z), rel_tol=1e-9, abs_tol=1e-6):
-        raise RuntimeError("Repair's incremental objective differs from full calculation")
+        raise RuntimeError(
+            "Repair's incremental objective differs from full calculation"
+        )
     return RepairResult(tuple(map(int, z)), tuple(steps), initial_count)
 
 
 def layout_metrics(problem, layers):
     z = np.asarray(layers, float)
-    directed = np.asarray([
-        (i, j) if z[i] < z[j] else (j, i) for i, j in problem.overlaps
-    ], dtype=int).reshape(-1, 2)
-    metrics = evaluate_layout(z, problem.data["nodes"], problem.data["hyperedges"],
-                              problem.weights, problem.regularized, problem.scale, directed)
+    directed = np.asarray(
+        [(i, j) if z[i] < z[j] else (j, i) for i, j in problem.overlaps], dtype=int
+    ).reshape(-1, 2)
+    metrics = evaluate_layout(
+        z,
+        problem.data["nodes"],
+        problem.data["hyperedges"],
+        problem.weights,
+        problem.regularized,
+        problem.scale,
+        directed,
+    )
     metrics["used_layer_count"] = len(set(layers))
     if not all(math.isfinite(float(value)) for value in metrics.values()):
         raise ValueError("Nonfinite metric")
@@ -450,8 +504,9 @@ def validate_state(problem, state):
 def initial_state(problem, config, deadline=None):
     tree = bfs_tree(problem)
     depth = validate_tree(tree, problem.n)
-    repair = repair_layers(problem, [d - 1 for d in depth[:-1]],
-                           config.max_repair_steps, deadline)
+    repair = repair_layers(
+        problem, [d - 1 for d in depth[:-1]], config.max_repair_steps, deadline
+    )
     tree, _ = tree_for_layers(repair.layers, tree)
     return make_state(problem, tree), repair
 
@@ -502,7 +557,9 @@ def propose(problem, state, rng, config):
         z[node], z[other] = z[other], z[node]
     else:
         forbidden = set(subtree_nodes(tree, node))
-        parents = [p for p in range(n + 1) if p not in forbidden and p != tree.parent[node]]
+        parents = [
+            p for p in range(n + 1) if p not in forbidden and p != tree.parent[node]
+        ]
         if kind == "rewire":
             depth = validate_tree(tree, n)
             parents = [p for p in parents if depth[p] == depth[tree.parent[node]]]
@@ -527,27 +584,45 @@ def evaluate_proposal(problem, proposal, config, state_id, deadline=None):
     state = make_state(problem, tree, state_id)
     # Independently check the multi-node delta against the full objective.
     delta = changed_layers_delta(problem, proposal.layers, layers)
-    if not math.isclose(objective(problem, proposal.layers) + delta,
-                        state.metrics["l2_regularized"], rel_tol=1e-9, abs_tol=1e-6):
-        raise RuntimeError("Candidate's incremental objective differs from full calculation")
-    return state, repair, {
-        "repair": repair_seconds, "rebuilding": rebuilding_seconds,
-        "evaluation": time.monotonic() - before,
-    }
+    if not math.isclose(
+        objective(problem, proposal.layers) + delta,
+        state.metrics["l2_regularized"],
+        rel_tol=1e-9,
+        abs_tol=1e-6,
+    ):
+        raise RuntimeError(
+            "Candidate's incremental objective differs from full calculation"
+        )
+    return (
+        state,
+        repair,
+        {
+            "repair": repair_seconds,
+            "rebuilding": rebuilding_seconds,
+            "evaluation": time.monotonic() - before,
+        },
+    )
 
 
 def accept_move(delta, temperature, rng, method="anneal"):
     if delta <= 0:
         return True
-    return (method == "anneal" and temperature > 0 and
-            rng.random() < math.exp(-delta / temperature))
+    return (
+        method == "anneal"
+        and temperature > 0
+        and rng.random() < math.exp(-delta / temperature)
+    )
 
 
 def calibrate_temperature(problem, state, config, deadline=None):
     if config.method == "greedy":
         return 0.0, {"samples": 0, "positive_samples": 0, "source": "greedy"}
     if config.initial_temperature is not None:
-        return config.initial_temperature, {"samples": 0, "positive_samples": 0, "source": "explicit"}
+        return config.initial_temperature, {
+            "samples": 0,
+            "positive_samples": 0,
+            "source": "explicit",
+        }
     rng = random.Random(config.seed ^ 0x75A94E)
     positive = []
     evaluated = 0
@@ -558,7 +633,8 @@ def calibrate_temperature(problem, state, config, deadline=None):
             continue
         try:
             candidate, _, _ = evaluate_proposal(
-                problem, proposal, config, "temperature-sample", deadline)
+                problem, proposal, config, "temperature-sample", deadline
+            )
         except RepairFailed:
             continue
         evaluated += 1
@@ -570,7 +646,11 @@ def calibrate_temperature(problem, state, config, deadline=None):
     else:
         value = max(1.0, abs(state.objective) * 0.01)
         source = "fallback_no_positive_deltas"
-    return value, {"samples": evaluated, "positive_samples": len(positive), "source": source}
+    return value, {
+        "samples": evaluated,
+        "positive_samples": len(positive),
+        "source": source,
+    }
 
 
 def run_search(problem, config, checkpoint=None, starting_state=None, started_at=None):
@@ -580,18 +660,44 @@ def run_search(problem, config, checkpoint=None, starting_state=None, started_at
     start = time.monotonic() if started_at is None else started_at
     deadline = start + config.time_budget if config.time_budget else None
     summary = {
-        "attempts": 0, "accepted": 0, "best_improvements": 0,
-        "repair_steps": 0, "repair_failures": 0, "returned_to_current": 0,
+        "attempts": 0,
+        "accepted": 0,
+        "best_improvements": 0,
+        "repair_steps": 0,
+        "repair_failures": 0,
+        "returned_to_current": 0,
         "equal_cost_tree_changes": 0,
-        "temperature": {"samples": 0, "positive_samples": 0,
-                        "initial": None, "source": "not_started",
-                        "final_ratio": config.final_temperature_ratio},
-        "timing_seconds": {k: 0.0 for k in (
-            "initialization", "calibration", "generation", "repair", "rebuilding",
-            "evaluation", "saving")},
-        "by_move": {kind: {"attempts": 0, "evaluated": 0, "accepted": 0,
-                          "improvements": 0, "repair_steps": 0,
-                          "repair_failures": 0, "seconds": 0.0} for kind in MOVE_TYPES},
+        "temperature": {
+            "samples": 0,
+            "positive_samples": 0,
+            "initial": None,
+            "source": "not_started",
+            "final_ratio": config.final_temperature_ratio,
+        },
+        "timing_seconds": {
+            k: 0.0
+            for k in (
+                "initialization",
+                "calibration",
+                "generation",
+                "repair",
+                "rebuilding",
+                "evaluation",
+                "saving",
+            )
+        },
+        "by_move": {
+            kind: {
+                "attempts": 0,
+                "evaluated": 0,
+                "accepted": 0,
+                "improvements": 0,
+                "repair_steps": 0,
+                "repair_failures": 0,
+                "seconds": 0.0,
+            }
+            for kind in MOVE_TYPES
+        },
     }
     before = time.monotonic()
     check_deadline(deadline)
@@ -601,7 +707,10 @@ def run_search(problem, config, checkpoint=None, starting_state=None, started_at
         validate_state(problem, starting_state)
         initial, repair = starting_state, RepairResult(starting_state.layers, (), 0)
     summary["timing_seconds"]["initialization"] = time.monotonic() - before
-    summary["initial_repair"] = {"violations": repair.initial_violations, "steps": list(repair.steps)}
+    summary["initial_repair"] = {
+        "violations": repair.initial_violations,
+        "steps": list(repair.steps),
+    }
     current = best = initial
     history, logs = [], []
 
@@ -620,13 +729,18 @@ def run_search(problem, config, checkpoint=None, starting_state=None, started_at
         summary["temperature"]["source"] = "calibrating"
         try:
             if config.max_iterations:
-                temperature, info = calibrate_temperature(problem, initial, config, deadline)
+                temperature, info = calibrate_temperature(
+                    problem, initial, config, deadline
+                )
             else:
                 info = {"samples": 0, "positive_samples": 0, "source": "initial_only"}
         finally:
             summary["timing_seconds"]["calibration"] = time.monotonic() - before
-        summary["temperature"] = {**info, "initial": temperature,
-                                  "final_ratio": config.final_temperature_ratio}
+        summary["temperature"] = {
+            **info,
+            "initial": temperature,
+            "final_ratio": config.final_temperature_ratio,
+        }
         rng = random.Random(config.seed)
         acceptance_rng = random.Random(config.seed ^ 0x128ABD)
         search_start = time.monotonic()
@@ -643,7 +757,8 @@ def run_search(problem, config, checkpoint=None, starting_state=None, started_at
             before = time.monotonic()
             try:
                 candidate, repair, timing = evaluate_proposal(
-                    problem, proposal, config, f"state-{attempt:06d}", deadline)
+                    problem, proposal, config, f"state-{attempt:06d}", deadline
+                )
             except RepairFailed:
                 summary["repair_failures"] += 1
                 counts["repair_failures"] += 1
@@ -656,37 +771,64 @@ def run_search(problem, config, checkpoint=None, starting_state=None, started_at
             counts["evaluated"] += 1
             counts["repair_steps"] += len(repair.steps)
             summary["repair_steps"] += len(repair.steps)
-            unchanged = candidate.layers == current.layers and candidate.tree == current.tree
+            unchanged = (
+                candidate.layers == current.layers and candidate.tree == current.tree
+            )
             if unchanged:
                 summary["returned_to_current"] += 1
             progress = (attempt - 1) / max(1, config.max_iterations - 1)
             if deadline is not None:
-                progress = max(progress, min(1.0, (time.monotonic() - search_start) /
-                                             max(deadline - search_start, 1e-12)))
-            t = temperature * config.final_temperature_ratio ** progress
+                progress = max(
+                    progress,
+                    min(
+                        1.0,
+                        (time.monotonic() - search_start)
+                        / max(deadline - search_start, 1e-12),
+                    ),
+                )
+            t = temperature * config.final_temperature_ratio**progress
             delta = candidate.objective - current.objective
-            accepted = not unchanged and accept_move(delta, t, acceptance_rng, config.method)
-            log = {"attempt": attempt, "move_type": kind, "details": proposal.details,
-                   "repair_steps": len(repair.steps), "delta_scaled": delta,
-                   "temperature": t, "accepted": accepted, "returned_to_current": unchanged}
+            accepted = not unchanged and accept_move(
+                delta, t, acceptance_rng, config.method
+            )
+            log = {
+                "attempt": attempt,
+                "move_type": kind,
+                "details": proposal.details,
+                "repair_steps": len(repair.steps),
+                "delta_scaled": delta,
+                "temperature": t,
+                "accepted": accepted,
+                "returned_to_current": unchanged,
+            }
             if len(logs) < config.log_limit:
                 logs.append(log)
             if accepted:
-                if candidate.layers == current.layers and candidate.tree != current.tree:
+                if (
+                    candidate.layers == current.layers
+                    and candidate.tree != current.tree
+                ):
                     summary["equal_cost_tree_changes"] += 1
                 current = candidate
                 summary["accepted"] += 1
                 counts["accepted"] += 1
                 if delta < 0:
                     counts["improvements"] += 1
-                if current.objective < best.objective - max(1e-9, abs(best.objective) * 1e-12):
+                if current.objective < best.objective - max(
+                    1e-9, abs(best.objective) * 1e-12
+                ):
                     validate_state(problem, current)
                     best = current
                     summary["best_improvements"] += 1
-                    history.append({"attempt": attempt, "move_type": kind,
-                                    "objective": best.objective,
-                                    "height_range": best.metrics["height_range"],
-                                    "used_layer_count": best.metrics["used_layer_count"]})
+                    history.append(
+                        {
+                            "attempt": attempt,
+                            "move_type": kind,
+                            "objective": best.objective,
+                            "height_range": best.metrics["height_range"],
+                            "used_layer_count": best.metrics["used_layer_count"],
+                        }
+                    )
                     save("improvement")
     except DeadlineExceeded:
         stop_reason = "time_budget_exhausted"
@@ -695,26 +837,40 @@ def run_search(problem, config, checkpoint=None, starting_state=None, started_at
     validate_state(problem, best)
     validate_state(problem, current)
     summary.update(
-        stop_reason=stop_reason, initial_objective=initial.objective,
-        best_objective=best.objective, current_objective=current.objective,
+        stop_reason=stop_reason,
+        initial_objective=initial.objective,
+        best_objective=best.objective,
+        current_objective=current.objective,
         improvement=initial.objective - best.objective,
-        improvement_percent=(100 * (initial.objective - best.objective) / initial.objective
-                             if initial.objective else 0.0),
+        improvement_percent=(
+            100 * (initial.objective - best.objective) / initial.objective
+            if initial.objective
+            else 0.0
+        ),
         total_seconds=time.monotonic() - start,
-        returned_to_current_ratio=(summary["returned_to_current"] / summary["attempts"]
-                                   if summary["attempts"] else 0.0),
+        returned_to_current_ratio=(
+            summary["returned_to_current"] / summary["attempts"]
+            if summary["attempts"]
+            else 0.0
+        ),
     )
     return SearchResult(initial, best, current, summary, history, logs)
 
 
 def state_record(state):
-    return {"state_id": state.state_id, "parent": state.tree.parent,
-            "children": state.tree.children,
-            "depth": tuple(z + 1 for z in state.layers) + (0,),
-            "layers": state.layers, "metrics": copy.deepcopy(state.metrics)}
+    return {
+        "state_id": state.state_id,
+        "parent": state.tree.parent,
+        "children": state.tree.children,
+        "depth": tuple(z + 1 for z in state.layers) + (0,),
+        "layers": state.layers,
+        "metrics": copy.deepcopy(state.metrics),
+    }
 
 
-def output_payload(problem, config, initial, best, summary, history, logs=None, provenance=None):
+def output_payload(
+    problem, config, initial, best, summary, history, logs=None, provenance=None
+):
     validate_state(problem, initial)
     validate_state(problem, best)
     payload = copy.deepcopy(problem.data)
@@ -722,16 +878,26 @@ def output_payload(problem, config, initial, best, summary, history, logs=None, 
         edge["layer"] = float(layer)
     payload["overlaps"] = [list(pair) for pair in problem.overlaps]
     payload["tree_layer_search"] = {
-        "format_version": 1, "problem_signature": problem.signature,
-        "provenance": provenance or {}, "settings": asdict(config),
-        "virtual_root_index": problem.n, "scale": problem.scale,
+        "format_version": 1,
+        "problem_signature": problem.signature,
+        "provenance": provenance or {},
+        "settings": asdict(config),
+        "virtual_root_index": problem.n,
+        "scale": problem.scale,
         "index_to_hyperedge_id": [edge["id"] for edge in problem.data["hyperedges"]],
-        "overlaps_sha256": hashlib.sha256(json.dumps(problem.overlaps).encode()).hexdigest(),
-        "initial": state_record(initial), "best": state_record(best),
-        "summary": copy.deepcopy(summary), "history": copy.deepcopy(history),
+        "overlaps_sha256": hashlib.sha256(
+            json.dumps(problem.overlaps).encode()
+        ).hexdigest(),
+        "initial": state_record(initial),
+        "best": state_record(best),
+        "summary": copy.deepcopy(summary),
+        "history": copy.deepcopy(history),
         "candidate_logs": copy.deepcopy(logs or []),
-        "validation": {"tree_valid": True, "overlap_violation_count": 0,
-                       "metrics_independently_recomputed": True},
+        "validation": {
+            "tree_valid": True,
+            "overlap_violation_count": 0,
+            "metrics_independently_recomputed": True,
+        },
         "limitations": [
             "Integer heights; not the same search space as continuous QP",
             "Greedy repair and asymmetric proposals; no global optimality guarantee",
@@ -742,20 +908,31 @@ def output_payload(problem, config, initial, best, summary, history, logs=None, 
 
 
 def comparison_metrics(problem, path):
-    z = load_comparison(path, problem.data["nodes"], problem.data["hyperedges"], problem.overlaps)
+    z = load_comparison(
+        path, problem.data["nodes"], problem.data["hyperedges"], problem.overlaps
+    )
     metrics = layout_metrics(problem, z)
     if metrics["overlap_violation_count"]:
         raise ValueError("Comparison layout violates overlap separation")
     metrics["distinct_height_count"] = metrics.pop("used_layer_count")
-    return {"path": str(path), "metrics": metrics,
-            "note": "Recomputed with this input's weights and scale; heights may be continuous"}
+    return {
+        "path": str(path),
+        "metrics": metrics,
+        "note": "Recomputed with this input's weights and scale; heights may be continuous",
+    }
 
 
 def parse_arguments(argv=None):
-    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     parser.add_argument("input_file", nargs="?", default="original.json")
-    parser.add_argument("output_file", nargs="?", default="layers_hypergraph.json",
-                        help="Completed viewer JSON, matching solve_layers.py (default: layers_hypergraph.json)")
+    parser.add_argument(
+        "output_file",
+        nargs="?",
+        default="layers_hypergraph.json",
+        help="Completed viewer JSON, matching solve_layers.py (default: layers_hypergraph.json)",
+    )
     parser.add_argument("--initial-output")
     parser.add_argument("--checkpoint")
     parser.add_argument("--report")
@@ -763,15 +940,29 @@ def parse_arguments(argv=None):
     parser.add_argument("--initial-only", action="store_true")
     parser.add_argument("--method", choices=("anneal", "greedy"), default="anneal")
     defaults = Config()
-    for name in ("reg", "time_budget", "initial_acceptance", "final_temperature_ratio",
-                 "checkpoint_interval"):
-        parser.add_argument("--" + name.replace("_", "-"), type=float, default=getattr(defaults, name))
+    for name in (
+        "reg",
+        "time_budget",
+        "initial_acceptance",
+        "final_temperature_ratio",
+        "checkpoint_interval",
+    ):
+        parser.add_argument(
+            "--" + name.replace("_", "-"), type=float, default=getattr(defaults, name)
+        )
     parser.add_argument("--initial-temperature", type=float)
     for name in ("seed", "max_iterations", "temperature_samples", "log_limit"):
-        parser.add_argument("--" + name.replace("_", "-"), type=int, default=getattr(defaults, name))
+        parser.add_argument(
+            "--" + name.replace("_", "-"), type=int, default=getattr(defaults, name)
+        )
     parser.add_argument("--max-repair-steps", type=int)
-    parser.add_argument("--move-weights", type=float, nargs=4, default=defaults.move_weights,
-                        metavar=("MOVE", "SWAP", "SUBTREE", "REWIRE"))
+    parser.add_argument(
+        "--move-weights",
+        type=float,
+        nargs=4,
+        default=defaults.move_weights,
+        metavar=("MOVE", "SWAP", "SUBTREE", "REWIRE"),
+    )
     parser.add_argument("--quiet", action="store_true")
     return parser.parse_args(argv)
 
@@ -785,20 +976,34 @@ def main(argv=None):
     config = Config(**fields)
     config.validate()
     source, output = Path(args.input_file).resolve(), Path(args.output_file).resolve()
-    auxiliary_directory = (Path("results/layers").resolve()
-                           if output.parent == Path.cwd().resolve() else output.parent)
-    initial_path = (Path(args.initial_output).resolve() if args.initial_output
-                    else auxiliary_directory / (output.stem + "_initial.json"))
-    checkpoint_path = (Path(args.checkpoint).resolve() if args.checkpoint
-                       else auxiliary_directory / (output.stem + "_checkpoint.json"))
-    report_path = (Path(args.report).resolve() if args.report else
-                   Path("results/reports", output.stem + "_report.json").resolve())
+    auxiliary_directory = (
+        Path("results/layers").resolve()
+        if output.parent == Path.cwd().resolve()
+        else output.parent
+    )
+    initial_path = (
+        Path(args.initial_output).resolve()
+        if args.initial_output
+        else auxiliary_directory / (output.stem + "_initial.json")
+    )
+    checkpoint_path = (
+        Path(args.checkpoint).resolve()
+        if args.checkpoint
+        else auxiliary_directory / (output.stem + "_checkpoint.json")
+    )
+    report_path = (
+        Path(args.report).resolve()
+        if args.report
+        else Path("results/reports", output.stem + "_report.json").resolve()
+    )
     products = [output, initial_path, checkpoint_path, report_path]
     protected = {source, Path(__file__).resolve().with_name("layered_hypergraph.json")}
     if args.compare:
         protected.add(Path(args.compare).resolve())
     if len(set(products)) != len(products) or any(p in protected for p in products):
-        raise ValueError("Outputs must be distinct and must not replace the input, comparison or active viewer data")
+        raise ValueError(
+            "Outputs must be distinct and must not replace the input, comparison or active viewer data"
+        )
 
     def log(message):
         if not args.quiet:
@@ -811,80 +1016,128 @@ def main(argv=None):
     log(f"Loaded {len(data['nodes'])} nodes and {len(data['hyperedges'])} hyperedges.")
     problem = prepare_problem(data, config.reg, progress=log)
     comparison = comparison_metrics(problem, args.compare) if args.compare else None
-    provenance = {"input": str(source), "input_sha256": hashlib.sha256(source_bytes).hexdigest(),
-                  "preprocessing_seconds": time.monotonic() - started}
+    provenance = {
+        "input": str(source),
+        "input_sha256": hashlib.sha256(source_bytes).hexdigest(),
+        "preprocessing_seconds": time.monotonic() - started,
+    }
 
     last_checkpoint = -math.inf
 
     def checkpoint(initial, best, summary, history):
         nonlocal last_checkpoint
         now = time.monotonic()
-        if summary["phase"] != "initial" and now - last_checkpoint < config.checkpoint_interval:
+        if (
+            summary["phase"] != "initial"
+            and now - last_checkpoint < config.checkpoint_interval
+        ):
             return
-        payload = output_payload(problem, config, initial, best, summary, history,
-                                 provenance=provenance)
+        payload = output_payload(
+            problem, config, initial, best, summary, history, provenance=provenance
+        )
         if summary["phase"] == "initial":
             atomic_write_json(initial_path, payload)
         atomic_write_json(checkpoint_path, payload)
         last_checkpoint = time.monotonic()
         if summary["phase"] == "initial":
-            log(f"Tree initialization and repair completed. Total layers used: "
-                f"{best.metrics['used_layer_count']}")
+            log(
+                f"Tree initialization and repair completed. Total layers used: "
+                f"{best.metrics['used_layer_count']}"
+            )
             log(f"Initial objective value (solve_layers.py): {best.objective:.6f}")
             if config.max_iterations:
                 log(f"Phase 2: Optimizing tree layers using {config.method}...")
         else:
-            log(f"Improved objective value (solve_layers.py): {best.objective:.6f}; "
+            log(
+                f"Improved objective value (solve_layers.py): {best.objective:.6f}; "
                 f"layers={best.metrics['used_layer_count']}; "
-                f"height={best.metrics['height_range']:.0f}")
+                f"height={best.metrics['height_range']:.0f}"
+            )
 
-    log("Phase 1: Computing a virtual-root BFS tree on overlap graph C and repairing conflicts...")
+    log(
+        "Phase 1: Computing a virtual-root BFS tree on overlap graph C and repairing conflicts..."
+    )
     log(f"Objective scale factor: {problem.scale:.6e}")
     result = run_search(problem, config, checkpoint, started_at=started)
     legacy_objective = solve_layers_objective(problem, result.best.layers)
-    if not math.isclose(legacy_objective, result.best.objective, rel_tol=1e-9, abs_tol=1e-6):
-        raise RuntimeError("solve_layers.py objective disagrees with tree-search objective")
+    if not math.isclose(
+        legacy_objective, result.best.objective, rel_tol=1e-9, abs_tol=1e-6
+    ):
+        raise RuntimeError(
+            "solve_layers.py objective disagrees with tree-search objective"
+        )
     result.summary["objective_value_solve_layers"] = legacy_objective
-    log(f"Optimization finished after {result.summary['attempts']} attempts "
-        f"({result.summary['total_seconds']:.3f} s). Stop reason: {result.summary['stop_reason']}")
+    log(
+        f"Optimization finished after {result.summary['attempts']} attempts "
+        f"({result.summary['total_seconds']:.3f} s). Stop reason: {result.summary['stop_reason']}"
+    )
     log(f"Best objective value: {result.best.objective:.6f}")
     log(f"Objective value (solve_layers.py): {legacy_objective:.6f}")
-    log(f"Unscaled squared objective value: {result.best.metrics['l2_regularized']:.6f}")
+    log(
+        f"Unscaled squared objective value: {result.best.metrics['l2_regularized']:.6f}"
+    )
     log("All overlap constraints successfully satisfied (|x_i - x_j| >= 1).")
     log(f"Coordinate x_0 (first hyperedge): {result.best.layers[0]:.6f}")
     log("Anchor coordinate x_0 for solve_layers.py objective evaluation: 0.000000")
-    log(f"Coordinate range: min={result.best.metrics['height_min']:.4f}, "
-        f"max={result.best.metrics['height_max']:.4f}")
+    log(
+        f"Coordinate range: min={result.best.metrics['height_min']:.4f}, "
+        f"max={result.best.metrics['height_max']:.4f}"
+    )
     if comparison is not None:
         baseline = comparison["metrics"]["l2_scaled_qp"]
-        log(f"Comparison objective value (solve_layers.py; {args.compare}): {baseline:.6f}")
+        log(
+            f"Comparison objective value (solve_layers.py; {args.compare}): {baseline:.6f}"
+        )
         log(f"Objective improvement over comparison: {baseline - legacy_objective:.6f}")
     log("Preparing output JSON...")
-    payload = output_payload(problem, config, result.initial, result.best, result.summary,
-                             result.history, result.logs, provenance)
+    payload = output_payload(
+        problem,
+        config,
+        result.initial,
+        result.best,
+        result.summary,
+        result.history,
+        result.logs,
+        provenance,
+    )
     # Keep the completed output identical to the legacy viewer schema.
     # Full input metadata and tree details remain in the sidecar files.
     viewer_payload = {key: payload[key] for key in ("nodes", "hyperedges", "overlaps")}
     log(f"Writing output to {args.output_file}...")
     atomic_write_json(output, viewer_payload)
     atomic_write_json(checkpoint_path, payload)
-    report = {"method": "rooted_tree_repair_" + config.method, "settings": asdict(config),
-              "provenance": provenance, "problem_signature": problem.signature,
-              "nodes": len(problem.data["nodes"]), "hyperedges": problem.n,
-              "overlaps": len(problem.overlaps), "scale": problem.scale,
-              "initial_metrics": result.initial.metrics, "best_metrics": result.best.metrics,
-              "current_metrics": result.current.metrics, "summary": result.summary,
-              "history": result.history, "comparison": comparison,
-              "objective_value_solve_layers": legacy_objective,
-              "objective_formula_solve_layers": "2 * scale * y.T @ L_yy @ y; y = z[1:] - z[0]",
-              "initial": state_record(result.initial), "best": state_record(result.best),
-              "outputs": {"initial": str(initial_path), "best": str(output),
-                          "checkpoint": str(checkpoint_path)},
-              "validation": payload["tree_layer_search"]["validation"],
-              "limitations": payload["tree_layer_search"]["limitations"]}
+    report = {
+        "method": "rooted_tree_repair_" + config.method,
+        "settings": asdict(config),
+        "provenance": provenance,
+        "problem_signature": problem.signature,
+        "nodes": len(problem.data["nodes"]),
+        "hyperedges": problem.n,
+        "overlaps": len(problem.overlaps),
+        "scale": problem.scale,
+        "initial_metrics": result.initial.metrics,
+        "best_metrics": result.best.metrics,
+        "current_metrics": result.current.metrics,
+        "summary": result.summary,
+        "history": result.history,
+        "comparison": comparison,
+        "objective_value_solve_layers": legacy_objective,
+        "objective_formula_solve_layers": "2 * scale * y.T @ L_yy @ y; y = z[1:] - z[0]",
+        "initial": state_record(result.initial),
+        "best": state_record(result.best),
+        "outputs": {
+            "initial": str(initial_path),
+            "best": str(output),
+            "checkpoint": str(checkpoint_path),
+        },
+        "validation": payload["tree_layer_search"]["validation"],
+        "limitations": payload["tree_layer_search"]["limitations"],
+    }
     atomic_write_json(report_path, report)
-    log(f"Initial -> best objective: {result.initial.objective:.6f} -> "
-        f"{result.best.objective:.6f} ({result.summary['improvement_percent']:.2f}% improvement)")
+    log(
+        f"Initial -> best objective: {result.initial.objective:.6f} -> "
+        f"{result.best.objective:.6f} ({result.summary['improvement_percent']:.2f}% improvement)"
+    )
     log(f"Report: {report_path}")
     log("Layer assignment complete!")
     return 130 if result.summary["stop_reason"] == "interrupted" else 0
