@@ -1,0 +1,1433 @@
+{
+  "plan": {
+    "experiment_id": "tree_optimization_comparison_01",
+    "format_version": 1,
+    "input_path": "original.json",
+    "input_base": "repository",
+    "input_sha256": "bc21935cccb75e36b17c92e7164032eed8f278606f5767a14efd9d212c82bd7b",
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "reg": 1e-05,
+    "penalty": 100.0,
+    "penalty_rationale": "100 units of normalized squared cost is about 2.9% of the previously reported 3493.207 squared cost. The term makes one fewer layer worth a squared-cost increase of up to 100.",
+    "objective_formulas": {
+      "squared": "2 * scale * sum_{i<j} (shared(i,j) + reg) * (z_i-z_j)^2",
+      "weighted-l1": "sum_{i<j} (shared(i,j) + reg) * abs(z_i-z_j)",
+      "pillar": "sum_{v} (max_{i contains v} z_i - min_{i contains v} z_i)",
+      "squared-plus-layers": "squared + penalty * len(set(z))"
+    },
+    "initialization": "Same deterministic BFS, squared-cost repair and compaction per input",
+    "repair": "Existing squared-cost repair for all objectives",
+    "solver_settings": {
+      "reg": 1e-05,
+      "seed": 0,
+      "max_iterations": 20000,
+      "time_budget": 600.0,
+      "method": "anneal",
+      "initial_temperature": null,
+      "temperature_samples": 16,
+      "initial_acceptance": 0.8,
+      "final_temperature_ratio": 0.001,
+      "move_weights": [
+        0.4,
+        0.3,
+        0.25,
+        0.05
+      ],
+      "max_repair_steps": null,
+      "log_limit": 0,
+      "checkpoint_interval": 5.0
+    },
+    "restart": {
+      "fractions": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "max_restarts": 2,
+      "seed_step": 11400714819323198485,
+      "rule": "Reset to the identical BFS + repair state and use seed + step * restart number at one-third and two-thirds of the case budget after the finalization reserve, or of attempts on small examples. Keep the global best."
+    },
+    "measure_case_budget_seconds": 180.0,
+    "measure_total_budget_seconds": 7200.0,
+    "finalization_reserve_seconds": 1.0,
+    "timing_definition": "The case clock starts before setup and stops after publishing report.json. Start and end of the setup, search and writes are measured on the same monotonic clock. The search stops one second before the case cap to reserve time for validating and publishing the final artifacts. Full case wall time is in progress.json.",
+    "thread_limits": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "BLIS_NUM_THREADS": "1"
+    },
+    "time_case_iteration_guard": 1000000000,
+    "smoke_case_budget_seconds": 5.0,
+    "small_case_max_attempts": 250,
+    "small_oracle": "small/oracle.json",
+    "case_files": [
+      "initial.json",
+      "checkpoint.json",
+      "layout.json",
+      "report.json",
+      "run.log"
+    ],
+    "cases": [
+      {
+        "key": "smoke/greedy-squared/seed-0",
+        "phase": "smoke",
+        "stage": "stage1",
+        "fixture": "original",
+        "method": "greedy",
+        "objective": "squared",
+        "seed": 0,
+        "path": "smoke/greedy-squared/seed-0"
+      },
+      {
+        "key": "smoke/anneal-squared/seed-0",
+        "phase": "smoke",
+        "stage": "stage1",
+        "fixture": "original",
+        "method": "anneal",
+        "objective": "squared",
+        "seed": 0,
+        "path": "smoke/anneal-squared/seed-0"
+      },
+      {
+        "key": "smoke/restart-greedy-squared/seed-0",
+        "phase": "smoke",
+        "stage": "stage1",
+        "fixture": "original",
+        "method": "restart-greedy",
+        "objective": "squared",
+        "seed": 0,
+        "path": "smoke/restart-greedy-squared/seed-0"
+      },
+      {
+        "key": "smoke/anneal-weighted-l1/seed-0",
+        "phase": "smoke",
+        "stage": "stage2",
+        "fixture": "original",
+        "method": "anneal",
+        "objective": "weighted-l1",
+        "seed": 0,
+        "path": "smoke/anneal-weighted-l1/seed-0"
+      },
+      {
+        "key": "smoke/anneal-pillar/seed-0",
+        "phase": "smoke",
+        "stage": "stage2",
+        "fixture": "original",
+        "method": "anneal",
+        "objective": "pillar",
+        "seed": 0,
+        "path": "smoke/anneal-pillar/seed-0"
+      },
+      {
+        "key": "smoke/anneal-squared-plus-layers/seed-0",
+        "phase": "smoke",
+        "stage": "stage2",
+        "fixture": "original",
+        "method": "anneal",
+        "objective": "squared-plus-layers",
+        "seed": 0,
+        "path": "smoke/anneal-squared-plus-layers/seed-0"
+      },
+      {
+        "key": "small/four-path/greedy-squared/seed-0",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "four-path",
+        "method": "greedy",
+        "objective": "squared",
+        "seed": 0,
+        "path": "small/four-path/greedy-squared/seed-0"
+      },
+      {
+        "key": "small/four-path/greedy-squared/seed-1",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "four-path",
+        "method": "greedy",
+        "objective": "squared",
+        "seed": 1,
+        "path": "small/four-path/greedy-squared/seed-1"
+      },
+      {
+        "key": "small/four-path/greedy-squared/seed-2",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "four-path",
+        "method": "greedy",
+        "objective": "squared",
+        "seed": 2,
+        "path": "small/four-path/greedy-squared/seed-2"
+      },
+      {
+        "key": "small/four-path/greedy-squared/seed-3",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "four-path",
+        "method": "greedy",
+        "objective": "squared",
+        "seed": 3,
+        "path": "small/four-path/greedy-squared/seed-3"
+      },
+      {
+        "key": "small/four-path/greedy-squared/seed-4",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "four-path",
+        "method": "greedy",
+        "objective": "squared",
+        "seed": 4,
+        "path": "small/four-path/greedy-squared/seed-4"
+      },
+      {
+        "key": "small/four-path/anneal-squared/seed-0",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "four-path",
+        "method": "anneal",
+        "objective": "squared",
+        "seed": 0,
+        "path": "small/four-path/anneal-squared/seed-0"
+      },
+      {
+        "key": "small/four-path/anneal-squared/seed-1",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "four-path",
+        "method": "anneal",
+        "objective": "squared",
+        "seed": 1,
+        "path": "small/four-path/anneal-squared/seed-1"
+      },
+      {
+        "key": "small/four-path/anneal-squared/seed-2",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "four-path",
+        "method": "anneal",
+        "objective": "squared",
+        "seed": 2,
+        "path": "small/four-path/anneal-squared/seed-2"
+      },
+      {
+        "key": "small/four-path/anneal-squared/seed-3",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "four-path",
+        "method": "anneal",
+        "objective": "squared",
+        "seed": 3,
+        "path": "small/four-path/anneal-squared/seed-3"
+      },
+      {
+        "key": "small/four-path/anneal-squared/seed-4",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "four-path",
+        "method": "anneal",
+        "objective": "squared",
+        "seed": 4,
+        "path": "small/four-path/anneal-squared/seed-4"
+      },
+      {
+        "key": "small/four-path/restart-greedy-squared/seed-0",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "four-path",
+        "method": "restart-greedy",
+        "objective": "squared",
+        "seed": 0,
+        "path": "small/four-path/restart-greedy-squared/seed-0"
+      },
+      {
+        "key": "small/four-path/restart-greedy-squared/seed-1",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "four-path",
+        "method": "restart-greedy",
+        "objective": "squared",
+        "seed": 1,
+        "path": "small/four-path/restart-greedy-squared/seed-1"
+      },
+      {
+        "key": "small/four-path/restart-greedy-squared/seed-2",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "four-path",
+        "method": "restart-greedy",
+        "objective": "squared",
+        "seed": 2,
+        "path": "small/four-path/restart-greedy-squared/seed-2"
+      },
+      {
+        "key": "small/four-path/restart-greedy-squared/seed-3",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "four-path",
+        "method": "restart-greedy",
+        "objective": "squared",
+        "seed": 3,
+        "path": "small/four-path/restart-greedy-squared/seed-3"
+      },
+      {
+        "key": "small/four-path/restart-greedy-squared/seed-4",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "four-path",
+        "method": "restart-greedy",
+        "objective": "squared",
+        "seed": 4,
+        "path": "small/four-path/restart-greedy-squared/seed-4"
+      },
+      {
+        "key": "small/four-path/anneal-weighted-l1/seed-0",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "four-path",
+        "method": "anneal",
+        "objective": "weighted-l1",
+        "seed": 0,
+        "path": "small/four-path/anneal-weighted-l1/seed-0"
+      },
+      {
+        "key": "small/four-path/anneal-weighted-l1/seed-1",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "four-path",
+        "method": "anneal",
+        "objective": "weighted-l1",
+        "seed": 1,
+        "path": "small/four-path/anneal-weighted-l1/seed-1"
+      },
+      {
+        "key": "small/four-path/anneal-weighted-l1/seed-2",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "four-path",
+        "method": "anneal",
+        "objective": "weighted-l1",
+        "seed": 2,
+        "path": "small/four-path/anneal-weighted-l1/seed-2"
+      },
+      {
+        "key": "small/four-path/anneal-weighted-l1/seed-3",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "four-path",
+        "method": "anneal",
+        "objective": "weighted-l1",
+        "seed": 3,
+        "path": "small/four-path/anneal-weighted-l1/seed-3"
+      },
+      {
+        "key": "small/four-path/anneal-weighted-l1/seed-4",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "four-path",
+        "method": "anneal",
+        "objective": "weighted-l1",
+        "seed": 4,
+        "path": "small/four-path/anneal-weighted-l1/seed-4"
+      },
+      {
+        "key": "small/four-path/anneal-pillar/seed-0",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "four-path",
+        "method": "anneal",
+        "objective": "pillar",
+        "seed": 0,
+        "path": "small/four-path/anneal-pillar/seed-0"
+      },
+      {
+        "key": "small/four-path/anneal-pillar/seed-1",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "four-path",
+        "method": "anneal",
+        "objective": "pillar",
+        "seed": 1,
+        "path": "small/four-path/anneal-pillar/seed-1"
+      },
+      {
+        "key": "small/four-path/anneal-pillar/seed-2",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "four-path",
+        "method": "anneal",
+        "objective": "pillar",
+        "seed": 2,
+        "path": "small/four-path/anneal-pillar/seed-2"
+      },
+      {
+        "key": "small/four-path/anneal-pillar/seed-3",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "four-path",
+        "method": "anneal",
+        "objective": "pillar",
+        "seed": 3,
+        "path": "small/four-path/anneal-pillar/seed-3"
+      },
+      {
+        "key": "small/four-path/anneal-pillar/seed-4",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "four-path",
+        "method": "anneal",
+        "objective": "pillar",
+        "seed": 4,
+        "path": "small/four-path/anneal-pillar/seed-4"
+      },
+      {
+        "key": "small/four-path/anneal-squared-plus-layers/seed-0",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "four-path",
+        "method": "anneal",
+        "objective": "squared-plus-layers",
+        "seed": 0,
+        "path": "small/four-path/anneal-squared-plus-layers/seed-0"
+      },
+      {
+        "key": "small/four-path/anneal-squared-plus-layers/seed-1",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "four-path",
+        "method": "anneal",
+        "objective": "squared-plus-layers",
+        "seed": 1,
+        "path": "small/four-path/anneal-squared-plus-layers/seed-1"
+      },
+      {
+        "key": "small/four-path/anneal-squared-plus-layers/seed-2",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "four-path",
+        "method": "anneal",
+        "objective": "squared-plus-layers",
+        "seed": 2,
+        "path": "small/four-path/anneal-squared-plus-layers/seed-2"
+      },
+      {
+        "key": "small/four-path/anneal-squared-plus-layers/seed-3",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "four-path",
+        "method": "anneal",
+        "objective": "squared-plus-layers",
+        "seed": 3,
+        "path": "small/four-path/anneal-squared-plus-layers/seed-3"
+      },
+      {
+        "key": "small/four-path/anneal-squared-plus-layers/seed-4",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "four-path",
+        "method": "anneal",
+        "objective": "squared-plus-layers",
+        "seed": 4,
+        "path": "small/four-path/anneal-squared-plus-layers/seed-4"
+      },
+      {
+        "key": "small/five-cycle/greedy-squared/seed-0",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "five-cycle",
+        "method": "greedy",
+        "objective": "squared",
+        "seed": 0,
+        "path": "small/five-cycle/greedy-squared/seed-0"
+      },
+      {
+        "key": "small/five-cycle/greedy-squared/seed-1",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "five-cycle",
+        "method": "greedy",
+        "objective": "squared",
+        "seed": 1,
+        "path": "small/five-cycle/greedy-squared/seed-1"
+      },
+      {
+        "key": "small/five-cycle/greedy-squared/seed-2",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "five-cycle",
+        "method": "greedy",
+        "objective": "squared",
+        "seed": 2,
+        "path": "small/five-cycle/greedy-squared/seed-2"
+      },
+      {
+        "key": "small/five-cycle/greedy-squared/seed-3",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "five-cycle",
+        "method": "greedy",
+        "objective": "squared",
+        "seed": 3,
+        "path": "small/five-cycle/greedy-squared/seed-3"
+      },
+      {
+        "key": "small/five-cycle/greedy-squared/seed-4",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "five-cycle",
+        "method": "greedy",
+        "objective": "squared",
+        "seed": 4,
+        "path": "small/five-cycle/greedy-squared/seed-4"
+      },
+      {
+        "key": "small/five-cycle/anneal-squared/seed-0",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "five-cycle",
+        "method": "anneal",
+        "objective": "squared",
+        "seed": 0,
+        "path": "small/five-cycle/anneal-squared/seed-0"
+      },
+      {
+        "key": "small/five-cycle/anneal-squared/seed-1",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "five-cycle",
+        "method": "anneal",
+        "objective": "squared",
+        "seed": 1,
+        "path": "small/five-cycle/anneal-squared/seed-1"
+      },
+      {
+        "key": "small/five-cycle/anneal-squared/seed-2",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "five-cycle",
+        "method": "anneal",
+        "objective": "squared",
+        "seed": 2,
+        "path": "small/five-cycle/anneal-squared/seed-2"
+      },
+      {
+        "key": "small/five-cycle/anneal-squared/seed-3",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "five-cycle",
+        "method": "anneal",
+        "objective": "squared",
+        "seed": 3,
+        "path": "small/five-cycle/anneal-squared/seed-3"
+      },
+      {
+        "key": "small/five-cycle/anneal-squared/seed-4",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "five-cycle",
+        "method": "anneal",
+        "objective": "squared",
+        "seed": 4,
+        "path": "small/five-cycle/anneal-squared/seed-4"
+      },
+      {
+        "key": "small/five-cycle/restart-greedy-squared/seed-0",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "five-cycle",
+        "method": "restart-greedy",
+        "objective": "squared",
+        "seed": 0,
+        "path": "small/five-cycle/restart-greedy-squared/seed-0"
+      },
+      {
+        "key": "small/five-cycle/restart-greedy-squared/seed-1",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "five-cycle",
+        "method": "restart-greedy",
+        "objective": "squared",
+        "seed": 1,
+        "path": "small/five-cycle/restart-greedy-squared/seed-1"
+      },
+      {
+        "key": "small/five-cycle/restart-greedy-squared/seed-2",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "five-cycle",
+        "method": "restart-greedy",
+        "objective": "squared",
+        "seed": 2,
+        "path": "small/five-cycle/restart-greedy-squared/seed-2"
+      },
+      {
+        "key": "small/five-cycle/restart-greedy-squared/seed-3",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "five-cycle",
+        "method": "restart-greedy",
+        "objective": "squared",
+        "seed": 3,
+        "path": "small/five-cycle/restart-greedy-squared/seed-3"
+      },
+      {
+        "key": "small/five-cycle/restart-greedy-squared/seed-4",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "five-cycle",
+        "method": "restart-greedy",
+        "objective": "squared",
+        "seed": 4,
+        "path": "small/five-cycle/restart-greedy-squared/seed-4"
+      },
+      {
+        "key": "small/five-cycle/anneal-weighted-l1/seed-0",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "five-cycle",
+        "method": "anneal",
+        "objective": "weighted-l1",
+        "seed": 0,
+        "path": "small/five-cycle/anneal-weighted-l1/seed-0"
+      },
+      {
+        "key": "small/five-cycle/anneal-weighted-l1/seed-1",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "five-cycle",
+        "method": "anneal",
+        "objective": "weighted-l1",
+        "seed": 1,
+        "path": "small/five-cycle/anneal-weighted-l1/seed-1"
+      },
+      {
+        "key": "small/five-cycle/anneal-weighted-l1/seed-2",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "five-cycle",
+        "method": "anneal",
+        "objective": "weighted-l1",
+        "seed": 2,
+        "path": "small/five-cycle/anneal-weighted-l1/seed-2"
+      },
+      {
+        "key": "small/five-cycle/anneal-weighted-l1/seed-3",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "five-cycle",
+        "method": "anneal",
+        "objective": "weighted-l1",
+        "seed": 3,
+        "path": "small/five-cycle/anneal-weighted-l1/seed-3"
+      },
+      {
+        "key": "small/five-cycle/anneal-weighted-l1/seed-4",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "five-cycle",
+        "method": "anneal",
+        "objective": "weighted-l1",
+        "seed": 4,
+        "path": "small/five-cycle/anneal-weighted-l1/seed-4"
+      },
+      {
+        "key": "small/five-cycle/anneal-pillar/seed-0",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "five-cycle",
+        "method": "anneal",
+        "objective": "pillar",
+        "seed": 0,
+        "path": "small/five-cycle/anneal-pillar/seed-0"
+      },
+      {
+        "key": "small/five-cycle/anneal-pillar/seed-1",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "five-cycle",
+        "method": "anneal",
+        "objective": "pillar",
+        "seed": 1,
+        "path": "small/five-cycle/anneal-pillar/seed-1"
+      },
+      {
+        "key": "small/five-cycle/anneal-pillar/seed-2",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "five-cycle",
+        "method": "anneal",
+        "objective": "pillar",
+        "seed": 2,
+        "path": "small/five-cycle/anneal-pillar/seed-2"
+      },
+      {
+        "key": "small/five-cycle/anneal-pillar/seed-3",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "five-cycle",
+        "method": "anneal",
+        "objective": "pillar",
+        "seed": 3,
+        "path": "small/five-cycle/anneal-pillar/seed-3"
+      },
+      {
+        "key": "small/five-cycle/anneal-pillar/seed-4",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "five-cycle",
+        "method": "anneal",
+        "objective": "pillar",
+        "seed": 4,
+        "path": "small/five-cycle/anneal-pillar/seed-4"
+      },
+      {
+        "key": "small/five-cycle/anneal-squared-plus-layers/seed-0",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "five-cycle",
+        "method": "anneal",
+        "objective": "squared-plus-layers",
+        "seed": 0,
+        "path": "small/five-cycle/anneal-squared-plus-layers/seed-0"
+      },
+      {
+        "key": "small/five-cycle/anneal-squared-plus-layers/seed-1",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "five-cycle",
+        "method": "anneal",
+        "objective": "squared-plus-layers",
+        "seed": 1,
+        "path": "small/five-cycle/anneal-squared-plus-layers/seed-1"
+      },
+      {
+        "key": "small/five-cycle/anneal-squared-plus-layers/seed-2",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "five-cycle",
+        "method": "anneal",
+        "objective": "squared-plus-layers",
+        "seed": 2,
+        "path": "small/five-cycle/anneal-squared-plus-layers/seed-2"
+      },
+      {
+        "key": "small/five-cycle/anneal-squared-plus-layers/seed-3",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "five-cycle",
+        "method": "anneal",
+        "objective": "squared-plus-layers",
+        "seed": 3,
+        "path": "small/five-cycle/anneal-squared-plus-layers/seed-3"
+      },
+      {
+        "key": "small/five-cycle/anneal-squared-plus-layers/seed-4",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "five-cycle",
+        "method": "anneal",
+        "objective": "squared-plus-layers",
+        "seed": 4,
+        "path": "small/five-cycle/anneal-squared-plus-layers/seed-4"
+      },
+      {
+        "key": "small/six-mixed/greedy-squared/seed-0",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "six-mixed",
+        "method": "greedy",
+        "objective": "squared",
+        "seed": 0,
+        "path": "small/six-mixed/greedy-squared/seed-0"
+      },
+      {
+        "key": "small/six-mixed/greedy-squared/seed-1",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "six-mixed",
+        "method": "greedy",
+        "objective": "squared",
+        "seed": 1,
+        "path": "small/six-mixed/greedy-squared/seed-1"
+      },
+      {
+        "key": "small/six-mixed/greedy-squared/seed-2",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "six-mixed",
+        "method": "greedy",
+        "objective": "squared",
+        "seed": 2,
+        "path": "small/six-mixed/greedy-squared/seed-2"
+      },
+      {
+        "key": "small/six-mixed/greedy-squared/seed-3",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "six-mixed",
+        "method": "greedy",
+        "objective": "squared",
+        "seed": 3,
+        "path": "small/six-mixed/greedy-squared/seed-3"
+      },
+      {
+        "key": "small/six-mixed/greedy-squared/seed-4",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "six-mixed",
+        "method": "greedy",
+        "objective": "squared",
+        "seed": 4,
+        "path": "small/six-mixed/greedy-squared/seed-4"
+      },
+      {
+        "key": "small/six-mixed/anneal-squared/seed-0",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "six-mixed",
+        "method": "anneal",
+        "objective": "squared",
+        "seed": 0,
+        "path": "small/six-mixed/anneal-squared/seed-0"
+      },
+      {
+        "key": "small/six-mixed/anneal-squared/seed-1",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "six-mixed",
+        "method": "anneal",
+        "objective": "squared",
+        "seed": 1,
+        "path": "small/six-mixed/anneal-squared/seed-1"
+      },
+      {
+        "key": "small/six-mixed/anneal-squared/seed-2",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "six-mixed",
+        "method": "anneal",
+        "objective": "squared",
+        "seed": 2,
+        "path": "small/six-mixed/anneal-squared/seed-2"
+      },
+      {
+        "key": "small/six-mixed/anneal-squared/seed-3",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "six-mixed",
+        "method": "anneal",
+        "objective": "squared",
+        "seed": 3,
+        "path": "small/six-mixed/anneal-squared/seed-3"
+      },
+      {
+        "key": "small/six-mixed/anneal-squared/seed-4",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "six-mixed",
+        "method": "anneal",
+        "objective": "squared",
+        "seed": 4,
+        "path": "small/six-mixed/anneal-squared/seed-4"
+      },
+      {
+        "key": "small/six-mixed/restart-greedy-squared/seed-0",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "six-mixed",
+        "method": "restart-greedy",
+        "objective": "squared",
+        "seed": 0,
+        "path": "small/six-mixed/restart-greedy-squared/seed-0"
+      },
+      {
+        "key": "small/six-mixed/restart-greedy-squared/seed-1",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "six-mixed",
+        "method": "restart-greedy",
+        "objective": "squared",
+        "seed": 1,
+        "path": "small/six-mixed/restart-greedy-squared/seed-1"
+      },
+      {
+        "key": "small/six-mixed/restart-greedy-squared/seed-2",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "six-mixed",
+        "method": "restart-greedy",
+        "objective": "squared",
+        "seed": 2,
+        "path": "small/six-mixed/restart-greedy-squared/seed-2"
+      },
+      {
+        "key": "small/six-mixed/restart-greedy-squared/seed-3",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "six-mixed",
+        "method": "restart-greedy",
+        "objective": "squared",
+        "seed": 3,
+        "path": "small/six-mixed/restart-greedy-squared/seed-3"
+      },
+      {
+        "key": "small/six-mixed/restart-greedy-squared/seed-4",
+        "phase": "small",
+        "stage": "stage1",
+        "fixture": "six-mixed",
+        "method": "restart-greedy",
+        "objective": "squared",
+        "seed": 4,
+        "path": "small/six-mixed/restart-greedy-squared/seed-4"
+      },
+      {
+        "key": "small/six-mixed/anneal-weighted-l1/seed-0",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "six-mixed",
+        "method": "anneal",
+        "objective": "weighted-l1",
+        "seed": 0,
+        "path": "small/six-mixed/anneal-weighted-l1/seed-0"
+      },
+      {
+        "key": "small/six-mixed/anneal-weighted-l1/seed-1",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "six-mixed",
+        "method": "anneal",
+        "objective": "weighted-l1",
+        "seed": 1,
+        "path": "small/six-mixed/anneal-weighted-l1/seed-1"
+      },
+      {
+        "key": "small/six-mixed/anneal-weighted-l1/seed-2",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "six-mixed",
+        "method": "anneal",
+        "objective": "weighted-l1",
+        "seed": 2,
+        "path": "small/six-mixed/anneal-weighted-l1/seed-2"
+      },
+      {
+        "key": "small/six-mixed/anneal-weighted-l1/seed-3",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "six-mixed",
+        "method": "anneal",
+        "objective": "weighted-l1",
+        "seed": 3,
+        "path": "small/six-mixed/anneal-weighted-l1/seed-3"
+      },
+      {
+        "key": "small/six-mixed/anneal-weighted-l1/seed-4",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "six-mixed",
+        "method": "anneal",
+        "objective": "weighted-l1",
+        "seed": 4,
+        "path": "small/six-mixed/anneal-weighted-l1/seed-4"
+      },
+      {
+        "key": "small/six-mixed/anneal-pillar/seed-0",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "six-mixed",
+        "method": "anneal",
+        "objective": "pillar",
+        "seed": 0,
+        "path": "small/six-mixed/anneal-pillar/seed-0"
+      },
+      {
+        "key": "small/six-mixed/anneal-pillar/seed-1",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "six-mixed",
+        "method": "anneal",
+        "objective": "pillar",
+        "seed": 1,
+        "path": "small/six-mixed/anneal-pillar/seed-1"
+      },
+      {
+        "key": "small/six-mixed/anneal-pillar/seed-2",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "six-mixed",
+        "method": "anneal",
+        "objective": "pillar",
+        "seed": 2,
+        "path": "small/six-mixed/anneal-pillar/seed-2"
+      },
+      {
+        "key": "small/six-mixed/anneal-pillar/seed-3",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "six-mixed",
+        "method": "anneal",
+        "objective": "pillar",
+        "seed": 3,
+        "path": "small/six-mixed/anneal-pillar/seed-3"
+      },
+      {
+        "key": "small/six-mixed/anneal-pillar/seed-4",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "six-mixed",
+        "method": "anneal",
+        "objective": "pillar",
+        "seed": 4,
+        "path": "small/six-mixed/anneal-pillar/seed-4"
+      },
+      {
+        "key": "small/six-mixed/anneal-squared-plus-layers/seed-0",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "six-mixed",
+        "method": "anneal",
+        "objective": "squared-plus-layers",
+        "seed": 0,
+        "path": "small/six-mixed/anneal-squared-plus-layers/seed-0"
+      },
+      {
+        "key": "small/six-mixed/anneal-squared-plus-layers/seed-1",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "six-mixed",
+        "method": "anneal",
+        "objective": "squared-plus-layers",
+        "seed": 1,
+        "path": "small/six-mixed/anneal-squared-plus-layers/seed-1"
+      },
+      {
+        "key": "small/six-mixed/anneal-squared-plus-layers/seed-2",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "six-mixed",
+        "method": "anneal",
+        "objective": "squared-plus-layers",
+        "seed": 2,
+        "path": "small/six-mixed/anneal-squared-plus-layers/seed-2"
+      },
+      {
+        "key": "small/six-mixed/anneal-squared-plus-layers/seed-3",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "six-mixed",
+        "method": "anneal",
+        "objective": "squared-plus-layers",
+        "seed": 3,
+        "path": "small/six-mixed/anneal-squared-plus-layers/seed-3"
+      },
+      {
+        "key": "small/six-mixed/anneal-squared-plus-layers/seed-4",
+        "phase": "small",
+        "stage": "stage2",
+        "fixture": "six-mixed",
+        "method": "anneal",
+        "objective": "squared-plus-layers",
+        "seed": 4,
+        "path": "small/six-mixed/anneal-squared-plus-layers/seed-4"
+      },
+      {
+        "key": "stage1/greedy-squared/seed-0",
+        "phase": "measure",
+        "stage": "stage1",
+        "fixture": "original",
+        "method": "greedy",
+        "objective": "squared",
+        "seed": 0,
+        "path": "stage1/greedy-squared/seed-0"
+      },
+      {
+        "key": "stage1/anneal-squared/seed-0",
+        "phase": "measure",
+        "stage": "stage1",
+        "fixture": "original",
+        "method": "anneal",
+        "objective": "squared",
+        "seed": 0,
+        "path": "stage1/anneal-squared/seed-0"
+      },
+      {
+        "key": "stage1/restart-greedy-squared/seed-0",
+        "phase": "measure",
+        "stage": "stage1",
+        "fixture": "original",
+        "method": "restart-greedy",
+        "objective": "squared",
+        "seed": 0,
+        "path": "stage1/restart-greedy-squared/seed-0"
+      },
+      {
+        "key": "stage1/greedy-squared/seed-1",
+        "phase": "measure",
+        "stage": "stage1",
+        "fixture": "original",
+        "method": "greedy",
+        "objective": "squared",
+        "seed": 1,
+        "path": "stage1/greedy-squared/seed-1"
+      },
+      {
+        "key": "stage1/anneal-squared/seed-1",
+        "phase": "measure",
+        "stage": "stage1",
+        "fixture": "original",
+        "method": "anneal",
+        "objective": "squared",
+        "seed": 1,
+        "path": "stage1/anneal-squared/seed-1"
+      },
+      {
+        "key": "stage1/restart-greedy-squared/seed-1",
+        "phase": "measure",
+        "stage": "stage1",
+        "fixture": "original",
+        "method": "restart-greedy",
+        "objective": "squared",
+        "seed": 1,
+        "path": "stage1/restart-greedy-squared/seed-1"
+      },
+      {
+        "key": "stage1/greedy-squared/seed-2",
+        "phase": "measure",
+        "stage": "stage1",
+        "fixture": "original",
+        "method": "greedy",
+        "objective": "squared",
+        "seed": 2,
+        "path": "stage1/greedy-squared/seed-2"
+      },
+      {
+        "key": "stage1/anneal-squared/seed-2",
+        "phase": "measure",
+        "stage": "stage1",
+        "fixture": "original",
+        "method": "anneal",
+        "objective": "squared",
+        "seed": 2,
+        "path": "stage1/anneal-squared/seed-2"
+      },
+      {
+        "key": "stage1/restart-greedy-squared/seed-2",
+        "phase": "measure",
+        "stage": "stage1",
+        "fixture": "original",
+        "method": "restart-greedy",
+        "objective": "squared",
+        "seed": 2,
+        "path": "stage1/restart-greedy-squared/seed-2"
+      },
+      {
+        "key": "stage1/greedy-squared/seed-3",
+        "phase": "measure",
+        "stage": "stage1",
+        "fixture": "original",
+        "method": "greedy",
+        "objective": "squared",
+        "seed": 3,
+        "path": "stage1/greedy-squared/seed-3"
+      },
+      {
+        "key": "stage1/anneal-squared/seed-3",
+        "phase": "measure",
+        "stage": "stage1",
+        "fixture": "original",
+        "method": "anneal",
+        "objective": "squared",
+        "seed": 3,
+        "path": "stage1/anneal-squared/seed-3"
+      },
+      {
+        "key": "stage1/restart-greedy-squared/seed-3",
+        "phase": "measure",
+        "stage": "stage1",
+        "fixture": "original",
+        "method": "restart-greedy",
+        "objective": "squared",
+        "seed": 3,
+        "path": "stage1/restart-greedy-squared/seed-3"
+      },
+      {
+        "key": "stage1/greedy-squared/seed-4",
+        "phase": "measure",
+        "stage": "stage1",
+        "fixture": "original",
+        "method": "greedy",
+        "objective": "squared",
+        "seed": 4,
+        "path": "stage1/greedy-squared/seed-4"
+      },
+      {
+        "key": "stage1/anneal-squared/seed-4",
+        "phase": "measure",
+        "stage": "stage1",
+        "fixture": "original",
+        "method": "anneal",
+        "objective": "squared",
+        "seed": 4,
+        "path": "stage1/anneal-squared/seed-4"
+      },
+      {
+        "key": "stage1/restart-greedy-squared/seed-4",
+        "phase": "measure",
+        "stage": "stage1",
+        "fixture": "original",
+        "method": "restart-greedy",
+        "objective": "squared",
+        "seed": 4,
+        "path": "stage1/restart-greedy-squared/seed-4"
+      },
+      {
+        "key": "stage2/anneal-weighted-l1/seed-0",
+        "phase": "measure",
+        "stage": "stage2",
+        "fixture": "original",
+        "method": "anneal",
+        "objective": "weighted-l1",
+        "seed": 0,
+        "path": "stage2/anneal-weighted-l1/seed-0"
+      },
+      {
+        "key": "stage2/anneal-pillar/seed-0",
+        "phase": "measure",
+        "stage": "stage2",
+        "fixture": "original",
+        "method": "anneal",
+        "objective": "pillar",
+        "seed": 0,
+        "path": "stage2/anneal-pillar/seed-0"
+      },
+      {
+        "key": "stage2/anneal-squared-plus-layers/seed-0",
+        "phase": "measure",
+        "stage": "stage2",
+        "fixture": "original",
+        "method": "anneal",
+        "objective": "squared-plus-layers",
+        "seed": 0,
+        "path": "stage2/anneal-squared-plus-layers/seed-0"
+      },
+      {
+        "key": "stage2/anneal-weighted-l1/seed-1",
+        "phase": "measure",
+        "stage": "stage2",
+        "fixture": "original",
+        "method": "anneal",
+        "objective": "weighted-l1",
+        "seed": 1,
+        "path": "stage2/anneal-weighted-l1/seed-1"
+      },
+      {
+        "key": "stage2/anneal-pillar/seed-1",
+        "phase": "measure",
+        "stage": "stage2",
+        "fixture": "original",
+        "method": "anneal",
+        "objective": "pillar",
+        "seed": 1,
+        "path": "stage2/anneal-pillar/seed-1"
+      },
+      {
+        "key": "stage2/anneal-squared-plus-layers/seed-1",
+        "phase": "measure",
+        "stage": "stage2",
+        "fixture": "original",
+        "method": "anneal",
+        "objective": "squared-plus-layers",
+        "seed": 1,
+        "path": "stage2/anneal-squared-plus-layers/seed-1"
+      },
+      {
+        "key": "stage2/anneal-weighted-l1/seed-2",
+        "phase": "measure",
+        "stage": "stage2",
+        "fixture": "original",
+        "method": "anneal",
+        "objective": "weighted-l1",
+        "seed": 2,
+        "path": "stage2/anneal-weighted-l1/seed-2"
+      },
+      {
+        "key": "stage2/anneal-pillar/seed-2",
+        "phase": "measure",
+        "stage": "stage2",
+        "fixture": "original",
+        "method": "anneal",
+        "objective": "pillar",
+        "seed": 2,
+        "path": "stage2/anneal-pillar/seed-2"
+      },
+      {
+        "key": "stage2/anneal-squared-plus-layers/seed-2",
+        "phase": "measure",
+        "stage": "stage2",
+        "fixture": "original",
+        "method": "anneal",
+        "objective": "squared-plus-layers",
+        "seed": 2,
+        "path": "stage2/anneal-squared-plus-layers/seed-2"
+      },
+      {
+        "key": "stage2/anneal-weighted-l1/seed-3",
+        "phase": "measure",
+        "stage": "stage2",
+        "fixture": "original",
+        "method": "anneal",
+        "objective": "weighted-l1",
+        "seed": 3,
+        "path": "stage2/anneal-weighted-l1/seed-3"
+      },
+      {
+        "key": "stage2/anneal-pillar/seed-3",
+        "phase": "measure",
+        "stage": "stage2",
+        "fixture": "original",
+        "method": "anneal",
+        "objective": "pillar",
+        "seed": 3,
+        "path": "stage2/anneal-pillar/seed-3"
+      },
+      {
+        "key": "stage2/anneal-squared-plus-layers/seed-3",
+        "phase": "measure",
+        "stage": "stage2",
+        "fixture": "original",
+        "method": "anneal",
+        "objective": "squared-plus-layers",
+        "seed": 3,
+        "path": "stage2/anneal-squared-plus-layers/seed-3"
+      },
+      {
+        "key": "stage2/anneal-weighted-l1/seed-4",
+        "phase": "measure",
+        "stage": "stage2",
+        "fixture": "original",
+        "method": "anneal",
+        "objective": "weighted-l1",
+        "seed": 4,
+        "path": "stage2/anneal-weighted-l1/seed-4"
+      },
+      {
+        "key": "stage2/anneal-pillar/seed-4",
+        "phase": "measure",
+        "stage": "stage2",
+        "fixture": "original",
+        "method": "anneal",
+        "objective": "pillar",
+        "seed": 4,
+        "path": "stage2/anneal-pillar/seed-4"
+      },
+      {
+        "key": "stage2/anneal-squared-plus-layers/seed-4",
+        "phase": "measure",
+        "stage": "stage2",
+        "fixture": "original",
+        "method": "anneal",
+        "objective": "squared-plus-layers",
+        "seed": 4,
+        "path": "stage2/anneal-squared-plus-layers/seed-4"
+      }
+    ],
+    "reused_baselines": [
+      {
+        "phase": "measure",
+        "stage": "stage2",
+        "method": "anneal",
+        "objective": "squared",
+        "seed": 0,
+        "source": "stage1/anneal-squared/seed-0",
+        "source_case_key": "stage1/anneal-squared/seed-0"
+      },
+      {
+        "phase": "measure",
+        "stage": "stage2",
+        "method": "anneal",
+        "objective": "squared",
+        "seed": 1,
+        "source": "stage1/anneal-squared/seed-1",
+        "source_case_key": "stage1/anneal-squared/seed-1"
+      },
+      {
+        "phase": "measure",
+        "stage": "stage2",
+        "method": "anneal",
+        "objective": "squared",
+        "seed": 2,
+        "source": "stage1/anneal-squared/seed-2",
+        "source_case_key": "stage1/anneal-squared/seed-2"
+      },
+      {
+        "phase": "measure",
+        "stage": "stage2",
+        "method": "anneal",
+        "objective": "squared",
+        "seed": 3,
+        "source": "stage1/anneal-squared/seed-3",
+        "source_case_key": "stage1/anneal-squared/seed-3"
+      },
+      {
+        "phase": "measure",
+        "stage": "stage2",
+        "method": "anneal",
+        "objective": "squared",
+        "seed": 4,
+        "source": "stage1/anneal-squared/seed-4",
+        "source_case_key": "stage1/anneal-squared/seed-4"
+      }
+    ],
+    "historical_baselines": [
+      {
+        "report": "results/reports/layered_hypergraph_tree_report.json",
+        "reused": false,
+        "reason": "20 seconds / 1000 attempts / 4 calibration samples"
+      },
+      {
+        "report": "results/reports/layers_hypergraph_report.json",
+        "reused": false,
+        "reason": "600 seconds / 20000 attempts"
+      }
+    ]
+  },
+  "provenance": {
+    "git_commit": "ec3aeb6bf9ebcf5f40c2f16b3d1ae59deb3cdcb4",
+    "git_status": [
+      "?? experiments/tree_optimization_comparison_01/optimization.py",
+      "?? experiments/tree_optimization_comparison_01/run_experiment.py",
+      "?? experiments/tree_optimization_comparison_01/small_examples.py"
+    ],
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source_sha256": {
+      "experiments/tree_optimization_comparison_01/run_experiment.py": "ba67fdc3adb0a0f7703dff435f97e6aaa19aba0e2737f0b0b8063494a817ab82",
+      "experiments/tree_optimization_comparison_01/optimization.py": "f9186f3e9bb11e22a4243428dd54bf6b3b043a0feed1308c98488801df24676d",
+      "experiments/tree_optimization_comparison_01/small_examples.py": "3fd4397a3f945209a43c68282c12324e31e4c90025ef14f30c5f20decfe3520d",
+      "solve_layers_tree.py": "888705b38cbec77b498b6332578c50215a61cc33f5e9a025a5d8ab493991787c",
+      "solve_layers_dsatur_l1.py": "4ff99edf40e396f6039cc4d01d347cfde82e61a81bfb923435ab9a9caad1b5b1",
+      "solve_layers_dummy.py": "f3f2031637b67c810bee903c4aa534ba420cd7c27dba4eb9326d3e14f12ddd75"
+    },
+    "environment": {
+      "python_executable": "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe",
+      "python_base_executable": "C:\\Users\\shink\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "python_version": "3.11.5",
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "shapely": "2.1.2",
+      "geos": "3.13.1",
+      "platform": "Windows-10-10.0.26200-SP0",
+      "thread_limits": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "BLIS_NUM_THREADS": "1"
+      }
+    },
+    "command": "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe -B experiments/tree_optimization_comparison_01/run_experiment.py --phase smoke",
+    "working_directory": "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization"
+  }
+}

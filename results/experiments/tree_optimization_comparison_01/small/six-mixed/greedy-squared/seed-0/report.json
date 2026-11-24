@@ -1,0 +1,256 @@
+{
+  "case": {
+    "key": "small/six-mixed/greedy-squared/seed-0",
+    "phase": "small",
+    "stage": "stage1",
+    "fixture": "six-mixed",
+    "method": "greedy",
+    "objective": "squared",
+    "seed": 0,
+    "path": "small/six-mixed/greedy-squared/seed-0"
+  },
+  "provenance": {
+    "git_commit": "ec3aeb6bf9ebcf5f40c2f16b3d1ae59deb3cdcb4",
+    "git_status": [
+      "?? experiments/tree_optimization_comparison_01/optimization.py",
+      "?? experiments/tree_optimization_comparison_01/run_experiment.py",
+      "?? experiments/tree_optimization_comparison_01/small_examples.py"
+    ],
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source_sha256": {
+      "experiments/tree_optimization_comparison_01/run_experiment.py": "ba67fdc3adb0a0f7703dff435f97e6aaa19aba0e2737f0b0b8063494a817ab82",
+      "experiments/tree_optimization_comparison_01/optimization.py": "f9186f3e9bb11e22a4243428dd54bf6b3b043a0feed1308c98488801df24676d",
+      "experiments/tree_optimization_comparison_01/small_examples.py": "3fd4397a3f945209a43c68282c12324e31e4c90025ef14f30c5f20decfe3520d",
+      "solve_layers_tree.py": "888705b38cbec77b498b6332578c50215a61cc33f5e9a025a5d8ab493991787c",
+      "solve_layers_dsatur_l1.py": "4ff99edf40e396f6039cc4d01d347cfde82e61a81bfb923435ab9a9caad1b5b1",
+      "solve_layers_dummy.py": "f3f2031637b67c810bee903c4aa534ba420cd7c27dba4eb9326d3e14f12ddd75"
+    },
+    "environment": {
+      "python_executable": "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe",
+      "python_base_executable": "C:\\Users\\shink\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "python_version": "3.11.5",
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "shapely": "2.1.2",
+      "geos": "3.13.1",
+      "platform": "Windows-10-10.0.26200-SP0",
+      "thread_limits": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "BLIS_NUM_THREADS": "1"
+      }
+    },
+    "command": "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe -B experiments/tree_optimization_comparison_01/run_experiment.py --phase small",
+    "working_directory": "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization",
+    "input_base": "output",
+    "input_path": "small/six-mixed/input.json",
+    "input_sha256": "c4e3dbbc98173c68005f17bb68595aaedf860e3eeb99a3ca2714d1d2d9790403"
+  },
+  "settings": {
+    "reg": 1e-05,
+    "seed": 0,
+    "max_iterations": 250,
+    "time_budget": 0.0,
+    "method": "greedy",
+    "initial_temperature": null,
+    "temperature_samples": 16,
+    "initial_acceptance": 0.8,
+    "final_temperature_ratio": 0.001,
+    "move_weights": [
+      0.4,
+      0.3,
+      0.25,
+      0.05
+    ],
+    "max_repair_steps": null,
+    "log_limit": 0,
+    "checkpoint_interval": 5.0,
+    "penalty": 100.0,
+    "optimized_objective": "squared",
+    "restart": false,
+    "budget_seconds": null,
+    "finalization_reserve_seconds": 0.0
+  },
+  "problem_signature": "5eb8282253411b8b765a0cdcf0d06a72ba7de0cc5c6248ecba1473d1f20f1a1c",
+  "overlap_count": 6,
+  "initial_metrics": {
+    "l1_regularized": 7.000159999999999,
+    "l1_shared_vertices": 7.0,
+    "l2_regularized": 13.00024,
+    "l2_shared_vertices": 13.0,
+    "l2_scaled_qp": 8.666682221962965,
+    "height_min": 0.0,
+    "height_max": 2.0,
+    "height_range": 2.0,
+    "pillar_length": 7.0,
+    "overlap_violation_count": 0,
+    "order_violation_count": 0,
+    "max_order_violation": 0.0,
+    "used_layer_count": 3
+  },
+  "initial_optimized_value": 8.666682221962965,
+  "initial_repair": {
+    "initial_violations": 2,
+    "steps": [
+      {
+        "node": 4,
+        "from": 1,
+        "to": 2,
+        "delta": 7.000000000000001e-05,
+        "violations_before": 2,
+        "violations_after": 0
+      }
+    ]
+  },
+  "best_metrics": {
+    "l1_regularized": 1.0001300000000002,
+    "l1_shared_vertices": 1.0,
+    "l2_regularized": 1.0001700000000002,
+    "l2_shared_vertices": 1.0,
+    "l2_scaled_qp": 0.6667688871852137,
+    "height_min": 0.0,
+    "height_max": 2.0,
+    "height_range": 2.0,
+    "pillar_length": 1.0,
+    "overlap_violation_count": 0,
+    "order_violation_count": 0,
+    "max_order_violation": 0.0,
+    "used_layer_count": 3
+  },
+  "all_objectives": {
+    "squared": 0.6667688871852137,
+    "weighted-l1": 1.0001300000000002,
+    "pillar": 1.0,
+    "squared-plus-layers": 300.66676888718524
+  },
+  "optimized_value": 0.6667688871852137,
+  "search": {
+    "attempts": 250,
+    "accepted": 24,
+    "uphill_accepted": 0,
+    "equal_cost_tree_changes": 18,
+    "best_improvements": 3,
+    "repair_steps": 129,
+    "repair_failures": 0,
+    "returned_to_current": 58,
+    "repair_returned_to_current": 53,
+    "restarts": [],
+    "temperature": {
+      "samples": 0,
+      "positive_samples": 0,
+      "source": "greedy",
+      "initial": 0.0,
+      "final_ratio": 0.001
+    },
+    "timing_seconds": {
+      "calibration": 0.0,
+      "generation": 0.0,
+      "repair": 0.06199999991804361,
+      "rebuilding": 0.015999999828636646,
+      "evaluation": 0.01600000006146729,
+      "restarts": 0.0,
+      "saving": 0.0,
+      "search": 0.09399999980814755
+    },
+    "by_move": {
+      "move": {
+        "attempts": 108,
+        "evaluated": 108,
+        "accepted": 1,
+        "improvements": 1,
+        "repair_steps": 40,
+        "acceptance_rate": 0.009259259259259259
+      },
+      "swap": {
+        "attempts": 60,
+        "evaluated": 60,
+        "accepted": 5,
+        "improvements": 2,
+        "repair_steps": 64,
+        "acceptance_rate": 0.08333333333333333
+      },
+      "subtree": {
+        "attempts": 71,
+        "evaluated": 59,
+        "accepted": 13,
+        "improvements": 0,
+        "repair_steps": 25,
+        "acceptance_rate": 0.18309859154929578
+      },
+      "rewire": {
+        "attempts": 11,
+        "evaluated": 5,
+        "accepted": 5,
+        "improvements": 0,
+        "repair_steps": 0,
+        "acceptance_rate": 0.45454545454545453
+      }
+    },
+    "stop_reason": "max_iterations_reached",
+    "initial_objective": 8.666682221962965,
+    "best_objective": 0.6667688871852137,
+    "current_objective": 0.6667688871852137,
+    "returned_to_current_ratio": 0.232,
+    "repair_returned_to_current_ratio": 0.212
+  },
+  "timing_seconds": {
+    "calibration": 0.0,
+    "generation": 0.0,
+    "repair": 0.06199999991804361,
+    "rebuilding": 0.015999999828636646,
+    "evaluation": 0.01600000006146729,
+    "restarts": 0.0,
+    "saving": 0.0,
+    "search": 0.09399999980814755,
+    "preprocessing": 0.0,
+    "initialization": 0.0,
+    "initial_writes": 0.01500000013038516,
+    "final_layout_writes": 0.01600000006146729,
+    "total": 0.125
+  },
+  "history": [
+    {
+      "attempt": 0,
+      "move_type": "initial",
+      "elapsed_seconds": 0.01500000013038516,
+      "timestamp_utc": "2026-11-22T07:06:34.574277+00:00",
+      "objective": 8.666682221962965,
+      "used_layer_count": 3,
+      "height_range": 2.0,
+      "pillar_length": 7.0
+    },
+    {
+      "attempt": 3,
+      "move_type": "swap",
+      "elapsed_seconds": 0.01500000013038516,
+      "timestamp_utc": "2026-11-22T07:06:34.576523+00:00",
+      "objective": 3.333497775037082,
+      "used_layer_count": 4,
+      "height_range": 3.0,
+      "pillar_length": 5.0
+    },
+    {
+      "attempt": 11,
+      "move_type": "swap",
+      "elapsed_seconds": 0.01500000013038516,
+      "timestamp_utc": "2026-11-22T07:06:34.580680+00:00",
+      "objective": 2.000186663555607,
+      "used_layer_count": 4,
+      "height_range": 3.0,
+      "pillar_length": 3.0
+    },
+    {
+      "attempt": 18,
+      "move_type": "move",
+      "elapsed_seconds": 0.01500000013038516,
+      "timestamp_utc": "2026-11-22T07:06:34.582759+00:00",
+      "objective": 0.6667688871852137,
+      "used_layer_count": 3,
+      "height_range": 2.0,
+      "pillar_length": 1.0
+    }
+  ],
+  "small_exact_value": 0.6667688871852134,
+  "small_exact_gap": 0.0
+}
