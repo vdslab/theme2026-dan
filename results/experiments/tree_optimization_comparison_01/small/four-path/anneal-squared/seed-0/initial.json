@@ -1,0 +1,308 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": 1,
+      "x": 2,
+      "y": 0
+    },
+    {
+      "id": 2,
+      "x": 2,
+      "y": 2
+    },
+    {
+      "id": 3,
+      "x": 0,
+      "y": 2
+    },
+    {
+      "id": 4,
+      "x": 1,
+      "y": 0
+    },
+    {
+      "id": 5,
+      "x": 3,
+      "y": 0
+    },
+    {
+      "id": 6,
+      "x": 3,
+      "y": 2
+    },
+    {
+      "id": 7,
+      "x": 1,
+      "y": 2
+    },
+    {
+      "id": 8,
+      "x": 4,
+      "y": 0
+    },
+    {
+      "id": 9,
+      "x": 4,
+      "y": 2
+    },
+    {
+      "id": 10,
+      "x": 5,
+      "y": 0
+    },
+    {
+      "id": 11,
+      "x": 5,
+      "y": 2
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": 0,
+      "nodes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "layer": 1.0
+    },
+    {
+      "id": 1,
+      "nodes": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "layer": 0.0
+    },
+    {
+      "id": 2,
+      "nodes": [
+        1,
+        8,
+        9,
+        2
+      ],
+      "layer": 1.0
+    },
+    {
+      "id": 3,
+      "nodes": [
+        5,
+        10,
+        11,
+        6
+      ],
+      "layer": 2.0
+    }
+  ],
+  "overlaps": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "tree_layer_search": {
+    "format_version": 1,
+    "problem_signature": "89e4eb0b6d126f99bf962a2074b765fcd79aa8376d7508fb8b3d12f57b119675",
+    "provenance": {
+      "git_commit": "ec3aeb6bf9ebcf5f40c2f16b3d1ae59deb3cdcb4",
+      "git_status": [
+        "?? experiments/tree_optimization_comparison_01/optimization.py",
+        "?? experiments/tree_optimization_comparison_01/run_experiment.py",
+        "?? experiments/tree_optimization_comparison_01/small_examples.py"
+      ],
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": {
+        "experiments/tree_optimization_comparison_01/run_experiment.py": "ba67fdc3adb0a0f7703dff435f97e6aaa19aba0e2737f0b0b8063494a817ab82",
+        "experiments/tree_optimization_comparison_01/optimization.py": "f9186f3e9bb11e22a4243428dd54bf6b3b043a0feed1308c98488801df24676d",
+        "experiments/tree_optimization_comparison_01/small_examples.py": "3fd4397a3f945209a43c68282c12324e31e4c90025ef14f30c5f20decfe3520d",
+        "solve_layers_tree.py": "888705b38cbec77b498b6332578c50215a61cc33f5e9a025a5d8ab493991787c",
+        "solve_layers_dsatur_l1.py": "4ff99edf40e396f6039cc4d01d347cfde82e61a81bfb923435ab9a9caad1b5b1",
+        "solve_layers_dummy.py": "f3f2031637b67c810bee903c4aa534ba420cd7c27dba4eb9326d3e14f12ddd75"
+      },
+      "environment": {
+        "python_executable": "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe",
+        "python_base_executable": "C:\\Users\\shink\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "python_version": "3.11.5",
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "shapely": "2.1.2",
+        "geos": "3.13.1",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "thread_limits": {
+          "OPENBLAS_NUM_THREADS": "1",
+          "OMP_NUM_THREADS": "1",
+          "MKL_NUM_THREADS": "1",
+          "BLIS_NUM_THREADS": "1"
+        }
+      },
+      "command": "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe -B experiments/tree_optimization_comparison_01/run_experiment.py --phase small",
+      "working_directory": "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization",
+      "input_base": "output",
+      "input_path": "small/four-path/input.json",
+      "input_sha256": "c81dd665ea2580ee1d36325261c15017774b1b2f3217a3794b1229ceeafd1d26"
+    },
+    "settings": {
+      "reg": 1e-05,
+      "seed": 0,
+      "max_iterations": 250,
+      "time_budget": 0.0,
+      "method": "anneal",
+      "initial_temperature": null,
+      "temperature_samples": 16,
+      "initial_acceptance": 0.8,
+      "final_temperature_ratio": 0.001,
+      "move_weights": [
+        0.4,
+        0.3,
+        0.25,
+        0.05
+      ],
+      "max_repair_steps": null,
+      "log_limit": 0,
+      "checkpoint_interval": 5.0
+    },
+    "virtual_root_index": 4,
+    "scale": 0.49999250011249824,
+    "index_to_hyperedge_id": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "overlaps_sha256": "5c051dcc1cdca90ee0d33e011482d3ce73e00c0c727558ce963c1c8f35369c5f",
+    "initial": {
+      "state_id": "state-000000",
+      "parent": [
+        1,
+        4,
+        1,
+        2
+      ],
+      "children": [
+        [],
+        [
+          0,
+          2
+        ],
+        [
+          3
+        ],
+        [],
+        [
+          1
+        ]
+      ],
+      "depth": [
+        2,
+        1,
+        2,
+        3,
+        0
+      ],
+      "layers": [
+        1,
+        0,
+        1,
+        2
+      ],
+      "metrics": {
+        "l1_regularized": 4.0000599999999995,
+        "l1_shared_vertices": 4.0,
+        "l2_regularized": 8.00008,
+        "l2_shared_vertices": 8.0,
+        "l2_scaled_qp": 7.99996000059999,
+        "height_min": 0.0,
+        "height_max": 2.0,
+        "height_range": 2.0,
+        "pillar_length": 4.0,
+        "overlap_violation_count": 0,
+        "order_violation_count": 0,
+        "max_order_violation": 0.0,
+        "used_layer_count": 3
+      }
+    },
+    "best": {
+      "state_id": "state-000000",
+      "parent": [
+        1,
+        4,
+        1,
+        2
+      ],
+      "children": [
+        [],
+        [
+          0,
+          2
+        ],
+        [
+          3
+        ],
+        [],
+        [
+          1
+        ]
+      ],
+      "depth": [
+        2,
+        1,
+        2,
+        3,
+        0
+      ],
+      "layers": [
+        1,
+        0,
+        1,
+        2
+      ],
+      "metrics": {
+        "l1_regularized": 4.0000599999999995,
+        "l1_shared_vertices": 4.0,
+        "l2_regularized": 8.00008,
+        "l2_shared_vertices": 8.0,
+        "l2_scaled_qp": 7.99996000059999,
+        "height_min": 0.0,
+        "height_max": 2.0,
+        "height_range": 2.0,
+        "pillar_length": 4.0,
+        "overlap_violation_count": 0,
+        "order_violation_count": 0,
+        "max_order_violation": 0.0,
+        "used_layer_count": 3
+      }
+    },
+    "summary": {
+      "phase": "initial"
+    },
+    "history": [],
+    "candidate_logs": [],
+    "validation": {
+      "tree_valid": true,
+      "overlap_violation_count": 0,
+      "metrics_independently_recomputed": true
+    },
+    "limitations": [
+      "Integer heights; not the same search space as continuous QP",
+      "Greedy repair and asymmetric proposals; no global optimality guarantee",
+      "Repair may undo a proposed move; both sides are eligible"
+    ]
+  }
+}

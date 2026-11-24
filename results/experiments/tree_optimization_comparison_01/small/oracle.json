@@ -1,0 +1,218 @@
+{
+  "reg": 1e-05,
+  "penalty": 100.0,
+  "fixtures": [
+    {
+      "name": "four-path",
+      "input_path": "small/four-path/input.json",
+      "input_sha256": "c81dd665ea2580ee1d36325261c15017774b1b2f3217a3794b1229ceeafd1d26",
+      "hyperedge_count": 4,
+      "overlap_count": 3,
+      "overlaps": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "feasible_count": 44,
+      "optima": {
+        "squared": {
+          "value": 3.999940000899986e-05,
+          "layers": [
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        "weighted-l1": {
+          "value": 4e-05,
+          "layers": [
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        "pillar": {
+          "value": 0,
+          "layers": [
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        "squared-plus-layers": {
+          "value": 200.0000399994,
+          "layers": [
+            0,
+            1,
+            0,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "name": "five-cycle",
+      "input_path": "small/five-cycle/input.json",
+      "input_sha256": "086e6cdb55df7f507828f7c1ac5a3295b20a779fe262b384bedb0b4bd3ca0af9",
+      "hyperedge_count": 5,
+      "overlap_count": 5,
+      "overlaps": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "feasible_count": 270,
+      "optima": {
+        "squared": {
+          "value": 7.000000000000001,
+          "layers": [
+            0,
+            1,
+            0,
+            1,
+            2
+          ]
+        },
+        "weighted-l1": {
+          "value": 10.0001,
+          "layers": [
+            0,
+            1,
+            0,
+            1,
+            2
+          ]
+        },
+        "pillar": {
+          "value": 2,
+          "layers": [
+            0,
+            1,
+            0,
+            1,
+            2
+          ]
+        },
+        "squared-plus-layers": {
+          "value": 307.0,
+          "layers": [
+            0,
+            1,
+            0,
+            1,
+            2
+          ]
+        }
+      }
+    },
+    {
+      "name": "six-mixed",
+      "input_path": "small/six-mixed/input.json",
+      "input_sha256": "c4e3dbbc98173c68005f17bb68595aaedf860e3eeb99a3ca2714d1d2d9790403",
+      "hyperedge_count": 6,
+      "overlap_count": 6,
+      "overlaps": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "feasible_count": 2268,
+      "optima": {
+        "squared": {
+          "value": 0.6667688871852134,
+          "layers": [
+            0,
+            1,
+            0,
+            1,
+            2,
+            1
+          ]
+        },
+        "weighted-l1": {
+          "value": 1.00013,
+          "layers": [
+            0,
+            1,
+            0,
+            1,
+            2,
+            1
+          ]
+        },
+        "pillar": {
+          "value": 1,
+          "layers": [
+            0,
+            1,
+            0,
+            1,
+            2,
+            0
+          ]
+        },
+        "squared-plus-layers": {
+          "value": 300.6667688871852,
+          "layers": [
+            0,
+            1,
+            0,
+            1,
+            2,
+            1
+          ]
+        }
+      }
+    }
+  ]
+}
