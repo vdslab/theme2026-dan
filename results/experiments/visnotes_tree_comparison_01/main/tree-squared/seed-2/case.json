@@ -1,0 +1,2217 @@
+{
+  "input": "original",
+  "condition": "tree-squared",
+  "seed": 2,
+  "command": [
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\solve_layers_tree.py",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\original.json",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_tree_comparison_01\\main\\tree-squared\\seed-2\\layout.json",
+    "--reg",
+    "1e-05",
+    "--report",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_tree_comparison_01\\main\\tree-squared\\seed-2\\report.json",
+    "--initial-output",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_tree_comparison_01\\main\\tree-squared\\seed-2\\initial.json",
+    "--checkpoint",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_tree_comparison_01\\main\\tree-squared\\seed-2\\checkpoint.json",
+    "--seed",
+    "2",
+    "--max-iterations",
+    "20000",
+    "--time-budget",
+    "25.0"
+  ],
+  "case_directory": "results/experiments/visnotes_tree_comparison_01/main/tree-squared/seed-2",
+  "status": "verified",
+  "metrics": {
+    "l1_regularized": 77825.79092,
+    "l1_shared_vertices": 77819,
+    "l2_regularized": 1107847.03608,
+    "l2_shared_vertices": 1107745,
+    "l2_scaled_qp": 4577.844183461197,
+    "height_min": 0,
+    "height_max": 47,
+    "height_range": 47,
+    "pillar_length": 7553,
+    "overlap_violation_count": 0,
+    "order_violation_count": 0,
+    "max_order_violation": 0,
+    "used_layer_count": 48,
+    "pillar_square_sum": 167081,
+    "degree_span_square_sum": 1279206,
+    "top5_constrained_hub_mean_span": 29.2,
+    "constrained_hubs": [
+      {
+        "node_id": 198,
+        "degree": 22,
+        "constrained_degree": 22,
+        "span": 29
+      },
+      {
+        "node_id": 96,
+        "degree": 22,
+        "constrained_degree": 21,
+        "span": 32
+      },
+      {
+        "node_id": 207,
+        "degree": 18,
+        "constrained_degree": 18,
+        "span": 30
+      },
+      {
+        "node_id": 199,
+        "degree": 19,
+        "constrained_degree": 17,
+        "span": 27
+      },
+      {
+        "node_id": 2,
+        "degree": 18,
+        "constrained_degree": 15,
+        "span": 28
+      }
+    ]
+  },
+  "projection": {
+    "projection": "orthographic",
+    "azimuth_degrees": 45.0,
+    "elevation_degrees": 35.0,
+    "pixels_per_xy_span": 384,
+    "z_step_world": 0.1363402923410712,
+    "polygons_measured": 168,
+    "covered_pixel_count": 19098,
+    "overdraw_pixel_count": 14198,
+    "overdraw_sample_count": 54701,
+    "max_face_depth": 16,
+    "projected_pillar_length_px": 23758.292699576657
+  },
+  "solver_wall_seconds": 26.405999999959022,
+  "iterations": 1900,
+  "termination_reason": "time_budget_exhausted",
+  "trajectory": [
+    {
+      "attempt": 4,
+      "move_type": "swap",
+      "objective": 11918.930838521124,
+      "height_range": 49.0,
+      "used_layer_count": 50
+    },
+    {
+      "attempt": 8,
+      "move_type": "swap",
+      "objective": 11918.185011680349,
+      "height_range": 49.0,
+      "used_layer_count": 50
+    },
+    {
+      "attempt": 9,
+      "move_type": "move",
+      "objective": 11910.973978263295,
+      "height_range": 49.0,
+      "used_layer_count": 50
+    },
+    {
+      "attempt": 10,
+      "move_type": "swap",
+      "objective": 11899.91915981165,
+      "height_range": 49.0,
+      "used_layer_count": 50
+    },
+    {
+      "attempt": 39,
+      "move_type": "subtree",
+      "objective": 9997.983629385446,
+      "height_range": 50.0,
+      "used_layer_count": 51
+    },
+    {
+      "attempt": 40,
+      "move_type": "subtree",
+      "objective": 9992.248137463088,
+      "height_range": 50.0,
+      "used_layer_count": 51
+    },
+    {
+      "attempt": 41,
+      "move_type": "move",
+      "objective": 9991.76881562633,
+      "height_range": 50.0,
+      "used_layer_count": 51
+    },
+    {
+      "attempt": 42,
+      "move_type": "swap",
+      "objective": 9990.083296036837,
+      "height_range": 50.0,
+      "used_layer_count": 51
+    },
+    {
+      "attempt": 44,
+      "move_type": "subtree",
+      "objective": 9507.177105503044,
+      "height_range": 49.0,
+      "used_layer_count": 50
+    },
+    {
+      "attempt": 47,
+      "move_type": "move",
+      "objective": 9507.119254719959,
+      "height_range": 49.0,
+      "used_layer_count": 50
+    },
+    {
+      "attempt": 54,
+      "move_type": "subtree",
+      "objective": 9505.620887289722,
+      "height_range": 49.0,
+      "used_layer_count": 50
+    },
+    {
+      "attempt": 56,
+      "move_type": "subtree",
+      "objective": 8341.51890520206,
+      "height_range": 48.0,
+      "used_layer_count": 49
+    },
+    {
+      "attempt": 57,
+      "move_type": "subtree",
+      "objective": 8341.3948963461,
+      "height_range": 48.0,
+      "used_layer_count": 49
+    },
+    {
+      "attempt": 58,
+      "move_type": "swap",
+      "objective": 8335.89490554024,
+      "height_range": 48.0,
+      "used_layer_count": 49
+    },
+    {
+      "attempt": 59,
+      "move_type": "swap",
+      "objective": 8305.975162262184,
+      "height_range": 48.0,
+      "used_layer_count": 49
+    },
+    {
+      "attempt": 129,
+      "move_type": "swap",
+      "objective": 8297.234887443674,
+      "height_range": 48.0,
+      "used_layer_count": 49
+    },
+    {
+      "attempt": 131,
+      "move_type": "swap",
+      "objective": 8245.705327036487,
+      "height_range": 48.0,
+      "used_layer_count": 49
+    },
+    {
+      "attempt": 138,
+      "move_type": "move",
+      "objective": 8175.562574361521,
+      "height_range": 48.0,
+      "used_layer_count": 49
+    },
+    {
+      "attempt": 139,
+      "move_type": "swap",
+      "objective": 8174.6782213413335,
+      "height_range": 48.0,
+      "used_layer_count": 49
+    },
+    {
+      "attempt": 140,
+      "move_type": "swap",
+      "objective": 8174.215352515219,
+      "height_range": 48.0,
+      "used_layer_count": 49
+    },
+    {
+      "attempt": 153,
+      "move_type": "subtree",
+      "objective": 8171.324579215116,
+      "height_range": 49.0,
+      "used_layer_count": 50
+    },
+    {
+      "attempt": 160,
+      "move_type": "swap",
+      "objective": 8132.881453869531,
+      "height_range": 49.0,
+      "used_layer_count": 50
+    },
+    {
+      "attempt": 262,
+      "move_type": "subtree",
+      "objective": 7865.196194112663,
+      "height_range": 48.0,
+      "used_layer_count": 49
+    },
+    {
+      "attempt": 263,
+      "move_type": "subtree",
+      "objective": 7862.881562463682,
+      "height_range": 48.0,
+      "used_layer_count": 49
+    },
+    {
+      "attempt": 375,
+      "move_type": "subtree",
+      "objective": 7685.892733325936,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 376,
+      "move_type": "subtree",
+      "objective": 7685.748935700538,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 377,
+      "move_type": "move",
+      "objective": 7676.3466822224555,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 379,
+      "move_type": "swap",
+      "objective": 7478.803244982642,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 380,
+      "move_type": "swap",
+      "objective": 7373.44811022358,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 385,
+      "move_type": "swap",
+      "objective": 7368.043478086588,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 403,
+      "move_type": "swap",
+      "objective": 7361.987840509177,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 404,
+      "move_type": "swap",
+      "objective": 7355.240987808714,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 405,
+      "move_type": "swap",
+      "objective": 7181.7808334653,
+      "height_range": 48.0,
+      "used_layer_count": 49
+    },
+    {
+      "attempt": 408,
+      "move_type": "subtree",
+      "objective": 7154.201241469518,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 411,
+      "move_type": "move",
+      "objective": 7149.506800834731,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 413,
+      "move_type": "move",
+      "objective": 7149.424103140321,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 414,
+      "move_type": "move",
+      "objective": 7130.526632207137,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 417,
+      "move_type": "move",
+      "objective": 6978.107734273636,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 420,
+      "move_type": "swap",
+      "objective": 6975.472895151912,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 422,
+      "move_type": "swap",
+      "objective": 6968.650538253985,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 426,
+      "move_type": "swap",
+      "objective": 6934.670404543471,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 431,
+      "move_type": "move",
+      "objective": 6929.46642173193,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 433,
+      "move_type": "swap",
+      "objective": 6914.44078602517,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 449,
+      "move_type": "swap",
+      "objective": 6911.656747419853,
+      "height_range": 48.0,
+      "used_layer_count": 49
+    },
+    {
+      "attempt": 450,
+      "move_type": "swap",
+      "objective": 6909.424819994157,
+      "height_range": 48.0,
+      "used_layer_count": 49
+    },
+    {
+      "attempt": 455,
+      "move_type": "swap",
+      "objective": 6904.647979761779,
+      "height_range": 48.0,
+      "used_layer_count": 49
+    },
+    {
+      "attempt": 463,
+      "move_type": "move",
+      "objective": 6890.303664710712,
+      "height_range": 48.0,
+      "used_layer_count": 49
+    },
+    {
+      "attempt": 464,
+      "move_type": "move",
+      "objective": 6879.107850677673,
+      "height_range": 48.0,
+      "used_layer_count": 49
+    },
+    {
+      "attempt": 466,
+      "move_type": "swap",
+      "objective": 6877.455838757603,
+      "height_range": 48.0,
+      "used_layer_count": 49
+    },
+    {
+      "attempt": 467,
+      "move_type": "move",
+      "objective": 6865.5520901466925,
+      "height_range": 48.0,
+      "used_layer_count": 49
+    },
+    {
+      "attempt": 470,
+      "move_type": "move",
+      "objective": 6852.4911411649255,
+      "height_range": 48.0,
+      "used_layer_count": 49
+    },
+    {
+      "attempt": 472,
+      "move_type": "swap",
+      "objective": 6822.519778459565,
+      "height_range": 49.0,
+      "used_layer_count": 50
+    },
+    {
+      "attempt": 473,
+      "move_type": "swap",
+      "objective": 6822.147744949582,
+      "height_range": 49.0,
+      "used_layer_count": 50
+    },
+    {
+      "attempt": 496,
+      "move_type": "swap",
+      "objective": 6820.798613035706,
+      "height_range": 49.0,
+      "used_layer_count": 50
+    },
+    {
+      "attempt": 498,
+      "move_type": "subtree",
+      "objective": 6820.401412203695,
+      "height_range": 49.0,
+      "used_layer_count": 50
+    },
+    {
+      "attempt": 500,
+      "move_type": "subtree",
+      "objective": 6820.264916917358,
+      "height_range": 49.0,
+      "used_layer_count": 50
+    },
+    {
+      "attempt": 534,
+      "move_type": "move",
+      "objective": 6694.5914297122345,
+      "height_range": 49.0,
+      "used_layer_count": 50
+    },
+    {
+      "attempt": 535,
+      "move_type": "move",
+      "objective": 6663.681086566597,
+      "height_range": 49.0,
+      "used_layer_count": 50
+    },
+    {
+      "attempt": 544,
+      "move_type": "move",
+      "objective": 6663.660594001062,
+      "height_range": 49.0,
+      "used_layer_count": 50
+    },
+    {
+      "attempt": 550,
+      "move_type": "move",
+      "objective": 6658.807672303047,
+      "height_range": 49.0,
+      "used_layer_count": 50
+    },
+    {
+      "attempt": 552,
+      "move_type": "subtree",
+      "objective": 6657.154891959289,
+      "height_range": 49.0,
+      "used_layer_count": 50
+    },
+    {
+      "attempt": 591,
+      "move_type": "subtree",
+      "objective": 6654.812071111308,
+      "height_range": 50.0,
+      "used_layer_count": 51
+    },
+    {
+      "attempt": 593,
+      "move_type": "subtree",
+      "objective": 6653.076294232522,
+      "height_range": 50.0,
+      "used_layer_count": 51
+    },
+    {
+      "attempt": 599,
+      "move_type": "move",
+      "objective": 6651.720389562183,
+      "height_range": 50.0,
+      "used_layer_count": 51
+    },
+    {
+      "attempt": 610,
+      "move_type": "subtree",
+      "objective": 6607.117954978093,
+      "height_range": 50.0,
+      "used_layer_count": 51
+    },
+    {
+      "attempt": 611,
+      "move_type": "swap",
+      "objective": 6606.70860721716,
+      "height_range": 50.0,
+      "used_layer_count": 51
+    },
+    {
+      "attempt": 613,
+      "move_type": "move",
+      "objective": 6550.385548940471,
+      "height_range": 50.0,
+      "used_layer_count": 51
+    },
+    {
+      "attempt": 615,
+      "move_type": "subtree",
+      "objective": 6505.790888014034,
+      "height_range": 49.0,
+      "used_layer_count": 50
+    },
+    {
+      "attempt": 671,
+      "move_type": "move",
+      "objective": 6358.1359808275565,
+      "height_range": 52.0,
+      "used_layer_count": 53
+    },
+    {
+      "attempt": 697,
+      "move_type": "move",
+      "objective": 6353.1385089481,
+      "height_range": 52.0,
+      "used_layer_count": 53
+    },
+    {
+      "attempt": 702,
+      "move_type": "subtree",
+      "objective": 6340.517268314091,
+      "height_range": 52.0,
+      "used_layer_count": 53
+    },
+    {
+      "attempt": 704,
+      "move_type": "subtree",
+      "objective": 6338.128035187792,
+      "height_range": 52.0,
+      "used_layer_count": 53
+    },
+    {
+      "attempt": 706,
+      "move_type": "swap",
+      "objective": 6338.070246139763,
+      "height_range": 52.0,
+      "used_layer_count": 53
+    },
+    {
+      "attempt": 708,
+      "move_type": "subtree",
+      "objective": 6161.478440645339,
+      "height_range": 51.0,
+      "used_layer_count": 52
+    },
+    {
+      "attempt": 709,
+      "move_type": "swap",
+      "objective": 6154.854117391029,
+      "height_range": 51.0,
+      "used_layer_count": 52
+    },
+    {
+      "attempt": 711,
+      "move_type": "swap",
+      "objective": 6154.779659714229,
+      "height_range": 51.0,
+      "used_layer_count": 52
+    },
+    {
+      "attempt": 712,
+      "move_type": "move",
+      "objective": 6152.847677276569,
+      "height_range": 51.0,
+      "used_layer_count": 52
+    },
+    {
+      "attempt": 714,
+      "move_type": "swap",
+      "objective": 6152.781402097172,
+      "height_range": 51.0,
+      "used_layer_count": 52
+    },
+    {
+      "attempt": 716,
+      "move_type": "move",
+      "objective": 6144.266540540914,
+      "height_range": 51.0,
+      "used_layer_count": 52
+    },
+    {
+      "attempt": 735,
+      "move_type": "move",
+      "objective": 6143.653128274868,
+      "height_range": 52.0,
+      "used_layer_count": 53
+    },
+    {
+      "attempt": 745,
+      "move_type": "subtree",
+      "objective": 6138.515000067531,
+      "height_range": 52.0,
+      "used_layer_count": 53
+    },
+    {
+      "attempt": 754,
+      "move_type": "subtree",
+      "objective": 6131.376345252781,
+      "height_range": 52.0,
+      "used_layer_count": 53
+    },
+    {
+      "attempt": 778,
+      "move_type": "swap",
+      "objective": 6033.6182646657335,
+      "height_range": 52.0,
+      "used_layer_count": 53
+    },
+    {
+      "attempt": 797,
+      "move_type": "subtree",
+      "objective": 5979.620310517352,
+      "height_range": 49.0,
+      "used_layer_count": 50
+    },
+    {
+      "attempt": 799,
+      "move_type": "move",
+      "objective": 5971.783380800558,
+      "height_range": 49.0,
+      "used_layer_count": 50
+    },
+    {
+      "attempt": 800,
+      "move_type": "subtree",
+      "objective": 5970.0650895688905,
+      "height_range": 49.0,
+      "used_layer_count": 50
+    },
+    {
+      "attempt": 801,
+      "move_type": "move",
+      "objective": 5969.072290793045,
+      "height_range": 49.0,
+      "used_layer_count": 50
+    },
+    {
+      "attempt": 803,
+      "move_type": "subtree",
+      "objective": 5872.0352541018865,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 805,
+      "move_type": "swap",
+      "objective": 5869.912718622723,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 822,
+      "move_type": "swap",
+      "objective": 5866.781055653615,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 823,
+      "move_type": "subtree",
+      "objective": 5865.883236376075,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 828,
+      "move_type": "swap",
+      "objective": 5865.811762064156,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 829,
+      "move_type": "subtree",
+      "objective": 5865.603113297707,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 831,
+      "move_type": "swap",
+      "objective": 5862.942045705307,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 834,
+      "move_type": "swap",
+      "objective": 5855.1900407727835,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 838,
+      "move_type": "swap",
+      "objective": 5853.660748214721,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 840,
+      "move_type": "move",
+      "objective": 5844.458958774298,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 846,
+      "move_type": "move",
+      "objective": 5834.023811547566,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 847,
+      "move_type": "move",
+      "objective": 5797.837328060722,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 850,
+      "move_type": "swap",
+      "objective": 5764.932904124562,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 851,
+      "move_type": "swap",
+      "objective": 5763.319956937492,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 857,
+      "move_type": "swap",
+      "objective": 5755.795188228022,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 859,
+      "move_type": "move",
+      "objective": 5752.490219271373,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 861,
+      "move_type": "move",
+      "objective": 5733.644263882012,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 864,
+      "move_type": "swap",
+      "objective": 5731.1978669920045,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 869,
+      "move_type": "swap",
+      "objective": 5727.991597421653,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 871,
+      "move_type": "subtree",
+      "objective": 5724.619844694578,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 873,
+      "move_type": "subtree",
+      "objective": 5724.438258359163,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 874,
+      "move_type": "subtree",
+      "objective": 5722.288663258861,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 878,
+      "move_type": "swap",
+      "objective": 5684.448645963129,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 879,
+      "move_type": "move",
+      "objective": 5683.721523933389,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 880,
+      "move_type": "subtree",
+      "objective": 5672.993616703236,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 882,
+      "move_type": "subtree",
+      "objective": 5665.609208952072,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 893,
+      "move_type": "swap",
+      "objective": 5638.7232774319455,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 933,
+      "move_type": "move",
+      "objective": 5633.539325040828,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 934,
+      "move_type": "subtree",
+      "objective": 5632.670512063278,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 939,
+      "move_type": "swap",
+      "objective": 5623.217072294971,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 942,
+      "move_type": "move",
+      "objective": 5607.59580062815,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 946,
+      "move_type": "swap",
+      "objective": 5607.530917173304,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 947,
+      "move_type": "move",
+      "objective": 5607.449264925188,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 948,
+      "move_type": "move",
+      "objective": 5606.583325396033,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 951,
+      "move_type": "subtree",
+      "objective": 5605.027000489342,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 963,
+      "move_type": "move",
+      "objective": 5602.106826429559,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 974,
+      "move_type": "move",
+      "objective": 5600.620677415281,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 975,
+      "move_type": "swap",
+      "objective": 5600.619795604058,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 976,
+      "move_type": "subtree",
+      "objective": 5595.165590717824,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 978,
+      "move_type": "swap",
+      "objective": 5586.3604605434375,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 979,
+      "move_type": "move",
+      "objective": 5586.2070821672105,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 987,
+      "move_type": "move",
+      "objective": 5571.300011723014,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 988,
+      "move_type": "move",
+      "objective": 5571.134544268646,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1008,
+      "move_type": "swap",
+      "objective": 5569.306809437959,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1010,
+      "move_type": "subtree",
+      "objective": 5569.303906816239,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1012,
+      "move_type": "subtree",
+      "objective": 5564.211747998153,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1013,
+      "move_type": "swap",
+      "objective": 5554.3977758687615,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1015,
+      "move_type": "move",
+      "objective": 5551.78623300945,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1016,
+      "move_type": "swap",
+      "objective": 5530.124740420404,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1022,
+      "move_type": "swap",
+      "objective": 5527.934675061003,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1030,
+      "move_type": "move",
+      "objective": 5523.026821069273,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1031,
+      "move_type": "move",
+      "objective": 5498.867088115097,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1032,
+      "move_type": "swap",
+      "objective": 5490.186814145361,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1033,
+      "move_type": "subtree",
+      "objective": 5480.900096780195,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1037,
+      "move_type": "subtree",
+      "objective": 5480.791334250179,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1038,
+      "move_type": "subtree",
+      "objective": 5480.584644889752,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1062,
+      "move_type": "swap",
+      "objective": 5479.531595845636,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1065,
+      "move_type": "move",
+      "objective": 5479.081107335029,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1069,
+      "move_type": "swap",
+      "objective": 5465.194387515338,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1078,
+      "move_type": "move",
+      "objective": 5462.322902658048,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1083,
+      "move_type": "subtree",
+      "objective": 5460.582499452141,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1084,
+      "move_type": "move",
+      "objective": 5460.102600429856,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1090,
+      "move_type": "subtree",
+      "objective": 5452.117626674897,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1101,
+      "move_type": "move",
+      "objective": 5445.940369148294,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1116,
+      "move_type": "move",
+      "objective": 5432.967161540139,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1117,
+      "move_type": "swap",
+      "objective": 5432.099399793961,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1130,
+      "move_type": "subtree",
+      "objective": 5421.108196046851,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1132,
+      "move_type": "swap",
+      "objective": 5420.29002068617,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1139,
+      "move_type": "move",
+      "objective": 5415.56832563839,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1142,
+      "move_type": "swap",
+      "objective": 5415.485507283775,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1143,
+      "move_type": "swap",
+      "objective": 5412.361564997534,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1146,
+      "move_type": "swap",
+      "objective": 5408.774816446665,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1149,
+      "move_type": "swap",
+      "objective": 5406.096582378183,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1151,
+      "move_type": "move",
+      "objective": 5406.00584127618,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1154,
+      "move_type": "subtree",
+      "objective": 5405.865013048831,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1156,
+      "move_type": "swap",
+      "objective": 5399.682333085686,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1159,
+      "move_type": "subtree",
+      "objective": 5394.1038771139965,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1179,
+      "move_type": "subtree",
+      "objective": 5391.79114817727,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1181,
+      "move_type": "subtree",
+      "objective": 5095.477297844439,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1182,
+      "move_type": "swap",
+      "objective": 5090.605435469467,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1183,
+      "move_type": "swap",
+      "objective": 5089.8792507877015,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1184,
+      "move_type": "move",
+      "objective": 5088.689226130457,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1190,
+      "move_type": "move",
+      "objective": 5078.340205331407,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1192,
+      "move_type": "move",
+      "objective": 5076.70114917685,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1195,
+      "move_type": "swap",
+      "objective": 5076.180492129143,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1197,
+      "move_type": "swap",
+      "objective": 5073.056549842902,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1206,
+      "move_type": "subtree",
+      "objective": 5072.44972281414,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1210,
+      "move_type": "swap",
+      "objective": 5065.163853706743,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1214,
+      "move_type": "swap",
+      "objective": 5064.900114796584,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1217,
+      "move_type": "move",
+      "objective": 5064.556271064111,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1219,
+      "move_type": "subtree",
+      "objective": 5062.575094138689,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1223,
+      "move_type": "swap",
+      "objective": 5056.259665305916,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1226,
+      "move_type": "swap",
+      "objective": 5055.073724252805,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1228,
+      "move_type": "move",
+      "objective": 5053.21069441143,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1238,
+      "move_type": "subtree",
+      "objective": 5051.423762399199,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1239,
+      "move_type": "subtree",
+      "objective": 5048.6464217575485,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1247,
+      "move_type": "move",
+      "objective": 5048.181845672178,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1248,
+      "move_type": "move",
+      "objective": 5047.772630306894,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1249,
+      "move_type": "swap",
+      "objective": 5044.946206333628,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1251,
+      "move_type": "subtree",
+      "objective": 5044.7604697830375,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1268,
+      "move_type": "swap",
+      "objective": 5019.336418377823,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1269,
+      "move_type": "swap",
+      "objective": 5018.282707686035,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1271,
+      "move_type": "move",
+      "objective": 5015.47790387271,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1276,
+      "move_type": "subtree",
+      "objective": 5012.515973613564,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1279,
+      "move_type": "swap",
+      "objective": 5008.5856557908655,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1287,
+      "move_type": "move",
+      "objective": 5004.458781502974,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1289,
+      "move_type": "move",
+      "objective": 5003.9967082077665,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1292,
+      "move_type": "swap",
+      "objective": 5003.996527713323,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1293,
+      "move_type": "move",
+      "objective": 5003.599873819146,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1297,
+      "move_type": "move",
+      "objective": 5002.255796162898,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1298,
+      "move_type": "move",
+      "objective": 5000.37127996218,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1305,
+      "move_type": "subtree",
+      "objective": 4999.9497127109125,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1310,
+      "move_type": "subtree",
+      "objective": 4998.5672619690995,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1329,
+      "move_type": "subtree",
+      "objective": 4996.262536605569,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1330,
+      "move_type": "move",
+      "objective": 4994.362835896595,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1331,
+      "move_type": "move",
+      "objective": 4992.4593286060945,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1333,
+      "move_type": "subtree",
+      "objective": 4957.267844125663,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1338,
+      "move_type": "swap",
+      "objective": 4956.769898468953,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1340,
+      "move_type": "move",
+      "objective": 4956.02347411222,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1341,
+      "move_type": "swap",
+      "objective": 4955.952914503827,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1344,
+      "move_type": "subtree",
+      "objective": 4955.228491295762,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1351,
+      "move_type": "subtree",
+      "objective": 4955.150020344851,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1353,
+      "move_type": "subtree",
+      "objective": 4954.938753086671,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1358,
+      "move_type": "move",
+      "objective": 4949.153769819391,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1360,
+      "move_type": "subtree",
+      "objective": 4949.054568123007,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1375,
+      "move_type": "swap",
+      "objective": 4941.042352847517,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1378,
+      "move_type": "swap",
+      "objective": 4941.0256597561265,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1382,
+      "move_type": "swap",
+      "objective": 4940.939658368782,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1394,
+      "move_type": "swap",
+      "objective": 4940.454532528246,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1400,
+      "move_type": "swap",
+      "objective": 4937.398254336063,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1421,
+      "move_type": "subtree",
+      "objective": 4873.844586515837,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1427,
+      "move_type": "move",
+      "objective": 4873.84452420228,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1433,
+      "move_type": "move",
+      "objective": 4873.071376089523,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1434,
+      "move_type": "move",
+      "objective": 4872.9436878411125,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1446,
+      "move_type": "move",
+      "objective": 4865.204033885488,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1448,
+      "move_type": "subtree",
+      "objective": 4862.826405047765,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1450,
+      "move_type": "swap",
+      "objective": 4789.514459204032,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1461,
+      "move_type": "swap",
+      "objective": 4788.143401926013,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1463,
+      "move_type": "move",
+      "objective": 4763.900307728946,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1464,
+      "move_type": "subtree",
+      "objective": 4760.6875666394235,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1466,
+      "move_type": "swap",
+      "objective": 4756.786664204398,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1467,
+      "move_type": "swap",
+      "objective": 4756.488737299607,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1489,
+      "move_type": "subtree",
+      "objective": 4755.077944054214,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1490,
+      "move_type": "swap",
+      "objective": 4751.666682795986,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1495,
+      "move_type": "subtree",
+      "objective": 4733.272987225568,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1499,
+      "move_type": "subtree",
+      "objective": 4731.30634233421,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1501,
+      "move_type": "swap",
+      "objective": 4723.165252208103,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1511,
+      "move_type": "swap",
+      "objective": 4720.495528981539,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1513,
+      "move_type": "swap",
+      "objective": 4720.265444020639,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1514,
+      "move_type": "swap",
+      "objective": 4720.034040888325,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1518,
+      "move_type": "swap",
+      "objective": 4720.03254809019,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1523,
+      "move_type": "swap",
+      "objective": 4716.264976338381,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1525,
+      "move_type": "move",
+      "objective": 4716.062410747058,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1526,
+      "move_type": "move",
+      "objective": 4711.402141082244,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1528,
+      "move_type": "swap",
+      "objective": 4706.344329761664,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1530,
+      "move_type": "swap",
+      "objective": 4700.084540655041,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1532,
+      "move_type": "move",
+      "objective": 4699.887377252487,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1533,
+      "move_type": "swap",
+      "objective": 4699.160135058408,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1535,
+      "move_type": "move",
+      "objective": 4699.0356579416775,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1544,
+      "move_type": "subtree",
+      "objective": 4698.655195655243,
+      "height_range": 46.0,
+      "used_layer_count": 47
+    },
+    {
+      "attempt": 1559,
+      "move_type": "subtree",
+      "objective": 4679.361465287578,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1562,
+      "move_type": "swap",
+      "objective": 4672.254831625059,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1572,
+      "move_type": "subtree",
+      "objective": 4669.560697186202,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1586,
+      "move_type": "move",
+      "objective": 4669.041738968063,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1593,
+      "move_type": "swap",
+      "objective": 4665.918886590575,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1594,
+      "move_type": "move",
+      "objective": 4665.885671315539,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1597,
+      "move_type": "move",
+      "objective": 4665.059918411358,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1601,
+      "move_type": "subtree",
+      "objective": 4664.861484605608,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1603,
+      "move_type": "subtree",
+      "objective": 4662.3571792470275,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1611,
+      "move_type": "swap",
+      "objective": 4662.307625588544,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1614,
+      "move_type": "move",
+      "objective": 4662.241189088107,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1628,
+      "move_type": "move",
+      "objective": 4660.972428358078,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1630,
+      "move_type": "move",
+      "objective": 4660.955927661864,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1632,
+      "move_type": "subtree",
+      "objective": 4660.261313805305,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1646,
+      "move_type": "swap",
+      "objective": 4660.078927310916,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1648,
+      "move_type": "subtree",
+      "objective": 4660.013648156715,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1651,
+      "move_type": "move",
+      "objective": 4658.743976359496,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1655,
+      "move_type": "move",
+      "objective": 4658.590953435008,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1657,
+      "move_type": "swap",
+      "objective": 4658.326492712365,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1669,
+      "move_type": "swap",
+      "objective": 4657.975255815101,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1681,
+      "move_type": "swap",
+      "objective": 4647.976631589366,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1704,
+      "move_type": "swap",
+      "objective": 4642.191553281513,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1705,
+      "move_type": "swap",
+      "objective": 4641.8524368671015,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1709,
+      "move_type": "swap",
+      "objective": 4639.753834008967,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1710,
+      "move_type": "move",
+      "objective": 4636.182015588194,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1712,
+      "move_type": "subtree",
+      "objective": 4635.442056056471,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1715,
+      "move_type": "swap",
+      "objective": 4635.183275867505,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1717,
+      "move_type": "subtree",
+      "objective": 4635.125425084427,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1726,
+      "move_type": "swap",
+      "objective": 4634.976246922982,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1733,
+      "move_type": "move",
+      "objective": 4634.939191265032,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1736,
+      "move_type": "move",
+      "objective": 4633.786139952337,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1737,
+      "move_type": "subtree",
+      "objective": 4633.661917626986,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1738,
+      "move_type": "swap",
+      "objective": 4632.736305097728,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1739,
+      "move_type": "move",
+      "objective": 4628.424269709248,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1752,
+      "move_type": "swap",
+      "objective": 4625.796042022945,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1757,
+      "move_type": "subtree",
+      "objective": 4625.399300526154,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1763,
+      "move_type": "swap",
+      "objective": 4622.998378979707,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1771,
+      "move_type": "swap",
+      "objective": 4621.484862991341,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1773,
+      "move_type": "swap",
+      "objective": 4598.05933705231,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1783,
+      "move_type": "subtree",
+      "objective": 4595.481449960429,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1813,
+      "move_type": "swap",
+      "objective": 4594.176462491528,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1814,
+      "move_type": "swap",
+      "objective": 4593.701259630526,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1820,
+      "move_type": "subtree",
+      "objective": 4591.338002662844,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1829,
+      "move_type": "move",
+      "objective": 4590.185459114736,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1831,
+      "move_type": "subtree",
+      "objective": 4588.433699717466,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1838,
+      "move_type": "swap",
+      "objective": 4588.302750255125,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1841,
+      "move_type": "move",
+      "objective": 4587.713970356651,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1842,
+      "move_type": "move",
+      "objective": 4586.986550478024,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1843,
+      "move_type": "subtree",
+      "objective": 4586.697466809222,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1847,
+      "move_type": "subtree",
+      "objective": 4583.86345644955,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1857,
+      "move_type": "swap",
+      "objective": 4582.7849525650145,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1878,
+      "move_type": "swap",
+      "objective": 4582.4709337211125,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1888,
+      "move_type": "move",
+      "objective": 4582.139229892826,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1897,
+      "move_type": "subtree",
+      "objective": 4578.083158434546,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1898,
+      "move_type": "move",
+      "objective": 4578.02950389934,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    },
+    {
+      "attempt": 1900,
+      "move_type": "swap",
+      "objective": 4577.844183461167,
+      "height_range": 47.0,
+      "used_layer_count": 48
+    }
+  ]
+}

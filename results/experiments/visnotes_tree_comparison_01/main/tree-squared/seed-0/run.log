@@ -1,0 +1,29 @@
+Reading hypergraph data from C:\Users\shink\evico\layered-hyper-graph-visualization\original.json...
+Loaded 627 nodes and 383 hyperedges.
+Computing polygons from node order using Shapely...
+Computing overlap set C...
+Found 4431 overlapping pairs (C set).
+Computing weight matrix W...
+Applying regularization (reg = 1e-05) to ensure connectivity...
+Phase 1: Computing a virtual-root BFS tree on overlap graph C and repairing conflicts...
+Objective scale factor: 2.066099e-03
+Tree initialization and repair completed. Total layers used: 50
+Initial objective value (solve_layers.py): 11960.003118
+Phase 2: Optimizing tree layers using anneal...
+Improved objective value (solve_layers.py): 5676.469031; layers=45; height=44
+Improved objective value (solve_layers.py): 5094.145625; layers=45; height=44
+Improved objective value (solve_layers.py): 4938.595708; layers=45; height=44
+Improved objective value (solve_layers.py): 4834.755928; layers=46; height=45
+Optimization finished after 1684 attempts (25.000 s). Stop reason: time_budget_exhausted
+Best objective value: 4804.628186
+Objective value (solve_layers.py): 4804.628186
+Unscaled squared objective value: 1162729.197800
+All overlap constraints successfully satisfied (|x_i - x_j| >= 1).
+Coordinate x_0 (first hyperedge): 27.000000
+Anchor coordinate x_0 for solve_layers.py objective evaluation: 0.000000
+Coordinate range: min=0.0000, max=45.0000
+Preparing output JSON...
+Writing output to C:\Users\shink\evico\layered-hyper-graph-visualization\results\experiments\visnotes_tree_comparison_01\main\tree-squared\seed-0\layout.json...
+Initial -> best objective: 11960.003118 -> 4804.628186 (59.83% improvement)
+Report: C:\Users\shink\evico\layered-hyper-graph-visualization\results\experiments\visnotes_tree_comparison_01\main\tree-squared\seed-0\report.json
+Layer assignment complete!

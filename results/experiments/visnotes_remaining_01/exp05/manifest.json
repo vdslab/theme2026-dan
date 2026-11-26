@@ -1,0 +1,213 @@
+{
+  "experiment_id": "exp05_xy_z_paradox_study",
+  "started_utc": "2026-11-25T15:16:31.992059+00:00",
+  "source_article": "https://vdslab.esa.io/posts/9193",
+  "regularization": 1e-05,
+  "input_files": {
+    "original": {
+      "file": "original.json",
+      "sha256": "bc21935cccb75e36b17c92e7164032eed8f278606f5767a14efd9d212c82bd7b"
+    },
+    "paper": {
+      "file": "results/layouts/original_polygon_paper.json",
+      "sha256": "cd25bb25d0ab893fdad6e0b1452862e9202c24a690f1148e8d6d646e24011e83"
+    },
+    "scalable": {
+      "file": "results/layouts/original_polygon_scalable.json",
+      "sha256": "2c57e0aad109c4c6e60bd5606ac9a8981c0288bad48c140059f5380188edcd84"
+    },
+    "arranged": {
+      "file": "results/layouts/original_polygon_arranged.json",
+      "sha256": "7455d26668183e956563d58976566708929aace0258aa1a753f33ba5bb617ee5"
+    }
+  },
+  "conditions": {
+    "full": {
+      "solver": "solve_layers_compact.py",
+      "method": "anneal",
+      "objective": "hybrid",
+      "alpha": 0.25,
+      "beta": 0.005,
+      "warm_start": 0,
+      "moves": [
+        "move",
+        "kempe",
+        "swap",
+        "shift"
+      ],
+      "optimize_free_edges": null
+    }
+  },
+  "case_budget_seconds": 35.0,
+  "total_budget_seconds": 480.0,
+  "trial_limit": 20000,
+  "cases": [
+    {
+      "input": "original",
+      "condition": "full",
+      "seed": 0
+    },
+    {
+      "input": "original",
+      "condition": "full",
+      "seed": 1
+    },
+    {
+      "input": "original",
+      "condition": "full",
+      "seed": 2
+    },
+    {
+      "input": "original",
+      "condition": "full",
+      "seed": 3
+    },
+    {
+      "input": "original",
+      "condition": "full",
+      "seed": 4
+    },
+    {
+      "input": "paper",
+      "condition": "full",
+      "seed": 0
+    },
+    {
+      "input": "paper",
+      "condition": "full",
+      "seed": 1
+    },
+    {
+      "input": "paper",
+      "condition": "full",
+      "seed": 2
+    },
+    {
+      "input": "paper",
+      "condition": "full",
+      "seed": 3
+    },
+    {
+      "input": "paper",
+      "condition": "full",
+      "seed": 4
+    },
+    {
+      "input": "scalable",
+      "condition": "full",
+      "seed": 0
+    },
+    {
+      "input": "scalable",
+      "condition": "full",
+      "seed": 1
+    },
+    {
+      "input": "scalable",
+      "condition": "full",
+      "seed": 2
+    },
+    {
+      "input": "scalable",
+      "condition": "full",
+      "seed": 3
+    },
+    {
+      "input": "scalable",
+      "condition": "full",
+      "seed": 4
+    },
+    {
+      "input": "arranged",
+      "condition": "full",
+      "seed": 0
+    },
+    {
+      "input": "arranged",
+      "condition": "full",
+      "seed": 1
+    },
+    {
+      "input": "arranged",
+      "condition": "full",
+      "seed": 2
+    },
+    {
+      "input": "arranged",
+      "condition": "full",
+      "seed": 3
+    },
+    {
+      "input": "arranged",
+      "condition": "full",
+      "seed": 4
+    }
+  ],
+  "provenance": {
+    "git_commit": "9453cc7511f2e52a50313aee097cf38f7805aead",
+    "relevant_git_status": [
+      "?? experiments/exp05_xy_z_paradox_study/run_experiment.py",
+      "?? experiments/visnotes_common.py",
+      "?? experiments/visnotes_exact.py",
+      "?? experiments/visnotes_metrics.py",
+      "?? solve_layers_compact.py"
+    ],
+    "source_sha256": {
+      "experiments/visnotes_common.py": "3a5953f7b39df0dea3cd1e912b78fe15f9e2e961e3fba44eddb0ce98e7e841b0",
+      "experiments/visnotes_metrics.py": "1a862bd1a82ac2068bcfcf7886bab6402efc8da9fdf2ff4c67090efb7fbbf318",
+      "experiments/visnotes_exact.py": "be441fb58c547baee8adab568de517820e629256ea0614e80aec201c68d57107",
+      "experiments/exp05_xy_z_paradox_study/run_experiment.py": "f395fdc2497c732f062dd5acad116767e1569409ebfc7d6df2c7d8aa7e79848e",
+      "experiments/tree_optimization_comparison_01/review_results.py": "82b6264e19c081a1f4dab48fc9bbac0dcd6ef3847386b68d37f0afabb937ff37",
+      "solve_layers.py": "8909d5eb5b2fe8301f5893b5d960f666ec50f267fa6ca34c2f38482648f1a985",
+      "solve_layers_dsatur_l1.py": "4ff99edf40e396f6039cc4d01d347cfde82e61a81bfb923435ab9a9caad1b5b1",
+      "solve_layers_compact.py": "3a4c7f72e0a53b1c668d4040c7a45c9d4e73426b40cc3c674f510ee404122d88",
+      "solve_layers_tree.py": "888705b38cbec77b498b6332578c50215a61cc33f5e9a025a5d8ab493991787c",
+      "solve_layers_dummy.py": "f3f2031637b67c810bee903c4aa534ba420cd7c27dba4eb9326d3e14f12ddd75"
+    },
+    "environment": {
+      "python": "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe",
+      "python_version": "3.11.5",
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "shapely": "2.1.2",
+      "geos": "3.13.1",
+      "thread_limits": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "BLIS_NUM_THREADS": "1"
+      }
+    },
+    "command": [
+      "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe",
+      "-B",
+      "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\experiments\\exp05_xy_z_paradox_study\\run_experiment.py",
+      "--output",
+      "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_remaining_01\\exp05",
+      "--total-budget",
+      "480",
+      "--inputs",
+      "original",
+      "paper",
+      "scalable",
+      "arranged",
+      "--case-budget",
+      "35",
+      "--max-iterations",
+      "20000",
+      "--seeds",
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "--conditions",
+      "full"
+    ],
+    "working_directory": "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization"
+  },
+  "structure_reference": {
+    "file": "original.json",
+    "sha256": "bc21935cccb75e36b17c92e7164032eed8f278606f5767a14efd9d212c82bd7b"
+  }
+}

@@ -1,0 +1,295 @@
+{
+  "complete": true,
+  "interrupted": false,
+  "error": null,
+  "total_budget_exhausted": false,
+  "elapsed_seconds": 212.95300000021234,
+  "input_profiles": {},
+  "case_counts": {
+    "verified": 2
+  },
+  "cases": [
+    {
+      "input": "original",
+      "condition": "qp-l2",
+      "seed": null,
+      "command": [
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\solve_layers.py",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\original.json",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_remaining_01\\exp04-legacy-reference\\original\\qp-l2\\deterministic\\layout.json",
+        "--reg",
+        "1e-05"
+      ],
+      "case_directory": "results/experiments/visnotes_remaining_01/exp04-legacy-reference/original/qp-l2/deterministic",
+      "input_sha256": "bc21935cccb75e36b17c92e7164032eed8f278606f5767a14efd9d212c82bd7b",
+      "subprocess_wall_budget": 180.0,
+      "solver_internal_budget": null,
+      "solver_wall_seconds": 149.8279999999795,
+      "exit_code": 0,
+      "metrics": {
+        "l1_regularized": 89511.82636286682,
+        "l1_shared_vertices": 89505.511309536,
+        "l2_regularized": 1496284.7470713784,
+        "l2_shared_vertices": 1496194.8400117492,
+        "l2_scaled_qp": 6182.946023324273,
+        "height_min": -11.000000000335499,
+        "height_max": 27.000000000085517,
+        "height_range": 38.00000000042102,
+        "pillar_length": 8643.020165652686,
+        "overlap_violation_count": 0,
+        "order_violation_count": 0,
+        "max_order_violation": 2.813980159999119e-10,
+        "distinct_height_values": 381,
+        "pillar_square_sum": 218762.21791029832,
+        "degree_span_square_sum": 1619039.1544360667,
+        "top5_constrained_hub_mean_span": 31.80000000035256,
+        "constrained_hubs": [
+          {
+            "node_id": 198,
+            "degree": 22,
+            "constrained_degree": 22,
+            "span": 35.000000000457774
+          },
+          {
+            "node_id": 96,
+            "degree": 22,
+            "constrained_degree": 21,
+            "span": 29.000000000260044
+          },
+          {
+            "node_id": 207,
+            "degree": 18,
+            "constrained_degree": 18,
+            "span": 36.000000000499696
+          },
+          {
+            "node_id": 199,
+            "degree": 19,
+            "constrained_degree": 17,
+            "span": 29.000000000415696
+          },
+          {
+            "node_id": 2,
+            "degree": 18,
+            "constrained_degree": 15,
+            "span": 30.000000000129578
+          }
+        ]
+      },
+      "height_type": "continuous",
+      "iterations": 144,
+      "termination_reason": "converged",
+      "projection": {
+        "projection": "orthographic",
+        "azimuth_degrees": 45.0,
+        "elevation_degrees": 35.0,
+        "pixels_per_xy_span": 384,
+        "z_step_world": 0.1363402923410712,
+        "polygons_measured": 168,
+        "covered_pixel_count": 21020,
+        "overdraw_pixel_count": 14692,
+        "overdraw_sample_count": 52748,
+        "max_face_depth": 12,
+        "projected_pillar_length_px": 27186.99892809745
+      },
+      "status": "verified",
+      "case_elapsed_seconds": 150.125
+    },
+    {
+      "input": "original",
+      "condition": "lp-l1",
+      "seed": null,
+      "command": [
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\solve_layers_dsatur_l1.py",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\original.json",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_remaining_01\\exp04-legacy-reference\\original\\lp-l1\\deterministic\\layout.json",
+        "--reg",
+        "1e-05"
+      ],
+      "case_directory": "results/experiments/visnotes_remaining_01/exp04-legacy-reference/original/lp-l1/deterministic",
+      "input_sha256": "bc21935cccb75e36b17c92e7164032eed8f278606f5767a14efd9d212c82bd7b",
+      "subprocess_wall_budget": 180.0,
+      "solver_internal_budget": null,
+      "solver_wall_seconds": 60.71900000004098,
+      "exit_code": 0,
+      "metrics": {
+        "l1_regularized": 88988.51606,
+        "l1_shared_vertices": 88982.0,
+        "l2_regularized": 1508556.72522,
+        "l2_shared_vertices": 1508460.0,
+        "l2_scaled_qp": 6233.656276597156,
+        "height_min": -11.0,
+        "height_max": 27.0,
+        "height_range": 38.0,
+        "pillar_length": 8614.0,
+        "overlap_violation_count": 0,
+        "order_violation_count": 0,
+        "max_order_violation": 0.0,
+        "distinct_height_values": 39,
+        "pillar_square_sum": 218438.0,
+        "degree_span_square_sum": 1617466.0,
+        "top5_constrained_hub_mean_span": 31.8,
+        "constrained_hubs": [
+          {
+            "node_id": 198,
+            "degree": 22,
+            "constrained_degree": 22,
+            "span": 35.0
+          },
+          {
+            "node_id": 96,
+            "degree": 22,
+            "constrained_degree": 21,
+            "span": 29.0
+          },
+          {
+            "node_id": 207,
+            "degree": 18,
+            "constrained_degree": 18,
+            "span": 36.0
+          },
+          {
+            "node_id": 199,
+            "degree": 19,
+            "constrained_degree": 17,
+            "span": 29.0
+          },
+          {
+            "node_id": 2,
+            "degree": 18,
+            "constrained_degree": 15,
+            "span": 30.0
+          }
+        ]
+      },
+      "height_type": "continuous",
+      "iterations": 102699,
+      "termination_reason": "converged",
+      "projection": {
+        "projection": "orthographic",
+        "azimuth_degrees": 45.0,
+        "elevation_degrees": 35.0,
+        "pixels_per_xy_span": 384,
+        "z_step_world": 0.1363402923410712,
+        "polygons_measured": 168,
+        "covered_pixel_count": 20996,
+        "overdraw_pixel_count": 14652,
+        "overdraw_sample_count": 52768,
+        "max_face_depth": 12,
+        "projected_pillar_length_px": 27095.71472450064
+      },
+      "status": "verified",
+      "case_elapsed_seconds": 61.187000000150874
+    }
+  ],
+  "comparisons": [
+    {
+      "input": "original",
+      "condition": "qp-l2",
+      "verified_cases": 1,
+      "metrics": {
+        "distinct_height_values": {
+          "median": 381,
+          "minimum": 381,
+          "maximum": 381
+        },
+        "height_range": {
+          "median": 38.00000000042102,
+          "minimum": 38.00000000042102,
+          "maximum": 38.00000000042102
+        },
+        "l2_scaled_qp": {
+          "median": 6182.946023324273,
+          "minimum": 6182.946023324273,
+          "maximum": 6182.946023324273
+        },
+        "pillar_length": {
+          "median": 8643.020165652686,
+          "minimum": 8643.020165652686,
+          "maximum": 8643.020165652686
+        },
+        "top5_constrained_hub_mean_span": {
+          "median": 31.80000000035256,
+          "minimum": 31.80000000035256,
+          "maximum": 31.80000000035256
+        },
+        "overlap_violation_count": {
+          "median": 0,
+          "minimum": 0,
+          "maximum": 0
+        },
+        "solver_wall_seconds": {
+          "median": 149.8279999999795,
+          "minimum": 149.8279999999795,
+          "maximum": 149.8279999999795
+        },
+        "overdraw_pixel_count": {
+          "median": 14692,
+          "minimum": 14692,
+          "maximum": 14692
+        },
+        "projected_pillar_length_px": {
+          "median": 27186.99892809745,
+          "minimum": 27186.99892809745,
+          "maximum": 27186.99892809745
+        }
+      }
+    },
+    {
+      "input": "original",
+      "condition": "lp-l1",
+      "verified_cases": 1,
+      "metrics": {
+        "distinct_height_values": {
+          "median": 39,
+          "minimum": 39,
+          "maximum": 39
+        },
+        "height_range": {
+          "median": 38.0,
+          "minimum": 38.0,
+          "maximum": 38.0
+        },
+        "l2_scaled_qp": {
+          "median": 6233.656276597156,
+          "minimum": 6233.656276597156,
+          "maximum": 6233.656276597156
+        },
+        "pillar_length": {
+          "median": 8614.0,
+          "minimum": 8614.0,
+          "maximum": 8614.0
+        },
+        "top5_constrained_hub_mean_span": {
+          "median": 31.8,
+          "minimum": 31.8,
+          "maximum": 31.8
+        },
+        "overlap_violation_count": {
+          "median": 0,
+          "minimum": 0,
+          "maximum": 0
+        },
+        "solver_wall_seconds": {
+          "median": 60.71900000004098,
+          "minimum": 60.71900000004098,
+          "maximum": 60.71900000004098
+        },
+        "overdraw_pixel_count": {
+          "median": 14652,
+          "minimum": 14652,
+          "maximum": 14652
+        },
+        "projected_pillar_length_px": {
+          "median": 27095.71472450064,
+          "minimum": 27095.71472450064,
+          "maximum": 27095.71472450064
+        }
+      }
+    }
+  ]
+}

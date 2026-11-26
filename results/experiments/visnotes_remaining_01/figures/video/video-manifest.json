@@ -1,0 +1,44 @@
+{
+  "figure_manifest": "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_remaining_01\\figures\\figure-manifest.json",
+  "figure_manifest_sha256": "019d7e021566776dd68c467e54a2fdac3f308837f60638afabef4fa3978b93e6",
+  "viewer_html_sha256": "a5cf0a5ca26ea35d86e6c391c3ce0a78c124de4b64592761ef194f67c86a1424",
+  "viewer_sha256": "f68d5bbff1f17276adfd3b68096a2c1303ff6d24eb277083d357d3ceaf3be090",
+  "video_sha256": "45965ac2b68845d4ca066342ff778bfdc1ad077e7b66e0c326fd8caf48895e78",
+  "intended_seconds": 60,
+  "decoded_seconds": 59.940453,
+  "width": 1280,
+  "height": 900,
+  "codec": "video/webm;codecs=vp8",
+  "scenes": [
+    {
+      "title": "VisNotes local comparison",
+      "note": "Internal draft. The same shared vertex and incident edges appear in the planar, first-fit, and proposed panels.",
+      "nominal_seconds": 8
+    },
+    {
+      "title": "Compare two saved layouts",
+      "note": "A uses the input-order Qu et al. first-fit rule. B uses the proposed method. Both views share a camera and scale.",
+      "nominal_seconds": 11
+    },
+    {
+      "title": "Follow a shared vertex",
+      "note": "Leiomyosarcoma · ID 198. The viewer highlights incident edges and draws the selected vertex as a pillar.",
+      "nominal_seconds": 11
+    },
+    {
+      "title": "Limit the displayed layers",
+      "note": "The range control displays layers 14–30 in both arrangements.",
+      "nominal_seconds": 11
+    },
+    {
+      "title": "Rotate the shared view",
+      "note": "Restoring all layers and dragging the comparison pane rotates both layouts together.",
+      "nominal_seconds": 11
+    },
+    {
+      "title": "Trace the same relationships",
+      "note": "Local case from the existing input. Reading accuracy and task time have yet to be evaluated.",
+      "nominal_seconds": 8
+    }
+  ]
+}

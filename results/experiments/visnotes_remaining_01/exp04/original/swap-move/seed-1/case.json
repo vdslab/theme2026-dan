@@ -1,0 +1,1340 @@
+{
+  "input": "original",
+  "condition": "swap-move",
+  "seed": 1,
+  "command": [
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\solve_layers_compact.py",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\original.json",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_remaining_01\\exp04\\original\\swap-move\\seed-1\\layout.json",
+    "--reg",
+    "1e-05",
+    "--report",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_remaining_01\\exp04\\original\\swap-move\\seed-1\\report.json",
+    "--method",
+    "anneal",
+    "--objective",
+    "hybrid",
+    "--alpha",
+    "0.25",
+    "--beta",
+    "0.005",
+    "--seed",
+    "1",
+    "--max-iterations",
+    "20000",
+    "--time-budget",
+    "32.2",
+    "--warm-start-extra-layers",
+    "0",
+    "--moves",
+    "swap",
+    "move"
+  ],
+  "case_directory": "results/experiments/visnotes_remaining_01/exp04/original/swap-move/seed-1",
+  "input_sha256": "bc21935cccb75e36b17c92e7164032eed8f278606f5767a14efd9d212c82bd7b",
+  "subprocess_wall_budget": 35.0,
+  "solver_internal_budget": 32.2,
+  "solver_wall_seconds": 4.875,
+  "exit_code": 0,
+  "metrics": {
+    "l1_regularized": 71448.73334,
+    "l1_shared_vertices": 71443,
+    "l2_regularized": 955882.07232,
+    "l2_shared_vertices": 955809,
+    "l2_scaled_qp": 3949.894743888592,
+    "height_min": 0,
+    "height_max": 38,
+    "height_range": 38,
+    "pillar_length": 6289,
+    "overlap_violation_count": 0,
+    "order_violation_count": 0,
+    "max_order_violation": 0,
+    "used_layer_count": 39,
+    "pillar_square_sum": 126341,
+    "degree_span_square_sum": 1045902,
+    "top5_constrained_hub_mean_span": 31.6,
+    "constrained_hubs": [
+      {
+        "node_id": 198,
+        "degree": 22,
+        "constrained_degree": 22,
+        "span": 32
+      },
+      {
+        "node_id": 96,
+        "degree": 22,
+        "constrained_degree": 21,
+        "span": 32
+      },
+      {
+        "node_id": 207,
+        "degree": 18,
+        "constrained_degree": 18,
+        "span": 33
+      },
+      {
+        "node_id": 199,
+        "degree": 19,
+        "constrained_degree": 17,
+        "span": 34
+      },
+      {
+        "node_id": 2,
+        "degree": 18,
+        "constrained_degree": 15,
+        "span": 27
+      }
+    ]
+  },
+  "height_type": "integer",
+  "stages": [
+    {
+      "cap": 39,
+      "metrics": {
+        "l1_regularized": 71448.73334,
+        "l1_shared_vertices": 71443,
+        "l2_regularized": 955882.07232,
+        "l2_shared_vertices": 955809,
+        "l2_scaled_qp": 3949.894743888592,
+        "height_min": 0,
+        "height_max": 38,
+        "height_range": 38,
+        "pillar_length": 6289,
+        "overlap_violation_count": 0,
+        "order_violation_count": 0,
+        "max_order_violation": 0,
+        "used_layer_count": 39,
+        "pillar_square_sum": 126341,
+        "degree_span_square_sum": 1045902,
+        "top5_constrained_hub_mean_span": 31.6,
+        "constrained_hubs": [
+          {
+            "node_id": 198,
+            "degree": 22,
+            "constrained_degree": 22,
+            "span": 32
+          },
+          {
+            "node_id": 96,
+            "degree": 22,
+            "constrained_degree": 21,
+            "span": 32
+          },
+          {
+            "node_id": 207,
+            "degree": 18,
+            "constrained_degree": 18,
+            "span": 33
+          },
+          {
+            "node_id": 199,
+            "degree": 19,
+            "constrained_degree": 17,
+            "span": 34
+          },
+          {
+            "node_id": 2,
+            "degree": 18,
+            "constrained_degree": 15,
+            "span": 27
+          }
+        ]
+      },
+      "optimized_value": 7276.473685972148,
+      "trajectory": [
+        {
+          "iteration": 0,
+          "elapsed_seconds": 1.2720162000041455,
+          "optimized_value": 10856.983783661046,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 0,
+          "elapsed_seconds": 1.3023568999487907,
+          "optimized_value": 10194.502047091282,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 5726,
+          "elapsed_seconds": 1.722764299949631,
+          "optimized_value": 10130.29954571433,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 5736,
+          "elapsed_seconds": 1.7232938997913152,
+          "optimized_value": 10080.551610811666,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 5743,
+          "elapsed_seconds": 1.7236949999351054,
+          "optimized_value": 10079.684508192518,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 6730,
+          "elapsed_seconds": 1.8098019999451935,
+          "optimized_value": 10048.809299273713,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 6743,
+          "elapsed_seconds": 1.8108876999467611,
+          "optimized_value": 10048.120906483755,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 6751,
+          "elapsed_seconds": 1.811781199881807,
+          "optimized_value": 9979.844049949854,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 7152,
+          "elapsed_seconds": 1.8470923998393118,
+          "optimized_value": 9899.14609457008,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 7156,
+          "elapsed_seconds": 1.847253399901092,
+          "optimized_value": 9838.052543490256,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 7166,
+          "elapsed_seconds": 1.8479837998747826,
+          "optimized_value": 9838.0359816375,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 7171,
+          "elapsed_seconds": 1.8482619998976588,
+          "optimized_value": 9818.590268502427,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 7179,
+          "elapsed_seconds": 1.8489554999396205,
+          "optimized_value": 9815.835953381526,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 7182,
+          "elapsed_seconds": 1.849249899853021,
+          "optimized_value": 9815.637545360696,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 7187,
+          "elapsed_seconds": 1.850419499911368,
+          "optimized_value": 9786.725162768344,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 7209,
+          "elapsed_seconds": 1.8541797997895628,
+          "optimized_value": 9729.100836435548,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 8060,
+          "elapsed_seconds": 1.9219333999790251,
+          "optimized_value": 9520.756968199135,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 8068,
+          "elapsed_seconds": 1.9227292998693883,
+          "optimized_value": 9507.940087745588,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 8799,
+          "elapsed_seconds": 1.9679172998294234,
+          "optimized_value": 9417.799629990524,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 8835,
+          "elapsed_seconds": 1.9704962999094278,
+          "optimized_value": 9415.529493052349,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 8837,
+          "elapsed_seconds": 1.9707347999792546,
+          "optimized_value": 9411.436661202384,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 8880,
+          "elapsed_seconds": 1.9732627999037504,
+          "optimized_value": 9407.373659220293,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 8891,
+          "elapsed_seconds": 1.9737974999006838,
+          "optimized_value": 9397.229981325354,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 8908,
+          "elapsed_seconds": 1.9744747998192906,
+          "optimized_value": 9384.855286679349,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 8915,
+          "elapsed_seconds": 1.9747714998666197,
+          "optimized_value": 9381.747777114651,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 8921,
+          "elapsed_seconds": 1.9750025998800993,
+          "optimized_value": 9362.060855883328,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 8922,
+          "elapsed_seconds": 1.975075799971819,
+          "optimized_value": 9361.642953189916,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 8953,
+          "elapsed_seconds": 1.9769559998530895,
+          "optimized_value": 9344.975762835922,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 8981,
+          "elapsed_seconds": 1.9786100999917835,
+          "optimized_value": 9306.647275800427,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 9003,
+          "elapsed_seconds": 1.9803577999118716,
+          "optimized_value": 9289.994174178213,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 9006,
+          "elapsed_seconds": 1.9806694998405874,
+          "optimized_value": 9282.49044395972,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 9025,
+          "elapsed_seconds": 1.9817925998941064,
+          "optimized_value": 9257.971762805508,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 9027,
+          "elapsed_seconds": 1.9820283998269588,
+          "optimized_value": 9238.095847156743,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 9031,
+          "elapsed_seconds": 1.982399599859491,
+          "optimized_value": 9223.095613894122,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 9224,
+          "elapsed_seconds": 1.9955628998577595,
+          "optimized_value": 9222.574049766798,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 9234,
+          "elapsed_seconds": 1.9960782998241484,
+          "optimized_value": 9206.561956597781,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 9245,
+          "elapsed_seconds": 1.9966796999797225,
+          "optimized_value": 9194.958484893776,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 9246,
+          "elapsed_seconds": 1.996751399943605,
+          "optimized_value": 9191.918801405327,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 9251,
+          "elapsed_seconds": 1.9969103999901563,
+          "optimized_value": 9145.41859382432,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 9253,
+          "elapsed_seconds": 1.9970474999863654,
+          "optimized_value": 9141.286456850692,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 9831,
+          "elapsed_seconds": 2.0379973999224603,
+          "optimized_value": 9140.446116954201,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 9832,
+          "elapsed_seconds": 2.0380699997767806,
+          "optimized_value": 9139.974900425372,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 10940,
+          "elapsed_seconds": 2.1100836999248713,
+          "optimized_value": 9097.962589324192,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 10987,
+          "elapsed_seconds": 2.1135849999263883,
+          "optimized_value": 9067.316219405046,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 10988,
+          "elapsed_seconds": 2.1136974999681115,
+          "optimized_value": 9064.419428342528,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11031,
+          "elapsed_seconds": 2.1169239999726415,
+          "optimized_value": 9058.961662472004,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11044,
+          "elapsed_seconds": 2.117898599943146,
+          "optimized_value": 9047.13187174845,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11057,
+          "elapsed_seconds": 2.118813799927011,
+          "optimized_value": 9039.486642853357,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11072,
+          "elapsed_seconds": 2.1198681998066604,
+          "optimized_value": 9037.079015925949,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11130,
+          "elapsed_seconds": 2.123406099854037,
+          "optimized_value": 9033.141999251162,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11185,
+          "elapsed_seconds": 2.126145099988207,
+          "optimized_value": 9013.923358993325,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11196,
+          "elapsed_seconds": 2.126533899921924,
+          "optimized_value": 9011.348677537297,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11206,
+          "elapsed_seconds": 2.127103599952534,
+          "optimized_value": 8990.356377683134,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11207,
+          "elapsed_seconds": 2.127175899920985,
+          "optimized_value": 8947.62974298426,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11222,
+          "elapsed_seconds": 2.1277855997905135,
+          "optimized_value": 8946.50279704404,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11235,
+          "elapsed_seconds": 2.1285493997856975,
+          "optimized_value": 8939.349517220753,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11239,
+          "elapsed_seconds": 2.128641199786216,
+          "optimized_value": 8937.807376313684,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11249,
+          "elapsed_seconds": 2.1290923999622464,
+          "optimized_value": 8937.240900516033,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11276,
+          "elapsed_seconds": 2.1302619997877628,
+          "optimized_value": 8898.207394416846,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11314,
+          "elapsed_seconds": 2.132459199987352,
+          "optimized_value": 8890.251235785701,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11345,
+          "elapsed_seconds": 2.135146299842745,
+          "optimized_value": 8886.200798435846,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11350,
+          "elapsed_seconds": 2.1354345998261124,
+          "optimized_value": 8885.268880398506,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11377,
+          "elapsed_seconds": 2.136863399995491,
+          "optimized_value": 8885.119580502484,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11391,
+          "elapsed_seconds": 2.1374782999046147,
+          "optimized_value": 8845.845873943723,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11399,
+          "elapsed_seconds": 2.138035199837759,
+          "optimized_value": 8842.214688470847,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11426,
+          "elapsed_seconds": 2.1392746998462826,
+          "optimized_value": 8841.694773648687,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11429,
+          "elapsed_seconds": 2.1394507999066263,
+          "optimized_value": 8841.520327566835,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11444,
+          "elapsed_seconds": 2.1401388999074697,
+          "optimized_value": 8820.972515423535,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11447,
+          "elapsed_seconds": 2.1403030999936163,
+          "optimized_value": 8812.429936813309,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11452,
+          "elapsed_seconds": 2.140584799926728,
+          "optimized_value": 8811.245230419876,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11499,
+          "elapsed_seconds": 2.1433315998874605,
+          "optimized_value": 8801.185451904079,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11544,
+          "elapsed_seconds": 2.1460648998618126,
+          "optimized_value": 8793.701433348191,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11558,
+          "elapsed_seconds": 2.1470144998747855,
+          "optimized_value": 8785.617575249717,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11572,
+          "elapsed_seconds": 2.149091999977827,
+          "optimized_value": 8772.531898983772,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11576,
+          "elapsed_seconds": 2.150507199810818,
+          "optimized_value": 8766.386070754565,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11599,
+          "elapsed_seconds": 2.1539264998864383,
+          "optimized_value": 8759.635798225725,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11605,
+          "elapsed_seconds": 2.154650299809873,
+          "optimized_value": 8752.150947300375,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11619,
+          "elapsed_seconds": 2.156824099831283,
+          "optimized_value": 8728.098539718138,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11663,
+          "elapsed_seconds": 2.159836799837649,
+          "optimized_value": 8710.743473966797,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11669,
+          "elapsed_seconds": 2.1602411998901516,
+          "optimized_value": 8678.7757228445,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11699,
+          "elapsed_seconds": 2.1617897998075932,
+          "optimized_value": 8674.375140510254,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11708,
+          "elapsed_seconds": 2.162317399866879,
+          "optimized_value": 8658.109990619496,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11735,
+          "elapsed_seconds": 2.1654902999289334,
+          "optimized_value": 8656.380202908316,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11763,
+          "elapsed_seconds": 2.169019299792126,
+          "optimized_value": 8655.235208329554,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11822,
+          "elapsed_seconds": 2.1736647998914123,
+          "optimized_value": 8646.3223762986,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11829,
+          "elapsed_seconds": 2.174198599997908,
+          "optimized_value": 8636.094046282527,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11833,
+          "elapsed_seconds": 2.174463299801573,
+          "optimized_value": 8582.671696103556,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11840,
+          "elapsed_seconds": 2.1748384998645633,
+          "optimized_value": 8575.671839986717,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11888,
+          "elapsed_seconds": 2.1768907997757196,
+          "optimized_value": 8575.038032323795,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 11941,
+          "elapsed_seconds": 2.18093299982138,
+          "optimized_value": 8558.883638996898,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 12030,
+          "elapsed_seconds": 2.188382799969986,
+          "optimized_value": 8555.768000488095,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 12040,
+          "elapsed_seconds": 2.1892834999598563,
+          "optimized_value": 8551.75460402358,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 12075,
+          "elapsed_seconds": 2.191815999802202,
+          "optimized_value": 8551.271591658098,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 12096,
+          "elapsed_seconds": 2.1933138999156654,
+          "optimized_value": 8529.57094243595,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 12132,
+          "elapsed_seconds": 2.197367599932477,
+          "optimized_value": 8518.48805994961,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 12151,
+          "elapsed_seconds": 2.198515199823305,
+          "optimized_value": 8509.446206478287,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 12175,
+          "elapsed_seconds": 2.2006347998976707,
+          "optimized_value": 8499.427223466955,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 12212,
+          "elapsed_seconds": 2.2023928998969495,
+          "optimized_value": 8492.188420434368,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 12250,
+          "elapsed_seconds": 2.204084699973464,
+          "optimized_value": 8490.089420554574,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 12277,
+          "elapsed_seconds": 2.205327799776569,
+          "optimized_value": 8477.758327630554,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 12500,
+          "elapsed_seconds": 2.215922199888155,
+          "optimized_value": 8477.244280902576,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 12564,
+          "elapsed_seconds": 2.2216226998716593,
+          "optimized_value": 8439.316050790674,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 12591,
+          "elapsed_seconds": 2.223075499990955,
+          "optimized_value": 8434.539308202155,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 12635,
+          "elapsed_seconds": 2.225176899926737,
+          "optimized_value": 8423.147892179859,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 12662,
+          "elapsed_seconds": 2.226320199901238,
+          "optimized_value": 8419.144365947359,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 12736,
+          "elapsed_seconds": 2.234427599934861,
+          "optimized_value": 8399.001510587252,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 12800,
+          "elapsed_seconds": 2.2395281000062823,
+          "optimized_value": 8375.71207357413,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 13419,
+          "elapsed_seconds": 2.277787799946964,
+          "optimized_value": 8374.158353027049,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 13453,
+          "elapsed_seconds": 2.2792509999126196,
+          "optimized_value": 8373.93923384737,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 13464,
+          "elapsed_seconds": 2.2800030999351293,
+          "optimized_value": 8369.655112494773,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 13555,
+          "elapsed_seconds": 2.2856744998134673,
+          "optimized_value": 8360.900069631682,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 13578,
+          "elapsed_seconds": 2.2878896999172866,
+          "optimized_value": 8336.527030468478,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 13607,
+          "elapsed_seconds": 2.2891833998728544,
+          "optimized_value": 8317.989904749098,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 13627,
+          "elapsed_seconds": 2.291531999828294,
+          "optimized_value": 8315.245996219617,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 13646,
+          "elapsed_seconds": 2.2925976999104023,
+          "optimized_value": 8310.915715975134,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 13929,
+          "elapsed_seconds": 2.3079266999848187,
+          "optimized_value": 8310.603354018982,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 13963,
+          "elapsed_seconds": 2.309417799813673,
+          "optimized_value": 8310.119724716222,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 13966,
+          "elapsed_seconds": 2.3095079998020083,
+          "optimized_value": 8310.107429771939,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 13981,
+          "elapsed_seconds": 2.3101411999668926,
+          "optimized_value": 8307.591368142508,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 14050,
+          "elapsed_seconds": 2.3155297997873276,
+          "optimized_value": 8304.336088318476,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 14055,
+          "elapsed_seconds": 2.3158229999244213,
+          "optimized_value": 8302.08816209343,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 14077,
+          "elapsed_seconds": 2.3176907999441028,
+          "optimized_value": 8301.214454918972,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 14078,
+          "elapsed_seconds": 2.3177696999628097,
+          "optimized_value": 8301.06574642324,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 14118,
+          "elapsed_seconds": 2.3198735998012125,
+          "optimized_value": 8293.578258865808,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 14695,
+          "elapsed_seconds": 2.358469999860972,
+          "optimized_value": 8290.036301469687,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 14720,
+          "elapsed_seconds": 2.362140799872577,
+          "optimized_value": 8289.95466979992,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 15027,
+          "elapsed_seconds": 2.3848223998211324,
+          "optimized_value": 8287.908230104465,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 15047,
+          "elapsed_seconds": 2.3868198997806758,
+          "optimized_value": 8276.615082356167,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 15094,
+          "elapsed_seconds": 2.389916299842298,
+          "optimized_value": 8270.975194307352,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 15099,
+          "elapsed_seconds": 2.3902642999310046,
+          "optimized_value": 8268.030243810885,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 15111,
+          "elapsed_seconds": 2.3908809998538345,
+          "optimized_value": 8266.461011402762,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 15191,
+          "elapsed_seconds": 2.395792899886146,
+          "optimized_value": 8265.328314495535,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 15221,
+          "elapsed_seconds": 2.3974146998953074,
+          "optimized_value": 8263.990322101177,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 15285,
+          "elapsed_seconds": 2.403468599775806,
+          "optimized_value": 8248.11721490132,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 15300,
+          "elapsed_seconds": 2.405694199958816,
+          "optimized_value": 8246.681453381918,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 15470,
+          "elapsed_seconds": 2.413828899851069,
+          "optimized_value": 8171.4270327246595,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 15569,
+          "elapsed_seconds": 2.4217346999794245,
+          "optimized_value": 8171.323690069223,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 15646,
+          "elapsed_seconds": 2.425714299781248,
+          "optimized_value": 8161.802942113143,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 15688,
+          "elapsed_seconds": 2.427673499798402,
+          "optimized_value": 8151.434701940989,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 15715,
+          "elapsed_seconds": 2.4286550998222083,
+          "optimized_value": 8151.269451220447,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 15754,
+          "elapsed_seconds": 2.430241899797693,
+          "optimized_value": 8149.528925164268,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 15759,
+          "elapsed_seconds": 2.4304087997879833,
+          "optimized_value": 8148.476764997433,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 15941,
+          "elapsed_seconds": 2.4436045999173075,
+          "optimized_value": 8147.96961786376,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 15968,
+          "elapsed_seconds": 2.4452437998261303,
+          "optimized_value": 8135.937264648035,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 16025,
+          "elapsed_seconds": 2.450068999780342,
+          "optimized_value": 8124.957825560137,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 16073,
+          "elapsed_seconds": 2.455521099967882,
+          "optimized_value": 8123.5474204935,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 16157,
+          "elapsed_seconds": 2.4598069000057876,
+          "optimized_value": 8052.461391689016,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 16199,
+          "elapsed_seconds": 2.462026699911803,
+          "optimized_value": 8041.881315110282,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 16232,
+          "elapsed_seconds": 2.464281699853018,
+          "optimized_value": 8033.086644047561,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 16252,
+          "elapsed_seconds": 2.4654433999676257,
+          "optimized_value": 8032.1382203760295,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 16309,
+          "elapsed_seconds": 2.468778599984944,
+          "optimized_value": 8031.335524975815,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 16349,
+          "elapsed_seconds": 2.4704043997917324,
+          "optimized_value": 8019.294306086262,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 16400,
+          "elapsed_seconds": 2.4728759999852628,
+          "optimized_value": 8014.178499727544,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 16494,
+          "elapsed_seconds": 2.4767535999417305,
+          "optimized_value": 7995.347052095581,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 16500,
+          "elapsed_seconds": 2.4770909999497235,
+          "optimized_value": 7990.850611137739,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 16525,
+          "elapsed_seconds": 2.4782586998771876,
+          "optimized_value": 7978.982242578168,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 16572,
+          "elapsed_seconds": 2.4821359999477863,
+          "optimized_value": 7976.881973617481,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 16621,
+          "elapsed_seconds": 2.4861223998013884,
+          "optimized_value": 7975.859221544987,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 16725,
+          "elapsed_seconds": 2.4930073998402804,
+          "optimized_value": 7961.132015900205,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 16762,
+          "elapsed_seconds": 2.4952985998243093,
+          "optimized_value": 7955.915773867239,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 16772,
+          "elapsed_seconds": 2.4959206997882575,
+          "optimized_value": 7952.756603615237,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 16773,
+          "elapsed_seconds": 2.495994299883023,
+          "optimized_value": 7950.273245942562,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 16898,
+          "elapsed_seconds": 2.502927799941972,
+          "optimized_value": 7942.571751334524,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 16914,
+          "elapsed_seconds": 2.503687599906698,
+          "optimized_value": 7939.829807789533,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 17172,
+          "elapsed_seconds": 2.5188341999892145,
+          "optimized_value": 7927.701877890137,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 17181,
+          "elapsed_seconds": 2.519162399927154,
+          "optimized_value": 7912.6953924867785,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 17265,
+          "elapsed_seconds": 2.524884399957955,
+          "optimized_value": 7912.484780512683,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 17267,
+          "elapsed_seconds": 2.5250592997763306,
+          "optimized_value": 7910.449789507859,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 17341,
+          "elapsed_seconds": 2.529781499877572,
+          "optimized_value": 7903.703839424243,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 17370,
+          "elapsed_seconds": 2.531138999853283,
+          "optimized_value": 7901.853994210211,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 17414,
+          "elapsed_seconds": 2.534145399928093,
+          "optimized_value": 7901.65377064586,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 17445,
+          "elapsed_seconds": 2.5360918999649584,
+          "optimized_value": 7901.422276605173,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 17519,
+          "elapsed_seconds": 2.5395806999877095,
+          "optimized_value": 7897.091718428999,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 17536,
+          "elapsed_seconds": 2.540380699792877,
+          "optimized_value": 7886.278072350751,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 17546,
+          "elapsed_seconds": 2.540765799814835,
+          "optimized_value": 7878.443057618842,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 17605,
+          "elapsed_seconds": 2.546586499782279,
+          "optimized_value": 7875.514308316822,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 17716,
+          "elapsed_seconds": 2.5535597999114543,
+          "optimized_value": 7874.16524381977,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 17728,
+          "elapsed_seconds": 2.5544226998463273,
+          "optimized_value": 7870.723578586632,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 17786,
+          "elapsed_seconds": 2.558794599957764,
+          "optimized_value": 7863.470075752708,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 17902,
+          "elapsed_seconds": 2.5649339999072254,
+          "optimized_value": 7858.716511411005,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 18345,
+          "elapsed_seconds": 2.5897021999116987,
+          "optimized_value": 7851.784476969624,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 18537,
+          "elapsed_seconds": 2.598374499939382,
+          "optimized_value": 7847.607595431788,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 18574,
+          "elapsed_seconds": 2.6004220999311656,
+          "optimized_value": 7846.905195397012,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 18784,
+          "elapsed_seconds": 2.6167787997983396,
+          "optimized_value": 7840.8401467368585,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 19012,
+          "elapsed_seconds": 2.62980299978517,
+          "optimized_value": 7803.886069060364,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 19023,
+          "elapsed_seconds": 2.630022499943152,
+          "optimized_value": 7797.849397077072,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 19047,
+          "elapsed_seconds": 2.6311107999645174,
+          "optimized_value": 7788.2789984798055,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 19102,
+          "elapsed_seconds": 2.6352187998127192,
+          "optimized_value": 7787.932170845263,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 19243,
+          "elapsed_seconds": 2.6440287998411804,
+          "optimized_value": 7775.325846932365,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 19321,
+          "elapsed_seconds": 2.647655899869278,
+          "optimized_value": 7773.745905951734,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 19370,
+          "elapsed_seconds": 2.6506432997994125,
+          "optimized_value": 7772.871905618431,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 19391,
+          "elapsed_seconds": 2.6525636999867857,
+          "optimized_value": 7760.539101757503,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 19525,
+          "elapsed_seconds": 2.661891099996865,
+          "optimized_value": 7748.719950350805,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 19892,
+          "elapsed_seconds": 2.685288299806416,
+          "optimized_value": 7741.735733180783,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 20000,
+          "elapsed_seconds": 2.748569699935615,
+          "optimized_value": 7276.473685972148,
+          "used_layer_count": 39
+        }
+      ],
+      "iterations": 20000,
+      "elapsed_seconds": 1.4860630000475794,
+      "termination_reason": "iteration_budget"
+    }
+  ],
+  "iterations": 20000,
+  "termination_reason": "iteration_budget",
+  "projection": {
+    "projection": "orthographic",
+    "azimuth_degrees": 45.0,
+    "elevation_degrees": 35.0,
+    "pixels_per_xy_span": 384,
+    "z_step_world": 0.1363402923410712,
+    "polygons_measured": 168,
+    "covered_pixel_count": 18227,
+    "overdraw_pixel_count": 13813,
+    "overdraw_sample_count": 55502,
+    "max_face_depth": 14,
+    "projected_pillar_length_px": 19782.32527308852
+  },
+  "status": "verified",
+  "case_elapsed_seconds": 5.188000000081956
+}

@@ -1,0 +1,424 @@
+{
+  "experiment_id": "exp04_solver_benchmark",
+  "started_utc": "2026-11-25T15:09:24.716811+00:00",
+  "source_article": "https://vdslab.esa.io/posts/9193",
+  "regularization": 1e-05,
+  "input_files": {
+    "original": {
+      "file": "original.json",
+      "sha256": "bc21935cccb75e36b17c92e7164032eed8f278606f5767a14efd9d212c82bd7b"
+    }
+  },
+  "conditions": {
+    "greedy-input": {
+      "solver": "solve_layers_compact.py",
+      "method": "greedy-input",
+      "objective": "hybrid",
+      "alpha": 0.25,
+      "beta": 0.005,
+      "warm_start": 0,
+      "moves": [
+        "move",
+        "kempe",
+        "swap",
+        "shift"
+      ],
+      "optimize_free_edges": null
+    },
+    "greedy-size": {
+      "solver": "solve_layers_compact.py",
+      "method": "greedy-size",
+      "objective": "hybrid",
+      "alpha": 0.25,
+      "beta": 0.005,
+      "warm_start": 0,
+      "moves": [
+        "move",
+        "kempe",
+        "swap",
+        "shift"
+      ],
+      "optimize_free_edges": null
+    },
+    "greedy-degree": {
+      "solver": "solve_layers_compact.py",
+      "method": "greedy-degree",
+      "objective": "hybrid",
+      "alpha": 0.25,
+      "beta": 0.005,
+      "warm_start": 0,
+      "moves": [
+        "move",
+        "kempe",
+        "swap",
+        "shift"
+      ],
+      "optimize_free_edges": null
+    },
+    "dsatur": {
+      "solver": "solve_layers_compact.py",
+      "method": "dsatur",
+      "objective": "hybrid",
+      "alpha": 0.25,
+      "beta": 0.005,
+      "warm_start": 0,
+      "moves": [
+        "move",
+        "kempe",
+        "swap",
+        "shift"
+      ],
+      "optimize_free_edges": null
+    },
+    "dsatur-free": {
+      "solver": "solve_layers_compact.py",
+      "method": "dsatur",
+      "objective": "hybrid",
+      "alpha": 0.25,
+      "beta": 0.005,
+      "warm_start": 0,
+      "moves": [
+        "move",
+        "kempe",
+        "swap",
+        "shift"
+      ],
+      "optimize_free_edges": true
+    },
+    "qp-l2": {
+      "solver": "solve_layers.py",
+      "method": "anneal",
+      "objective": "squared",
+      "alpha": 0.25,
+      "beta": 0.005,
+      "warm_start": 0,
+      "moves": [
+        "move",
+        "kempe",
+        "swap",
+        "shift"
+      ],
+      "optimize_free_edges": null
+    },
+    "lp-l1": {
+      "solver": "solve_layers_dsatur_l1.py",
+      "method": "anneal",
+      "objective": "weighted-l1",
+      "alpha": 0.25,
+      "beta": 0.005,
+      "warm_start": 0,
+      "moves": [
+        "move",
+        "kempe",
+        "swap",
+        "shift"
+      ],
+      "optimize_free_edges": null
+    },
+    "tree-sa": {
+      "solver": "solve_layers_tree.py",
+      "method": "anneal",
+      "objective": "squared",
+      "alpha": 0.25,
+      "beta": 0.005,
+      "warm_start": 0,
+      "moves": [
+        "move",
+        "kempe",
+        "swap",
+        "shift"
+      ],
+      "optimize_free_edges": null
+    },
+    "swap": {
+      "solver": "solve_layers_compact.py",
+      "method": "anneal",
+      "objective": "hybrid",
+      "alpha": 0.25,
+      "beta": 0.005,
+      "warm_start": 0,
+      "moves": [
+        "swap"
+      ],
+      "optimize_free_edges": null
+    },
+    "swap-move": {
+      "solver": "solve_layers_compact.py",
+      "method": "anneal",
+      "objective": "hybrid",
+      "alpha": 0.25,
+      "beta": 0.005,
+      "warm_start": 0,
+      "moves": [
+        "swap",
+        "move"
+      ],
+      "optimize_free_edges": null
+    },
+    "swap-move-kempe": {
+      "solver": "solve_layers_compact.py",
+      "method": "anneal",
+      "objective": "hybrid",
+      "alpha": 0.25,
+      "beta": 0.005,
+      "warm_start": 0,
+      "moves": [
+        "swap",
+        "move",
+        "kempe"
+      ],
+      "optimize_free_edges": null
+    },
+    "full": {
+      "solver": "solve_layers_compact.py",
+      "method": "anneal",
+      "objective": "hybrid",
+      "alpha": 0.25,
+      "beta": 0.005,
+      "warm_start": 0,
+      "moves": [
+        "move",
+        "kempe",
+        "swap",
+        "shift"
+      ],
+      "optimize_free_edges": null
+    }
+  },
+  "case_budget_seconds": 35.0,
+  "total_budget_seconds": 540.0,
+  "trial_limit": 20000,
+  "cases": [
+    {
+      "input": "original",
+      "condition": "greedy-input",
+      "seed": null
+    },
+    {
+      "input": "original",
+      "condition": "greedy-size",
+      "seed": null
+    },
+    {
+      "input": "original",
+      "condition": "greedy-degree",
+      "seed": null
+    },
+    {
+      "input": "original",
+      "condition": "dsatur",
+      "seed": null
+    },
+    {
+      "input": "original",
+      "condition": "dsatur-free",
+      "seed": null
+    },
+    {
+      "input": "original",
+      "condition": "qp-l2",
+      "seed": null
+    },
+    {
+      "input": "original",
+      "condition": "lp-l1",
+      "seed": null
+    },
+    {
+      "input": "original",
+      "condition": "tree-sa",
+      "seed": 0
+    },
+    {
+      "input": "original",
+      "condition": "tree-sa",
+      "seed": 1
+    },
+    {
+      "input": "original",
+      "condition": "tree-sa",
+      "seed": 2
+    },
+    {
+      "input": "original",
+      "condition": "tree-sa",
+      "seed": 3
+    },
+    {
+      "input": "original",
+      "condition": "tree-sa",
+      "seed": 4
+    },
+    {
+      "input": "original",
+      "condition": "swap",
+      "seed": 0
+    },
+    {
+      "input": "original",
+      "condition": "swap",
+      "seed": 1
+    },
+    {
+      "input": "original",
+      "condition": "swap",
+      "seed": 2
+    },
+    {
+      "input": "original",
+      "condition": "swap",
+      "seed": 3
+    },
+    {
+      "input": "original",
+      "condition": "swap",
+      "seed": 4
+    },
+    {
+      "input": "original",
+      "condition": "swap-move",
+      "seed": 0
+    },
+    {
+      "input": "original",
+      "condition": "swap-move",
+      "seed": 1
+    },
+    {
+      "input": "original",
+      "condition": "swap-move",
+      "seed": 2
+    },
+    {
+      "input": "original",
+      "condition": "swap-move",
+      "seed": 3
+    },
+    {
+      "input": "original",
+      "condition": "swap-move",
+      "seed": 4
+    },
+    {
+      "input": "original",
+      "condition": "swap-move-kempe",
+      "seed": 0
+    },
+    {
+      "input": "original",
+      "condition": "swap-move-kempe",
+      "seed": 1
+    },
+    {
+      "input": "original",
+      "condition": "swap-move-kempe",
+      "seed": 2
+    },
+    {
+      "input": "original",
+      "condition": "swap-move-kempe",
+      "seed": 3
+    },
+    {
+      "input": "original",
+      "condition": "swap-move-kempe",
+      "seed": 4
+    },
+    {
+      "input": "original",
+      "condition": "full",
+      "seed": 0
+    },
+    {
+      "input": "original",
+      "condition": "full",
+      "seed": 1
+    },
+    {
+      "input": "original",
+      "condition": "full",
+      "seed": 2
+    },
+    {
+      "input": "original",
+      "condition": "full",
+      "seed": 3
+    },
+    {
+      "input": "original",
+      "condition": "full",
+      "seed": 4
+    }
+  ],
+  "provenance": {
+    "git_commit": "9453cc7511f2e52a50313aee097cf38f7805aead",
+    "relevant_git_status": [
+      "?? experiments/exp04_solver_benchmark/run_experiment.py",
+      "?? experiments/visnotes_common.py",
+      "?? experiments/visnotes_exact.py",
+      "?? experiments/visnotes_metrics.py",
+      "?? solve_layers_compact.py"
+    ],
+    "source_sha256": {
+      "experiments/visnotes_common.py": "3a5953f7b39df0dea3cd1e912b78fe15f9e2e961e3fba44eddb0ce98e7e841b0",
+      "experiments/visnotes_metrics.py": "1a862bd1a82ac2068bcfcf7886bab6402efc8da9fdf2ff4c67090efb7fbbf318",
+      "experiments/visnotes_exact.py": "be441fb58c547baee8adab568de517820e629256ea0614e80aec201c68d57107",
+      "experiments/exp04_solver_benchmark/run_experiment.py": "c8daa3a830b1c58284910c8effc9870506e161e9bd2857a75d6aada7025e7484",
+      "experiments/tree_optimization_comparison_01/review_results.py": "82b6264e19c081a1f4dab48fc9bbac0dcd6ef3847386b68d37f0afabb937ff37",
+      "solve_layers.py": "8909d5eb5b2fe8301f5893b5d960f666ec50f267fa6ca34c2f38482648f1a985",
+      "solve_layers_dsatur_l1.py": "4ff99edf40e396f6039cc4d01d347cfde82e61a81bfb923435ab9a9caad1b5b1",
+      "solve_layers_compact.py": "3a4c7f72e0a53b1c668d4040c7a45c9d4e73426b40cc3c674f510ee404122d88",
+      "solve_layers_tree.py": "888705b38cbec77b498b6332578c50215a61cc33f5e9a025a5d8ab493991787c",
+      "solve_layers_dummy.py": "f3f2031637b67c810bee903c4aa534ba420cd7c27dba4eb9326d3e14f12ddd75"
+    },
+    "environment": {
+      "python": "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe",
+      "python_version": "3.11.5",
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "shapely": "2.1.2",
+      "geos": "3.13.1",
+      "thread_limits": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "BLIS_NUM_THREADS": "1"
+      }
+    },
+    "command": [
+      "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe",
+      "-B",
+      "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\experiments\\exp04_solver_benchmark\\run_experiment.py",
+      "--output",
+      "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_remaining_01\\exp04",
+      "--total-budget",
+      "540",
+      "--inputs",
+      "original",
+      "--case-budget",
+      "35",
+      "--max-iterations",
+      "20000",
+      "--seeds",
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "--conditions",
+      "greedy-input",
+      "greedy-size",
+      "greedy-degree",
+      "dsatur",
+      "dsatur-free",
+      "qp-l2",
+      "lp-l1",
+      "tree-sa",
+      "swap",
+      "swap-move",
+      "swap-move-kempe",
+      "full"
+    ],
+    "working_directory": "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization"
+  }
+}

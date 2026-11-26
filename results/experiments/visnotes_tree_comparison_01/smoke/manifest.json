@@ -1,0 +1,122 @@
+{
+  "experiment_id": "visnotes_tree_comparison_01",
+  "input": "original.json",
+  "input_sha256": "bc21935cccb75e36b17c92e7164032eed8f278606f5767a14efd9d212c82bd7b",
+  "problem_signature": "24615e48a51043390502ac57c4068c00279a2a05069b364c3660c3bdbf76f11d",
+  "overlaps_sha256": "9c749e83013715d37924554a8be1a53cd65e739d0781674d0880b7ed542e6e76",
+  "cases": [
+    {
+      "input": "original",
+      "condition": "tree-squared",
+      "seed": 0
+    },
+    {
+      "input": "original",
+      "condition": "compact-squared",
+      "seed": 0
+    },
+    {
+      "input": "original",
+      "condition": "compact-hybrid",
+      "seed": 0
+    }
+  ],
+  "methods": {
+    "tree-squared": {
+      "solver": "solve_layers_tree.py",
+      "method": "anneal",
+      "objective": "squared",
+      "alpha": 0.25,
+      "beta": 0.005,
+      "warm_start": 0,
+      "moves": [
+        "move",
+        "kempe",
+        "swap",
+        "shift"
+      ],
+      "optimize_free_edges": null
+    },
+    "compact-squared": {
+      "solver": "solve_layers_compact.py",
+      "method": "anneal",
+      "objective": "squared",
+      "alpha": 0.25,
+      "beta": 0.005,
+      "warm_start": 0,
+      "moves": [
+        "move",
+        "kempe",
+        "swap",
+        "shift"
+      ],
+      "optimize_free_edges": null
+    },
+    "compact-hybrid": {
+      "solver": "solve_layers_compact.py",
+      "method": "anneal",
+      "objective": "hybrid",
+      "alpha": 0.25,
+      "beta": 0.005,
+      "warm_start": 0,
+      "moves": [
+        "move",
+        "kempe",
+        "swap",
+        "shift"
+      ],
+      "optimize_free_edges": null
+    }
+  },
+  "trial_limit": 10,
+  "regularization": 1e-05,
+  "solver_budget_seconds": 25.0,
+  "case_wall_limit_seconds": 45.0,
+  "total_budget_seconds": 480.0,
+  "provenance": {
+    "git_commit": "9453cc7511f2e52a50313aee097cf38f7805aead",
+    "relevant_git_status": [
+      "?? experiments/exp04_solver_benchmark/run_experiment.py",
+      "?? experiments/visnotes_common.py",
+      "?? experiments/visnotes_exact.py",
+      "?? experiments/visnotes_metrics.py",
+      "?? solve_layers_compact.py"
+    ],
+    "source_sha256": {
+      "experiments/visnotes_common.py": "3a5953f7b39df0dea3cd1e912b78fe15f9e2e961e3fba44eddb0ce98e7e841b0",
+      "experiments/visnotes_metrics.py": "1a862bd1a82ac2068bcfcf7886bab6402efc8da9fdf2ff4c67090efb7fbbf318",
+      "experiments/visnotes_exact.py": "be441fb58c547baee8adab568de517820e629256ea0614e80aec201c68d57107",
+      "experiments/exp04_solver_benchmark/run_experiment.py": "c8daa3a830b1c58284910c8effc9870506e161e9bd2857a75d6aada7025e7484",
+      "experiments/tree_optimization_comparison_01/review_results.py": "82b6264e19c081a1f4dab48fc9bbac0dcd6ef3847386b68d37f0afabb937ff37",
+      "solve_layers.py": "8909d5eb5b2fe8301f5893b5d960f666ec50f267fa6ca34c2f38482648f1a985",
+      "solve_layers_dsatur_l1.py": "4ff99edf40e396f6039cc4d01d347cfde82e61a81bfb923435ab9a9caad1b5b1",
+      "solve_layers_tree.py": "888705b38cbec77b498b6332578c50215a61cc33f5e9a025a5d8ab493991787c",
+      "solve_layers_compact.py": "3a4c7f72e0a53b1c668d4040c7a45c9d4e73426b40cc3c674f510ee404122d88",
+      "solve_layers_dummy.py": "f3f2031637b67c810bee903c4aa534ba420cd7c27dba4eb9326d3e14f12ddd75",
+      "experiments/visnotes_tree_comparison_01/run_experiment.py": "85fa93706461eebb1692aa7274b5e2795b44b1c6dbe28a0368f72209b909c60b"
+    },
+    "environment": {
+      "python": "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe",
+      "python_version": "3.11.5",
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "shapely": "2.1.2",
+      "geos": "3.13.1",
+      "thread_limits": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "BLIS_NUM_THREADS": "1"
+      }
+    },
+    "command": [
+      "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe",
+      "-B",
+      "experiments/visnotes_tree_comparison_01/run_experiment.py",
+      "--smoke",
+      "--output",
+      "results/experiments/visnotes_tree_comparison_01/smoke"
+    ],
+    "working_directory": "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization"
+  }
+}

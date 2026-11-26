@@ -1,0 +1,280 @@
+{
+  "input": "six-mixed",
+  "condition": "hybrid-0.25-plus-1",
+  "seed": 0,
+  "command": [
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\solve_layers_compact.py",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\tree_optimization_comparison_01\\small\\six-mixed\\input.json",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_remaining_01\\exp03-small-recovery-01\\six-mixed\\hybrid-0.25-plus-1\\seed-0\\layout.json",
+    "--reg",
+    "1e-05",
+    "--report",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_remaining_01\\exp03-small-recovery-01\\six-mixed\\hybrid-0.25-plus-1\\seed-0\\report.json",
+    "--method",
+    "anneal",
+    "--objective",
+    "hybrid",
+    "--alpha",
+    "0.25",
+    "--beta",
+    "0.005",
+    "--seed",
+    "0",
+    "--max-iterations",
+    "20000",
+    "--time-budget",
+    "32.2",
+    "--warm-start-extra-layers",
+    "1",
+    "--moves",
+    "move",
+    "kempe",
+    "swap",
+    "shift"
+  ],
+  "case_directory": "results/experiments/visnotes_remaining_01/exp03-small-recovery-01/six-mixed/hybrid-0.25-plus-1/seed-0",
+  "input_sha256": "c4e3dbbc98173c68005f17bb68595aaedf860e3eeb99a3ca2714d1d2d9790403",
+  "subprocess_wall_budget": 35.0,
+  "solver_internal_budget": 32.2,
+  "solver_wall_seconds": 2.156999999890104,
+  "exit_code": 0,
+  "metrics": {
+    "l1_regularized": 1.00013,
+    "l1_shared_vertices": 1,
+    "l2_regularized": 1.00017,
+    "l2_shared_vertices": 1,
+    "l2_scaled_qp": 0.6667688871852135,
+    "height_min": 0,
+    "height_max": 2,
+    "height_range": 2,
+    "pillar_length": 1,
+    "overlap_violation_count": 0,
+    "order_violation_count": 0,
+    "max_order_violation": 0,
+    "used_layer_count": 3,
+    "pillar_square_sum": 1,
+    "degree_span_square_sum": 2,
+    "top5_constrained_hub_mean_span": 0.0,
+    "constrained_hubs": [
+      {
+        "node_id": 1,
+        "degree": 2,
+        "constrained_degree": 2,
+        "span": 0
+      },
+      {
+        "node_id": 2,
+        "degree": 2,
+        "constrained_degree": 2,
+        "span": 0
+      },
+      {
+        "node_id": 5,
+        "degree": 2,
+        "constrained_degree": 2,
+        "span": 0
+      },
+      {
+        "node_id": 6,
+        "degree": 2,
+        "constrained_degree": 2,
+        "span": 0
+      }
+    ]
+  },
+  "height_type": "integer",
+  "stages": [
+    {
+      "cap": 3,
+      "metrics": {
+        "l1_regularized": 1.00013,
+        "l1_shared_vertices": 1,
+        "l2_regularized": 1.00017,
+        "l2_shared_vertices": 1,
+        "l2_scaled_qp": 0.6667688871852135,
+        "height_min": 0,
+        "height_max": 2,
+        "height_range": 2,
+        "pillar_length": 1,
+        "overlap_violation_count": 0,
+        "order_violation_count": 0,
+        "max_order_violation": 0,
+        "used_layer_count": 3,
+        "pillar_square_sum": 1,
+        "degree_span_square_sum": 2,
+        "top5_constrained_hub_mean_span": 0.0,
+        "constrained_hubs": [
+          {
+            "node_id": 1,
+            "degree": 2,
+            "constrained_degree": 2,
+            "span": 0
+          },
+          {
+            "node_id": 2,
+            "degree": 2,
+            "constrained_degree": 2,
+            "span": 0
+          },
+          {
+            "node_id": 5,
+            "degree": 2,
+            "constrained_degree": 2,
+            "span": 0
+          },
+          {
+            "node_id": 6,
+            "degree": 2,
+            "constrained_degree": 2,
+            "span": 0
+          }
+        ]
+      },
+      "optimized_value": 1.1666922217963034,
+      "trajectory": [
+        {
+          "iteration": 0,
+          "elapsed_seconds": 0.0037668999284505844,
+          "optimized_value": 1.1666972217129714,
+          "used_layer_count": 3
+        },
+        {
+          "iteration": 0,
+          "elapsed_seconds": 0.003920499933883548,
+          "optimized_value": 1.1666922217963034,
+          "used_layer_count": 3
+        }
+      ],
+      "iterations": 10000,
+      "elapsed_seconds": 0.2839162000454962,
+      "termination_reason": "iteration_budget",
+      "oracle": {
+        "enumeration": {
+          "feasible_count": 36,
+          "value": 1.1666922217963034,
+          "layers": [
+            0,
+            1,
+            0,
+            1,
+            2,
+            1
+          ]
+        },
+        "milp": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "lower_bound": 1.1666922217963034,
+          "solver_relative_gap": 0.0,
+          "value": 1.1666922217963034,
+          "layers": [
+            0,
+            1,
+            0,
+            1,
+            2,
+            1
+          ],
+          "reported_value": 1.1666922217963034
+        }
+      },
+      "optimality_gap": 0.0
+    },
+    {
+      "cap": 4,
+      "metrics": {
+        "l1_regularized": 1.00013,
+        "l1_shared_vertices": 1,
+        "l2_regularized": 1.00017,
+        "l2_shared_vertices": 1,
+        "l2_scaled_qp": 0.6667688871852135,
+        "height_min": 0,
+        "height_max": 2,
+        "height_range": 2,
+        "pillar_length": 1,
+        "overlap_violation_count": 0,
+        "order_violation_count": 0,
+        "max_order_violation": 0,
+        "used_layer_count": 3,
+        "pillar_square_sum": 1,
+        "degree_span_square_sum": 2,
+        "top5_constrained_hub_mean_span": 0.0,
+        "constrained_hubs": [
+          {
+            "node_id": 1,
+            "degree": 2,
+            "constrained_degree": 2,
+            "span": 0
+          },
+          {
+            "node_id": 2,
+            "degree": 2,
+            "constrained_degree": 2,
+            "span": 0
+          },
+          {
+            "node_id": 5,
+            "degree": 2,
+            "constrained_degree": 2,
+            "span": 0
+          },
+          {
+            "node_id": 6,
+            "degree": 2,
+            "constrained_degree": 2,
+            "span": 0
+          }
+        ]
+      },
+      "optimized_value": 1.1666922217963034,
+      "trajectory": [
+        {
+          "iteration": 10000,
+          "elapsed_seconds": 0.2876905999146402,
+          "optimized_value": 1.1666922217963034,
+          "used_layer_count": 3
+        }
+      ],
+      "iterations": 10000,
+      "elapsed_seconds": 0.2579626999795437,
+      "termination_reason": "iteration_budget",
+      "oracle": {
+        "enumeration": {
+          "feasible_count": 468,
+          "value": 1.1666922217963034,
+          "layers": [
+            0,
+            1,
+            0,
+            1,
+            2,
+            1
+          ]
+        },
+        "milp": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "lower_bound": 1.1666922217963032,
+          "solver_relative_gap": 0.0,
+          "value": 1.1666922217963034,
+          "layers": [
+            0,
+            1,
+            0,
+            1,
+            2,
+            1
+          ],
+          "reported_value": 1.1666922217963032
+        }
+      },
+      "optimality_gap": 0.0
+    }
+  ],
+  "iterations": 20000,
+  "termination_reason": "iteration_budget",
+  "status": "verified",
+  "case_elapsed_seconds": 2.3129999998491257
+}

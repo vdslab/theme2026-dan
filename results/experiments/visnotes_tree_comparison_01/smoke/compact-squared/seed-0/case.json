@@ -1,0 +1,167 @@
+{
+  "input": "original",
+  "condition": "compact-squared",
+  "seed": 0,
+  "command": [
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\solve_layers_compact.py",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\original.json",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_tree_comparison_01\\smoke\\compact-squared\\seed-0\\layout.json",
+    "--reg",
+    "1e-05",
+    "--report",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_tree_comparison_01\\smoke\\compact-squared\\seed-0\\report.json",
+    "--method",
+    "anneal",
+    "--objective",
+    "squared",
+    "--alpha",
+    "0.25",
+    "--beta",
+    "0.005",
+    "--seed",
+    "0",
+    "--max-iterations",
+    "10",
+    "--time-budget",
+    "25.0",
+    "--warm-start-extra-layers",
+    "0",
+    "--moves",
+    "move",
+    "kempe",
+    "swap",
+    "shift"
+  ],
+  "case_directory": "results/experiments/visnotes_tree_comparison_01/smoke/compact-squared/seed-0",
+  "status": "verified",
+  "metrics": {
+    "l1_regularized": 86141.31948,
+    "l1_shared_vertices": 86135,
+    "l2_regularized": 1386445.4633,
+    "l2_shared_vertices": 1386355,
+    "l2_scaled_qp": 5729.0682676843335,
+    "height_min": 0,
+    "height_max": 38,
+    "height_range": 38,
+    "pillar_length": 8457,
+    "overlap_violation_count": 0,
+    "order_violation_count": 0,
+    "max_order_violation": 0,
+    "used_layer_count": 39,
+    "pillar_square_sum": 210341,
+    "degree_span_square_sum": 1566227,
+    "top5_constrained_hub_mean_span": 30.8,
+    "constrained_hubs": [
+      {
+        "node_id": 198,
+        "degree": 22,
+        "constrained_degree": 22,
+        "span": 35
+      },
+      {
+        "node_id": 96,
+        "degree": 22,
+        "constrained_degree": 21,
+        "span": 28
+      },
+      {
+        "node_id": 207,
+        "degree": 18,
+        "constrained_degree": 18,
+        "span": 36
+      },
+      {
+        "node_id": 199,
+        "degree": 19,
+        "constrained_degree": 17,
+        "span": 28
+      },
+      {
+        "node_id": 2,
+        "degree": 18,
+        "constrained_degree": 15,
+        "span": 27
+      }
+    ]
+  },
+  "projection": {
+    "projection": "orthographic",
+    "azimuth_degrees": 45.0,
+    "elevation_degrees": 35.0,
+    "pixels_per_xy_span": 384,
+    "z_step_world": 0.1363402923410712,
+    "polygons_measured": 168,
+    "covered_pixel_count": 19974,
+    "overdraw_pixel_count": 14021,
+    "overdraw_sample_count": 53859,
+    "max_face_depth": 13,
+    "projected_pillar_length_px": 26601.864340039694
+  },
+  "solver_wall_seconds": 2.7339999999385327,
+  "iterations": 10,
+  "termination_reason": "iteration_budget",
+  "trajectory": [
+    {
+      "iteration": 0,
+      "elapsed_seconds": 0.8549758000299335,
+      "optimized_value": 7375.935134644185,
+      "used_layer_count": 39
+    },
+    {
+      "iteration": 0,
+      "elapsed_seconds": 0.8765094000846148,
+      "optimized_value": 6232.930353152998,
+      "used_layer_count": 39
+    },
+    {
+      "iteration": 1,
+      "elapsed_seconds": 0.8766034999862313,
+      "optimized_value": 6135.646650970647,
+      "used_layer_count": 39
+    },
+    {
+      "iteration": 2,
+      "elapsed_seconds": 0.8766665998846292,
+      "optimized_value": 6134.28302536951,
+      "used_layer_count": 39
+    },
+    {
+      "iteration": 4,
+      "elapsed_seconds": 0.8774337999057025,
+      "optimized_value": 6007.592922469083,
+      "used_layer_count": 39
+    },
+    {
+      "iteration": 5,
+      "elapsed_seconds": 0.8775591999292374,
+      "optimized_value": 5989.611730502458,
+      "used_layer_count": 39
+    },
+    {
+      "iteration": 7,
+      "elapsed_seconds": 0.8777180998586118,
+      "optimized_value": 5896.673200223916,
+      "used_layer_count": 39
+    },
+    {
+      "iteration": 9,
+      "elapsed_seconds": 0.8778792000375688,
+      "optimized_value": 5815.926638182319,
+      "used_layer_count": 39
+    },
+    {
+      "iteration": 10,
+      "elapsed_seconds": 0.877935899887234,
+      "optimized_value": 5768.980727714092,
+      "used_layer_count": 39
+    },
+    {
+      "iteration": 10,
+      "elapsed_seconds": 0.8896643999032676,
+      "optimized_value": 5729.0682676843335,
+      "used_layer_count": 39
+    }
+  ]
+}

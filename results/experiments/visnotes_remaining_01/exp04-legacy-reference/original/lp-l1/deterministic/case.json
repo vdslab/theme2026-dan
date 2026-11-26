@@ -1,0 +1,88 @@
+{
+  "input": "original",
+  "condition": "lp-l1",
+  "seed": null,
+  "command": [
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\solve_layers_dsatur_l1.py",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\original.json",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_remaining_01\\exp04-legacy-reference\\original\\lp-l1\\deterministic\\layout.json",
+    "--reg",
+    "1e-05"
+  ],
+  "case_directory": "results/experiments/visnotes_remaining_01/exp04-legacy-reference/original/lp-l1/deterministic",
+  "input_sha256": "bc21935cccb75e36b17c92e7164032eed8f278606f5767a14efd9d212c82bd7b",
+  "subprocess_wall_budget": 180.0,
+  "solver_internal_budget": null,
+  "solver_wall_seconds": 60.71900000004098,
+  "exit_code": 0,
+  "metrics": {
+    "l1_regularized": 88988.51606,
+    "l1_shared_vertices": 88982.0,
+    "l2_regularized": 1508556.72522,
+    "l2_shared_vertices": 1508460.0,
+    "l2_scaled_qp": 6233.656276597156,
+    "height_min": -11.0,
+    "height_max": 27.0,
+    "height_range": 38.0,
+    "pillar_length": 8614.0,
+    "overlap_violation_count": 0,
+    "order_violation_count": 0,
+    "max_order_violation": 0.0,
+    "distinct_height_values": 39,
+    "pillar_square_sum": 218438.0,
+    "degree_span_square_sum": 1617466.0,
+    "top5_constrained_hub_mean_span": 31.8,
+    "constrained_hubs": [
+      {
+        "node_id": 198,
+        "degree": 22,
+        "constrained_degree": 22,
+        "span": 35.0
+      },
+      {
+        "node_id": 96,
+        "degree": 22,
+        "constrained_degree": 21,
+        "span": 29.0
+      },
+      {
+        "node_id": 207,
+        "degree": 18,
+        "constrained_degree": 18,
+        "span": 36.0
+      },
+      {
+        "node_id": 199,
+        "degree": 19,
+        "constrained_degree": 17,
+        "span": 29.0
+      },
+      {
+        "node_id": 2,
+        "degree": 18,
+        "constrained_degree": 15,
+        "span": 30.0
+      }
+    ]
+  },
+  "height_type": "continuous",
+  "iterations": 102699,
+  "termination_reason": "converged",
+  "projection": {
+    "projection": "orthographic",
+    "azimuth_degrees": 45.0,
+    "elevation_degrees": 35.0,
+    "pixels_per_xy_span": 384,
+    "z_step_world": 0.1363402923410712,
+    "polygons_measured": 168,
+    "covered_pixel_count": 20996,
+    "overdraw_pixel_count": 14652,
+    "overdraw_sample_count": 52768,
+    "max_face_depth": 12,
+    "projected_pillar_length_px": 27095.71472450064
+  },
+  "status": "verified",
+  "case_elapsed_seconds": 61.187000000150874
+}

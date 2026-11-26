@@ -1,0 +1,249 @@
+{
+  "settings": {
+    "method": "anneal",
+    "objective": "hybrid",
+    "alpha": 0.25,
+    "beta": 0.005,
+    "seed": 0,
+    "reg": 1e-05,
+    "max_iterations": 20000,
+    "time_budget": 32.2,
+    "layer_cap": null,
+    "warm_start_extra_layers": 0,
+    "moves": [
+      "move",
+      "kempe",
+      "swap",
+      "shift"
+    ],
+    "optimize_free_edges": true
+  },
+  "quadratic_metric": "l2_scaled_qp",
+  "problem_signature": "5eb8282253411b8b765a0cdcf0d06a72ba7de0cc5c6248ecba1473d1f20f1a1c",
+  "initial_layers": [
+    1,
+    0,
+    1,
+    0,
+    2,
+    0
+  ],
+  "initial_metrics": {
+    "l1_regularized": 1.00014,
+    "l1_shared_vertices": 1.0,
+    "l2_regularized": 1.0002000000000004,
+    "l2_shared_vertices": 1.0,
+    "l2_scaled_qp": 0.666788886851886,
+    "height_min": 0.0,
+    "height_max": 2.0,
+    "height_range": 2.0,
+    "pillar_length": 1.0,
+    "overlap_violation_count": 0,
+    "order_violation_count": 0,
+    "max_order_violation": 0.0,
+    "used_layer_count": 3,
+    "layer_count": 3,
+    "pillar_square_sum": 1,
+    "degree_span_square_sum": 2,
+    "top5_constrained_hub_mean_span": 0.0,
+    "constrained_hubs": [
+      {
+        "node_id": 1,
+        "degree": 2,
+        "constrained_degree": 2,
+        "span": 0
+      },
+      {
+        "node_id": 2,
+        "degree": 2,
+        "constrained_degree": 2,
+        "span": 0
+      },
+      {
+        "node_id": 5,
+        "degree": 2,
+        "constrained_degree": 2,
+        "span": 0
+      },
+      {
+        "node_id": 6,
+        "degree": 2,
+        "constrained_degree": 2,
+        "span": 0
+      }
+    ]
+  },
+  "initial_color_count": 3,
+  "dsatur_upper_bound": 3,
+  "clique_witness": [
+    1,
+    2,
+    4
+  ],
+  "clique_lower_bound": 3,
+  "coloring_upper_bound": 3,
+  "proven_minimum_layers": 3,
+  "planned_caps": [
+    3
+  ],
+  "stages": [
+    {
+      "cap": 3,
+      "initial_layers": [
+        1,
+        0,
+        1,
+        0,
+        2,
+        0
+      ],
+      "layers": [
+        1,
+        0,
+        1,
+        0,
+        2,
+        1
+      ],
+      "iterations": 20000,
+      "iteration_budget": 20000,
+      "elapsed_seconds": 0.5337626000400633,
+      "termination_reason": "iteration_budget",
+      "optimized_value": 1.1666922217963034,
+      "metrics": {
+        "l1_regularized": 1.0001300000000002,
+        "l1_shared_vertices": 1.0,
+        "l2_regularized": 1.0001700000000002,
+        "l2_shared_vertices": 1.0,
+        "l2_scaled_qp": 0.6667688871852137,
+        "height_min": 0.0,
+        "height_max": 2.0,
+        "height_range": 2.0,
+        "pillar_length": 1.0,
+        "overlap_violation_count": 0,
+        "order_violation_count": 0,
+        "max_order_violation": 0.0,
+        "used_layer_count": 3,
+        "layer_count": 3,
+        "pillar_square_sum": 1,
+        "degree_span_square_sum": 2,
+        "top5_constrained_hub_mean_span": 0.0,
+        "constrained_hubs": [
+          {
+            "node_id": 1,
+            "degree": 2,
+            "constrained_degree": 2,
+            "span": 0
+          },
+          {
+            "node_id": 2,
+            "degree": 2,
+            "constrained_degree": 2,
+            "span": 0
+          },
+          {
+            "node_id": 5,
+            "degree": 2,
+            "constrained_degree": 2,
+            "span": 0
+          },
+          {
+            "node_id": 6,
+            "degree": 2,
+            "constrained_degree": 2,
+            "span": 0
+          }
+        ]
+      },
+      "trajectory": [
+        {
+          "iteration": 0,
+          "elapsed_seconds": 0.0035959999077022076,
+          "optimized_value": 1.1666972217129714,
+          "used_layer_count": 3
+        },
+        {
+          "iteration": 0,
+          "elapsed_seconds": 0.0038517999928444624,
+          "optimized_value": 1.1666922217963034,
+          "used_layer_count": 3
+        }
+      ],
+      "moves": {
+        "move": {
+          "attempted": 4966,
+          "evaluated": 498,
+          "accepted": 0
+        },
+        "kempe": {
+          "attempted": 5065,
+          "evaluated": 5065,
+          "accepted": 2422
+        },
+        "swap": {
+          "attempted": 5024,
+          "evaluated": 5024,
+          "accepted": 3428
+        },
+        "shift": {
+          "attempted": 4945,
+          "evaluated": 4945,
+          "accepted": 2454
+        }
+      },
+      "free_coordinate_updates": 1
+    }
+  ],
+  "iterations": 20000,
+  "preprocessing_seconds": 0.0035663999151438475,
+  "elapsed_seconds": 0.5374608999118209,
+  "termination_reason": "iteration_budget",
+  "optimized_value": 1.1666922217963034,
+  "metrics": {
+    "l1_regularized": 1.0001300000000002,
+    "l1_shared_vertices": 1.0,
+    "l2_regularized": 1.0001700000000002,
+    "l2_shared_vertices": 1.0,
+    "l2_scaled_qp": 0.6667688871852137,
+    "height_min": 0.0,
+    "height_max": 2.0,
+    "height_range": 2.0,
+    "pillar_length": 1.0,
+    "overlap_violation_count": 0,
+    "order_violation_count": 0,
+    "max_order_violation": 0.0,
+    "used_layer_count": 3,
+    "layer_count": 3,
+    "pillar_square_sum": 1,
+    "degree_span_square_sum": 2,
+    "top5_constrained_hub_mean_span": 0.0,
+    "constrained_hubs": [
+      {
+        "node_id": 1,
+        "degree": 2,
+        "constrained_degree": 2,
+        "span": 0
+      },
+      {
+        "node_id": 2,
+        "degree": 2,
+        "constrained_degree": 2,
+        "span": 0
+      },
+      {
+        "node_id": 5,
+        "degree": 2,
+        "constrained_degree": 2,
+        "span": 0
+      },
+      {
+        "node_id": 6,
+        "degree": 2,
+        "constrained_degree": 2,
+        "span": 0
+      }
+    ]
+  },
+  "input_path": "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\tree_optimization_comparison_01\\small\\six-mixed\\input.json",
+  "input_sha256": "c4e3dbbc98173c68005f17bb68595aaedf860e3eeb99a3ca2714d1d2d9790403"
+}

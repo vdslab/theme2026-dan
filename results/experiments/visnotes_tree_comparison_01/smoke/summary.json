@@ -1,0 +1,592 @@
+{
+  "complete": true,
+  "sources_unchanged": true,
+  "cases": [
+    {
+      "input": "original",
+      "condition": "tree-squared",
+      "seed": 0,
+      "command": [
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\solve_layers_tree.py",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\original.json",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_tree_comparison_01\\smoke\\tree-squared\\seed-0\\layout.json",
+        "--reg",
+        "1e-05",
+        "--report",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_tree_comparison_01\\smoke\\tree-squared\\seed-0\\report.json",
+        "--initial-output",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_tree_comparison_01\\smoke\\tree-squared\\seed-0\\initial.json",
+        "--checkpoint",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_tree_comparison_01\\smoke\\tree-squared\\seed-0\\checkpoint.json",
+        "--seed",
+        "0",
+        "--max-iterations",
+        "10",
+        "--time-budget",
+        "25.0"
+      ],
+      "case_directory": "results/experiments/visnotes_tree_comparison_01/smoke/tree-squared/seed-0",
+      "status": "verified",
+      "metrics": {
+        "l1_regularized": 124996.858,
+        "l1_shared_vertices": 124993,
+        "l2_regularized": 2886564.48286,
+        "l2_shared_vertices": 2886509,
+        "l2_scaled_qp": 11927.858267151692,
+        "height_min": 0,
+        "height_max": 49,
+        "height_range": 49,
+        "pillar_length": 11714,
+        "overlap_violation_count": 0,
+        "order_violation_count": 0,
+        "max_order_violation": 0,
+        "used_layer_count": 50,
+        "pillar_square_sum": 397096,
+        "degree_span_square_sum": 3025060,
+        "top5_constrained_hub_mean_span": 46.6,
+        "constrained_hubs": [
+          {
+            "node_id": 198,
+            "degree": 22,
+            "constrained_degree": 22,
+            "span": 47
+          },
+          {
+            "node_id": 96,
+            "degree": 22,
+            "constrained_degree": 21,
+            "span": 49
+          },
+          {
+            "node_id": 207,
+            "degree": 18,
+            "constrained_degree": 18,
+            "span": 48
+          },
+          {
+            "node_id": 199,
+            "degree": 19,
+            "constrained_degree": 17,
+            "span": 46
+          },
+          {
+            "node_id": 2,
+            "degree": 18,
+            "constrained_degree": 15,
+            "span": 43
+          }
+        ]
+      },
+      "projection": {
+        "projection": "orthographic",
+        "azimuth_degrees": 45.0,
+        "elevation_degrees": 35.0,
+        "pixels_per_xy_span": 384,
+        "z_step_world": 0.1363402923410712,
+        "polygons_measured": 168,
+        "covered_pixel_count": 20313,
+        "overdraw_pixel_count": 14945,
+        "overdraw_sample_count": 53480,
+        "max_face_depth": 13,
+        "projected_pillar_length_px": 36846.9006597168
+      },
+      "solver_wall_seconds": 3.172000000020489,
+      "iterations": 10,
+      "termination_reason": "max_iterations_reached",
+      "trajectory": [
+        {
+          "attempt": 3,
+          "move_type": "swap",
+          "objective": 11951.641381838737,
+          "height_range": 49.0,
+          "used_layer_count": 50
+        },
+        {
+          "attempt": 5,
+          "move_type": "move",
+          "objective": 11938.28772987789,
+          "height_range": 49.0,
+          "used_layer_count": 50
+        },
+        {
+          "attempt": 9,
+          "move_type": "subtree",
+          "objective": 11937.93235020341,
+          "height_range": 49.0,
+          "used_layer_count": 50
+        },
+        {
+          "attempt": 10,
+          "move_type": "swap",
+          "objective": 11927.858267151747,
+          "height_range": 49.0,
+          "used_layer_count": 50
+        }
+      ]
+    },
+    {
+      "input": "original",
+      "condition": "compact-squared",
+      "seed": 0,
+      "command": [
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\solve_layers_compact.py",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\original.json",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_tree_comparison_01\\smoke\\compact-squared\\seed-0\\layout.json",
+        "--reg",
+        "1e-05",
+        "--report",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_tree_comparison_01\\smoke\\compact-squared\\seed-0\\report.json",
+        "--method",
+        "anneal",
+        "--objective",
+        "squared",
+        "--alpha",
+        "0.25",
+        "--beta",
+        "0.005",
+        "--seed",
+        "0",
+        "--max-iterations",
+        "10",
+        "--time-budget",
+        "25.0",
+        "--warm-start-extra-layers",
+        "0",
+        "--moves",
+        "move",
+        "kempe",
+        "swap",
+        "shift"
+      ],
+      "case_directory": "results/experiments/visnotes_tree_comparison_01/smoke/compact-squared/seed-0",
+      "status": "verified",
+      "metrics": {
+        "l1_regularized": 86141.31948,
+        "l1_shared_vertices": 86135,
+        "l2_regularized": 1386445.4633,
+        "l2_shared_vertices": 1386355,
+        "l2_scaled_qp": 5729.0682676843335,
+        "height_min": 0,
+        "height_max": 38,
+        "height_range": 38,
+        "pillar_length": 8457,
+        "overlap_violation_count": 0,
+        "order_violation_count": 0,
+        "max_order_violation": 0,
+        "used_layer_count": 39,
+        "pillar_square_sum": 210341,
+        "degree_span_square_sum": 1566227,
+        "top5_constrained_hub_mean_span": 30.8,
+        "constrained_hubs": [
+          {
+            "node_id": 198,
+            "degree": 22,
+            "constrained_degree": 22,
+            "span": 35
+          },
+          {
+            "node_id": 96,
+            "degree": 22,
+            "constrained_degree": 21,
+            "span": 28
+          },
+          {
+            "node_id": 207,
+            "degree": 18,
+            "constrained_degree": 18,
+            "span": 36
+          },
+          {
+            "node_id": 199,
+            "degree": 19,
+            "constrained_degree": 17,
+            "span": 28
+          },
+          {
+            "node_id": 2,
+            "degree": 18,
+            "constrained_degree": 15,
+            "span": 27
+          }
+        ]
+      },
+      "projection": {
+        "projection": "orthographic",
+        "azimuth_degrees": 45.0,
+        "elevation_degrees": 35.0,
+        "pixels_per_xy_span": 384,
+        "z_step_world": 0.1363402923410712,
+        "polygons_measured": 168,
+        "covered_pixel_count": 19974,
+        "overdraw_pixel_count": 14021,
+        "overdraw_sample_count": 53859,
+        "max_face_depth": 13,
+        "projected_pillar_length_px": 26601.864340039694
+      },
+      "solver_wall_seconds": 2.7339999999385327,
+      "iterations": 10,
+      "termination_reason": "iteration_budget",
+      "trajectory": [
+        {
+          "iteration": 0,
+          "elapsed_seconds": 0.8549758000299335,
+          "optimized_value": 7375.935134644185,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 0,
+          "elapsed_seconds": 0.8765094000846148,
+          "optimized_value": 6232.930353152998,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 1,
+          "elapsed_seconds": 0.8766034999862313,
+          "optimized_value": 6135.646650970647,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 2,
+          "elapsed_seconds": 0.8766665998846292,
+          "optimized_value": 6134.28302536951,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 4,
+          "elapsed_seconds": 0.8774337999057025,
+          "optimized_value": 6007.592922469083,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 5,
+          "elapsed_seconds": 0.8775591999292374,
+          "optimized_value": 5989.611730502458,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 7,
+          "elapsed_seconds": 0.8777180998586118,
+          "optimized_value": 5896.673200223916,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 9,
+          "elapsed_seconds": 0.8778792000375688,
+          "optimized_value": 5815.926638182319,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 10,
+          "elapsed_seconds": 0.877935899887234,
+          "optimized_value": 5768.980727714092,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 10,
+          "elapsed_seconds": 0.8896643999032676,
+          "optimized_value": 5729.0682676843335,
+          "used_layer_count": 39
+        }
+      ]
+    },
+    {
+      "input": "original",
+      "condition": "compact-hybrid",
+      "seed": 0,
+      "command": [
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\solve_layers_compact.py",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\original.json",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_tree_comparison_01\\smoke\\compact-hybrid\\seed-0\\layout.json",
+        "--reg",
+        "1e-05",
+        "--report",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_tree_comparison_01\\smoke\\compact-hybrid\\seed-0\\report.json",
+        "--method",
+        "anneal",
+        "--objective",
+        "hybrid",
+        "--alpha",
+        "0.25",
+        "--beta",
+        "0.005",
+        "--seed",
+        "0",
+        "--max-iterations",
+        "10",
+        "--time-budget",
+        "25.0",
+        "--warm-start-extra-layers",
+        "0",
+        "--moves",
+        "move",
+        "kempe",
+        "swap",
+        "shift"
+      ],
+      "case_directory": "results/experiments/visnotes_tree_comparison_01/smoke/compact-hybrid/seed-0",
+      "status": "verified",
+      "metrics": {
+        "l1_regularized": 88820.55358,
+        "l1_shared_vertices": 88814,
+        "l2_regularized": 1458890.1136,
+        "l2_shared_vertices": 1458794,
+        "l2_scaled_qp": 6028.423964091854,
+        "height_min": 0,
+        "height_max": 38,
+        "height_range": 38,
+        "pillar_length": 8607,
+        "overlap_violation_count": 0,
+        "order_violation_count": 0,
+        "max_order_violation": 0,
+        "used_layer_count": 39,
+        "pillar_square_sum": 215873,
+        "degree_span_square_sum": 1585665,
+        "top5_constrained_hub_mean_span": 31.4,
+        "constrained_hubs": [
+          {
+            "node_id": 198,
+            "degree": 22,
+            "constrained_degree": 22,
+            "span": 31
+          },
+          {
+            "node_id": 96,
+            "degree": 22,
+            "constrained_degree": 21,
+            "span": 29
+          },
+          {
+            "node_id": 207,
+            "degree": 18,
+            "constrained_degree": 18,
+            "span": 36
+          },
+          {
+            "node_id": 199,
+            "degree": 19,
+            "constrained_degree": 17,
+            "span": 29
+          },
+          {
+            "node_id": 2,
+            "degree": 18,
+            "constrained_degree": 15,
+            "span": 32
+          }
+        ]
+      },
+      "projection": {
+        "projection": "orthographic",
+        "azimuth_degrees": 45.0,
+        "elevation_degrees": 35.0,
+        "pixels_per_xy_span": 384,
+        "z_step_world": 0.1363402923410712,
+        "polygons_measured": 168,
+        "covered_pixel_count": 20355,
+        "overdraw_pixel_count": 14644,
+        "overdraw_sample_count": 53523,
+        "max_face_depth": 13,
+        "projected_pillar_length_px": 27073.69591755015
+      },
+      "solver_wall_seconds": 2.1410000000614673,
+      "iterations": 10,
+      "termination_reason": "iteration_budget",
+      "trajectory": [
+        {
+          "iteration": 0,
+          "elapsed_seconds": 0.797418899834156,
+          "optimized_value": 10856.983783661046,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 0,
+          "elapsed_seconds": 0.824705199804157,
+          "optimized_value": 10194.502047091282,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 6,
+          "elapsed_seconds": 0.8253384998533875,
+          "optimized_value": 10131.1475970169,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 7,
+          "elapsed_seconds": 0.8256089999340475,
+          "optimized_value": 10124.087672241925,
+          "used_layer_count": 39
+        },
+        {
+          "iteration": 10,
+          "elapsed_seconds": 0.840760099934414,
+          "optimized_value": 10114.105991022963,
+          "used_layer_count": 39
+        }
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "input": "original",
+      "condition": "tree-squared",
+      "verified_cases": 1,
+      "metrics": {
+        "used_layer_count": {
+          "median": 50,
+          "minimum": 50,
+          "maximum": 50
+        },
+        "height_range": {
+          "median": 49,
+          "minimum": 49,
+          "maximum": 49
+        },
+        "l2_scaled_qp": {
+          "median": 11927.858267151692,
+          "minimum": 11927.858267151692,
+          "maximum": 11927.858267151692
+        },
+        "pillar_length": {
+          "median": 11714,
+          "minimum": 11714,
+          "maximum": 11714
+        },
+        "top5_constrained_hub_mean_span": {
+          "median": 46.6,
+          "minimum": 46.6,
+          "maximum": 46.6
+        },
+        "overlap_violation_count": {
+          "median": 0,
+          "minimum": 0,
+          "maximum": 0
+        },
+        "solver_wall_seconds": {
+          "median": 3.172000000020489,
+          "minimum": 3.172000000020489,
+          "maximum": 3.172000000020489
+        },
+        "overdraw_pixel_count": {
+          "median": 14945,
+          "minimum": 14945,
+          "maximum": 14945
+        },
+        "projected_pillar_length_px": {
+          "median": 36846.9006597168,
+          "minimum": 36846.9006597168,
+          "maximum": 36846.9006597168
+        }
+      }
+    },
+    {
+      "input": "original",
+      "condition": "compact-squared",
+      "verified_cases": 1,
+      "metrics": {
+        "used_layer_count": {
+          "median": 39,
+          "minimum": 39,
+          "maximum": 39
+        },
+        "height_range": {
+          "median": 38,
+          "minimum": 38,
+          "maximum": 38
+        },
+        "l2_scaled_qp": {
+          "median": 5729.0682676843335,
+          "minimum": 5729.0682676843335,
+          "maximum": 5729.0682676843335
+        },
+        "pillar_length": {
+          "median": 8457,
+          "minimum": 8457,
+          "maximum": 8457
+        },
+        "top5_constrained_hub_mean_span": {
+          "median": 30.8,
+          "minimum": 30.8,
+          "maximum": 30.8
+        },
+        "overlap_violation_count": {
+          "median": 0,
+          "minimum": 0,
+          "maximum": 0
+        },
+        "solver_wall_seconds": {
+          "median": 2.7339999999385327,
+          "minimum": 2.7339999999385327,
+          "maximum": 2.7339999999385327
+        },
+        "overdraw_pixel_count": {
+          "median": 14021,
+          "minimum": 14021,
+          "maximum": 14021
+        },
+        "projected_pillar_length_px": {
+          "median": 26601.864340039694,
+          "minimum": 26601.864340039694,
+          "maximum": 26601.864340039694
+        }
+      }
+    },
+    {
+      "input": "original",
+      "condition": "compact-hybrid",
+      "verified_cases": 1,
+      "metrics": {
+        "used_layer_count": {
+          "median": 39,
+          "minimum": 39,
+          "maximum": 39
+        },
+        "height_range": {
+          "median": 38,
+          "minimum": 38,
+          "maximum": 38
+        },
+        "l2_scaled_qp": {
+          "median": 6028.423964091854,
+          "minimum": 6028.423964091854,
+          "maximum": 6028.423964091854
+        },
+        "pillar_length": {
+          "median": 8607,
+          "minimum": 8607,
+          "maximum": 8607
+        },
+        "top5_constrained_hub_mean_span": {
+          "median": 31.4,
+          "minimum": 31.4,
+          "maximum": 31.4
+        },
+        "overlap_violation_count": {
+          "median": 0,
+          "minimum": 0,
+          "maximum": 0
+        },
+        "solver_wall_seconds": {
+          "median": 2.1410000000614673,
+          "minimum": 2.1410000000614673,
+          "maximum": 2.1410000000614673
+        },
+        "overdraw_pixel_count": {
+          "median": 14644,
+          "minimum": 14644,
+          "maximum": 14644
+        },
+        "projected_pillar_length_px": {
+          "median": 27073.69591755015,
+          "minimum": 27073.69591755015,
+          "maximum": 27073.69591755015
+        }
+      }
+    }
+  ]
+}

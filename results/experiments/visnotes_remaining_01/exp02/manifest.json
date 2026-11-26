@@ -1,0 +1,76 @@
+{
+  "experiment_id": "exp02_clean_benchmarks_prep",
+  "started_utc": "2026-11-25T15:20:41.349772+00:00",
+  "source_article": "https://vdslab.esa.io/posts/9193",
+  "regularization": 1e-05,
+  "input_files": {
+    "original": {
+      "file": "original.json",
+      "sha256": "bc21935cccb75e36b17c92e7164032eed8f278606f5767a14efd9d212c82bd7b"
+    },
+    "paper": {
+      "file": "results/layouts/original_polygon_paper.json",
+      "sha256": "cd25bb25d0ab893fdad6e0b1452862e9202c24a690f1148e8d6d646e24011e83"
+    },
+    "scalable": {
+      "file": "results/layouts/original_polygon_scalable.json",
+      "sha256": "2c57e0aad109c4c6e60bd5606ac9a8981c0288bad48c140059f5380188edcd84"
+    },
+    "arranged": {
+      "file": "results/layouts/original_polygon_arranged.json",
+      "sha256": "7455d26668183e956563d58976566708929aace0258aa1a753f33ba5bb617ee5"
+    }
+  },
+  "conditions": {},
+  "case_budget_seconds": null,
+  "total_budget_seconds": 40.0,
+  "trial_limit": null,
+  "cases": [],
+  "provenance": {
+    "git_commit": "9453cc7511f2e52a50313aee097cf38f7805aead",
+    "relevant_git_status": [
+      "?? experiments/exp02_clean_benchmarks_prep/run_experiment.py",
+      "?? experiments/visnotes_common.py",
+      "?? experiments/visnotes_exact.py",
+      "?? experiments/visnotes_metrics.py"
+    ],
+    "source_sha256": {
+      "experiments/visnotes_common.py": "3a5953f7b39df0dea3cd1e912b78fe15f9e2e961e3fba44eddb0ce98e7e841b0",
+      "experiments/visnotes_metrics.py": "1a862bd1a82ac2068bcfcf7886bab6402efc8da9fdf2ff4c67090efb7fbbf318",
+      "experiments/visnotes_exact.py": "be441fb58c547baee8adab568de517820e629256ea0614e80aec201c68d57107",
+      "experiments/exp02_clean_benchmarks_prep/run_experiment.py": "972877b15c5ca88980e602c0eee681e4d1936e43573715b68d0171cf643b03ce",
+      "experiments/tree_optimization_comparison_01/review_results.py": "82b6264e19c081a1f4dab48fc9bbac0dcd6ef3847386b68d37f0afabb937ff37",
+      "solve_layers.py": "8909d5eb5b2fe8301f5893b5d960f666ec50f267fa6ca34c2f38482648f1a985",
+      "solve_layers_dsatur_l1.py": "4ff99edf40e396f6039cc4d01d347cfde82e61a81bfb923435ab9a9caad1b5b1"
+    },
+    "environment": {
+      "python": "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe",
+      "python_version": "3.11.5",
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "shapely": "2.1.2",
+      "geos": "3.13.1",
+      "thread_limits": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "BLIS_NUM_THREADS": "1"
+      }
+    },
+    "command": [
+      "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe",
+      "-B",
+      "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\experiments\\exp02_clean_benchmarks_prep\\run_experiment.py",
+      "--output",
+      "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_remaining_01\\exp02",
+      "--total-budget",
+      "40",
+      "--inputs",
+      "original",
+      "paper",
+      "scalable",
+      "arranged"
+    ],
+    "working_directory": "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization"
+  }
+}

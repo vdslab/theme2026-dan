@@ -1,0 +1,180 @@
+{
+  "input": "four-path",
+  "condition": "degree-span",
+  "seed": 0,
+  "command": [
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\solve_layers_compact.py",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\tree_optimization_comparison_01\\small\\four-path\\input.json",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_remaining_01\\exp03-small\\four-path\\degree-span\\seed-0\\layout.json",
+    "--reg",
+    "1e-05",
+    "--report",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_remaining_01\\exp03-small\\four-path\\degree-span\\seed-0\\report.json",
+    "--method",
+    "anneal",
+    "--objective",
+    "degree-span",
+    "--alpha",
+    "0.25",
+    "--beta",
+    "0.005",
+    "--seed",
+    "0",
+    "--max-iterations",
+    "20000",
+    "--time-budget",
+    "32.2",
+    "--warm-start-extra-layers",
+    "0",
+    "--moves",
+    "move",
+    "kempe",
+    "swap",
+    "shift"
+  ],
+  "case_directory": "results/experiments/visnotes_remaining_01/exp03-small/four-path/degree-span/seed-0",
+  "input_sha256": "c81dd665ea2580ee1d36325261c15017774b1b2f3217a3794b1229ceeafd1d26",
+  "subprocess_wall_budget": 35.0,
+  "solver_internal_budget": 32.2,
+  "solver_wall_seconds": 5.952999999979511,
+  "exit_code": 0,
+  "metrics": {
+    "l1_regularized": 4e-05,
+    "l1_shared_vertices": 0,
+    "l2_regularized": 4e-05,
+    "l2_shared_vertices": 0,
+    "l2_scaled_qp": 3.999940000899986e-05,
+    "height_min": 0,
+    "height_max": 1,
+    "height_range": 1,
+    "pillar_length": 0,
+    "overlap_violation_count": 0,
+    "order_violation_count": 0,
+    "max_order_violation": 0,
+    "used_layer_count": 2,
+    "pillar_square_sum": 0,
+    "degree_span_square_sum": 0,
+    "top5_constrained_hub_mean_span": 0.0,
+    "constrained_hubs": [
+      {
+        "node_id": 1,
+        "degree": 2,
+        "constrained_degree": 2,
+        "span": 0
+      },
+      {
+        "node_id": 2,
+        "degree": 2,
+        "constrained_degree": 2,
+        "span": 0
+      },
+      {
+        "node_id": 5,
+        "degree": 2,
+        "constrained_degree": 2,
+        "span": 0
+      },
+      {
+        "node_id": 6,
+        "degree": 2,
+        "constrained_degree": 2,
+        "span": 0
+      }
+    ]
+  },
+  "height_type": "integer",
+  "stages": [
+    {
+      "cap": 2,
+      "metrics": {
+        "l1_regularized": 4e-05,
+        "l1_shared_vertices": 0,
+        "l2_regularized": 4e-05,
+        "l2_shared_vertices": 0,
+        "l2_scaled_qp": 3.999940000899986e-05,
+        "height_min": 0,
+        "height_max": 1,
+        "height_range": 1,
+        "pillar_length": 0,
+        "overlap_violation_count": 0,
+        "order_violation_count": 0,
+        "max_order_violation": 0,
+        "used_layer_count": 2,
+        "pillar_square_sum": 0,
+        "degree_span_square_sum": 0,
+        "top5_constrained_hub_mean_span": 0.0,
+        "constrained_hubs": [
+          {
+            "node_id": 1,
+            "degree": 2,
+            "constrained_degree": 2,
+            "span": 0
+          },
+          {
+            "node_id": 2,
+            "degree": 2,
+            "constrained_degree": 2,
+            "span": 0
+          },
+          {
+            "node_id": 5,
+            "degree": 2,
+            "constrained_degree": 2,
+            "span": 0
+          },
+          {
+            "node_id": 6,
+            "degree": 2,
+            "constrained_degree": 2,
+            "span": 0
+          }
+        ]
+      },
+      "optimized_value": 0.0,
+      "trajectory": [
+        {
+          "iteration": 0,
+          "elapsed_seconds": 0.007497800048440695,
+          "optimized_value": 0.0,
+          "used_layer_count": 2
+        }
+      ],
+      "iterations": 20000,
+      "elapsed_seconds": 2.220570100005716,
+      "termination_reason": "iteration_budget",
+      "oracle": {
+        "enumeration": {
+          "feasible_count": 2,
+          "value": 0.0,
+          "layers": [
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        "milp": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "lower_bound": 0.0,
+          "solver_relative_gap": 0.0,
+          "value": 0.0,
+          "layers": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "reported_value": 0.0
+        }
+      },
+      "optimality_gap": 0.0
+    }
+  ],
+  "iterations": 20000,
+  "termination_reason": "iteration_budget",
+  "status": "verified",
+  "case_elapsed_seconds": 6.015999999828637
+}

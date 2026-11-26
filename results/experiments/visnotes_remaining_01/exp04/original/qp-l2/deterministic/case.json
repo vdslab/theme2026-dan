@@ -1,0 +1,22 @@
+{
+  "input": "original",
+  "condition": "qp-l2",
+  "seed": null,
+  "command": [
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\solve_layers.py",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\original.json",
+    "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_remaining_01\\exp04\\original\\qp-l2\\deterministic\\layout.json",
+    "--reg",
+    "1e-05"
+  ],
+  "case_directory": "results/experiments/visnotes_remaining_01/exp04/original/qp-l2/deterministic",
+  "input_sha256": "bc21935cccb75e36b17c92e7164032eed8f278606f5767a14efd9d212c82bd7b",
+  "subprocess_wall_budget": 35.0,
+  "solver_internal_budget": null,
+  "status": "timeout",
+  "termination_reason": "case_wall_budget",
+  "solver_wall_seconds": 35.07799999997951,
+  "case_elapsed_seconds": 35.07799999997951
+}

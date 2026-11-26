@@ -28894,7 +28894,7 @@
     "provenance": {
       "input": "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\original.json",
       "input_sha256": "bc21935cccb75e36b17c92e7164032eed8f278606f5767a14efd9d212c82bd7b",
-      "preprocessing_seconds": 0.6880000000819564
+      "preprocessing_seconds": 0.6870000001508743
     },
     "settings": {
       "reg": 1e-05,
@@ -33440,13 +33440,13 @@
         "final_ratio": 0.001
       },
       "timing_seconds": {
-        "initialization": 0.4529999999795109,
+        "initialization": 0.5,
         "calibration": 0.1559999999590218,
-        "generation": 5.117000000202097,
-        "repair": 35.003999999840744,
-        "rebuilding": 33.16299999936018,
-        "evaluation": 166.06999999738764,
-        "saving": 6.702000000164844
+        "generation": 5.623999998206273,
+        "repair": 34.60699999821372,
+        "rebuilding": 31.784999994095415,
+        "evaluation": 169.94200000655837,
+        "saving": 4.8649999995250255
       },
       "by_move": {
         "move": {
@@ -33456,7 +33456,7 @@
           "improvements": 592,
           "repair_steps": 3274,
           "repair_failures": 0,
-          "seconds": 87.8469999989029
+          "seconds": 87.96999999787658
         },
         "swap": {
           "attempts": 5860,
@@ -33465,7 +33465,7 @@
           "improvements": 839,
           "repair_steps": 6487,
           "repair_failures": 0,
-          "seconds": 65.93099999555852
+          "seconds": 66.95200000167824
         },
         "subtree": {
           "attempts": 5047,
@@ -33474,7 +33474,7 @@
           "improvements": 656,
           "repair_steps": 16349,
           "repair_failures": 0,
-          "seconds": 72.17600000149105
+          "seconds": 73.03000000072643
         },
         "rewire": {
           "attempts": 944,
@@ -33483,7 +33483,7 @@
           "improvements": 0,
           "repair_steps": 0,
           "repair_failures": 0,
-          "seconds": 8.848000001395121
+          "seconds": 8.945999997202307
         }
       },
       "initial_repair": {
@@ -34753,7 +34753,7 @@
       "current_objective": 3493.2066621292347,
       "improvement": 8466.79645611061,
       "improvement_percent": 70.79259405207137,
-      "total_seconds": 265.26600000006147,
+      "total_seconds": 266.530999999959,
       "returned_to_current_ratio": 0.1253,
       "objective_value_solve_layers": 3493.2066621292383
     },

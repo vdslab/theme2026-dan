@@ -9,7 +9,7 @@ Git・Python環境・エディター設定・自動生成キャッシュは従�
 | フォルダ | 内容 |
 | --- | --- |
 | polygon_layout/ | ポリゴン配置の補助PythonモジュールとC++カーネル |
-| tools/ | データ変換、比較画像の作成ツール |
+| tools/ | データ変換、比較画像の作成、esa への実験報告 |
 | tests/ | ソルバーとポリゴン処理のテスト |
 | results/layouts/ | 過去のXY配置・実験候補JSON |
 | results/layers/ | 過去のレイヤー割り当て、初期解、チェックポイント |
@@ -30,6 +30,23 @@ python tools/convert.py
 python tools/plot_polygon_comparison.py backups/original_before_polygon_layout.json original.json results/previews/polygon_layout_comparison.png
 python -B -m unittest discover -s tests -v
 ~~~
+
+## esa への実験レポート投稿
+
+`vdslab` チーム向けに `write:post` の PAT v2 を発行する。API 経由で画像も添付する場合は `write:attachment` を含める。リポジトリ直下に `.env.esa.local` がなければ、次のコマンドで作成する。
+
+~~~powershell
+Copy-Item .env.esa.example .env.esa.local
+~~~
+
+`.env.esa.local` の `ESA_ACCESS_TOKEN=` の直後にトークンを 1 行で記入する。このファイルは Git の追跡対象外。環境変数 `ESA_ACCESS_TOKEN` が設定されている場合はそちらを優先する。
+
+~~~powershell
+python tools/post_esa_report.py --check-config
+python tools/post_esa_report.py --title "実験報告 tree_optimization_comparison_01" --report "results/experiments/tree_optimization_comparison_01/report.md"
+~~~
+
+`--check-config` はトークンが設定されているかを通信せずに確認する。投稿時は `--report` に作成済みの UTF-8 Markdown を指定する。投稿が成功すると、`vdslab` の `ゼミ/大学院/dan` に作成した記事の URL が出力される。
 
 ## 根付き木によるレイヤー割り当て
 
@@ -52,7 +69,7 @@ python -B -m unittest tests.test_solve_layers_tree -v
 木の詳細と入力の独自メタデータは results/layers/layers_hypergraph_initial.json と
 results/layers/layers_hypergraph_checkpoint.json に保存する。
 レポートは results/reports/layers_hypergraph_report.json に保存する。
-ビューアは引き続きルートの layered_hypergraph.json を読む。
+ビューアは配信先の index.html と同じディレクトリにある layered_hypergraph.json を読む。
 
 実行ログには読み込み件数、重なり件数、重み・正則化、目的値、制約検証、座標範囲、
 保存先を表示する。Objective value (solve_layers.py) は、旧版と同じ
@@ -278,9 +295,15 @@ This script runs the following optimization flow:
 - Output is stored in `layered_hypergraph.json`.
 
 ### Step 3: Run the Visualizer
-Start a local HTTP web server to serve the viewer files:
-```bash
-python -m http.server 8080 --bind 127.0.0.1
+From the repository root, copy the viewer and the layout you want to inspect into a fresh preview directory. The viewer loads the JSON by the name `layered_hypergraph.json`.
+
+```powershell
+$layout = 'layered_hypergraph.json'
+$viewerDir = Join-Path ([IO.Path]::GetTempPath()) ("hypergraph-view-" + [guid]::NewGuid())
+New-Item -ItemType Directory -Path $viewerDir | Out-Null
+Copy-Item -LiteralPath index.html -Destination $viewerDir
+Copy-Item -LiteralPath $layout -Destination (Join-Path $viewerDir 'layered_hypergraph.json')
+python -m http.server 8080 --bind 127.0.0.1 --directory $viewerDir
 ```
 Open your browser and navigate to:
 ```

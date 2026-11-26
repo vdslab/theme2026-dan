@@ -1,0 +1,202 @@
+{
+  "run": "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_remaining_01",
+  "metadata_only": false,
+  "phases": {
+    "exp04": {
+      "planned_cases": 32,
+      "recorded_counts": {
+        "verified": 25,
+        "timeout": 7
+      },
+      "completed_within_budget": false,
+      "elapsed_seconds": 424.79699999978766,
+      "recomputed_layouts": 25,
+      "recomputed_stages": 25,
+      "profiles_verified": 0,
+      "errors": [],
+      "tree_timeout_checkpoints": {
+        "count": 5,
+        "records": [
+          {
+            "seed": 0,
+            "file": "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_remaining_01\\exp04\\original\\tree-sa\\seed-0\\checkpoint.json",
+            "sha256": "1cff2ffa5b138c5f1b9ce6b83b249def098d5dd77049e12b66cc4097de4284a4",
+            "input_sha256": "bc21935cccb75e36b17c92e7164032eed8f278606f5767a14efd9d212c82bd7b",
+            "last_modified_utc": "2026-11-25T15:11:31.331195+00:00",
+            "save_phase": "improvement",
+            "attempts_at_save": 283,
+            "best_attempt": 283,
+            "reported_total_seconds": null,
+            "used_layer_count": 47,
+            "l2_scaled_qp": 5814.074228174481,
+            "pillar_length": 8350,
+            "top5_constrained_hub_mean_span": 33.8
+          },
+          {
+            "seed": 1,
+            "file": "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_remaining_01\\exp04\\original\\tree-sa\\seed-1\\checkpoint.json",
+            "sha256": "21685e1981680e3d986e90147140b05e01e756befb8e706fbd3f9d887e883018",
+            "input_sha256": "bc21935cccb75e36b17c92e7164032eed8f278606f5767a14efd9d212c82bd7b",
+            "last_modified_utc": "2026-11-25T15:12:06.557990+00:00",
+            "save_phase": "improvement",
+            "attempts_at_save": 300,
+            "best_attempt": 300,
+            "reported_total_seconds": null,
+            "used_layer_count": 44,
+            "l2_scaled_qp": 5862.723806766649,
+            "pillar_length": 8478,
+            "top5_constrained_hub_mean_span": 32.2
+          },
+          {
+            "seed": 2,
+            "file": "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_remaining_01\\exp04\\original\\tree-sa\\seed-2\\checkpoint.json",
+            "sha256": "35e6436eafaf86fbe171378ec41f2b946048dc6f9d2a98e2a72e78e817835c7c",
+            "input_sha256": "bc21935cccb75e36b17c92e7164032eed8f278606f5767a14efd9d212c82bd7b",
+            "last_modified_utc": "2026-11-25T15:12:38.946914+00:00",
+            "save_phase": "improvement",
+            "attempts_at_save": 323,
+            "best_attempt": 323,
+            "reported_total_seconds": null,
+            "used_layer_count": 49,
+            "l2_scaled_qp": 7789.3481986154575,
+            "pillar_length": 9443,
+            "top5_constrained_hub_mean_span": 39.2
+          },
+          {
+            "seed": 3,
+            "file": "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_remaining_01\\exp04\\original\\tree-sa\\seed-3\\checkpoint.json",
+            "sha256": "385f7e5e6cdf697094acee58dce28ca7e7ab876f1be6eb15f11cd2b81772551c",
+            "input_sha256": "bc21935cccb75e36b17c92e7164032eed8f278606f5767a14efd9d212c82bd7b",
+            "last_modified_utc": "2026-11-25T15:13:18.212098+00:00",
+            "save_phase": "improvement",
+            "attempts_at_save": 281,
+            "best_attempt": 281,
+            "reported_total_seconds": null,
+            "used_layer_count": 46,
+            "l2_scaled_qp": 6102.806806772724,
+            "pillar_length": 8770,
+            "top5_constrained_hub_mean_span": 35.8
+          },
+          {
+            "seed": 4,
+            "file": "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\visnotes_remaining_01\\exp04\\original\\tree-sa\\seed-4\\checkpoint.json",
+            "sha256": "fc79da250d1b0c566dee4cf4981e751acd3b049a49b9e9593601226123e7738d",
+            "input_sha256": "bc21935cccb75e36b17c92e7164032eed8f278606f5767a14efd9d212c82bd7b",
+            "last_modified_utc": "2026-11-25T15:13:52.258759+00:00",
+            "save_phase": "improvement",
+            "attempts_at_save": 382,
+            "best_attempt": 382,
+            "reported_total_seconds": null,
+            "used_layer_count": 47,
+            "l2_scaled_qp": 6316.570113434229,
+            "pillar_length": 8800,
+            "top5_constrained_hub_mean_span": 31.2
+          }
+        ],
+        "observed_snapshot_statistics": {
+          "used_layer_count": {
+            "minimum": 44,
+            "median": 47,
+            "maximum": 49
+          },
+          "l2_scaled_qp": {
+            "minimum": 5814.074228174481,
+            "median": 6102.806806772724,
+            "maximum": 7789.3481986154575
+          },
+          "pillar_length": {
+            "minimum": 8350,
+            "median": 8770,
+            "maximum": 9443
+          },
+          "top5_constrained_hub_mean_span": {
+            "minimum": 31.2,
+            "median": 33.8,
+            "maximum": 39.2
+          }
+        },
+        "note": "Filesystem modification times and saved attempt counters describe snapshots only. Checkpoint records do not imply a final solution or a measured 35-second objective.",
+        "logged_phase_window_utc": [
+          "2026-11-25T15:09:20.355386+00:00",
+          "2026-11-25T15:16:30.203347+00:00"
+        ]
+      }
+    },
+    "exp05": {
+      "planned_cases": 20,
+      "recorded_counts": {
+        "verified": 20
+      },
+      "completed_within_budget": true,
+      "elapsed_seconds": 244.2029999999795,
+      "recomputed_layouts": 20,
+      "recomputed_stages": 20,
+      "profiles_verified": 4,
+      "errors": []
+    },
+    "exp02": {
+      "planned_cases": 0,
+      "recorded_counts": {},
+      "completed_within_budget": true,
+      "elapsed_seconds": 37.859999999869615,
+      "recomputed_layouts": 0,
+      "recomputed_stages": 0,
+      "profiles_verified": 4,
+      "errors": []
+    },
+    "exp03": {
+      "planned_cases": 45,
+      "recorded_counts": {
+        "verified": 45
+      },
+      "completed_within_budget": true,
+      "elapsed_seconds": 675.8589999999385,
+      "recomputed_layouts": 45,
+      "recomputed_stages": 60,
+      "profiles_verified": 0,
+      "errors": []
+    },
+    "exp03-small": {
+      "planned_cases": 27,
+      "recorded_counts": {
+        "verified": 19,
+        "timeout": 1,
+        "pending": 7
+      },
+      "completed_within_budget": false,
+      "elapsed_seconds": 31633.5,
+      "recomputed_layouts": 19,
+      "recomputed_stages": 25,
+      "profiles_verified": 0,
+      "errors": [],
+      "recorded_timeout_overruns": {
+        "cases": [
+          {
+            "input": "six-mixed",
+            "condition": "squared",
+            "seed": 0,
+            "subprocess_wall_budget": 35.0,
+            "solver_wall_seconds": 31502.796999999788
+          }
+        ],
+        "note": "These observations are abnormal wall-clock durations with unknown cause. They are excluded from the solver comparison metrics."
+      }
+    },
+    "exp04-legacy-reference": {
+      "planned_cases": 2,
+      "recorded_counts": {
+        "verified": 2
+      },
+      "completed_within_budget": true,
+      "elapsed_seconds": 212.95300000021234,
+      "recomputed_layouts": 2,
+      "recomputed_stages": 0,
+      "profiles_verified": 0,
+      "errors": []
+    }
+  },
+  "errors": [
+    "small oracle coverage: manifest command, interpreter, threads or working directory differ from plan"
+  ],
+  "audit_passed": false
+}

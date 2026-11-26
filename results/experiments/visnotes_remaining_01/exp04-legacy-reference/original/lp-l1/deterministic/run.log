@@ -1,0 +1,27 @@
+Reading hypergraph data from C:\Users\shink\evico\layered-hyper-graph-visualization\original.json...
+Loaded 627 nodes and 383 hyperedges.
+Computing polygons and overlap set C (same as solve_layers.py)...
+Found 4431 overlapping pairs (C set).
+Regularization on every off-diagonal pair: 1e-05
+Phase 1: Computing Graph Coloring using DSatur on overlap graph C...
+DSatur completed. Initial colors: 39 (not the final number of heights)
+Objective scale factor for QP comparison: 2.066099e-03
+Phase 2: Building sparse LP for the weighted absolute-value objective...
+Solving LP with 73536 continuous variables and 150737 constraints...
+Optimization converged successfully (58.184 s).
+Optimal objective value (regularized L1): 88988.516060
+All overlap constraints and DSatur directions satisfied.
+Anchor coordinate x_0: 0.000000
+Coordinate range: min=-11.0000, max=27.0000
+Metric                                           DSatur L1
+L1 (W + reg)                                  88988.516060
+L1 (shared vertices only)                     88982.000000
+L2 squared (W + reg)                        1508556.725220
+L2 squared (shared vertices only)           1508460.000000
+L2 scaled as solve_layers.py                   6233.656277
+Height range                                     38.000000
+Pillar length (before viewer Z scale)          8614.000000
+Overlap constraint violations                     0.000000
+DSatur order violations                           0.000000
+Writing output to C:\Users\shink\evico\layered-hyper-graph-visualization\results\experiments\visnotes_remaining_01\exp04-legacy-reference\original\lp-l1\deterministic\layout.json...
+Layer assignment complete!

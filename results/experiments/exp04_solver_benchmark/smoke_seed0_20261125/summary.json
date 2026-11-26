@@ -1,0 +1,619 @@
+{
+  "complete": true,
+  "interrupted": false,
+  "error": null,
+  "total_budget_exhausted": false,
+  "elapsed_seconds": 23.57799999997951,
+  "input_profiles": {},
+  "case_counts": {
+    "verified": 2
+  },
+  "cases": [
+    {
+      "input": "original",
+      "condition": "dsatur",
+      "seed": null,
+      "command": [
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\solve_layers_compact.py",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\original.json",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\exp04_solver_benchmark\\smoke_seed0_20261125\\original\\dsatur\\deterministic\\layout.json",
+        "--reg",
+        "1e-05",
+        "--report",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\exp04_solver_benchmark\\smoke_seed0_20261125\\original\\dsatur\\deterministic\\report.json",
+        "--method",
+        "dsatur",
+        "--objective",
+        "hybrid",
+        "--alpha",
+        "0.25",
+        "--beta",
+        "0.005",
+        "--seed",
+        "0",
+        "--max-iterations",
+        "250",
+        "--time-budget",
+        "23.0",
+        "--warm-start-extra-layers",
+        "0",
+        "--moves",
+        "move",
+        "kempe",
+        "swap",
+        "shift"
+      ],
+      "case_directory": "results/experiments/exp04_solver_benchmark/smoke_seed0_20261125/original/dsatur/deterministic",
+      "input_sha256": "bc21935cccb75e36b17c92e7164032eed8f278606f5767a14efd9d212c82bd7b",
+      "subprocess_wall_budget": 25.0,
+      "solver_internal_budget": 23.0,
+      "solver_wall_seconds": 9.609999999869615,
+      "exit_code": 0,
+      "metrics": {
+        "l1_regularized": 98251.04426,
+        "l1_shared_vertices": 98245,
+        "l2_regularized": 1784990.39062,
+        "l2_shared_vertices": 1784863,
+        "l2_scaled_qp": 7375.935134644185,
+        "height_min": 0,
+        "height_max": 38,
+        "height_range": 38,
+        "pillar_length": 9013,
+        "overlap_violation_count": 0,
+        "order_violation_count": 0,
+        "max_order_violation": 0,
+        "used_layer_count": 39,
+        "pillar_square_sum": 234721,
+        "degree_span_square_sum": 1724747,
+        "top5_constrained_hub_mean_span": 32.2,
+        "constrained_hubs": [
+          {
+            "node_id": 198,
+            "degree": 22,
+            "constrained_degree": 22,
+            "span": 35
+          },
+          {
+            "node_id": 96,
+            "degree": 22,
+            "constrained_degree": 21,
+            "span": 29
+          },
+          {
+            "node_id": 207,
+            "degree": 18,
+            "constrained_degree": 18,
+            "span": 36
+          },
+          {
+            "node_id": 199,
+            "degree": 19,
+            "constrained_degree": 17,
+            "span": 29
+          },
+          {
+            "node_id": 2,
+            "degree": 18,
+            "constrained_degree": 15,
+            "span": 32
+          }
+        ]
+      },
+      "height_type": "integer",
+      "stages": [
+        {
+          "cap": 39,
+          "metrics": {
+            "l1_regularized": 98251.04426,
+            "l1_shared_vertices": 98245,
+            "l2_regularized": 1784990.39062,
+            "l2_shared_vertices": 1784863,
+            "l2_scaled_qp": 7375.935134644185,
+            "height_min": 0,
+            "height_max": 38,
+            "height_range": 38,
+            "pillar_length": 9013,
+            "overlap_violation_count": 0,
+            "order_violation_count": 0,
+            "max_order_violation": 0,
+            "used_layer_count": 39,
+            "pillar_square_sum": 234721,
+            "degree_span_square_sum": 1724747,
+            "top5_constrained_hub_mean_span": 32.2,
+            "constrained_hubs": [
+              {
+                "node_id": 198,
+                "degree": 22,
+                "constrained_degree": 22,
+                "span": 35
+              },
+              {
+                "node_id": 96,
+                "degree": 22,
+                "constrained_degree": 21,
+                "span": 29
+              },
+              {
+                "node_id": 207,
+                "degree": 18,
+                "constrained_degree": 18,
+                "span": 36
+              },
+              {
+                "node_id": 199,
+                "degree": 19,
+                "constrained_degree": 17,
+                "span": 29
+              },
+              {
+                "node_id": 2,
+                "degree": 18,
+                "constrained_degree": 15,
+                "span": 32
+              }
+            ]
+          },
+          "optimized_value": 10856.983783661046,
+          "trajectory": [
+            {
+              "iteration": 0,
+              "elapsed_seconds": 3.479245100170374,
+              "optimized_value": 10856.983783661046,
+              "used_layer_count": 39
+            }
+          ],
+          "iterations": 0,
+          "elapsed_seconds": 0.022619100054726005,
+          "termination_reason": "initialization_only"
+        }
+      ],
+      "iterations": 0,
+      "termination_reason": "initialization_only",
+      "projection": {
+        "projection": "orthographic",
+        "azimuth_degrees": 45.0,
+        "elevation_degrees": 35.0,
+        "pixels_per_xy_span": 384,
+        "z_step_world": 0.1363402923410712,
+        "polygons_measured": 168,
+        "covered_pixel_count": 20984,
+        "overdraw_pixel_count": 14673,
+        "overdraw_sample_count": 52775,
+        "max_face_depth": 12,
+        "projected_pillar_length_px": 28350.78672067846
+      },
+      "status": "verified",
+      "case_elapsed_seconds": 10.390999999828637
+    },
+    {
+      "input": "original",
+      "condition": "full",
+      "seed": 0,
+      "command": [
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\solve_layers_compact.py",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\original.json",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\exp04_solver_benchmark\\smoke_seed0_20261125\\original\\full\\seed-0\\layout.json",
+        "--reg",
+        "1e-05",
+        "--report",
+        "C:\\Users\\shink\\evico\\layered-hyper-graph-visualization\\results\\experiments\\exp04_solver_benchmark\\smoke_seed0_20261125\\original\\full\\seed-0\\report.json",
+        "--method",
+        "anneal",
+        "--objective",
+        "hybrid",
+        "--alpha",
+        "0.25",
+        "--beta",
+        "0.005",
+        "--seed",
+        "0",
+        "--max-iterations",
+        "250",
+        "--time-budget",
+        "23.0",
+        "--warm-start-extra-layers",
+        "0",
+        "--moves",
+        "move",
+        "kempe",
+        "swap",
+        "shift"
+      ],
+      "case_directory": "results/experiments/exp04_solver_benchmark/smoke_seed0_20261125/original/full/seed-0",
+      "input_sha256": "bc21935cccb75e36b17c92e7164032eed8f278606f5767a14efd9d212c82bd7b",
+      "subprocess_wall_budget": 25.0,
+      "solver_internal_budget": 23.0,
+      "solver_wall_seconds": 9.094000000040978,
+      "exit_code": 0,
+      "metrics": {
+        "l1_regularized": 79445.08068,
+        "l1_shared_vertices": 79439,
+        "l2_regularized": 1170486.26948,
+        "l2_shared_vertices": 1170403,
+        "l2_scaled_qp": 4836.681948006113,
+        "height_min": 0,
+        "height_max": 38,
+        "height_range": 38,
+        "pillar_length": 7457,
+        "overlap_violation_count": 0,
+        "order_violation_count": 0,
+        "max_order_violation": 0,
+        "used_layer_count": 39,
+        "pillar_square_sum": 167893,
+        "degree_span_square_sum": 1297865,
+        "top5_constrained_hub_mean_span": 31.4,
+        "constrained_hubs": [
+          {
+            "node_id": 198,
+            "degree": 22,
+            "constrained_degree": 22,
+            "span": 36
+          },
+          {
+            "node_id": 96,
+            "degree": 22,
+            "constrained_degree": 21,
+            "span": 27
+          },
+          {
+            "node_id": 207,
+            "degree": 18,
+            "constrained_degree": 18,
+            "span": 30
+          },
+          {
+            "node_id": 199,
+            "degree": 19,
+            "constrained_degree": 17,
+            "span": 36
+          },
+          {
+            "node_id": 2,
+            "degree": 18,
+            "constrained_degree": 15,
+            "span": 28
+          }
+        ]
+      },
+      "height_type": "integer",
+      "stages": [
+        {
+          "cap": 39,
+          "metrics": {
+            "l1_regularized": 79445.08068,
+            "l1_shared_vertices": 79439,
+            "l2_regularized": 1170486.26948,
+            "l2_shared_vertices": 1170403,
+            "l2_scaled_qp": 4836.681948006113,
+            "height_min": 0,
+            "height_max": 38,
+            "height_range": 38,
+            "pillar_length": 7457,
+            "overlap_violation_count": 0,
+            "order_violation_count": 0,
+            "max_order_violation": 0,
+            "used_layer_count": 39,
+            "pillar_square_sum": 167893,
+            "degree_span_square_sum": 1297865,
+            "top5_constrained_hub_mean_span": 31.4,
+            "constrained_hubs": [
+              {
+                "node_id": 198,
+                "degree": 22,
+                "constrained_degree": 22,
+                "span": 36
+              },
+              {
+                "node_id": 96,
+                "degree": 22,
+                "constrained_degree": 21,
+                "span": 27
+              },
+              {
+                "node_id": 207,
+                "degree": 18,
+                "constrained_degree": 18,
+                "span": 30
+              },
+              {
+                "node_id": 199,
+                "degree": 19,
+                "constrained_degree": 17,
+                "span": 36
+              },
+              {
+                "node_id": 2,
+                "degree": 18,
+                "constrained_degree": 15,
+                "span": 28
+              }
+            ]
+          },
+          "optimized_value": 8666.170487001527,
+          "trajectory": [
+            {
+              "iteration": 0,
+              "elapsed_seconds": 3.4111969999503344,
+              "optimized_value": 10856.983783661046,
+              "used_layer_count": 39
+            },
+            {
+              "iteration": 0,
+              "elapsed_seconds": 3.5368051999248564,
+              "optimized_value": 10194.502047091282,
+              "used_layer_count": 39
+            },
+            {
+              "iteration": 6,
+              "elapsed_seconds": 3.5399488999973983,
+              "optimized_value": 10131.1475970169,
+              "used_layer_count": 39
+            },
+            {
+              "iteration": 7,
+              "elapsed_seconds": 3.540422699879855,
+              "optimized_value": 10124.087672241925,
+              "used_layer_count": 39
+            },
+            {
+              "iteration": 16,
+              "elapsed_seconds": 3.5444860998541117,
+              "optimized_value": 10115.719102134359,
+              "used_layer_count": 39
+            },
+            {
+              "iteration": 109,
+              "elapsed_seconds": 3.5843102999497205,
+              "optimized_value": 9825.005397643348,
+              "used_layer_count": 39
+            },
+            {
+              "iteration": 115,
+              "elapsed_seconds": 3.586842800024897,
+              "optimized_value": 9744.560036902189,
+              "used_layer_count": 39
+            },
+            {
+              "iteration": 122,
+              "elapsed_seconds": 3.588523000013083,
+              "optimized_value": 9715.590252118258,
+              "used_layer_count": 39
+            },
+            {
+              "iteration": 126,
+              "elapsed_seconds": 3.5899527999572456,
+              "optimized_value": 9706.377459665504,
+              "used_layer_count": 39
+            },
+            {
+              "iteration": 127,
+              "elapsed_seconds": 3.5902199000120163,
+              "optimized_value": 9692.270153818208,
+              "used_layer_count": 39
+            },
+            {
+              "iteration": 128,
+              "elapsed_seconds": 3.5904737999662757,
+              "optimized_value": 9689.557901381853,
+              "used_layer_count": 39
+            },
+            {
+              "iteration": 131,
+              "elapsed_seconds": 3.591880999971181,
+              "optimized_value": 9631.14207753567,
+              "used_layer_count": 39
+            },
+            {
+              "iteration": 136,
+              "elapsed_seconds": 3.5957202999852598,
+              "optimized_value": 9593.913804048076,
+              "used_layer_count": 39
+            },
+            {
+              "iteration": 137,
+              "elapsed_seconds": 3.5962320999242365,
+              "optimized_value": 9560.150730277293,
+              "used_layer_count": 39
+            },
+            {
+              "iteration": 140,
+              "elapsed_seconds": 3.5978057000320405,
+              "optimized_value": 9407.834181866581,
+              "used_layer_count": 39
+            },
+            {
+              "iteration": 143,
+              "elapsed_seconds": 3.599755199858919,
+              "optimized_value": 9300.153727443721,
+              "used_layer_count": 39
+            },
+            {
+              "iteration": 188,
+              "elapsed_seconds": 3.623375599971041,
+              "optimized_value": 9275.876593928535,
+              "used_layer_count": 39
+            },
+            {
+              "iteration": 194,
+              "elapsed_seconds": 3.6284396999981254,
+              "optimized_value": 9240.51828995895,
+              "used_layer_count": 39
+            },
+            {
+              "iteration": 198,
+              "elapsed_seconds": 3.6316624998580664,
+              "optimized_value": 9162.838596191245,
+              "used_layer_count": 39
+            },
+            {
+              "iteration": 201,
+              "elapsed_seconds": 3.632610799977556,
+              "optimized_value": 9155.351349251749,
+              "used_layer_count": 39
+            },
+            {
+              "iteration": 205,
+              "elapsed_seconds": 3.633906199829653,
+              "optimized_value": 9101.911419769373,
+              "used_layer_count": 39
+            },
+            {
+              "iteration": 209,
+              "elapsed_seconds": 3.635433399816975,
+              "optimized_value": 9092.85887592788,
+              "used_layer_count": 39
+            },
+            {
+              "iteration": 241,
+              "elapsed_seconds": 3.6517781999427825,
+              "optimized_value": 8995.246430059167,
+              "used_layer_count": 39
+            },
+            {
+              "iteration": 248,
+              "elapsed_seconds": 3.654151199851185,
+              "optimized_value": 8990.461254892574,
+              "used_layer_count": 39
+            },
+            {
+              "iteration": 250,
+              "elapsed_seconds": 3.7836754999589175,
+              "optimized_value": 8666.170487001527,
+              "used_layer_count": 39
+            }
+          ],
+          "iterations": 250,
+          "elapsed_seconds": 0.39796030009165406,
+          "termination_reason": "iteration_budget"
+        }
+      ],
+      "iterations": 250,
+      "termination_reason": "iteration_budget",
+      "projection": {
+        "projection": "orthographic",
+        "azimuth_degrees": 45.0,
+        "elevation_degrees": 35.0,
+        "pixels_per_xy_span": 384,
+        "z_step_world": 0.1363402923410712,
+        "polygons_measured": 168,
+        "covered_pixel_count": 18465,
+        "overdraw_pixel_count": 13972,
+        "overdraw_sample_count": 55284,
+        "max_face_depth": 14,
+        "projected_pillar_length_px": 23456.320489969963
+      },
+      "status": "verified",
+      "case_elapsed_seconds": 10.125
+    }
+  ],
+  "comparisons": [
+    {
+      "input": "original",
+      "condition": "dsatur",
+      "verified_cases": 1,
+      "metrics": {
+        "used_layer_count": {
+          "median": 39,
+          "minimum": 39,
+          "maximum": 39
+        },
+        "height_range": {
+          "median": 38,
+          "minimum": 38,
+          "maximum": 38
+        },
+        "l2_scaled_qp": {
+          "median": 7375.935134644185,
+          "minimum": 7375.935134644185,
+          "maximum": 7375.935134644185
+        },
+        "pillar_length": {
+          "median": 9013,
+          "minimum": 9013,
+          "maximum": 9013
+        },
+        "top5_constrained_hub_mean_span": {
+          "median": 32.2,
+          "minimum": 32.2,
+          "maximum": 32.2
+        },
+        "overlap_violation_count": {
+          "median": 0,
+          "minimum": 0,
+          "maximum": 0
+        },
+        "solver_wall_seconds": {
+          "median": 9.609999999869615,
+          "minimum": 9.609999999869615,
+          "maximum": 9.609999999869615
+        },
+        "overdraw_pixel_count": {
+          "median": 14673,
+          "minimum": 14673,
+          "maximum": 14673
+        },
+        "projected_pillar_length_px": {
+          "median": 28350.78672067846,
+          "minimum": 28350.78672067846,
+          "maximum": 28350.78672067846
+        }
+      }
+    },
+    {
+      "input": "original",
+      "condition": "full",
+      "verified_cases": 1,
+      "metrics": {
+        "used_layer_count": {
+          "median": 39,
+          "minimum": 39,
+          "maximum": 39
+        },
+        "height_range": {
+          "median": 38,
+          "minimum": 38,
+          "maximum": 38
+        },
+        "l2_scaled_qp": {
+          "median": 4836.681948006113,
+          "minimum": 4836.681948006113,
+          "maximum": 4836.681948006113
+        },
+        "pillar_length": {
+          "median": 7457,
+          "minimum": 7457,
+          "maximum": 7457
+        },
+        "top5_constrained_hub_mean_span": {
+          "median": 31.4,
+          "minimum": 31.4,
+          "maximum": 31.4
+        },
+        "overlap_violation_count": {
+          "median": 0,
+          "minimum": 0,
+          "maximum": 0
+        },
+        "solver_wall_seconds": {
+          "median": 9.094000000040978,
+          "minimum": 9.094000000040978,
+          "maximum": 9.094000000040978
+        },
+        "overdraw_pixel_count": {
+          "median": 13972,
+          "minimum": 13972,
+          "maximum": 13972
+        },
+        "projected_pillar_length_px": {
+          "median": 23456.320489969963,
+          "minimum": 23456.320489969963,
+          "maximum": 23456.320489969963
+        }
+      }
+    }
+  ]
+}
