@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ハイパーグラフ層配置ビューア</title>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+        }
+    }
+    </script>
+    <style>
+        :root {
+            color-scheme: dark;
+            font-family: system-ui, "Yu Gothic UI", sans-serif;
+            background: #12181e;
+            color: #eef2f4;
+            --panel: #1a222a;
+            --surface: #0e151c;
+            --border: #33424e;
+            --muted: #acbcc7;
+            --accent: #a5e3de;
+        }
+        *, *::before, *::after { box-sizing: border-box; }
+        body { margin: 0; min-height: 100vh; }
+        h1, h2, h3, p { margin: 0; }
+        h1 { font-size: clamp(1.22rem, 2.35vw, 1.65rem); letter-spacing: .02em; }
+        h2 { font-size: .92rem; }
+        h3 { font-size: .82rem; }
+        label { display: block; font-size: .81rem; }
+        button, input, select { font: inherit; }
+        button, .file-button {
+            background: #26343e;
+            color: #eef2f4;
+            border: 1px solid #465967;
+            border-radius: .42rem;
+            padding: .48rem .68rem;
+            font-size: .8rem;
+            cursor: pointer;
+        }
+        button:hover, .file-button:hover { background: #344754; }
+        button:disabled, .file-button:has(:disabled) { opacity: .5; cursor: default; }
+        :focus-visible, .file-button:focus-within { outline: 2px solid var(--accent); outline-offset: 3px; }
+        [hidden] { display: none !important; }
+        .top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: .75rem;
+            border-bottom: 1px solid var(--border);
+            padding: .95rem clamp(.85rem, 2.8vw, 2rem);
+            background: #1a222a;
+        }
+        .actions { display: flex; flex-wrap: wrap; gap: .45rem; }
+        .file-button { position: relative; }
+        .file-button input {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            inset: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .status { min-height: 1.5rem; margin: .5rem clamp(.85rem, 2.8vw, 2rem) 0; font-size: .8rem; color: var(--muted); }
+        .error { color: #ffd3c5; }
+        .workspace {
+            display: grid;
+            grid-template-columns: minmax(13rem, 17rem) minmax(0, 1fr);
+            padding: .35rem clamp(.85rem, 2.8vw, 2rem) 1.5rem;
+            gap: .75rem;
+            align-items: start;
+        }
+        aside, .pane { border: 1px solid var(--border); border-radius: .65rem; background: var(--panel); }
+        aside { padding: .92rem; display: grid; gap: .88rem; }
+        .controls { display: grid; gap: .42rem; }
+        .controls + .controls { padding-top: .9rem; border-top: 1px solid var(--border); }
+        .controls .muted { font-size: .74rem; line-height: 1.45; }
+        .muted { color: var(--muted); }
+        .field { display: grid; gap: .22rem; }
+        input[type="number"], input[type="search"], select {
+            min-width: 0;
+            width: 100%;
+            padding: .37rem .48rem;
+            border: 1px solid #465967;
+            border-radius: .34rem;
+            background: var(--surface);
+            color: inherit;
+            font-size: .8rem;
+        }
+        input[type="range"] { width: 100%; margin: .3rem 0; accent-color: var(--accent); }
+        select { height: 6.55rem; }
+        .bounds { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .42rem; }
+        .row { display: flex; justify-content: space-between; align-items: center; gap: .45rem; }
+        .selected { color: var(--accent); overflow-wrap: anywhere; }
+        .memberships { margin: .15rem 0 .3rem; padding-left: 1.2rem; max-height: 8rem; overflow: auto; font-size: .78rem; }
+        .memberships li { padding: .12rem 0; overflow-wrap: anywhere; }
+        .panes { display: grid; grid-template-columns: minmax(0, 1fr); gap: .68rem; }
+        .panes.compare { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .pane { min-width: 0; overflow: hidden; }
+        .pane-head { padding: .65rem .78rem; }
+        .pane-head h2 { display: flex; justify-content: space-between; gap: .5rem; }
+        .dataset { color: var(--accent); font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .counts { margin-top: .22rem; min-height: 1.1rem; font-size: .75rem; }
+        .stage { height: clamp(18rem, 56vh, 38rem); background: var(--surface); overflow: hidden; }
+        .stage canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+        .pane-foot { border-top: 1px solid var(--border); padding: .64rem .78rem; display: flex; gap: .8rem; align-items: flex-start; }
+        figure { margin: 0; width: min(100%, 15rem); }
+        figcaption { margin-bottom: .3rem; font-size: .74rem; }
+        .overview { display: block; width: 100%; height: 6.7rem; background: var(--surface); border-radius: .32rem; cursor: crosshair; }
+        .degree-legend { display: grid; gap: .22rem; align-self: center; min-width: 4.5rem; }
+        .gradient { display: block; height: .4rem; border-radius: .2rem; background: linear-gradient(90deg, #3f608f, #2a788e, #22a884, #7ad151, #fde725); }
+        .degree-legend .muted { font-size: .68rem; }
+        @media (max-width: 900px) {
+            .panes.compare { grid-template-columns: minmax(0, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .workspace { grid-template-columns: minmax(0, 1fr); }
+            .panes { grid-row: 1; }
+            .stage { height: 19rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="top">
+        <h1>ハイパーグラフ層配置ビューア</h1>
+        <div class="actions">
+            <label class="file-button">配置 A を開く<input id="file-a" type="file" accept=".json,application/json" aria-label="配置 A の JSON" disabled></label>
+            <label class="file-button">配置 B を開く<input id="file-b" type="file" accept=".json,application/json" aria-label="配置 B の JSON" disabled></label>
+            <button id="remove-b" type="button" hidden>配置 B を閉じる</button>
+            <button id="reset-view" type="button">視点を戻す</button>
+        </div>
+    </header>
+    <p id="status" class="status" role="status" aria-live="polite">ビューアを読み込み中…</p>
+    <noscript>ビューアには JavaScript が必要です。</noscript>
+    <main class="workspace">
+        <aside aria-label="表示と選択">
+            <section class="controls" aria-labelledby="layers-title">
+                <h2 id="layers-title">表示するレイヤー</h2>
+                <p class="muted">各配置の最下層を 0 に揃えます。</p>
+                <div class="bounds">
+                    <label class="field">下限<input type="number" id="layer-low" step="any" value="0"></label>
+                    <label class="field">上限<input type="number" id="layer-high" step="any" value="0"></label>
+                </div>
+                <button id="all-layers" type="button">全範囲を表示</button>
+                <label class="field">層の間隔 <output id="spacing-value" for="spacing">1.0×</output>
+                    <input id="spacing" type="range" min="0.4" max="5" step="0.1" value="1">
+                </label>
+            </section>
+            <section class="controls" aria-labelledby="vertex-title">
+                <div class="row"><h2 id="vertex-title">頂点を追跡</h2><button id="clear-node" type="button" disabled>解除</button></div>
+                <label class="field">名前・ID で検索<input id="node-query" type="search" autocomplete="off"></label>
+                <select id="node-results" size="4" aria-label="追跡する頂点"></select>
+                <p class="muted">配置図や XY マップからも選択できます。</p>
+                <div id="node-details" hidden></div>
+            </section>
+        </aside>
+        <div id="panes" class="panes">
+            <section id="pane-a" class="pane" aria-label="配置 A">
+                <div class="pane-head">
+                    <h2>配置 A <span class="dataset"></span></h2>
+                    <p class="counts muted"></p>
+                </div>
+                <div class="stage"></div>
+                <div class="pane-foot">
+                    <figure><figcaption>XY マップ</figcaption><canvas class="overview" aria-label="配置 A の XY マップ"></canvas></figure>
+                    <div class="degree-legend"><h3>所属頂点数</h3><span class="gradient"></span><span class="muted">少 → 多</span></div>
+                </div>
+            </section>
+            <section id="pane-b" class="pane" aria-label="配置 B" hidden>
+                <div class="pane-head">
+                    <h2>配置 B <span class="dataset"></span></h2>
+                    <p class="counts muted"></p>
+                </div>
+                <div class="stage"></div>
+                <div class="pane-foot">
+                    <figure><figcaption>XY マップ</figcaption><canvas class="overview" aria-label="配置 B の XY マップ"></canvas></figure>
+                    <div class="degree-legend"><h3>所属頂点数</h3><span class="gradient"></span><span class="muted">少 → 多</span></div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script type="module" src="viewer_visnotes.js"></script>
+</body>
+</html>
