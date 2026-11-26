@@ -48,6 +48,24 @@ python tools/post_esa_report.py --title "実験報告 tree_optimization_comparis
 
 `--check-config` はトークンが設定されているかを通信せずに確認する。投稿時は `--report` に作成済みの UTF-8 Markdown を指定する。投稿が成功すると、`vdslab` の `ゼミ/大学院/dan` に作成した記事の URL が出力される。
 
+## C++によるレイヤー直接探索
+
+[直接探索ソルバー](solve_layers_compact.py) は、4種の近傍の生成・評価、焼きなまし法、制約のない辺の座標降下を [C++17](native/compact_search.cpp) で実行できる。既存の Python CLI が入力、重なり判定、初期彩色、出力の検証と保存を担当する。ビューアには従来と同じ形式の配置 JSON を渡せる。
+
+MinGW-w64 の `g++` を使う Windows のビルドと実行例。
+
+~~~powershell
+New-Item -ItemType Directory -Force native/build | Out-Null
+g++ -O3 -DNDEBUG -std=c++17 -shared -static-libstdc++ -static-libgcc native/compact_search.cpp -o native/build/compact_search.dll
+python -B solve_layers_compact.py original.json results/experiments/local-native/layout.json --report results/experiments/local-native/report.json --backend native
+~~~
+
+Linux は `g++ -O3 -DNDEBUG -std=c++17 -fPIC -shared native/compact_search.cpp -o native/build/libcompact_search.so`、macOS は `c++ -O3 -DNDEBUG -std=c++17 -dynamiclib native/compact_search.cpp -o native/build/libcompact_search.dylib` を使う。
+
+既定の `--backend auto` は標準の場所にライブラリがあれば C++ を使う。`--backend python` は比較用の Python 探索を選ぶ。別の場所にビルドした場合は `--native-library` で指定する。レポートの `backend` に使用した実装を記録する。検証と速度計測は [比較実験](experiments/visnotes_native_comparison_01/run_experiment.py) を参照する。
+
+seed は探索の乱数列に使う。C++ と Python で浮動小数点の加算順が異なるため、目的値が同じ配置間では選択する層が異なる場合がある。
+
 ## 根付き木によるレイヤー割り当て
 
 [solve_layers_tree.py](solve_layers_tree.py) は、仮想根付きのBFS木を初期値とし、

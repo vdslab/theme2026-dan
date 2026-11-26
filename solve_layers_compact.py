@@ -22,11 +22,13 @@ import numpy as np
 
 from solve_layers import dsatur_coloring
 from solve_layers_tree import Problem, layout_metrics, prepare_problem
+from native.compact_search import DEFAULT_LIBRARY, INT32_MAX, NativeSearch
 
 
 METHODS = ("greedy-input", "greedy-size", "greedy-degree", "dsatur", "anneal")
 OBJECTIVES = ("pillar", "squared", "hybrid", "degree-span")
 MOVES = ("move", "kempe", "swap", "shift")
+BACKENDS = ("auto", "native", "python")
 IMPROVEMENT_TOLERANCE = 1e-9
 SHIFT_CACHE_AFTER = 6
 
@@ -534,37 +536,56 @@ def search_stage(objective, initial, cap, budget, first_iteration, rng, started_
             best, best_value = refined, refined_value
             record_improvement(trajectory, best, best_value, first_iteration + iterations, started_at)
 
+    return finish_stage(objective, initial, best, best_value, cap, budget, deadline, {
+        "iterations": iterations,
+        "elapsed_seconds": time.perf_counter() - stage_start,
+        "trajectory": trajectory,
+        "moves": move_stats,
+        "free_coordinate_updates": updates,
+    })
+
+
+def finish_stage(objective, initial, best, best_value, cap, budget, deadline, stats, timed_out=False):
     check_layout(objective.problem, best, cap)
     metrics = objective.metrics(best)
     reported_value = objective.reported_value(metrics)
     if not math.isclose(best_value, reported_value, rel_tol=1e-10, abs_tol=1e-8):
         raise RuntimeError("Proposal objective differs from the reported metric.")
-    if past_deadline(deadline):
+    if timed_out or past_deadline(deadline):
         reason = "time_budget"
     else:
-        reason = "iteration_budget" if config.method == "anneal" else "initialization_only"
+        reason = "iteration_budget" if objective.config.method == "anneal" else "initialization_only"
     return best, {
         "cap": cap,
         "initial_layers": initial.tolist(),
         "layers": best.tolist(),
-        "iterations": iterations,
         "iteration_budget": budget,
-        "elapsed_seconds": time.perf_counter() - stage_start,
         "termination_reason": reason,
         "optimized_value": reported_value,
         "metrics": metrics,
-        "trajectory": trajectory,
-        "moves": move_stats,
-        "free_coordinate_updates": updates,
+        **stats,
     }
 
 
-def solve(data, config=Config(), *, overlaps=None, started_at=None):
+def solve(data, config=Config(), *, overlaps=None, started_at=None, backend="auto", native_library=None):
     """Return viewer JSON and metrics for every cap that reached initialization."""
     started_at = time.perf_counter() if started_at is None else started_at
     deadline = started_at + config.time_budget if config.time_budget else None
     problem = prepare_problem(data, reg=config.reg, overlaps=overlaps)
     objective = Objective(problem, config)
+    if backend not in BACKENDS:
+        raise ValueError(f"Unknown search backend: {backend}")
+    library = Path(native_library) if native_library is not None else DEFAULT_LIBRARY
+    budget = config.max_iterations if config.method == "anneal" else 0
+    if backend == "native" and budget > INT32_MAX:
+        raise ValueError("Native search supports at most 2,147,483,647 proposals.")
+    use_native = backend == "native" or (
+        backend == "auto" and budget <= INT32_MAX
+        and (native_library is not None or library.is_file())
+    )
+    if use_native and not library.is_file():
+        raise FileNotFoundError(f"Native search library not found: {library}. Build it first.")
+    native = NativeSearch(objective, MOVES, library) if use_native else None
     initial = initial_coloring(problem, config.method)
     colors = int(initial.max()) + 1
     base_cap = min(config.layer_cap or colors, problem.n)
@@ -574,7 +595,6 @@ def solve(data, config=Config(), *, overlaps=None, started_at=None):
     caps = tuple(range(base_cap, last_cap + 1))
     iterations, stages = 0, []
     rng = random.Random(config.seed)
-    budget = config.max_iterations if config.method == "anneal" else 0
     each, remainder = divmod(budget, len(caps))
     initial_metrics = objective.metrics(initial)
     preprocessing_seconds = time.perf_counter() - started_at
@@ -582,10 +602,18 @@ def solve(data, config=Config(), *, overlaps=None, started_at=None):
     for stage_index, cap in enumerate(caps):
         if stage_index and past_deadline(deadline):
             break
-        layers, stage = search_stage(
-            objective, layers, cap, each + int(stage_index < remainder),
-            iterations, rng, started_at, deadline,
-        )
+        stage_budget = each + int(stage_index < remainder)
+        if native is None:
+            layers, stage = search_stage(
+                objective, layers, cap, stage_budget, iterations, rng, started_at, deadline,
+            )
+        else:
+            best, stats, value, timed_out = native.run(
+                layers, cap, stage_budget, iterations, rng, started_at, deadline,
+            )
+            layers, stage = finish_stage(
+                objective, layers, best, value, cap, stage_budget, deadline, stats, timed_out,
+            )
         stages.append(stage)
         iterations += stage["iterations"]
     final = stages[-1]
@@ -599,6 +627,7 @@ def solve(data, config=Config(), *, overlaps=None, started_at=None):
     upper_bound = min(colors, *(stage["metrics"]["used_layer_count"] for stage in stages))
     witness = clique_witness(problem.adjacency, upper_bound, deadline)
     report = {
+        "backend": "native" if use_native else "python",
         "settings": {**asdict(config), "optimize_free_edges": config.refine_free_edges},
         "quadratic_metric": "l2_scaled_qp",
         "problem_signature": problem.signature,
@@ -657,6 +686,9 @@ def parse_args(argv=None):
     parser.add_argument("input", type=Path)
     parser.add_argument("output", type=Path)
     parser.add_argument("--report", required=True, type=Path)
+    parser.add_argument("--backend", choices=BACKENDS, default="auto",
+                        help="Use the native search when a built library is available, or select a backend.")
+    parser.add_argument("--native-library", type=Path, help="Path to a built C++ search library.")
     parser.add_argument("--method", choices=METHODS, default=defaults.method)
     parser.add_argument("--objective", choices=OBJECTIVES, default=defaults.objective)
     parser.add_argument("--alpha", type=float, default=defaults.alpha)
@@ -678,7 +710,7 @@ def parse_args(argv=None):
 def main(argv=None):
     args = parse_args(argv)
     settings = vars(args).copy()
-    for key in ("input", "output", "report"):
+    for key in ("input", "output", "report", "backend", "native_library"):
         del settings[key]
     try:
         check_output_paths(args.input, args.output, args.report)
@@ -686,7 +718,9 @@ def main(argv=None):
         started_at = time.perf_counter()
         raw = args.input.read_bytes()
         data = json.loads(raw.decode("utf-8-sig"))
-        output, report = solve(data, config, started_at=started_at)
+        output, report = solve(
+            data, config, started_at=started_at, backend=args.backend, native_library=args.native_library,
+        )
         report.update(input_path=str(args.input), input_sha256=sha256(raw).hexdigest())
         save_results(((args.output, output), (args.report, report)))
     except (OSError, ValueError, RuntimeError, KeyError, TypeError) as error:
