@@ -4,6 +4,8 @@
 
 ## 研究の位置付けと貢献
 
+2026年11月27日に、公開DBLPの実図と読み取り課題をもとに、C3 の図案・対照条件・12月14日の投稿判定を更新した。共有頂点を層間で結ぶ垂直柱を使い、投影上の交差と実際の所属を識別できるか検証する。 [図の比較と改訂計画](docs/visnotes-visual-revision.md)
+
 **仮題**　*Compact and Coherent 2.5D Layer Assignment for Exact Polygon-Based Hypergraph Visualization*
 
 Qu et al. (2017) §6 は、平面上で重なるポリゴンを異なる平行面に置き、共有頂点を円筒でつなぐ多層表示を提案している。各ポリゴンは既存層を順に調べ、衝突しない最初の層に置く。この表現と貪欲法を出発点とし、入力の頂点・ハイパーエッジ・所属関係を保持したまま、層数、柱の長さ、共有先の多い頂点のスパン、視点による遮蔽を改善する。 [Qu et al. (2017) 原論文](https://web.engr.oregonstate.edu/~zhange/images/Nary.pdf)
