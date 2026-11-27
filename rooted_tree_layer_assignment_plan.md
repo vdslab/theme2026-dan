@@ -541,3 +541,6 @@ y = z[1:] - z[0] に対する 2 * scale * y.T @ L_yy @ y を再計算して表�
 この値は探索目的のl2_scaled_qpと一致することも検証する。
 正規化前の二乗和、--compareで指定した配置の値、改善量も別に出力する。
 レポートにはobjective_value_solve_layersと計算式を保存する。
+
+現在は既定で、完成結果をビューアが読む `layered_hypergraph.json` に保存する。
+現在の保存先と比較時の指定方法は [README の実行例](README.md#根付き木によるレイヤー割り当て) を参照。

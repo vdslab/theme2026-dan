@@ -383,45 +383,61 @@ class PersistenceTests(unittest.TestCase):
                 solver.comparison_metrics(problem, output)
 
     def test_default_filename_and_legacy_style_console_output(self):
-        self.assertEqual(solver.parse_arguments([]).output_file, "layers_hypergraph.json")
         with tempfile.TemporaryDirectory() as directory:
             previous = Path.cwd()
             try:
                 os.chdir(directory)
-                source = Path("input.json")
+                source = Path("original.json")
                 source.write_text(json.dumps(self.data()), encoding="utf-8")
+                viewer = Path("layered_hypergraph.json")
+                viewer.write_text('{"previous_layout": true}', encoding="utf-8")
                 console = io.StringIO()
-                with redirect_stdout(console):
-                    solver.main([str(source), "--initial-only", "--time-budget", "0"])
-                payload = json.loads(Path("layers_hypergraph.json").read_text())
+                with patch.object(solver, "__file__", str(Path.cwd() / "solve_layers_tree.py")):
+                    with redirect_stdout(console):
+                        code = solver.main(["--initial-only", "--time-budget", "0"])
+                self.assertEqual(code, 0)
+                payload = json.loads(viewer.read_text(encoding="utf-8"))
                 self.assertEqual(set(payload), {"nodes", "hyperedges", "overlaps"})
-                self.assertTrue(Path("results/layers/layers_hypergraph_initial.json").is_file())
-                self.assertTrue(Path("results/layers/layers_hypergraph_checkpoint.json").is_file())
-                report = json.loads(Path("results/reports/layers_hypergraph_report.json").read_text())
+                stem = "layered_hypergraph_rooted_tree"
+                self.assertTrue(Path(f"results/layers/{stem}_initial.json").is_file())
+                self.assertTrue(Path(f"results/layers/{stem}_checkpoint.json").is_file())
+                report = json.loads(Path(f"results/reports/{stem}_report.json").read_text())
+                self.assertEqual(Path(report["outputs"]["best"]), viewer.resolve())
                 for message in ("Reading hypergraph data", "Loaded 3 nodes and 3 hyperedges",
                                 "Computing overlap set C", "Computing weight matrix W",
                                 "Objective scale factor", "Best objective value",
                                 "Objective value (solve_layers.py)",
                                 "All overlap constraints successfully satisfied",
                                 "Coordinate range", "Preparing output JSON",
-                                "Writing output to layers_hypergraph.json",
+                                "Writing output to layered_hypergraph.json",
                                 "Layer assignment complete!"):
                     self.assertIn(message, console.getvalue())
                 self.assertIn(f"{report['objective_value_solve_layers']:.6f}", console.getvalue())
             finally:
                 os.chdir(previous)
 
-    def test_outputs_cannot_replace_input_or_each_other(self):
+    def test_outputs_cannot_replace_input_comparison_or_each_other(self):
         with tempfile.TemporaryDirectory() as directory:
-            source = Path(directory) / "input.json"
+            root = Path(directory)
+            source, output = root / "input.json", root / "out.json"
+            viewer = root / "layered_hypergraph.json"
             source.write_text(json.dumps(self.data()), encoding="utf-8")
             before = source.read_bytes()
+            viewer.write_text('{"previous_layout": true}', encoding="utf-8")
+            viewer_before = viewer.read_bytes()
             with self.assertRaises(ValueError):
                 solver.main([str(source), str(source)])
             with self.assertRaises(ValueError):
-                solver.main([str(source), str(Path(directory) / "out.json"),
-                             "--report", str(source)])
+                solver.main([str(source), str(output), "--report", str(output)])
+            with self.assertRaises(ValueError):
+                solver.main([str(source), str(output), "--report", str(source)])
+            with self.assertRaisesRegex(ValueError, "comparison layout"):
+                solver.main([str(source), str(viewer), "--compare", str(viewer)])
+            with patch.object(solver, "__file__", str(root / "solve_layers_tree.py")):
+                with self.assertRaisesRegex(ValueError, "active viewer data"):
+                    solver.main([str(source), str(output), "--report", str(viewer)])
             self.assertEqual(source.read_bytes(), before)
+            self.assertEqual(viewer.read_bytes(), viewer_before)
 
 
 if __name__ == "__main__":
