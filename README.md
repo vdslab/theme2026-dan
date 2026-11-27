@@ -77,16 +77,17 @@ seed は探索の乱数列に使う。C++ と Python で浮動小数点の加算
 python solve_layers_tree.py --seed 0 --time-budget 300
 python solve_layers_tree.py --time-budget 0 --max-iterations 10000 --seed 0
 python solve_layers_tree.py original.json results/layers/tree_bfs.json --initial-only
-python solve_layers_tree.py --method greedy --time-budget 60 --compare layered_hypergraph.json
+python solve_layers_tree.py original.json results/layers/tree_greedy.json --method greedy --time-budget 60 --compare layered_hypergraph.json
 python -B -m unittest tests.test_solve_layers_tree -v
 ~~~
 
-入力の既定値は original.json。完了後の既定保存先はルートの layers_hypergraph.json。
+入力の既定値は `original.json`。出力先を省略すると、完了時にビューアが読む
+`layered_hypergraph.json` を上書きする。比較に使う場合は例のように別の出力先を指定する。
 完成JSONは solve_layers.py と同じ nodes / hyperedges / overlaps の3項目とし、
 各hyperedgeにlayerを付ける。元のXY・所属・頂点順序・hyperedgeのメタデータを保持する。
-木の詳細と入力の独自メタデータは results/layers/layers_hypergraph_initial.json と
-results/layers/layers_hypergraph_checkpoint.json に保存する。
-レポートは results/reports/layers_hypergraph_report.json に保存する。
+既定出力時の木の詳細と入力の独自メタデータは `results/layers/layered_hypergraph_rooted_tree_initial.json` と
+`results/layers/layered_hypergraph_rooted_tree_checkpoint.json` に保存する。
+レポートは `results/reports/layered_hypergraph_rooted_tree_report.json` に保存する。
 ビューアは配信先の index.html と同じディレクトリにある layered_hypergraph.json を読む。
 
 実行ログには読み込み件数、重なり件数、重み・正則化、目的値、制約検証、座標範囲、

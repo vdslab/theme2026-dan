@@ -35,6 +35,9 @@ from solve_layers_dsatur_l1 import (
 from solve_layers_dummy import atomic_write_json
 
 
+VIEWER_FILENAME = "layered_hypergraph.json"
+
+
 class DeadlineExceeded(RuntimeError):
     pass
 
@@ -930,8 +933,8 @@ def parse_arguments(argv=None):
     parser.add_argument(
         "output_file",
         nargs="?",
-        default="layers_hypergraph.json",
-        help="Completed viewer JSON, matching solve_layers.py (default: layers_hypergraph.json)",
+        default=VIEWER_FILENAME,
+        help="Completed viewer JSON (default: %(default)s, replaces the existing file)",
     )
     parser.add_argument("--initial-output")
     parser.add_argument("--checkpoint")
@@ -976,6 +979,11 @@ def main(argv=None):
     config = Config(**fields)
     config.validate()
     source, output = Path(args.input_file).resolve(), Path(args.output_file).resolve()
+    active_viewer = Path(__file__).with_name(VIEWER_FILENAME).resolve()
+    # Keep tree artifacts separate from the dummy-layer solver's viewer artifacts.
+    artifact_stem = output.stem
+    if Path(args.output_file).name == VIEWER_FILENAME or output == active_viewer:
+        artifact_stem = Path(VIEWER_FILENAME).stem + "_rooted_tree"
     auxiliary_directory = (
         Path("results/layers").resolve()
         if output.parent == Path.cwd().resolve()
@@ -984,26 +992,28 @@ def main(argv=None):
     initial_path = (
         Path(args.initial_output).resolve()
         if args.initial_output
-        else auxiliary_directory / (output.stem + "_initial.json")
+        else auxiliary_directory / (artifact_stem + "_initial.json")
     )
     checkpoint_path = (
         Path(args.checkpoint).resolve()
         if args.checkpoint
-        else auxiliary_directory / (output.stem + "_checkpoint.json")
+        else auxiliary_directory / (artifact_stem + "_checkpoint.json")
     )
     report_path = (
         Path(args.report).resolve()
         if args.report
-        else Path("results/reports", output.stem + "_report.json").resolve()
+        else Path("results/reports", artifact_stem + "_report.json").resolve()
     )
     products = [output, initial_path, checkpoint_path, report_path]
-    protected = {source, Path(__file__).resolve().with_name("layered_hypergraph.json")}
+    protected = {source}
     if args.compare:
         protected.add(Path(args.compare).resolve())
-    if len(set(products)) != len(products) or any(p in protected for p in products):
+    if len(set(products)) != len(products) or protected.intersection(products):
         raise ValueError(
-            "Outputs must be distinct and must not replace the input, comparison or active viewer data"
+            "Outputs must be distinct and must not replace the input or comparison layout"
         )
+    if active_viewer in (initial_path, checkpoint_path, report_path):
+        raise ValueError("Only the completed output may replace the active viewer data")
 
     def log(message):
         if not args.quiet:
