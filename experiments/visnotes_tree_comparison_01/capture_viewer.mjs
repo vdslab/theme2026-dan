@@ -9,8 +9,16 @@ import { setTimeout as sleep } from "node:timers/promises";
 import { fileURLToPath } from "node:url";
 
 const root = fileURLToPath(new URL("../../", import.meta.url));
-const [run, output] = process.argv.slice(2).map((argument) => resolve(argument));
-assert.ok(run && output, "Pass the run directory and a new PNG path");
+const [runArg, outputArg, left = "tree-squared", right = "compact-hybrid",
+    leftTitle = "Tree-SA", rightTitle = "Compact-hybrid"] = process.argv.slice(2);
+assert.ok(runArg && outputArg, "Pass the run directory and a new PNG path");
+const run = resolve(runArg);
+const output = resolve(outputArg);
+const [leftFile, rightFile] = [leftTitle, rightTitle].map((title) => {
+    assert.match(title, /^[\w+-]+$/, "Use letters, digits, underscores, plus signs or hyphens in the viewer title");
+    return title + ".json";
+});
+assert.notEqual(leftFile, rightFile);
 
 async function poll(action) {
     for (let i = 0; i < 100; i += 1) {
@@ -26,21 +34,25 @@ async function anonymized(method) {
     const fields = (items, keys, name) => items.map((item) => ({
         ...Object.fromEntries(keys.map((key) => [key, item[key]])), label: name + " " + item.id,
     }));
-    return JSON.stringify({
+    return {
         nodes: fields(layout.nodes, ["id", "x", "y"], "Vertex"),
         hyperedges: fields(layout.hyperedges, ["id", "nodes", "layer"], "Edge"),
-    });
+    };
 }
 
 const summary = JSON.parse(await readFile(join(run, "summary.json"), "utf-8"));
 assert.ok(summary.complete);
-const baseline = summary.cases.find((record) => record.condition === "tree-squared" && record.seed === 0);
+const baseline = summary.cases.find((record) => record.condition === left && record.seed === 0);
 const focus = baseline.metrics.constrained_hubs[0].node_id;
+const leftLayout = await anonymized(left);
+const rightLayout = await anonymized(right);
+assert.equal(leftLayout.hyperedges.length, rightLayout.hyperedges.length);
+const edgeCount = leftLayout.hyperedges.length;
 const files = new Map([
     ["/viewer_visnotes.html", ["text/html; charset=utf-8", await readFile(join(root, "viewer_visnotes.html"))]],
     ["/viewer_visnotes.js", ["text/javascript", await readFile(join(root, "viewer_visnotes.js"))]],
-    ["/Tree-SA.json", ["application/json", await anonymized("tree-squared")]],
-    ["/Compact-hybrid.json", ["application/json", await anonymized("compact-hybrid")]],
+    ["/" + leftFile, ["application/json", JSON.stringify(leftLayout)]],
+    ["/" + rightFile, ["application/json", JSON.stringify(rightLayout)]],
 ]);
 const server = createServer((request, response) => {
     const file = files.get(new URL(request.url, "http://127.0.0.1").pathname);
@@ -91,9 +103,10 @@ try {
     }
     await send("Page.enable");
     await send("Emulation.setDeviceMetricsOverride", { width: 1440, height: 1040, deviceScaleFactor: 1, mobile: false });
-    const url = "http://127.0.0.1:" + server.address().port + "/viewer_visnotes.html?a=Tree-SA.json&b=Compact-hybrid.json";
+    const query = new URLSearchParams({ a: leftFile, b: rightFile });
+    const url = "http://127.0.0.1:" + server.address().port + "/viewer_visnotes.html?" + query;
     await send("Page.navigate", { url });
-    await poll(() => evaluate(`["a","b"].every(side => document.querySelector("#pane-"+side+" .counts")?.textContent.includes("383"))`));
+    await poll(() => evaluate(`["a","b"].every(side => document.querySelector("#pane-"+side+" .counts")?.textContent.includes("${edgeCount}"))`));
     const selected = await evaluate("(" + ((id) => {
         const select = document.getElementById("node-results");
         const match = [...select.options].find((option) => JSON.parse(option.value)[0] === id);

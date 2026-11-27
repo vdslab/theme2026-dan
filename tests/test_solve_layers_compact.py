@@ -164,9 +164,9 @@ class CompactTests(unittest.TestCase):
                 config = solver.Config(
                     objective=name, max_iterations=360, seed=37, warm_start_extra_layers=2,
                 )
-                actual_layout, actual_report = solver.solve(data, config)
+                actual_layout, actual_report = solver.solve(data, config, backend="python")
                 with patch.object(solver.ShiftCosts, "supported", return_value=False):
-                    full_layout, full_report = solver.solve(data, config)
+                    full_layout, full_report = solver.solve(data, config, backend="python")
                 self.assertEqual(actual_layout, full_layout)
                 for actual, full in zip(actual_report["stages"], full_report["stages"], strict=True):
                     for field in ("layers", "metrics", "moves", "optimized_value", "free_coordinate_updates"):
