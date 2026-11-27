@@ -10,7 +10,7 @@ import { fileURLToPath } from "node:url";
 
 const root = fileURLToPath(new URL("../../", import.meta.url));
 const [runArg, outputArg, left = "tree-squared", right = "compact-hybrid",
-    leftTitle = "Tree-SA", rightTitle = "Compact-hybrid"] = process.argv.slice(2);
+    leftTitle = "Tree-SA", rightTitle = "Compact-hybrid", input] = process.argv.slice(2);
 assert.ok(runArg && outputArg, "Pass the run directory and a new PNG path");
 const run = resolve(runArg);
 const output = resolve(outputArg);
@@ -29,8 +29,10 @@ async function poll(action) {
     throw new Error("Timed out waiting for the viewer");
 }
 
-async function anonymized(method) {
-    const layout = JSON.parse(await readFile(join(run, method, "seed-0", "layout.json"), "utf-8"));
+async function anonymized(record) {
+    const key = record.seed === null ? "deterministic" : `seed-${record.seed}`;
+    const directory = input ? join(run, input, record.condition, key) : join(run, record.condition, key);
+    const layout = JSON.parse(await readFile(join(directory, "layout.json"), "utf-8"));
     const fields = (items, keys, name) => items.map((item) => ({
         ...Object.fromEntries(keys.map((key) => [key, item[key]])), label: name + " " + item.id,
     }));
@@ -41,11 +43,20 @@ async function anonymized(method) {
 }
 
 const summary = JSON.parse(await readFile(join(run, "summary.json"), "utf-8"));
-assert.ok(summary.complete);
-const baseline = summary.cases.find((record) => record.condition === left && record.seed === 0);
+assert.ok(summary.complete || summary.sources_unchanged === true);
+function verifiedCase(condition) {
+    const matches = summary.cases.filter((record) =>
+        record.condition === condition && (record.seed === null || record.seed === 0) &&
+        (!input || record.input === input) && record.status === "verified");
+    assert.equal(matches.length, 1, `Expected one independently verified case for ${condition}`);
+    return matches[0];
+}
+const baseline = verifiedCase(left);
+const proposed = verifiedCase(right);
+assert.equal(baseline.input, proposed.input);
 const focus = baseline.metrics.constrained_hubs[0].node_id;
-const leftLayout = await anonymized(left);
-const rightLayout = await anonymized(right);
+const leftLayout = await anonymized(baseline);
+const rightLayout = await anonymized(proposed);
 assert.equal(leftLayout.hyperedges.length, rightLayout.hyperedges.length);
 const edgeCount = leftLayout.hyperedges.length;
 const files = new Map([

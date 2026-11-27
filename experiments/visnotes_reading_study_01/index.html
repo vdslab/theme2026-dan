@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ポリゴン図の読み取り課題</title>
+  <link rel="stylesheet" href="study.css">
+  <script src="study.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>ポリゴン図の読み取り課題</h1>
+    <form id="setup">
+      <label>刺激ファイル <input id="stimulus" type="file" accept="application/json,.json" required></label>
+      <label>参加者コード <input id="participant" autocomplete="off" pattern="[A-Za-z0-9_-]{1,24}" required></label>
+      <label>割付番号（0〜17） <input id="slot" type="number" min="0" max="17" step="1" required></label>
+      <label>実行区分 <select id="purpose"><option value="dry-run">動作確認</option><option value="pilot">参加者パイロット</option></select></label>
+      <p>運営者から受け取ったコードと割付番号を使います。氏名は入力しないでください。</p>
+      <button type="submit">課題を準備</button>
+    </form>
+    <section id="session" hidden>
+      <p id="progress" aria-live="polite"></p>
+      <p id="instruct">黄色の丸または点線は対象頂点の位置です。A〜D のうち、対象頂点を頂点として含む面を選んでください。点線は所属する層の範囲を示しません。</p>
+      <button id="next" type="button">図を表示して計時開始</button>
+      <svg id="image" role="img" aria-label="対象頂点と4つの候補面" tabindex="-1" hidden></svg>
+      <p id="viewport-warning" role="status" hidden>開始時と画面の大きさが違います。この試行は計測から除外されます。</p>
+      <div id="choices" role="group" aria-label="回答" hidden>
+        <button type="button" data-choice="A">A</button>
+        <button type="button" data-choice="B">B</button>
+        <button type="button" data-choice="C">C</button>
+        <button type="button" data-choice="D">D</button>
+        <button type="button" data-choice="skip">わからない</button>
+      </div>
+      <button id="export" type="button" disabled>記録を保存（JSON）</button>
+    </section>
+    <p id="error" role="alert"></p>
+  </main>
+</body>
+</html>
