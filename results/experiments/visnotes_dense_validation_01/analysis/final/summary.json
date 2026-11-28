@@ -1,0 +1,2950 @@
+{
+  "complete": true,
+  "datasets": {
+    "original": {
+      "profile": {
+        "vertices": 627,
+        "hyperedges": 383,
+        "edge_pairs": 73153,
+        "shared_edge_pairs": 4026,
+        "xy_constraint_pairs": 4431,
+        "face_population": {
+          "degree_0": 1,
+          "degree_1": 144,
+          "degree_2": 70,
+          "degenerate": 0,
+          "empty_after_repair": 0,
+          "valid": 168,
+          "repaired_nonempty": 0
+        },
+        "edges_with_duplicate_members": 30
+      },
+      "input_sha256": "bc21935cccb75e36b17c92e7164032eed8f278606f5767a14efd9d212c82bd7b",
+      "input_path": "original.json",
+      "layouts": [
+        {
+          "method": "first-fit",
+          "seed": null,
+          "layers": 45,
+          "pillar_length": 9492,
+          "height_range": 44,
+          "l2_scaled_qp": 8729.19679105012,
+          "constraint_violations": 0,
+          "layout_path": "results/experiments/visnotes_remaining_01/exp04/original/greedy-input/deterministic/layout.json",
+          "layout_sha256": "b0caba84382193cf2d17cbcf8957973f25f4372c5b0141dac5f45b01ccf36a07",
+          "case_sha256": "c829c74ac22fe33c24de7fcf4a0ee36179d2a323848b3f8eb4cb5651a6ac8293",
+          "verified_nodes_membership_and_xy": true,
+          "solver_wall_seconds": 5.3280000002123415,
+          "iterations": 0,
+          "solver_stop": "initialization_only",
+          "focus_vertex": {
+            "node_id": 198,
+            "degree": 22,
+            "constrained_degree": 22,
+            "span": 37
+          }
+        },
+        {
+          "method": "proposed",
+          "seed": 0,
+          "layers": 39,
+          "pillar_length": 5891,
+          "height_range": 38,
+          "l2_scaled_qp": 3718.7101981137257,
+          "constraint_violations": 0,
+          "layout_path": "results/experiments/visnotes_remaining_01/exp04/original/full/seed-0/layout.json",
+          "layout_sha256": "b271a0e540ef14d6a5ab528659131cc170e08505820e2929dafcd2acc3087970",
+          "case_sha256": "5d9e4b5d97d4675e5bdb8f1c72b560cba33f30b512220998b07990f6e3b6f66b",
+          "verified_nodes_membership_and_xy": true,
+          "solver_wall_seconds": 7.812000000150874,
+          "iterations": 20000,
+          "solver_stop": "iteration_budget",
+          "focus_vertex": {
+            "node_id": 198,
+            "degree": 22,
+            "constrained_degree": 22,
+            "span": 33
+          }
+        },
+        {
+          "method": "proposed",
+          "seed": 1,
+          "layers": 39,
+          "pillar_length": 6040,
+          "height_range": 38,
+          "l2_scaled_qp": 3640.526626422081,
+          "constraint_violations": 0,
+          "layout_path": "results/experiments/visnotes_remaining_01/exp04/original/full/seed-1/layout.json",
+          "layout_sha256": "4d58c8f2aaf948e0b0544cfce7cee2cef91dd2e3580a420bee87bad181161610",
+          "case_sha256": "423d76dc392c0a16465b74a98e92ac7c83755e73c1b3dfeaeb9553e7ea23d95f",
+          "verified_nodes_membership_and_xy": true,
+          "solver_wall_seconds": 6.515999999828637,
+          "iterations": 20000,
+          "solver_stop": "iteration_budget",
+          "focus_vertex": {
+            "node_id": 198,
+            "degree": 22,
+            "constrained_degree": 22,
+            "span": 21
+          }
+        },
+        {
+          "method": "proposed",
+          "seed": 2,
+          "layers": 39,
+          "pillar_length": 6085,
+          "height_range": 38,
+          "l2_scaled_qp": 3858.3263448623193,
+          "constraint_violations": 0,
+          "layout_path": "results/experiments/visnotes_remaining_01/exp04/original/full/seed-2/layout.json",
+          "layout_sha256": "aca76d9999f3e8b234002f97a1e1d48ebbef3ad2b38bc4be4acc6f1b8656ca1b",
+          "case_sha256": "83bf8b5872d509e22d9622fe761ef9d599c7d68bf1da41d2e259a416b7d79015",
+          "verified_nodes_membership_and_xy": true,
+          "solver_wall_seconds": 6.5,
+          "iterations": 20000,
+          "solver_stop": "iteration_budget",
+          "focus_vertex": {
+            "node_id": 198,
+            "degree": 22,
+            "constrained_degree": 22,
+            "span": 37
+          }
+        },
+        {
+          "method": "proposed",
+          "seed": 3,
+          "layers": 39,
+          "pillar_length": 5801,
+          "height_range": 38,
+          "l2_scaled_qp": 3544.2842566821064,
+          "constraint_violations": 0,
+          "layout_path": "results/experiments/visnotes_remaining_01/exp04/original/full/seed-3/layout.json",
+          "layout_sha256": "da3d01a5fe649e259c61e8331a5eaabf4d2d3ef2f4b9a7c92cccb684def87151",
+          "case_sha256": "f22722f8ae4b005135778a69b144dd3b5ba862102a25f0fe89729262b08af499",
+          "verified_nodes_membership_and_xy": true,
+          "solver_wall_seconds": 6.484999999869615,
+          "iterations": 20000,
+          "solver_stop": "iteration_budget",
+          "focus_vertex": {
+            "node_id": 198,
+            "degree": 22,
+            "constrained_degree": 22,
+            "span": 29
+          }
+        },
+        {
+          "method": "proposed",
+          "seed": 4,
+          "layers": 39,
+          "pillar_length": 5773,
+          "height_range": 38,
+          "l2_scaled_qp": 3500.843342104201,
+          "constraint_violations": 0,
+          "layout_path": "results/experiments/visnotes_remaining_01/exp04/original/full/seed-4/layout.json",
+          "layout_sha256": "82fdd99b7419f515ca4d573f880147ed6c0a28da3c8f0f4f46363801843bf3ff",
+          "case_sha256": "34d3b258349526ccb51ec1b28ec54295c30aa06184513bede9cda7c7decb20ac",
+          "verified_nodes_membership_and_xy": true,
+          "solver_wall_seconds": 6.765999999828637,
+          "iterations": 20000,
+          "solver_stop": "iteration_budget",
+          "focus_vertex": {
+            "node_id": 198,
+            "degree": 22,
+            "constrained_degree": 22,
+            "span": 29
+          }
+        }
+      ],
+      "proposed_seed_statistics": {
+        "layers": {
+          "min": 39,
+          "median": 39,
+          "max": 39
+        },
+        "pillar_length": {
+          "min": 5773,
+          "median": 5891,
+          "max": 6085
+        },
+        "l2_scaled_qp": {
+          "min": 3500.843342104201,
+          "median": 3640.526626422081,
+          "max": 3858.3263448623193
+        },
+        "solver_wall_seconds": {
+          "min": 6.484999999869615,
+          "median": 6.515999999828637,
+          "max": 7.812000000150874
+        }
+      },
+      "span_changes": [
+        {
+          "seed": 0,
+          "shared_vertices": 430,
+          "improved": 337,
+          "equal": 18,
+          "worse": 75,
+          "by_degree": {
+            "9": {
+              "improved": 14,
+              "equal": 1,
+              "worse": 4
+            },
+            "4": {
+              "improved": 51,
+              "equal": 1,
+              "worse": 13
+            },
+            "18": {
+              "improved": 2,
+              "equal": 0,
+              "worse": 0
+            },
+            "8": {
+              "improved": 26,
+              "equal": 0,
+              "worse": 10
+            },
+            "7": {
+              "improved": 37,
+              "equal": 0,
+              "worse": 7
+            },
+            "2": {
+              "improved": 33,
+              "equal": 8,
+              "worse": 7
+            },
+            "3": {
+              "improved": 52,
+              "equal": 2,
+              "worse": 16
+            },
+            "6": {
+              "improved": 41,
+              "equal": 1,
+              "worse": 8
+            },
+            "5": {
+              "improved": 35,
+              "equal": 3,
+              "worse": 5
+            },
+            "14": {
+              "improved": 3,
+              "equal": 0,
+              "worse": 0
+            },
+            "10": {
+              "improved": 10,
+              "equal": 0,
+              "worse": 3
+            },
+            "11": {
+              "improved": 4,
+              "equal": 0,
+              "worse": 2
+            },
+            "15": {
+              "improved": 3,
+              "equal": 0,
+              "worse": 0
+            },
+            "12": {
+              "improved": 17,
+              "equal": 1,
+              "worse": 0
+            },
+            "13": {
+              "improved": 4,
+              "equal": 0,
+              "worse": 0
+            },
+            "22": {
+              "improved": 2,
+              "equal": 0,
+              "worse": 0
+            },
+            "16": {
+              "improved": 1,
+              "equal": 0,
+              "worse": 0
+            },
+            "19": {
+              "improved": 2,
+              "equal": 0,
+              "worse": 0
+            },
+            "17": {
+              "improved": 0,
+              "equal": 1,
+              "worse": 0
+            }
+          }
+        },
+        {
+          "seed": 1,
+          "shared_vertices": 430,
+          "improved": 329,
+          "equal": 20,
+          "worse": 81,
+          "by_degree": {
+            "9": {
+              "improved": 16,
+              "equal": 0,
+              "worse": 3
+            },
+            "4": {
+              "improved": 41,
+              "equal": 0,
+              "worse": 24
+            },
+            "18": {
+              "improved": 2,
+              "equal": 0,
+              "worse": 0
+            },
+            "8": {
+              "improved": 23,
+              "equal": 0,
+              "worse": 13
+            },
+            "7": {
+              "improved": 34,
+              "equal": 4,
+              "worse": 6
+            },
+            "2": {
+              "improved": 33,
+              "equal": 7,
+              "worse": 8
+            },
+            "3": {
+              "improved": 51,
+              "equal": 4,
+              "worse": 15
+            },
+            "6": {
+              "improved": 44,
+              "equal": 3,
+              "worse": 3
+            },
+            "5": {
+              "improved": 37,
+              "equal": 1,
+              "worse": 5
+            },
+            "14": {
+              "improved": 3,
+              "equal": 0,
+              "worse": 0
+            },
+            "10": {
+              "improved": 10,
+              "equal": 1,
+              "worse": 2
+            },
+            "11": {
+              "improved": 5,
+              "equal": 0,
+              "worse": 1
+            },
+            "15": {
+              "improved": 3,
+              "equal": 0,
+              "worse": 0
+            },
+            "12": {
+              "improved": 17,
+              "equal": 0,
+              "worse": 1
+            },
+            "13": {
+              "improved": 4,
+              "equal": 0,
+              "worse": 0
+            },
+            "22": {
+              "improved": 2,
+              "equal": 0,
+              "worse": 0
+            },
+            "16": {
+              "improved": 1,
+              "equal": 0,
+              "worse": 0
+            },
+            "19": {
+              "improved": 2,
+              "equal": 0,
+              "worse": 0
+            },
+            "17": {
+              "improved": 1,
+              "equal": 0,
+              "worse": 0
+            }
+          }
+        },
+        {
+          "seed": 2,
+          "shared_vertices": 430,
+          "improved": 324,
+          "equal": 35,
+          "worse": 71,
+          "by_degree": {
+            "9": {
+              "improved": 15,
+              "equal": 1,
+              "worse": 3
+            },
+            "4": {
+              "improved": 39,
+              "equal": 7,
+              "worse": 19
+            },
+            "18": {
+              "improved": 2,
+              "equal": 0,
+              "worse": 0
+            },
+            "8": {
+              "improved": 29,
+              "equal": 0,
+              "worse": 7
+            },
+            "7": {
+              "improved": 36,
+              "equal": 2,
+              "worse": 6
+            },
+            "2": {
+              "improved": 33,
+              "equal": 6,
+              "worse": 9
+            },
+            "3": {
+              "improved": 53,
+              "equal": 9,
+              "worse": 8
+            },
+            "6": {
+              "improved": 41,
+              "equal": 3,
+              "worse": 6
+            },
+            "5": {
+              "improved": 29,
+              "equal": 4,
+              "worse": 10
+            },
+            "14": {
+              "improved": 3,
+              "equal": 0,
+              "worse": 0
+            },
+            "10": {
+              "improved": 11,
+              "equal": 0,
+              "worse": 2
+            },
+            "11": {
+              "improved": 5,
+              "equal": 0,
+              "worse": 1
+            },
+            "15": {
+              "improved": 3,
+              "equal": 0,
+              "worse": 0
+            },
+            "12": {
+              "improved": 18,
+              "equal": 0,
+              "worse": 0
+            },
+            "13": {
+              "improved": 4,
+              "equal": 0,
+              "worse": 0
+            },
+            "22": {
+              "improved": 0,
+              "equal": 2,
+              "worse": 0
+            },
+            "16": {
+              "improved": 0,
+              "equal": 1,
+              "worse": 0
+            },
+            "19": {
+              "improved": 2,
+              "equal": 0,
+              "worse": 0
+            },
+            "17": {
+              "improved": 1,
+              "equal": 0,
+              "worse": 0
+            }
+          }
+        },
+        {
+          "seed": 3,
+          "shared_vertices": 430,
+          "improved": 340,
+          "equal": 28,
+          "worse": 62,
+          "by_degree": {
+            "9": {
+              "improved": 15,
+              "equal": 0,
+              "worse": 4
+            },
+            "4": {
+              "improved": 46,
+              "equal": 5,
+              "worse": 14
+            },
+            "18": {
+              "improved": 2,
+              "equal": 0,
+              "worse": 0
+            },
+            "8": {
+              "improved": 31,
+              "equal": 0,
+              "worse": 5
+            },
+            "7": {
+              "improved": 36,
+              "equal": 2,
+              "worse": 6
+            },
+            "2": {
+              "improved": 32,
+              "equal": 9,
+              "worse": 7
+            },
+            "3": {
+              "improved": 54,
+              "equal": 3,
+              "worse": 13
+            },
+            "6": {
+              "improved": 41,
+              "equal": 3,
+              "worse": 6
+            },
+            "5": {
+              "improved": 35,
+              "equal": 4,
+              "worse": 4
+            },
+            "14": {
+              "improved": 3,
+              "equal": 0,
+              "worse": 0
+            },
+            "10": {
+              "improved": 9,
+              "equal": 2,
+              "worse": 2
+            },
+            "11": {
+              "improved": 5,
+              "equal": 0,
+              "worse": 1
+            },
+            "15": {
+              "improved": 3,
+              "equal": 0,
+              "worse": 0
+            },
+            "12": {
+              "improved": 18,
+              "equal": 0,
+              "worse": 0
+            },
+            "13": {
+              "improved": 4,
+              "equal": 0,
+              "worse": 0
+            },
+            "22": {
+              "improved": 2,
+              "equal": 0,
+              "worse": 0
+            },
+            "16": {
+              "improved": 1,
+              "equal": 0,
+              "worse": 0
+            },
+            "19": {
+              "improved": 2,
+              "equal": 0,
+              "worse": 0
+            },
+            "17": {
+              "improved": 1,
+              "equal": 0,
+              "worse": 0
+            }
+          }
+        },
+        {
+          "seed": 4,
+          "shared_vertices": 430,
+          "improved": 337,
+          "equal": 25,
+          "worse": 68,
+          "by_degree": {
+            "9": {
+              "improved": 14,
+              "equal": 0,
+              "worse": 5
+            },
+            "4": {
+              "improved": 43,
+              "equal": 9,
+              "worse": 13
+            },
+            "18": {
+              "improved": 2,
+              "equal": 0,
+              "worse": 0
+            },
+            "8": {
+              "improved": 29,
+              "equal": 1,
+              "worse": 6
+            },
+            "7": {
+              "improved": 36,
+              "equal": 3,
+              "worse": 5
+            },
+            "2": {
+              "improved": 31,
+              "equal": 9,
+              "worse": 8
+            },
+            "3": {
+              "improved": 59,
+              "equal": 2,
+              "worse": 9
+            },
+            "6": {
+              "improved": 42,
+              "equal": 0,
+              "worse": 8
+            },
+            "5": {
+              "improved": 34,
+              "equal": 1,
+              "worse": 8
+            },
+            "14": {
+              "improved": 3,
+              "equal": 0,
+              "worse": 0
+            },
+            "10": {
+              "improved": 11,
+              "equal": 0,
+              "worse": 2
+            },
+            "11": {
+              "improved": 3,
+              "equal": 0,
+              "worse": 3
+            },
+            "15": {
+              "improved": 3,
+              "equal": 0,
+              "worse": 0
+            },
+            "12": {
+              "improved": 18,
+              "equal": 0,
+              "worse": 0
+            },
+            "13": {
+              "improved": 4,
+              "equal": 0,
+              "worse": 0
+            },
+            "22": {
+              "improved": 2,
+              "equal": 0,
+              "worse": 0
+            },
+            "16": {
+              "improved": 0,
+              "equal": 0,
+              "worse": 1
+            },
+            "19": {
+              "improved": 2,
+              "equal": 0,
+              "worse": 0
+            },
+            "17": {
+              "improved": 1,
+              "equal": 0,
+              "worse": 0
+            }
+          }
+        }
+      ],
+      "projections": [
+        {
+          "scope": "valid",
+          "method": "planar",
+          "seed": null,
+          "elevation": 90,
+          "azimuth": null,
+          "faces": 168,
+          "pairs": 14028,
+          "tp": 2009,
+          "fp": 2422,
+          "fn": 478,
+          "tn": 9119,
+          "boundary_touch_with_shared_id": 477,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              1
+            ],
+            "fp": [
+              0,
+              46
+            ],
+            "fn": [
+              0,
+              7
+            ],
+            "tn": [
+              0,
+              40
+            ]
+          }
+        },
+        {
+          "scope": "repaired",
+          "method": "planar",
+          "seed": null,
+          "elevation": 90,
+          "azimuth": null,
+          "faces": 168,
+          "pairs": 14028,
+          "tp": 2009,
+          "fp": 2422,
+          "fn": 478,
+          "tn": 9119,
+          "boundary_touch_with_shared_id": 477,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              1
+            ],
+            "fp": [
+              0,
+              46
+            ],
+            "fn": [
+              0,
+              7
+            ],
+            "tn": [
+              0,
+              40
+            ]
+          }
+        },
+        {
+          "scope": "valid",
+          "method": "first-fit",
+          "seed": null,
+          "elevation": 35,
+          "azimuth": 45,
+          "faces": 168,
+          "pairs": 14028,
+          "tp": 713,
+          "fp": 967,
+          "fn": 1774,
+          "tn": 10574,
+          "boundary_touch_with_shared_id": 43,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              1
+            ],
+            "fp": [
+              0,
+              40
+            ],
+            "fn": [
+              0,
+              7
+            ],
+            "tn": [
+              0,
+              46
+            ]
+          }
+        },
+        {
+          "scope": "repaired",
+          "method": "first-fit",
+          "seed": null,
+          "elevation": 35,
+          "azimuth": 45,
+          "faces": 168,
+          "pairs": 14028,
+          "tp": 713,
+          "fp": 967,
+          "fn": 1774,
+          "tn": 10574,
+          "boundary_touch_with_shared_id": 43,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              1
+            ],
+            "fp": [
+              0,
+              40
+            ],
+            "fn": [
+              0,
+              7
+            ],
+            "tn": [
+              0,
+              46
+            ]
+          }
+        },
+        {
+          "scope": "valid",
+          "method": "first-fit",
+          "seed": null,
+          "elevation": 75,
+          "azimuth": 45,
+          "faces": 168,
+          "pairs": 14028,
+          "tp": 1842,
+          "fp": 2229,
+          "fn": 645,
+          "tn": 9312,
+          "boundary_touch_with_shared_id": 47,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              1
+            ],
+            "fp": [
+              0,
+              46
+            ],
+            "fn": [
+              0,
+              7
+            ],
+            "tn": [
+              0,
+              40
+            ]
+          }
+        },
+        {
+          "scope": "repaired",
+          "method": "first-fit",
+          "seed": null,
+          "elevation": 75,
+          "azimuth": 45,
+          "faces": 168,
+          "pairs": 14028,
+          "tp": 1842,
+          "fp": 2229,
+          "fn": 645,
+          "tn": 9312,
+          "boundary_touch_with_shared_id": 47,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              1
+            ],
+            "fp": [
+              0,
+              46
+            ],
+            "fn": [
+              0,
+              7
+            ],
+            "tn": [
+              0,
+              40
+            ]
+          }
+        },
+        {
+          "scope": "valid",
+          "method": "proposed",
+          "seed": 0,
+          "elevation": 35,
+          "azimuth": 45,
+          "faces": 168,
+          "pairs": 14028,
+          "tp": 831,
+          "fp": 986,
+          "fn": 1656,
+          "tn": 10555,
+          "boundary_touch_with_shared_id": 62,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              1
+            ],
+            "fp": [
+              0,
+              44
+            ],
+            "fn": [
+              0,
+              4
+            ],
+            "tn": [
+              0,
+              40
+            ]
+          }
+        },
+        {
+          "scope": "repaired",
+          "method": "proposed",
+          "seed": 0,
+          "elevation": 35,
+          "azimuth": 45,
+          "faces": 168,
+          "pairs": 14028,
+          "tp": 831,
+          "fp": 986,
+          "fn": 1656,
+          "tn": 10555,
+          "boundary_touch_with_shared_id": 62,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              1
+            ],
+            "fp": [
+              0,
+              44
+            ],
+            "fn": [
+              0,
+              4
+            ],
+            "tn": [
+              0,
+              40
+            ]
+          }
+        },
+        {
+          "scope": "valid",
+          "method": "proposed",
+          "seed": 0,
+          "elevation": 75,
+          "azimuth": 45,
+          "faces": 168,
+          "pairs": 14028,
+          "tp": 1900,
+          "fp": 2082,
+          "fn": 587,
+          "tn": 9459,
+          "boundary_touch_with_shared_id": 64,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              1
+            ],
+            "fp": [
+              0,
+              60
+            ],
+            "fn": [
+              0,
+              7
+            ],
+            "tn": [
+              0,
+              40
+            ]
+          }
+        },
+        {
+          "scope": "repaired",
+          "method": "proposed",
+          "seed": 0,
+          "elevation": 75,
+          "azimuth": 45,
+          "faces": 168,
+          "pairs": 14028,
+          "tp": 1900,
+          "fp": 2082,
+          "fn": 587,
+          "tn": 9459,
+          "boundary_touch_with_shared_id": 64,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              1
+            ],
+            "fp": [
+              0,
+              60
+            ],
+            "fn": [
+              0,
+              7
+            ],
+            "tn": [
+              0,
+              40
+            ]
+          }
+        },
+        {
+          "scope": "valid",
+          "method": "proposed",
+          "seed": 1,
+          "elevation": 35,
+          "azimuth": 45,
+          "faces": 168,
+          "pairs": 14028,
+          "tp": 842,
+          "fp": 1146,
+          "fn": 1645,
+          "tn": 10395,
+          "boundary_touch_with_shared_id": 55,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              1
+            ],
+            "fp": [
+              0,
+              40
+            ],
+            "fn": [
+              0,
+              9
+            ],
+            "tn": [
+              0,
+              44
+            ]
+          }
+        },
+        {
+          "scope": "repaired",
+          "method": "proposed",
+          "seed": 1,
+          "elevation": 35,
+          "azimuth": 45,
+          "faces": 168,
+          "pairs": 14028,
+          "tp": 842,
+          "fp": 1146,
+          "fn": 1645,
+          "tn": 10395,
+          "boundary_touch_with_shared_id": 55,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              1
+            ],
+            "fp": [
+              0,
+              40
+            ],
+            "fn": [
+              0,
+              9
+            ],
+            "tn": [
+              0,
+              44
+            ]
+          }
+        },
+        {
+          "scope": "valid",
+          "method": "proposed",
+          "seed": 1,
+          "elevation": 75,
+          "azimuth": 45,
+          "faces": 168,
+          "pairs": 14028,
+          "tp": 1933,
+          "fp": 2332,
+          "fn": 554,
+          "tn": 9209,
+          "boundary_touch_with_shared_id": 56,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              1
+            ],
+            "fp": [
+              0,
+              40
+            ],
+            "fn": [
+              0,
+              15
+            ],
+            "tn": [
+              0,
+              47
+            ]
+          }
+        },
+        {
+          "scope": "repaired",
+          "method": "proposed",
+          "seed": 1,
+          "elevation": 75,
+          "azimuth": 45,
+          "faces": 168,
+          "pairs": 14028,
+          "tp": 1933,
+          "fp": 2332,
+          "fn": 554,
+          "tn": 9209,
+          "boundary_touch_with_shared_id": 56,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              1
+            ],
+            "fp": [
+              0,
+              40
+            ],
+            "fn": [
+              0,
+              15
+            ],
+            "tn": [
+              0,
+              47
+            ]
+          }
+        },
+        {
+          "scope": "valid",
+          "method": "proposed",
+          "seed": 2,
+          "elevation": 35,
+          "azimuth": 45,
+          "faces": 168,
+          "pairs": 14028,
+          "tp": 820,
+          "fp": 1062,
+          "fn": 1667,
+          "tn": 10479,
+          "boundary_touch_with_shared_id": 48,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              1
+            ],
+            "fp": [
+              0,
+              44
+            ],
+            "fn": [
+              0,
+              4
+            ],
+            "tn": [
+              0,
+              40
+            ]
+          }
+        },
+        {
+          "scope": "repaired",
+          "method": "proposed",
+          "seed": 2,
+          "elevation": 35,
+          "azimuth": 45,
+          "faces": 168,
+          "pairs": 14028,
+          "tp": 820,
+          "fp": 1062,
+          "fn": 1667,
+          "tn": 10479,
+          "boundary_touch_with_shared_id": 48,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              1
+            ],
+            "fp": [
+              0,
+              44
+            ],
+            "fn": [
+              0,
+              4
+            ],
+            "tn": [
+              0,
+              40
+            ]
+          }
+        },
+        {
+          "scope": "valid",
+          "method": "proposed",
+          "seed": 2,
+          "elevation": 75,
+          "azimuth": 45,
+          "faces": 168,
+          "pairs": 14028,
+          "tp": 1912,
+          "fp": 2200,
+          "fn": 575,
+          "tn": 9341,
+          "boundary_touch_with_shared_id": 48,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              1
+            ],
+            "fp": [
+              0,
+              44
+            ],
+            "fn": [
+              0,
+              6
+            ],
+            "tn": [
+              0,
+              40
+            ]
+          }
+        },
+        {
+          "scope": "repaired",
+          "method": "proposed",
+          "seed": 2,
+          "elevation": 75,
+          "azimuth": 45,
+          "faces": 168,
+          "pairs": 14028,
+          "tp": 1912,
+          "fp": 2200,
+          "fn": 575,
+          "tn": 9341,
+          "boundary_touch_with_shared_id": 48,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              1
+            ],
+            "fp": [
+              0,
+              44
+            ],
+            "fn": [
+              0,
+              6
+            ],
+            "tn": [
+              0,
+              40
+            ]
+          }
+        },
+        {
+          "scope": "valid",
+          "method": "proposed",
+          "seed": 3,
+          "elevation": 35,
+          "azimuth": 45,
+          "faces": 168,
+          "pairs": 14028,
+          "tp": 884,
+          "fp": 1181,
+          "fn": 1603,
+          "tn": 10360,
+          "boundary_touch_with_shared_id": 56,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              1
+            ],
+            "fp": [
+              0,
+              40
+            ],
+            "fn": [
+              0,
+              4
+            ],
+            "tn": [
+              0,
+              44
+            ]
+          }
+        },
+        {
+          "scope": "repaired",
+          "method": "proposed",
+          "seed": 3,
+          "elevation": 35,
+          "azimuth": 45,
+          "faces": 168,
+          "pairs": 14028,
+          "tp": 884,
+          "fp": 1181,
+          "fn": 1603,
+          "tn": 10360,
+          "boundary_touch_with_shared_id": 56,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              1
+            ],
+            "fp": [
+              0,
+              40
+            ],
+            "fn": [
+              0,
+              4
+            ],
+            "tn": [
+              0,
+              44
+            ]
+          }
+        },
+        {
+          "scope": "valid",
+          "method": "proposed",
+          "seed": 3,
+          "elevation": 75,
+          "azimuth": 45,
+          "faces": 168,
+          "pairs": 14028,
+          "tp": 1937,
+          "fp": 2322,
+          "fn": 550,
+          "tn": 9219,
+          "boundary_touch_with_shared_id": 58,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              1
+            ],
+            "fp": [
+              0,
+              40
+            ],
+            "fn": [
+              0,
+              14
+            ],
+            "tn": [
+              0,
+              47
+            ]
+          }
+        },
+        {
+          "scope": "repaired",
+          "method": "proposed",
+          "seed": 3,
+          "elevation": 75,
+          "azimuth": 45,
+          "faces": 168,
+          "pairs": 14028,
+          "tp": 1937,
+          "fp": 2322,
+          "fn": 550,
+          "tn": 9219,
+          "boundary_touch_with_shared_id": 58,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              1
+            ],
+            "fp": [
+              0,
+              40
+            ],
+            "fn": [
+              0,
+              14
+            ],
+            "tn": [
+              0,
+              47
+            ]
+          }
+        },
+        {
+          "scope": "valid",
+          "method": "proposed",
+          "seed": 4,
+          "elevation": 35,
+          "azimuth": 45,
+          "faces": 168,
+          "pairs": 14028,
+          "tp": 883,
+          "fp": 1178,
+          "fn": 1604,
+          "tn": 10363,
+          "boundary_touch_with_shared_id": 53,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              1
+            ],
+            "fp": [
+              0,
+              40
+            ],
+            "fn": [
+              0,
+              6
+            ],
+            "tn": [
+              0,
+              44
+            ]
+          }
+        },
+        {
+          "scope": "repaired",
+          "method": "proposed",
+          "seed": 4,
+          "elevation": 35,
+          "azimuth": 45,
+          "faces": 168,
+          "pairs": 14028,
+          "tp": 883,
+          "fp": 1178,
+          "fn": 1604,
+          "tn": 10363,
+          "boundary_touch_with_shared_id": 53,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              1
+            ],
+            "fp": [
+              0,
+              40
+            ],
+            "fn": [
+              0,
+              6
+            ],
+            "tn": [
+              0,
+              44
+            ]
+          }
+        },
+        {
+          "scope": "valid",
+          "method": "proposed",
+          "seed": 4,
+          "elevation": 75,
+          "azimuth": 45,
+          "faces": 168,
+          "pairs": 14028,
+          "tp": 1952,
+          "fp": 2343,
+          "fn": 535,
+          "tn": 9198,
+          "boundary_touch_with_shared_id": 57,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              1
+            ],
+            "fp": [
+              0,
+              40
+            ],
+            "fn": [
+              0,
+              15
+            ],
+            "tn": [
+              0,
+              47
+            ]
+          }
+        },
+        {
+          "scope": "repaired",
+          "method": "proposed",
+          "seed": 4,
+          "elevation": 75,
+          "azimuth": 45,
+          "faces": 168,
+          "pairs": 14028,
+          "tp": 1952,
+          "fp": 2343,
+          "fn": 535,
+          "tn": 9198,
+          "boundary_touch_with_shared_id": 57,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              1
+            ],
+            "fp": [
+              0,
+              40
+            ],
+            "fn": [
+              0,
+              15
+            ],
+            "tn": [
+              0,
+              47
+            ]
+          }
+        }
+      ],
+      "elapsed_seconds": 5.687999999849126
+    },
+    "dblp": {
+      "profile": {
+        "vertices": 1008,
+        "hyperedges": 429,
+        "edge_pairs": 91806,
+        "shared_edge_pairs": 1999,
+        "xy_constraint_pairs": 973,
+        "face_population": {
+          "degree_0": 0,
+          "degree_1": 0,
+          "degree_2": 68,
+          "degenerate": 0,
+          "empty_after_repair": 0,
+          "valid": 361,
+          "repaired_nonempty": 0
+        },
+        "edges_with_duplicate_members": 0
+      },
+      "input_sha256": "01ae9296276fb8bd103aaa15dde63d0a45b08d087acd9088ef2d4b1942226fcf",
+      "input_path": "results/experiments/visnotes_public_validation_01/inputs/dblp.json",
+      "layouts": [
+        {
+          "method": "first-fit",
+          "seed": null,
+          "layers": 10,
+          "pillar_length": 704,
+          "height_range": 9,
+          "l2_scaled_qp": 860.5596551169025,
+          "constraint_violations": 0,
+          "layout_path": "results/experiments/visnotes_public_validation_01/public-main/dblp/greedy-input/deterministic/layout.json",
+          "layout_sha256": "b06d71d6fa9954fb0ad94af7eafe0b78510c2316fbec18d082649490e86620f1",
+          "case_sha256": "b7501ad64d34a5026fdab174f2ff7057287683de769325387071c8ff3142657b",
+          "verified_nodes_membership_and_xy": true,
+          "solver_wall_seconds": 1.5309999999590218,
+          "iterations": 0,
+          "solver_stop": "initialization_only",
+          "focus_vertex": {
+            "node_id": 48,
+            "degree": 20,
+            "constrained_degree": 16,
+            "span": 4
+          }
+        },
+        {
+          "method": "proposed",
+          "seed": 0,
+          "layers": 10,
+          "pillar_length": 442,
+          "height_range": 9,
+          "l2_scaled_qp": 471.91657492648284,
+          "constraint_violations": 0,
+          "layout_path": "results/experiments/visnotes_public_validation_01/public-main/dblp/full/seed-0/layout.json",
+          "layout_sha256": "6ef3dd5aa31c8fd9a715579288d555ab1f167377d07e12fcd69e8d468ac0fac4",
+          "case_sha256": "31fb9f001b72dcbee88bf12587e29aa15270e8297c6b568b2a8610306d3f298e",
+          "verified_nodes_membership_and_xy": true,
+          "solver_wall_seconds": 1.8900000001303852,
+          "iterations": 20000,
+          "solver_stop": "iteration_budget",
+          "focus_vertex": {
+            "node_id": 48,
+            "degree": 20,
+            "constrained_degree": 16,
+            "span": 6
+          }
+        },
+        {
+          "method": "proposed",
+          "seed": 1,
+          "layers": 10,
+          "pillar_length": 437,
+          "height_range": 9,
+          "l2_scaled_qp": 448.5242998999107,
+          "constraint_violations": 0,
+          "layout_path": "results/experiments/visnotes_public_validation_01/public-main/dblp/full/seed-1/layout.json",
+          "layout_sha256": "ff7e1a9dce73b80dc1d9a835938fbd467bd52268c4b2ab6f5d09a8230a4ac18f",
+          "case_sha256": "2438599ae855932f195de71709254994a30cb0815f812315b742407557dd4a33",
+          "verified_nodes_membership_and_xy": true,
+          "solver_wall_seconds": 2.8120000001508743,
+          "iterations": 20000,
+          "solver_stop": "iteration_budget",
+          "focus_vertex": {
+            "node_id": 48,
+            "degree": 20,
+            "constrained_degree": 16,
+            "span": 6
+          }
+        },
+        {
+          "method": "proposed",
+          "seed": 2,
+          "layers": 10,
+          "pillar_length": 420,
+          "height_range": 9,
+          "l2_scaled_qp": 413.13027106099645,
+          "constraint_violations": 0,
+          "layout_path": "results/experiments/visnotes_public_validation_01/public-main/dblp/full/seed-2/layout.json",
+          "layout_sha256": "63d9d0bdf6b9b94ad97eca96b67fdbbaee8ff2456a0c49a10ce95027b4710767",
+          "case_sha256": "4fa6b23000ef1e9c98a12a799de6bd5a46bfedcd29012e49fa1a6d9616f14d57",
+          "verified_nodes_membership_and_xy": true,
+          "solver_wall_seconds": 1.702999999979511,
+          "iterations": 20000,
+          "solver_stop": "iteration_budget",
+          "focus_vertex": {
+            "node_id": 48,
+            "degree": 20,
+            "constrained_degree": 16,
+            "span": 5
+          }
+        },
+        {
+          "method": "proposed",
+          "seed": 3,
+          "layers": 10,
+          "pillar_length": 432,
+          "height_range": 9,
+          "l2_scaled_qp": 390.3138794149026,
+          "constraint_violations": 0,
+          "layout_path": "results/experiments/visnotes_public_validation_01/public-main/dblp/full/seed-3/layout.json",
+          "layout_sha256": "8fa8d90d5041afef78809e7b35db411c84aee7348d5c59ce89e553f334062191",
+          "case_sha256": "fa15619c484d2b438afe06e9c7d72aab5b8d50adf7dc533166f96a6abbcfb1b8",
+          "verified_nodes_membership_and_xy": true,
+          "solver_wall_seconds": 1.9370000001508743,
+          "iterations": 20000,
+          "solver_stop": "iteration_budget",
+          "focus_vertex": {
+            "node_id": 48,
+            "degree": 20,
+            "constrained_degree": 16,
+            "span": 5
+          }
+        },
+        {
+          "method": "proposed",
+          "seed": 4,
+          "layers": 10,
+          "pillar_length": 450,
+          "height_range": 9,
+          "l2_scaled_qp": 462.3715972390955,
+          "constraint_violations": 0,
+          "layout_path": "results/experiments/visnotes_public_validation_01/public-main/dblp/full/seed-4/layout.json",
+          "layout_sha256": "0820624609a1d61ad24b37f5c967bde315b61ca077a32f140bdcdf47e42d0548",
+          "case_sha256": "32822914789f9610d6518137c83531667733efd45b24fce7c97cf44206cf5856",
+          "verified_nodes_membership_and_xy": true,
+          "solver_wall_seconds": 1.8130000000819564,
+          "iterations": 20000,
+          "solver_stop": "iteration_budget",
+          "focus_vertex": {
+            "node_id": 48,
+            "degree": 20,
+            "constrained_degree": 16,
+            "span": 5
+          }
+        }
+      ],
+      "proposed_seed_statistics": {
+        "layers": {
+          "min": 10,
+          "median": 10,
+          "max": 10
+        },
+        "pillar_length": {
+          "min": 420,
+          "median": 437,
+          "max": 450
+        },
+        "l2_scaled_qp": {
+          "min": 390.3138794149026,
+          "median": 448.5242998999107,
+          "max": 471.91657492648284
+        },
+        "solver_wall_seconds": {
+          "min": 1.702999999979511,
+          "median": 1.8900000001303852,
+          "max": 2.8120000001508743
+        }
+      },
+      "span_changes": [
+        {
+          "seed": 0,
+          "shared_vertices": 303,
+          "improved": 143,
+          "equal": 131,
+          "worse": 29,
+          "by_degree": {
+            "9": {
+              "improved": 3,
+              "equal": 0,
+              "worse": 0
+            },
+            "6": {
+              "improved": 8,
+              "equal": 3,
+              "worse": 3
+            },
+            "2": {
+              "improved": 71,
+              "equal": 80,
+              "worse": 5
+            },
+            "3": {
+              "improved": 28,
+              "equal": 27,
+              "worse": 5
+            },
+            "5": {
+              "improved": 2,
+              "equal": 6,
+              "worse": 4
+            },
+            "10": {
+              "improved": 2,
+              "equal": 1,
+              "worse": 0
+            },
+            "4": {
+              "improved": 15,
+              "equal": 8,
+              "worse": 5
+            },
+            "7": {
+              "improved": 6,
+              "equal": 1,
+              "worse": 3
+            },
+            "8": {
+              "improved": 3,
+              "equal": 2,
+              "worse": 1
+            },
+            "11": {
+              "improved": 3,
+              "equal": 2,
+              "worse": 0
+            },
+            "12": {
+              "improved": 2,
+              "equal": 0,
+              "worse": 1
+            },
+            "20": {
+              "improved": 0,
+              "equal": 0,
+              "worse": 1
+            },
+            "13": {
+              "improved": 0,
+              "equal": 1,
+              "worse": 0
+            },
+            "18": {
+              "improved": 0,
+              "equal": 0,
+              "worse": 1
+            }
+          }
+        },
+        {
+          "seed": 1,
+          "shared_vertices": 303,
+          "improved": 138,
+          "equal": 129,
+          "worse": 36,
+          "by_degree": {
+            "9": {
+              "improved": 3,
+              "equal": 0,
+              "worse": 0
+            },
+            "6": {
+              "improved": 8,
+              "equal": 3,
+              "worse": 3
+            },
+            "2": {
+              "improved": 69,
+              "equal": 77,
+              "worse": 10
+            },
+            "3": {
+              "improved": 27,
+              "equal": 27,
+              "worse": 6
+            },
+            "5": {
+              "improved": 4,
+              "equal": 5,
+              "worse": 3
+            },
+            "10": {
+              "improved": 1,
+              "equal": 1,
+              "worse": 1
+            },
+            "4": {
+              "improved": 12,
+              "equal": 9,
+              "worse": 7
+            },
+            "7": {
+              "improved": 6,
+              "equal": 1,
+              "worse": 3
+            },
+            "8": {
+              "improved": 4,
+              "equal": 1,
+              "worse": 1
+            },
+            "11": {
+              "improved": 2,
+              "equal": 2,
+              "worse": 1
+            },
+            "12": {
+              "improved": 2,
+              "equal": 1,
+              "worse": 0
+            },
+            "20": {
+              "improved": 0,
+              "equal": 0,
+              "worse": 1
+            },
+            "13": {
+              "improved": 0,
+              "equal": 1,
+              "worse": 0
+            },
+            "18": {
+              "improved": 0,
+              "equal": 1,
+              "worse": 0
+            }
+          }
+        },
+        {
+          "seed": 2,
+          "shared_vertices": 303,
+          "improved": 149,
+          "equal": 124,
+          "worse": 30,
+          "by_degree": {
+            "9": {
+              "improved": 3,
+              "equal": 0,
+              "worse": 0
+            },
+            "6": {
+              "improved": 10,
+              "equal": 1,
+              "worse": 3
+            },
+            "2": {
+              "improved": 69,
+              "equal": 83,
+              "worse": 4
+            },
+            "3": {
+              "improved": 29,
+              "equal": 25,
+              "worse": 6
+            },
+            "5": {
+              "improved": 4,
+              "equal": 3,
+              "worse": 5
+            },
+            "10": {
+              "improved": 2,
+              "equal": 0,
+              "worse": 1
+            },
+            "4": {
+              "improved": 17,
+              "equal": 8,
+              "worse": 3
+            },
+            "7": {
+              "improved": 5,
+              "equal": 1,
+              "worse": 4
+            },
+            "8": {
+              "improved": 4,
+              "equal": 0,
+              "worse": 2
+            },
+            "11": {
+              "improved": 3,
+              "equal": 1,
+              "worse": 1
+            },
+            "12": {
+              "improved": 2,
+              "equal": 1,
+              "worse": 0
+            },
+            "20": {
+              "improved": 0,
+              "equal": 0,
+              "worse": 1
+            },
+            "13": {
+              "improved": 1,
+              "equal": 0,
+              "worse": 0
+            },
+            "18": {
+              "improved": 0,
+              "equal": 1,
+              "worse": 0
+            }
+          }
+        },
+        {
+          "seed": 3,
+          "shared_vertices": 303,
+          "improved": 139,
+          "equal": 130,
+          "worse": 34,
+          "by_degree": {
+            "9": {
+              "improved": 3,
+              "equal": 0,
+              "worse": 0
+            },
+            "6": {
+              "improved": 9,
+              "equal": 2,
+              "worse": 3
+            },
+            "2": {
+              "improved": 68,
+              "equal": 82,
+              "worse": 6
+            },
+            "3": {
+              "improved": 28,
+              "equal": 23,
+              "worse": 9
+            },
+            "5": {
+              "improved": 2,
+              "equal": 9,
+              "worse": 1
+            },
+            "10": {
+              "improved": 2,
+              "equal": 0,
+              "worse": 1
+            },
+            "4": {
+              "improved": 15,
+              "equal": 7,
+              "worse": 6
+            },
+            "7": {
+              "improved": 5,
+              "equal": 3,
+              "worse": 2
+            },
+            "8": {
+              "improved": 2,
+              "equal": 1,
+              "worse": 3
+            },
+            "11": {
+              "improved": 3,
+              "equal": 2,
+              "worse": 0
+            },
+            "12": {
+              "improved": 1,
+              "equal": 0,
+              "worse": 2
+            },
+            "20": {
+              "improved": 0,
+              "equal": 0,
+              "worse": 1
+            },
+            "13": {
+              "improved": 0,
+              "equal": 1,
+              "worse": 0
+            },
+            "18": {
+              "improved": 1,
+              "equal": 0,
+              "worse": 0
+            }
+          }
+        },
+        {
+          "seed": 4,
+          "shared_vertices": 303,
+          "improved": 138,
+          "equal": 132,
+          "worse": 33,
+          "by_degree": {
+            "9": {
+              "improved": 2,
+              "equal": 1,
+              "worse": 0
+            },
+            "6": {
+              "improved": 8,
+              "equal": 5,
+              "worse": 1
+            },
+            "2": {
+              "improved": 70,
+              "equal": 76,
+              "worse": 10
+            },
+            "3": {
+              "improved": 29,
+              "equal": 27,
+              "worse": 4
+            },
+            "5": {
+              "improved": 2,
+              "equal": 7,
+              "worse": 3
+            },
+            "10": {
+              "improved": 1,
+              "equal": 0,
+              "worse": 2
+            },
+            "4": {
+              "improved": 14,
+              "equal": 9,
+              "worse": 5
+            },
+            "7": {
+              "improved": 4,
+              "equal": 2,
+              "worse": 4
+            },
+            "8": {
+              "improved": 3,
+              "equal": 1,
+              "worse": 2
+            },
+            "11": {
+              "improved": 3,
+              "equal": 2,
+              "worse": 0
+            },
+            "12": {
+              "improved": 2,
+              "equal": 0,
+              "worse": 1
+            },
+            "20": {
+              "improved": 0,
+              "equal": 0,
+              "worse": 1
+            },
+            "13": {
+              "improved": 0,
+              "equal": 1,
+              "worse": 0
+            },
+            "18": {
+              "improved": 0,
+              "equal": 1,
+              "worse": 0
+            }
+          }
+        }
+      ],
+      "projections": [
+        {
+          "scope": "valid",
+          "method": "planar",
+          "seed": null,
+          "elevation": 90,
+          "azimuth": null,
+          "faces": 361,
+          "pairs": 64980,
+          "tp": 339,
+          "fp": 634,
+          "fn": 1152,
+          "tn": 62855,
+          "boundary_touch_with_shared_id": 1152,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              5
+            ],
+            "fp": [
+              0,
+              2
+            ],
+            "fn": [
+              0,
+              38
+            ],
+            "tn": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "scope": "repaired",
+          "method": "planar",
+          "seed": null,
+          "elevation": 90,
+          "azimuth": null,
+          "faces": 361,
+          "pairs": 64980,
+          "tp": 339,
+          "fp": 634,
+          "fn": 1152,
+          "tn": 62855,
+          "boundary_touch_with_shared_id": 1152,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              5
+            ],
+            "fp": [
+              0,
+              2
+            ],
+            "fn": [
+              0,
+              38
+            ],
+            "tn": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "scope": "valid",
+          "method": "first-fit",
+          "seed": null,
+          "elevation": 35,
+          "azimuth": 45,
+          "faces": 361,
+          "pairs": 64980,
+          "tp": 429,
+          "fp": 632,
+          "fn": 1062,
+          "tn": 62857,
+          "boundary_touch_with_shared_id": 331,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              5
+            ],
+            "fp": [
+              0,
+              2
+            ],
+            "fn": [
+              0,
+              38
+            ],
+            "tn": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "scope": "repaired",
+          "method": "first-fit",
+          "seed": null,
+          "elevation": 35,
+          "azimuth": 45,
+          "faces": 361,
+          "pairs": 64980,
+          "tp": 429,
+          "fp": 632,
+          "fn": 1062,
+          "tn": 62857,
+          "boundary_touch_with_shared_id": 331,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              5
+            ],
+            "fp": [
+              0,
+              2
+            ],
+            "fn": [
+              0,
+              38
+            ],
+            "tn": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "scope": "valid",
+          "method": "first-fit",
+          "seed": null,
+          "elevation": 75,
+          "azimuth": 45,
+          "faces": 361,
+          "pairs": 64980,
+          "tp": 581,
+          "fp": 640,
+          "fn": 910,
+          "tn": 62849,
+          "boundary_touch_with_shared_id": 331,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              5
+            ],
+            "fp": [
+              0,
+              2
+            ],
+            "fn": [
+              0,
+              38
+            ],
+            "tn": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "scope": "repaired",
+          "method": "first-fit",
+          "seed": null,
+          "elevation": 75,
+          "azimuth": 45,
+          "faces": 361,
+          "pairs": 64980,
+          "tp": 581,
+          "fp": 640,
+          "fn": 910,
+          "tn": 62849,
+          "boundary_touch_with_shared_id": 331,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              5
+            ],
+            "fp": [
+              0,
+              2
+            ],
+            "fn": [
+              0,
+              38
+            ],
+            "tn": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "scope": "valid",
+          "method": "proposed",
+          "seed": 0,
+          "elevation": 35,
+          "azimuth": 45,
+          "faces": 361,
+          "pairs": 64980,
+          "tp": 423,
+          "fp": 665,
+          "fn": 1068,
+          "tn": 62824,
+          "boundary_touch_with_shared_id": 352,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              5
+            ],
+            "fp": [
+              0,
+              2
+            ],
+            "fn": [
+              0,
+              131
+            ],
+            "tn": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "scope": "repaired",
+          "method": "proposed",
+          "seed": 0,
+          "elevation": 35,
+          "azimuth": 45,
+          "faces": 361,
+          "pairs": 64980,
+          "tp": 423,
+          "fp": 665,
+          "fn": 1068,
+          "tn": 62824,
+          "boundary_touch_with_shared_id": 352,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              5
+            ],
+            "fp": [
+              0,
+              2
+            ],
+            "fn": [
+              0,
+              131
+            ],
+            "tn": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "scope": "valid",
+          "method": "proposed",
+          "seed": 0,
+          "elevation": 75,
+          "azimuth": 45,
+          "faces": 361,
+          "pairs": 64980,
+          "tp": 546,
+          "fp": 627,
+          "fn": 945,
+          "tn": 62862,
+          "boundary_touch_with_shared_id": 352,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              5
+            ],
+            "fp": [
+              0,
+              2
+            ],
+            "fn": [
+              0,
+              136
+            ],
+            "tn": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "scope": "repaired",
+          "method": "proposed",
+          "seed": 0,
+          "elevation": 75,
+          "azimuth": 45,
+          "faces": 361,
+          "pairs": 64980,
+          "tp": 546,
+          "fp": 627,
+          "fn": 945,
+          "tn": 62862,
+          "boundary_touch_with_shared_id": 352,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              5
+            ],
+            "fp": [
+              0,
+              2
+            ],
+            "fn": [
+              0,
+              136
+            ],
+            "tn": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "scope": "valid",
+          "method": "proposed",
+          "seed": 1,
+          "elevation": 35,
+          "azimuth": 45,
+          "faces": 361,
+          "pairs": 64980,
+          "tp": 458,
+          "fp": 702,
+          "fn": 1033,
+          "tn": 62787,
+          "boundary_touch_with_shared_id": 317,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              5
+            ],
+            "fp": [
+              0,
+              2
+            ],
+            "fn": [
+              0,
+              38
+            ],
+            "tn": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "scope": "repaired",
+          "method": "proposed",
+          "seed": 1,
+          "elevation": 35,
+          "azimuth": 45,
+          "faces": 361,
+          "pairs": 64980,
+          "tp": 458,
+          "fp": 702,
+          "fn": 1033,
+          "tn": 62787,
+          "boundary_touch_with_shared_id": 317,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              5
+            ],
+            "fp": [
+              0,
+              2
+            ],
+            "fn": [
+              0,
+              38
+            ],
+            "tn": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "scope": "valid",
+          "method": "proposed",
+          "seed": 1,
+          "elevation": 75,
+          "azimuth": 45,
+          "faces": 361,
+          "pairs": 64980,
+          "tp": 596,
+          "fp": 652,
+          "fn": 895,
+          "tn": 62837,
+          "boundary_touch_with_shared_id": 317,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              5
+            ],
+            "fp": [
+              0,
+              2
+            ],
+            "fn": [
+              0,
+              38
+            ],
+            "tn": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "scope": "repaired",
+          "method": "proposed",
+          "seed": 1,
+          "elevation": 75,
+          "azimuth": 45,
+          "faces": 361,
+          "pairs": 64980,
+          "tp": 596,
+          "fp": 652,
+          "fn": 895,
+          "tn": 62837,
+          "boundary_touch_with_shared_id": 317,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              5
+            ],
+            "fp": [
+              0,
+              2
+            ],
+            "fn": [
+              0,
+              38
+            ],
+            "tn": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "scope": "valid",
+          "method": "proposed",
+          "seed": 2,
+          "elevation": 35,
+          "azimuth": 45,
+          "faces": 361,
+          "pairs": 64980,
+          "tp": 432,
+          "fp": 652,
+          "fn": 1059,
+          "tn": 62837,
+          "boundary_touch_with_shared_id": 354,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              5
+            ],
+            "fp": [
+              0,
+              2
+            ],
+            "fn": [
+              0,
+              136
+            ],
+            "tn": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "scope": "repaired",
+          "method": "proposed",
+          "seed": 2,
+          "elevation": 35,
+          "azimuth": 45,
+          "faces": 361,
+          "pairs": 64980,
+          "tp": 432,
+          "fp": 652,
+          "fn": 1059,
+          "tn": 62837,
+          "boundary_touch_with_shared_id": 354,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              5
+            ],
+            "fp": [
+              0,
+              2
+            ],
+            "fn": [
+              0,
+              136
+            ],
+            "tn": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "scope": "valid",
+          "method": "proposed",
+          "seed": 2,
+          "elevation": 75,
+          "azimuth": 45,
+          "faces": 361,
+          "pairs": 64980,
+          "tp": 562,
+          "fp": 639,
+          "fn": 929,
+          "tn": 62850,
+          "boundary_touch_with_shared_id": 354,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              5
+            ],
+            "fp": [
+              0,
+              2
+            ],
+            "fn": [
+              0,
+              136
+            ],
+            "tn": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "scope": "repaired",
+          "method": "proposed",
+          "seed": 2,
+          "elevation": 75,
+          "azimuth": 45,
+          "faces": 361,
+          "pairs": 64980,
+          "tp": 562,
+          "fp": 639,
+          "fn": 929,
+          "tn": 62850,
+          "boundary_touch_with_shared_id": 354,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              5
+            ],
+            "fp": [
+              0,
+              2
+            ],
+            "fn": [
+              0,
+              136
+            ],
+            "tn": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "scope": "valid",
+          "method": "proposed",
+          "seed": 3,
+          "elevation": 35,
+          "azimuth": 45,
+          "faces": 361,
+          "pairs": 64980,
+          "tp": 427,
+          "fp": 685,
+          "fn": 1064,
+          "tn": 62804,
+          "boundary_touch_with_shared_id": 358,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              38
+            ],
+            "fp": [
+              0,
+              2
+            ],
+            "fn": [
+              0,
+              5
+            ],
+            "tn": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "scope": "repaired",
+          "method": "proposed",
+          "seed": 3,
+          "elevation": 35,
+          "azimuth": 45,
+          "faces": 361,
+          "pairs": 64980,
+          "tp": 427,
+          "fp": 685,
+          "fn": 1064,
+          "tn": 62804,
+          "boundary_touch_with_shared_id": 358,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              38
+            ],
+            "fp": [
+              0,
+              2
+            ],
+            "fn": [
+              0,
+              5
+            ],
+            "tn": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "scope": "valid",
+          "method": "proposed",
+          "seed": 3,
+          "elevation": 75,
+          "azimuth": 45,
+          "faces": 361,
+          "pairs": 64980,
+          "tp": 560,
+          "fp": 638,
+          "fn": 931,
+          "tn": 62851,
+          "boundary_touch_with_shared_id": 358,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              5
+            ],
+            "fp": [
+              0,
+              2
+            ],
+            "fn": [
+              0,
+              219
+            ],
+            "tn": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "scope": "repaired",
+          "method": "proposed",
+          "seed": 3,
+          "elevation": 75,
+          "azimuth": 45,
+          "faces": 361,
+          "pairs": 64980,
+          "tp": 560,
+          "fp": 638,
+          "fn": 931,
+          "tn": 62851,
+          "boundary_touch_with_shared_id": 358,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              5
+            ],
+            "fp": [
+              0,
+              2
+            ],
+            "fn": [
+              0,
+              219
+            ],
+            "tn": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "scope": "valid",
+          "method": "proposed",
+          "seed": 4,
+          "elevation": 35,
+          "azimuth": 45,
+          "faces": 361,
+          "pairs": 64980,
+          "tp": 447,
+          "fp": 687,
+          "fn": 1044,
+          "tn": 62802,
+          "boundary_touch_with_shared_id": 365,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              5
+            ],
+            "fp": [
+              0,
+              2
+            ],
+            "fn": [
+              0,
+              38
+            ],
+            "tn": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "scope": "repaired",
+          "method": "proposed",
+          "seed": 4,
+          "elevation": 35,
+          "azimuth": 45,
+          "faces": 361,
+          "pairs": 64980,
+          "tp": 447,
+          "fp": 687,
+          "fn": 1044,
+          "tn": 62802,
+          "boundary_touch_with_shared_id": 365,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              5
+            ],
+            "fp": [
+              0,
+              2
+            ],
+            "fn": [
+              0,
+              38
+            ],
+            "tn": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "scope": "valid",
+          "method": "proposed",
+          "seed": 4,
+          "elevation": 75,
+          "azimuth": 45,
+          "faces": 361,
+          "pairs": 64980,
+          "tp": 550,
+          "fp": 647,
+          "fn": 941,
+          "tn": 62842,
+          "boundary_touch_with_shared_id": 365,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              5
+            ],
+            "fp": [
+              0,
+              2
+            ],
+            "fn": [
+              0,
+              38
+            ],
+            "tn": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "scope": "repaired",
+          "method": "proposed",
+          "seed": 4,
+          "elevation": 75,
+          "azimuth": 45,
+          "faces": 361,
+          "pairs": 64980,
+          "tp": 550,
+          "fp": 647,
+          "fn": 941,
+          "tn": 62842,
+          "boundary_touch_with_shared_id": 365,
+          "first_pair_ids_in_input_order": {
+            "tp": [
+              0,
+              5
+            ],
+            "fp": [
+              0,
+              2
+            ],
+            "fn": [
+              0,
+              38
+            ],
+            "tn": [
+              0,
+              1
+            ]
+          }
+        }
+      ],
+      "elapsed_seconds": 1.8900000001303852
+    }
+  },
+  "stop_reason": "all_planned_cases_verified",
+  "elapsed_seconds": 7.609999999869615
+}

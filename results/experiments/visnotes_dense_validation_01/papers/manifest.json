@@ -1,0 +1,52 @@
+[
+  {
+    "id": "qu-2017",
+    "title": "Interactive Design and Visualization of N-ary Relationships",
+    "status": "downloaded",
+    "attempts": [
+      {
+        "url": "https://web.engr.oregonstate.edu/~zhange/images/Nary.pdf",
+        "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)>"
+      }
+    ],
+    "url": "https://web.engr.oregonstate.edu/~zhange/images/Nary.pdf",
+    "file": "qu-2017.pdf",
+    "pages": 8,
+    "sha256": "19ef9ac4d0bb5759bae4c75a314282fa02dd3547e453451d41b3c5685d099d5e"
+  },
+  {
+    "id": "oliver-scalable",
+    "title": "Scalable Hypergraph Visualization",
+    "url": "https://arxiv.org/pdf/2308.05043",
+    "file": "oliver-scalable.pdf",
+    "pages": 17,
+    "sha256": "b1441abd68093029f35ea9fb0669caa9f3d3bf36dd7d1aa66b1d5dedf69d5e72",
+    "status": "downloaded",
+    "attempts": []
+  },
+  {
+    "id": "oliver-structure",
+    "title": "Structure-Aware Simplification for Hypergraph Visualization",
+    "url": "https://arxiv.org/pdf/2407.19621",
+    "file": "oliver-structure.pdf",
+    "pages": 15,
+    "sha256": "3dcdb062201ae3ee97774050a3aa36c2bc896687cfd99a2c4f511076284b4cb5",
+    "status": "downloaded",
+    "attempts": [
+      {
+        "url": "https://web.engr.oregonstate.edu/~zhangyue/papers/hypergraph2024_main.pdf",
+        "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)>"
+      }
+    ]
+  },
+  {
+    "id": "feyer-multilayer",
+    "title": "2D, 2.5D, or 3D? An Exploratory Study on Multilayer Network Visualisations in Virtual Reality",
+    "url": "https://research-portal.uu.nl/ws/files/245925661/2D_2.5D_or_3D_An_Exploratory_Study_on_Multilayer_Network_Visualisations_in_Virtual_Reality.pdf",
+    "file": "feyer-multilayer.pdf",
+    "pages": 12,
+    "sha256": "2b21083a9b3408a34799f68863caed7123079b56e3c7a8e8f8aa4de7cd09987a",
+    "status": "downloaded",
+    "attempts": []
+  }
+]
