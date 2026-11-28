@@ -26,6 +26,8 @@
 - 可視化の実験報告には、検証済みの定量結果の図と、同じ入力・視点・倍率で撮影したビューアの比較画像を添える。esa の添付画像を本文に埋め込み、投稿後に閲覧画面で画像の表示とキャプションを確認する。
 - API で画像も添付する場合は、本文の投稿権限に加えて `write:attachment` を確認する。添付ができない場合は、記事本文に添付状況と図の主要な値を記載する。完了報告には理由とローカルの画像を示す。esa の記事本文にローカルのパスを画像の参照先として載せない。 [esa への実験報告](../.agents/skills/report-experiment-to-esa/SKILL.md)・[esa の API スコープ](https://docs.esa.io/posts/555)
 
+図を esa に添付する場合、公式 CLI の `esa attachment upload <PNGのパス>` または API の `POST /v1/teams/vdslab/attachments` に multipart の `file` を渡す。応答の `attachment.url` を Markdown の画像として本文に埋め込む。画像ごとの URL と元ファイルの SHA-256 を控えると、途中で HTTP 429 が返った際に、指定時間を待って未添付分から再開できる。投稿後は記事本文に生成された画像要素とキャプションを照合し、各画像が表示できることを確かめる。 [esa 公式 CLI の添付ファイル操作](https://github.com/esaio/esa-cli#添付ファイル)
+
 ## 変更別の確認手順
 
 | 変更対象 | 確認する内容 |
